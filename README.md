@@ -5,4 +5,5 @@ Componenta grupei: <br>-Apostu Razvan (The Big Brother)<br>
                    -Badarau Bogdan<br>
                    -Popa Dorian<br>
                    -Mocanu Alex<br>
-              
+# Trello
+https://trello.com/b/Q7hPnHmI/fratii-brothers
