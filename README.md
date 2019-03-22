@@ -1,5 +1,5 @@
 # FratiiBrothers
-Componenta grupei: <br>-Apostu Razvan<br>
+Componenta grupei: <br>-Apostu Razvan (Lead)<br>
                    -Barbu Vlad<br>
                    -Acsinte Matei<br>
                    -Badarau Bogdan<br>
