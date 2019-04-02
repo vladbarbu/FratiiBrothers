@@ -2,10 +2,9 @@ import React, { Component } from "react";
 
 class NavBar extends Component {
   render() {
-    const styleTitle = {
-      color: "#0DD2A3"
-    };
+    const styleTitle = { color: "#0DD2A3" };
     const styleButton = { color: "#0DD2A3" };
+    const styleBackButton = { background: "#DEDEDE" };
     const styleSearch = { width: "500px", height: "58px" };
     return (
       <nav className="navbar navbar-light bg-light justify-content-between">
@@ -15,7 +14,14 @@ class NavBar extends Component {
 
         <form className="form-inline">
           <button
-            className="btn  my-2 my-sm-0 m-2 shadow-sm p-3 mb-5 bg-white rounded"
+            className="btn  my-2 my-sm-0 m-1 shadow-sm p-3 mb-5 rounded text-white"
+            type="submit"
+            style={styleBackButton}
+          >
+            <i className="fas fa-arrow-left fa-lg" />
+          </button>
+          <button
+            className="btn  my-2 my-sm-0 m-4 shadow-sm p-3 mb-5 rounded bg-light"
             type="submit"
             style={styleButton}
           >
