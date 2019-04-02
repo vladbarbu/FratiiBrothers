@@ -21,7 +21,7 @@ class NavBar extends Component {
             <i className="fas fa-arrow-left fa-lg" />
           </button>
           <button
-            className="btn  my-2 my-sm-0 m-4 shadow-sm p-3 mb-5 rounded"
+            className="btn  my-2 my-sm-0 m-4 shadow-sm p-3 mb-5 rounded bg-light"
             type="submit"
             style={styleButton}
           >
