@@ -17,6 +17,6 @@ https://trello.com/b/Q7hPnHmI/fratii-brothers
 - [ ] Create wireframes (and UI) for the
   - [X] Employee Web App
   - [ ] Manager Web App
-- [ ] Finish React tutorials (1-2 weeks)
+- [X] Finish React tutorials (1-2 weeks)
 - [ ] Code UI and visual components (also objectify logic)
 - [ ] Connect to API and write the networking logic
