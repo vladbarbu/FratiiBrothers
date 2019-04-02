@@ -6,7 +6,7 @@ class NavBar extends Component {
       color: "#0DD2A3"
     };
     const styleButton = { color: "#0DD2A3" };
-    const styleSearch = { width: "500px", height: "50px" };
+    const styleSearch = { width: "500px", height: "58px" };
     return (
       <nav className="navbar navbar-light bg-light justify-content-between">
         <a className="navbar-brand font-weight-bold" style={styleTitle}>
@@ -15,18 +15,17 @@ class NavBar extends Component {
 
         <form className="form-inline">
           <button
-            className="btn  my-2 my-sm-0 m-2 "
+            className="btn  my-2 my-sm-0 m-2 shadow-sm p-3 mb-5 bg-white rounded"
             type="submit"
             style={styleButton}
           >
-            <i className="far fa-bell" />
+            <i className="far fa-bell fa-lg" />
           </button>
           <input
             className="form-control mr-sm-2"
             type="search"
             placeholder="Search for a specific item"
             aria-label="Search"
-            width="20px"
             style={styleSearch}
           />
         </form>
