@@ -5,7 +5,11 @@ class NavBar extends Component {
     const styleTitle = { color: "#0DD2A3" };
     const styleButton = { color: "#0DD2A3" };
     const styleBackButton = { background: "#DEDEDE" };
-    const styleSearch = { width: "500px", height: "58px" };
+    const styleSearch = {
+      width: "500px",
+      height: "58px",
+      fontFamily: "FontAwesome"
+    };
     return (
       <nav className="navbar navbar-light bg-light justify-content-between">
         <a className="navbar-brand font-weight-bold" style={styleTitle}>
@@ -30,7 +34,7 @@ class NavBar extends Component {
           <input
             className="form-control mr-sm-2"
             type="search"
-            placeholder="Search for a specific item"
+            placeholder="Search for a specific item &#xF002;"
             aria-label="Search"
             style={styleSearch}
           />
