@@ -1,6 +1,7 @@
 .ItemsContainer {
   width: 100%;
-  margin: 20px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
