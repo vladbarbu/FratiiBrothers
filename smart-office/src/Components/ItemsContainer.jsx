@@ -6,9 +6,8 @@ class ItemsContainer extends Component {
   render() {
     let path = require("../resources/images/unknown.png");
     let quant = 69;
-    const style = { display: "flex", flexWrap: "wrap", width: "100%" };
     return (
-      <div className="ItemsContainer" style={style}>
+      <div className="ItemsContainer">
         <Item name="coffee" imagePath={path} quantity={quant} />
         <Item name="Tea" imagePath={path} quantity={quant} />
         <Item name="Tea" imagePath={path} quantity={quant} />
