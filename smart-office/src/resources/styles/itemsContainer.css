@@ -1,7 +1,6 @@
 .ItemsContainer {
-  width: 1280px;
+  width: 100%;
   margin: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  row-gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
 }
