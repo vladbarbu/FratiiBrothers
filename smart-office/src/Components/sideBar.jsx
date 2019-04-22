@@ -7,18 +7,20 @@ class SideBar extends Component {
   state = {
     itemDescription: "PaperCups",
     buildingDescription: "Centric Iasi",
-    reminders: ["3 notifications ", "no paperscups"],
+    //reminders: ["3 notifications ", "no paperscups"],
     actions: ["Action1", "Action2", "Action3"]
   };
 
   render() {
+    const clickedItem = this.props.clickedItem;
     return (
       <div id="sideBarContainer">
         <SideBarHeader location={this.props.location} />
-        <hr />
-        <div>{this.state.itemDescription}</div>
-        <hr />
-        <div>{this.state.reminders}</div>
+        <img src={clickedItem.imagePath} alt="" />
+        <p>{clickedItem.name}</p>
+        <h6>{clickedItem.quantity}</h6>
+
+        {/* <div>{this.state.reminders}</div> */}
         <div>
           <button>{this.state.actions[0]}</button>
           <button>{this.state.actions[1]}</button>
