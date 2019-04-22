@@ -5,3 +5,8 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.ItemsContainerNav p {
+  margin-left: 10px;
+  margin-top: 20px;
+}
