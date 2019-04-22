@@ -8,13 +8,13 @@ class Item extends Component {
       <div className="Item">
         <img src={this.props.imagePath} alt="" />
         <h3 className="Name">{this.props.name}</h3>
-        <p className="Quantity">
+        <div className="Quantity">
           <i className="material-icons">label</i>
           {this.props.quantity} items
           <i className="material-icons" style={iconStyle}>
             drag_indicator
           </i>
-        </p>
+        </div>
       </div>
     );
   }
