@@ -1,0 +1,10 @@
+#sideBarHeaderList {
+  text-align: center;
+}
+#sideBarHeaderList li {
+  display: inline-block;
+}
+#sideBarContainer {
+  width: 400px;
+  margin-left: 50px;
+}

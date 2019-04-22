@@ -1,0 +1,23 @@
+.Item {
+  max-width: 200px;
+  max-height: 200px;
+  background: white;
+  border-color: #dedede;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.Item img {
+  height: 125px;
+  width: 198px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.Quantity {
+  color: #0dd2a3;
+  font-size: 0.9em;
+}
