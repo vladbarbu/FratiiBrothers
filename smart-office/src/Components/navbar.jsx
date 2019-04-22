@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../resources/styles/navBar.css";
 
 class NavBar extends Component {
   render() {
@@ -35,8 +36,11 @@ class NavBar extends Component {
             data-live-search="true"
             data-live-search-style="startsWith p-3"
             className="selectpicker"
-            defaultValue="Search for a specific item"
+            defaultValue="search"
           >
+            <option value="search" disabled hidden>
+              Search for a specific item
+            </option>
             <option value="Tea">Tea</option>
             <option value="Coffee">Coffee</option>
             <option value="Cups">Cups</option>

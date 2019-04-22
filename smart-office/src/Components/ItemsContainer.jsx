@@ -10,7 +10,10 @@ class ItemsContainer extends Component {
       <div className="ItemsContainerNav">
         <p className="text-left font-weight-bold">
           All items
-          <i className="material-icons" style={{ color: "#0DD2A3" }}>
+          <i
+            className="material-icons"
+            style={{ color: "#0DD2A3", position: "relative", top: "7px" }}
+          >
             arrow_right
           </i>
         </p>
