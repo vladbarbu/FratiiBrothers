@@ -15,7 +15,9 @@ class SideBar extends Component {
     return (
       <div id="sideBarContainer">
         <SideBarHeader location={this.props.location} />
+        <hr />
         <div>{this.state.itemDescription}</div>
+        <hr />
         <div>{this.state.reminders}</div>
         <div>
           <button>{this.state.actions[0]}</button>
