@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-// import NavBar from "./components/navbar";
+// import NavBar from "./Components/navbar";
 import "./App.css";
-import ItemsContainer from "./components/ItemsContainer";
-import SideBar from "./components/sideBar";
+import ItemsContainer from "./Components/ItemsContainer";
+import SideBar from "./Components/sideBar";
 // import MainContainer from "./components/MainContainer";
-import NavBar from "./components/navbar";
+import NavBar from "./Components/navbar";
 class App extends Component {
   state = {};
 
