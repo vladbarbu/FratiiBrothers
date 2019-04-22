@@ -5,14 +5,13 @@ class NavBar extends Component {
     const styleTitle = { color: "#0DD2A3" };
     const styleButton = { color: "#0DD2A3" };
     const styleBackButton = { background: "#DEDEDE" };
-    const styleSearch = {
-      width: "500px",
-      height: "58px",
-      fontFamily: "FontAwesome"
-    };
     return (
       <nav className="navbar navbar-light bg-light justify-content-between">
-        <a className="navbar-brand font-weight-bold" style={styleTitle}>
+        <a
+          className="navbar-brand font-weight-bold"
+          href="#"
+          style={styleTitle}
+        >
           SmartOffice
         </a>
 
@@ -31,13 +30,22 @@ class NavBar extends Component {
           >
             <i className="far fa-bell fa-lg" />
           </button>
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search for a specific item &#xF002;"
-            aria-label="Search"
-            style={styleSearch}
-          />
+
+          <select
+            data-live-search="true"
+            data-live-search-style="startsWith"
+            className="selectpicker"
+            defaultValue="Search for a specific item"
+          >
+            <option value="Tea">Tea</option>
+            <option value="Coffee">Coffee</option>
+            <option value="Cups">Cups</option>
+            <option value="Apple">Apple</option>
+            <option value="Orange juice">Orange Juice</option>
+            <option value="Orange juice">Orange Juice</option>
+            <option value="Orange juice">Orange Juice</option>
+            <option value="Orange juice">Orange Juice</option>
+          </select>
         </form>
       </nav>
     );
