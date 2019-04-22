@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+#left-wrapper {
+  width: 1100px;
+  margin-left: 20px;
+}
+#app-wrapper {
+  width: 100%;
+  display: flex;
+}

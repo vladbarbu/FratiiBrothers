@@ -1,14 +1,30 @@
 import React, { Component } from "react";
-import NavBar from "./Components/navbar";
+import "bootstrap/dist/css/bootstrap.css";
+// import NavBar from "./components/navbar";
 import "./App.css";
-import ItemsContainer from "./Components/ItemsContainer";
-
+import ItemsContainer from "./components/ItemsContainer";
+import SideBar from "./components/sideBar";
+// import MainContainer from "./components/MainContainer";
+import NavBar from "./components/navbar";
 class App extends Component {
+  state = {};
+
   render() {
+    const styleTitle = {
+      display: "grid"
+    };
+    let location = {
+      building: "Centric Iasi",
+      floor: "Floor 5",
+      table: "Table 3"
+    };
     return (
-      <div>
-        <NavBar />
-        <ItemsContainer />
+      <div id="app-wrapper">
+        <div id="left-wrapper">
+          <NavBar />
+          <ItemsContainer />
+        </div>
+        <SideBar location={location} />
       </div>
     );
   }
