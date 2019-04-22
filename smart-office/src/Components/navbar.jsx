@@ -3,7 +3,6 @@ import "../resources/styles/navBar.css";
 
 class NavBar extends Component {
   render() {
-    const styleTitle = { color: "#0DD2A3" };
     const styleButton = { color: "#0DD2A3" };
     const styleBackButton = { background: "#DEDEDE" };
     return (
@@ -11,7 +10,7 @@ class NavBar extends Component {
         <a
           className="navbar-brand font-weight-bold"
           href="#"
-          style={styleTitle}
+          style={{ color: "#0DD2A3" }}
         >
           SmartOffice
         </a>
