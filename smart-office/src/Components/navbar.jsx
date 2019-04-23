@@ -12,7 +12,7 @@ class NavBar extends Component {
         </div>
 
         <div className="body">
-          {this.props.element.parentID ? (
+          {this.props.element != null ? (
             <button className="button goBack">
               <i className="material-icons-two-tone"> arrow_back</i>
             </button>

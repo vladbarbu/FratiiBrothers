@@ -51,7 +51,7 @@ class App extends Component {
           <div className="App-left">
             <NavBar
               onClickNavBar={this.onNavBarClick}
-              element={this.state.chosen ? this.state.chosen : "no"}
+              element={this.state.chosen}
               elements={this.state.elements}
               navBarClick={this.state.navBarClick}
             />
