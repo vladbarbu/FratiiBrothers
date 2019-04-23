@@ -1,37 +1,36 @@
-import React, { Component } from "react";
+import React, { Component } from "../../node_modules/react";
 import "../resources/styles/item.css";
 
 class Item extends Component {
+  state = {};
+
+  onItemClick = ID => {
+    this.props.click(this.props.item.ID);
+  };
+
   render() {
-    const rightIconStyle = {
-      transform: "rotate(90deg)",
-      background: "#0dd2a3",
-      color: "white",
-      borderTopRightRadius: "5px",
-      borderBottomLeftRadius: "5px",
-      padding: "8px",
-      position: "relative",
-      bottom: "3px",
-      left: "87px"
-    };
-    const leftIconStyle = { position: "relative", bottom: "4px", left: "10px" };
-    const bottomTextStyle = {
-      position: "relative",
-      bottom: "11px",
-      left: "20px"
-    };
     return (
-      <div className="Item">
-        <img src={this.props.imagePath} alt="" />
-        <h5 className="Name">{this.props.name}</h5>
-        <div className="Quantity">
-          <i className="material-icons-two-tone" style={leftIconStyle}>
-            label
-          </i>
-          <strong style={bottomTextStyle}>{this.props.quantity} items</strong>
-          <i className="material-icons " style={rightIconStyle}>
-            drag_indicator
-          </i>
+      <div
+        onClick={this.onItemClick.bind(this, this.props.item.ID)}
+        className="Item"
+      >
+        <div className="image">
+          <img
+            src={require("./../resources/" + this.props.item.image)}
+            alt=""
+          />
+        </div>
+        <div className="body">
+          <p className="name">{this.props.item.name}</p>
+        </div>
+        <div className="footer">
+          <div className="quantity">
+            <i className="material-icons-two-tone">label</i>
+            <p>{this.props.item.quantity} items</p>
+          </div>
+          <div className="button">
+            <i className="material-icons">drag_indicator</i>
+          </div>
         </div>
       </div>
     );

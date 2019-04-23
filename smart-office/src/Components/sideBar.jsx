@@ -1,27 +1,33 @@
 import React, { Component } from "react";
 import SideBarHeader from "./sideBarHeader";
+import Item from "./Item";
 
 import "../resources/styles/sideBar.css";
 
 class SideBar extends Component {
   state = {
-    itemDescription: "PaperCups",
-    buildingDescription: "Centric Iasi",
-    //reminders: ["3 notifications ", "no paperscups"],
+    element: this.props.element,
     actions: ["Action1", "Action2", "Action3"]
   };
+  //
+  // static getDerivedStateFromProps(nextProps, prevState){
+  //     console.log(prevState);
+  //     console.log(nextProps);
+  //     if(nextProps.element !== prevState.element){
+  //         return { element: nextProps.element};
+  //     }
+  //     else return null;
+  // }
 
   render() {
-    const clickedItem = this.props.clickedItem;
     return (
-      <div id="sideBarContainer">
+      <div id="SideBar">
         <SideBarHeader location={this.props.location} />
-        <img src={clickedItem.imagePath} alt="" />
-        <p>{clickedItem.name}</p>
-        <h6>{clickedItem.quantity}</h6>
+        <div className="body">
+          <Item item={this.props.element} />
+        </div>
 
-        {/* <div>{this.state.reminders}</div> */}
-        <div>
+        <div className="actions">
           <button>{this.state.actions[0]}</button>
           <button>{this.state.actions[1]}</button>
           <button>{this.state.actions[2]}</button>
