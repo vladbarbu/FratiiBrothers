@@ -13,9 +13,9 @@ class NavBar extends Component {
 
   handleClick = e => {
     if (this.node.contains(e.target)) {
-      this.props.onClickNavBar();
+      this.setState(this.props.onClickNavBar());
     } else {
-      this.props.onClickDiscardSearch();
+      this.setState(this.props.onClickDiscardSearch());
     }
   };
   render() {
@@ -27,7 +27,7 @@ class NavBar extends Component {
         </div>
 
         <div className="body">
-          {this.props.element != null ? (
+          {this.props.element.parentID ? (
             <button className="button goBack">
               <i className="material-icons-two-tone"> arrow_back</i>
             </button>
