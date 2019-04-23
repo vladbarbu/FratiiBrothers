@@ -11,6 +11,11 @@ class NavBar extends Component {
         </div>
 
         <div className="body">
+          {this.props.element.parentID ? (
+            <button className="button notifications">
+              <i className="material-icons-two-tone"> left_arrow</i>
+            </button>
+          ) : null}
           <button className="button notifications">
             <i className="material-icons-two-tone"> notifications</i>
           </button>

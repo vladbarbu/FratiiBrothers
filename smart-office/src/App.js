@@ -50,6 +50,7 @@ class App extends Component {
           <div className="App-left">
             <NavBar
               onNavBarClick={this.onNavBarClick}
+              element={this.state.chosen}
               elements={this.state.elements}
             />
             <Main
@@ -76,6 +77,14 @@ class App extends Component {
       })()
     }));
   };
-}
+} /*
+onNavBarClick = name => {
+  this.setState((state, props) => ({
+    chosen: (() => {
+      for (let i = 0; i < state.elements.length; i++)
 
+    })()
+  }));
+};
+}*/
 export default App;
