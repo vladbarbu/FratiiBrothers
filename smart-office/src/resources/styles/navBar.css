@@ -9,4 +9,10 @@ form .material-icons-two-tone {
 form button {
   max-width: 58px;
   max-height: 64px;
+  border: solid gray 10px;
+}
+
+select {
+  max-width: 100px;
+  width: 100px;
 }

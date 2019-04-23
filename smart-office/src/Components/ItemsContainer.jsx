@@ -4,7 +4,7 @@ import "../resources/styles/itemsContainer.css";
 
 class ItemsContainer extends Component {
   render() {
-    let path = require("../resources/images/unknown.png");
+    let path = require("../resources/images/unknown.jpg");
     let quant = 69;
     return (
       <div className="ItemsContainerNav">
