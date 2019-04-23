@@ -14,7 +14,7 @@ class App extends Component {
 
     this.state = {
       elements: elements,
-      chosen: elements[0]
+      chosen: null
     };
   }
 
@@ -58,7 +58,11 @@ class App extends Component {
             />
           </div>
           <div className="App-right">
-            <SideBar element={this.state.chosen} location={location} />
+            <SideBar
+              element={this.state.chosen}
+              location={location}
+              onClickDiscardSearch={this.onClickDiscardSearch}
+            />
           </div>
         </div>
       </div>
@@ -75,6 +79,11 @@ class App extends Component {
         return state.elements[0];
       })()
     }));
+  };
+
+  onClickDiscardSearch = () => {
+    const chosen = null;
+    this.setState({ chosen });
   };
 }
 

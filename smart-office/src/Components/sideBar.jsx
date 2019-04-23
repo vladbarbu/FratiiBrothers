@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import SideBarHeader from "./sideBarHeader";
 import Item from "./Item";
+import SideBarCategory from "./SideBarCategory";
+import SideBarInitial from "./SideBarInitial";
 
 import "../resources/styles/sideBar.css";
 
@@ -19,19 +21,25 @@ class SideBar extends Component {
   //     else return null;
   // }
 
+  getTypeOfSidebar() {
+    return this.props.element === null ? (
+      <SideBarInitial />
+    ) : (
+      <SideBarCategory
+        element={this.props.element}
+        onClickDiscardSearch={this.props.onClickDiscardSearch}
+      />
+    );
+  }
   render() {
     return (
       <div id="SideBar">
         <SideBarHeader location={this.props.location} />
-        <div className="body">
+        {this.getTypeOfSidebar()}
+        {/* <SideBarCategory element={this.props.element} /> */}
+        {/* <div className="body">
           <Item item={this.props.element} />
-        </div>
-
-        <div className="actions">
-          <button>{this.state.actions[0]}</button>
-          <button>{this.state.actions[1]}</button>
-          <button>{this.state.actions[2]}</button>
-        </div>
+        </div> */}
       </div>
     );
   }
