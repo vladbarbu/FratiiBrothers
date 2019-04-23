@@ -53,7 +53,6 @@ class Element {
     this._image = value;
   }
 
-
   get ID() {
     return this._ID;
   }
@@ -61,30 +60,28 @@ class Element {
     this._ID = ID;
   }
 
-
   constructor(object) {
     if (object === null) return;
     this.ID = object.hasOwnProperty("ID") ? object["ID"] : null;
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
-    this.parentID = object.hasOwnProperty("parentID") ? object["parentID"] : null;
-    this.elements = (()=>{
+    this.parentID = object.hasOwnProperty("parentID")
+      ? object["parentID"]
+      : null;
+    this.elements = (() => {
       let data = [];
-      let elements =  object.hasOwnProperty("elements") ? object["elements"] : [];
-      if(elements && elements.length > 0) for(let i = 0; i < elements.length; i++) data.push(new Element(elements[i]));
+      let elements = object.hasOwnProperty("elements")
+        ? object["elements"]
+        : [];
+      if (elements && elements.length > 0)
+        for (let i = 0; i < elements.length; i++)
+          data.push(new Element(elements[i]));
       return data;
     })();
 
     this.quantity = this.elements.length;
-
-
-
-
-
-
   }
-
 }
 
 export default Element;
