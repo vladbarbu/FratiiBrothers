@@ -7,19 +7,16 @@ import NavBar from "./components/NavBar";
 import Element from "./model/Element";
 
 class App extends Component {
-
-
-  constructor(props){
+  constructor(props) {
     super(props);
 
-    let elements =  this.loadElements();
+    let elements = this.loadElements();
 
     this.state = {
-      elements : elements,
-      chosen : elements[0]
+      elements: elements,
+      chosen: elements[0]
     };
   }
-
 
   loadElements = () => {
     /**
@@ -28,23 +25,21 @@ class App extends Component {
      */
     try {
       let elements = require("./resources/data/elements.json");
-      if(elements){
+      if (elements) {
         let data = [];
-        for(let i = 0; i < elements.length; i++){
+        for (let i = 0; i < elements.length; i++) {
           data.push(new Element(elements[i]));
         }
         return data;
       }
-    }catch (e) {
+    } catch (e) {
       console.error(e);
     }
     return [];
   };
 
-
   render() {
     let location = {
-
       building: "Centric Iasi",
       floor: "Floor 5",
       table: "Table 3"
@@ -54,7 +49,10 @@ class App extends Component {
         <div className="App-container">
           <div className="App-left">
             <NavBar />
-            <Main onItemClick={this.onItemClick} elements={this.state.elements} />
+            <Main
+              onItemClick={this.onItemClick}
+              elements={this.state.elements}
+            />
           </div>
           <div className="App-right">
             <SideBar element={this.state.chosen} location={location} />
@@ -64,16 +62,17 @@ class App extends Component {
     );
   }
 
-
-  onItemClick = (ID) => {
+  onItemClick = ID => {
     this.setState((state, props) => ({
-      chosen : (()=>{
-        for(let i = 0; i < state.elements.length; i++) if(state.elements[i].ID === ID) {return state.elements[i]} return state.elements[0];
+      chosen: (() => {
+        for (let i = 0; i < state.elements.length; i++)
+          if (state.elements[i].ID === ID) {
+            return state.elements[i];
+          }
+        return state.elements[0];
       })()
     }));
-  }
-
-
+  };
 }
 
 export default App;
