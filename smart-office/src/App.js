@@ -14,7 +14,8 @@ class App extends Component {
 
     this.state = {
       elements: elements,
-      chosen: null
+      chosen: null,
+      navBarClick: false
     };
   }
 
@@ -49,9 +50,10 @@ class App extends Component {
         <div className="App-container">
           <div className="App-left">
             <NavBar
-              onNavBarClick={this.onNavBarClick}
+              onClickNavBar={this.onNavBarClick}
               element={this.state.chosen ? this.state.chosen : "no"}
               elements={this.state.elements}
+              navBarClick={this.state.navBarClick}
             />
             <Main
               onItemClick={this.onItemClick}
@@ -85,11 +87,12 @@ class App extends Component {
 
   onClickDiscardSearch = () => {
     const chosen = null;
-    this.setState({ chosen });
+
+    this.setState({ chosen, navBarClick: false });
   };
 
   onNavBarClick = () => {
-    console.log("NavBar Clicked");
+    this.setState({ navBarClick: true });
   };
 }
 

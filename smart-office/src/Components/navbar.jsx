@@ -4,6 +4,7 @@ import Logo from "./../resources/images/logo.svg";
 
 class NavBar extends Component {
   render() {
+    let style = { right: "258px" };
     return (
       <nav className="NavBar">
         <div className="logo">
@@ -22,17 +23,24 @@ class NavBar extends Component {
           <div className="searchBar">
             <input
               placeholder="Search for a specific item"
-              list="search-list"
+              onClick={() => this.props.onClickNavBar()}
             />
-            <datalist id="search-list">
-              {this.props.elements.map(element =>
-                element.elements.map(element =>
-                  element.elements.map(element => (
-                    <option>{element.name}</option>
-                  ))
-                )
-              )}
-            </datalist>
+            {this.props.navBarClick ? (
+              <ul
+                id="search-list"
+                {...(this.props.element.parentID ? (style = { style }) : null)}
+              >
+                {this.props.elements.map(element =>
+                  element.elements.map(element =>
+                    element.elements.map(element => (
+                      <li>
+                        <button>{element.name}</button>
+                      </li>
+                    ))
+                  )
+                )}
+              </ul>
+            ) : null}
           </div>
         </div>
       </nav>
