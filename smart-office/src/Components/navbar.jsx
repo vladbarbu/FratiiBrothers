@@ -3,21 +3,35 @@ import "../resources/styles/nav.css";
 import Logo from "./../resources/images/logo.svg";
 
 class NavBar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
   componentWillMount() {
-    document.addEventListener("mouseDown", this.handleClick, false);
+    document.addEventListener("mouseDown", this.handleClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mouseDown", this.handleClick, false);
+    document.removeEventListener("mouseDown", this.handleClick);
   }
 
-  handleClick = e => {
-    if (this.node.contains(e.target)) {
-      this.setState(this.props.onClickNavBar());
-    } else {
-      this.setState(this.props.onClickDiscardSearch());
+  /**
+   * Set the wrapper ref
+   */
+  setWrapperRef(node) {
+    this.wrapperRef = node;
+  }
+
+  /**
+   * Alert if clicked on outside of element
+   */
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      console.log("Mere ??");
     }
-  };
+  }
   render() {
     let style = { right: "258px" };
     return (
@@ -40,22 +54,23 @@ class NavBar extends Component {
               placeholder="Search for a specific item"
               onClick={() => this.props.onClickNavBar()}
             />
+
             {this.props.navBarClick ? (
-              <ul
+              <div
                 id="search-list"
                 {...(this.props.element.parentID ? (style = { style }) : null)}
-                ref={node => (this.node = node)}
+                ref={this.setWrapperRef}
               >
                 {this.props.elements.map(element =>
                   element.elements.map(element =>
                     element.elements.map(element => (
-                      <li>
-                        <button>{element.name}</button>
-                      </li>
+                      <button onMouseEnter={console.log(element.name)}>
+                        {element.img + " " + element.name}
+                      </button>
                     ))
                   )
                 )}
-              </ul>
+              </div>
             ) : null}
           </div>
         </div>

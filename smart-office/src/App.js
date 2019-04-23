@@ -55,9 +55,10 @@ class App extends Component {
               element={this.state.chosen ? this.state.chosen : "no"}
               elements={this.state.elements}
               navBarClick={this.state.navBarClick}
+              discardSearch={this.discardSearch}
             />
             <Main
-              onItemClick={this.onItemClick}
+              onItemClick={(this.onItemClick, this.discardSearch)}
               elements={this.state.elements}
             />
           </div>
@@ -90,6 +91,10 @@ class App extends Component {
     const chosen = null;
 
     this.setState({ chosen, navBarClick: false });
+  };
+
+  discardSearch = () => {
+    this.setState({ navBarClick: false });
   };
 
   onNavBarClick = () => {
