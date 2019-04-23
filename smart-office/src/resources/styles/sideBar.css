@@ -5,6 +5,43 @@
   display: inline-block;
 }
 #sideBarContainer {
-  width: 400px;
-  margin-left: 50px;
+  width: 100%;
 }
+
+
+#SideBar{
+  display: flex;
+  flex-direction: column;
+}
+
+#SideBar > header{
+  height: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#SideBar > header > p{
+  margin: 0;
+  color: #08A68B;
+  font-size: 12pt;
+}
+#SideBar > .body{
+  padding: 10px;
+  flex: 1;
+}
+
+#SideBar > .body .Item:hover, #SideBar > .body  .Item:active{
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  transform: none;
+}
+#SideBar > .body .Item > .footer {
+  padding-bottom: 10px;
+}
+#SideBar > .body .Item > .footer > .button{
+  display: none;
+}
+

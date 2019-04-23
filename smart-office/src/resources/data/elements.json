@@ -1,0 +1,90 @@
+[
+  {
+    "ID": 1,
+    "type": "category",
+    "name": "Cups",
+    "image": "images/category_1.png",
+    "elements": [
+      {
+        "ID": 8,
+        "type": "category",
+        "name": "Paper Cups",
+        "parentID": 1,
+        "image": "images/category_8.png",
+        "elements": [
+          {
+            "ID": 1,
+            "type": "item",
+            "name": "Paper Cups Small",
+            "parentID": 8,
+            "image": "images/item_1.png"
+          },
+          {
+            "ID": 2,
+            "type": "item",
+            "name": "Paper Cups Medium",
+            "parentID": 8,
+            "image": "images/item_2.png"
+          },
+          {
+            "ID": 3,
+            "type": "item",
+            "name": "Paper Cups Large",
+            "parentID": 8,
+            "image": "images/item_3.png"
+          }
+        ]
+      },
+      {
+        "ID": 9,
+        "type": "category",
+        "name": "Glass Cups",
+        "parentID": 1,
+        "image": "images/category_9.png"
+      },
+      {
+        "ID": 10,
+        "type": "category",
+        "name": "Plastic Cups",
+        "parentID": 1,
+        "image": "images/category_10.png"
+      }
+    ]
+  },
+  {
+    "ID": 2,
+    "type": "category",
+    "name": "Stationary",
+    "image": "images/category_2.png"
+  },
+  {
+    "ID": 3,
+    "type": "category",
+    "name": "Coffee",
+    "image": "images/category_3.png"
+  },
+  {
+    "ID": 4,
+    "type": "category",
+    "name": "Snacks",
+    "image": "images/category_4.png"
+  },
+  {
+    "ID": 5,
+    "type": "category",
+    "name": "Tea",
+    "image": "images/category_5.png"
+  },
+  {
+    "ID": 6,
+    "type": "category",
+    "name": "Soft Drinks",
+    "image": "images/category_6.png"
+  },
+  {
+    "ID": 7,
+    "type": "category",
+    "name": "Sugar & Salt Packs",
+    "image": "images/category_7.png"
+  }
+]
