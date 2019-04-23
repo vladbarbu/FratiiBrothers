@@ -1,7 +1,7 @@
 .Item {
   background: white;
   border-color: #eeeeee;
-  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
@@ -12,38 +12,35 @@
   cursor: pointer;
 }
 
-
-
-.Item:hover, .Item:active{
+.Item:hover,
+.Item:active {
   transform: translateY(2px);
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.Item > .image >  img {
+.Item > .image > img {
   height: 130px;
   width: 100%;
   object-fit: cover;
   border-bottom: 1px solid #eeeeee;
 }
 
-.Item > .body{
+.Item > .body {
   flex: 1;
   padding: 10px;
   width: calc(100% - 2 * 10px);
 }
 
-.Item > .body >  p.name {
+.Item > .body > p.name {
   font-size: 12pt;
 
   font-weight: 600;
   margin: 0;
   padding: 0;
-
 }
 
-.Item > .footer{
-
+.Item > .footer {
   box-sizing: content-box;
   display: flex;
   align-items: center;
@@ -51,21 +48,20 @@
   padding-left: 8px;
 }
 
-.Item > .footer > .button{
+.Item > .footer > .button {
   background: #0dd2a3;
   border-radius: 4px 0;
-  padding:  4px 12px;
+  padding: 4px 12px;
   margin-left: auto;
   height: 100%;
 }
 
-.Item > .footer > .button > i{
+.Item > .footer > .button > i {
   color: white;
   transform: rotate(90deg);
   height: 24px;
   width: 20px;
 }
-
 
 .Item > .footer > .quantity {
   color: #0dd2a3;
@@ -76,21 +72,17 @@
   align-items: center;
 }
 
-.Item > .footer > .quantity > i{
+.Item > .footer > .quantity > i {
   margin-right: 5px;
   font-size: 16pt;
-
 }
-.Item > .footer > .quantity > p{
+.Item > .footer > .quantity > p {
   margin: 0;
   font-weight: 600;
   font-size: 10pt;
-
 }
-
-
 
 .material-icons-two-tone {
   filter: invert(70%) sepia(15%) saturate(7499%) hue-rotate(118deg)
-  brightness(98%) contrast(90%);
+    brightness(98%) contrast(90%);
 }
