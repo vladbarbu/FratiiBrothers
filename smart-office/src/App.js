@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./resources/styles/App.css";
-import Main from "./components/Main";
-import SideBar from "./components/SideBar";
-import NavBar from "./components/NavBar";
+import Main from "./Components/Main";
+import SideBar from "./Components/sideBar";
+import NavBar from "./Components/navbar";
 
 import Element from "./model/Element";
 
