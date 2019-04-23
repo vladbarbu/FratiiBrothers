@@ -50,6 +50,7 @@ class App extends Component {
           <div className="App-left">
             <NavBar
               onNavBarClick={this.onNavBarClick}
+              element={this.state.chosen}
               elements={this.state.elements}
             />
             <Main
@@ -81,10 +82,15 @@ class App extends Component {
     }));
   };
 
+
   onClickDiscardSearch = () => {
     const chosen = null;
     this.setState({ chosen });
   };
 }
 
+    })()
+  }));
+};
+}*/
 export default App;
