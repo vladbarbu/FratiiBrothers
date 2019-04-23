@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import SideBarHeader from "./sideBarHeader";
 import Item from "./Item";
 
 import "../resources/styles/sideBar.css";

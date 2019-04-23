@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import SideBarHeader from "./sideBarHeader";
-import Item from "./Item";
 import SideBarNotifications from "./SideBarNotifications";
 
 import "../resources/styles/sideBar.css";
@@ -49,7 +47,9 @@ class SideBarInitial extends Component {
         <h3>How it works</h3>
         <br />
         <h6>{this.getInstructions()}</h6>
-        <button>Search and mark unavailable</button>
+        <button onClick={() => this.props.onClickSearch()}>
+          Search and mark unavailable
+        </button>
         <h6>{this.getAddItemInfo()}</h6>
         <button>Request new item</button>
         <SideBarNotifications

@@ -63,6 +63,7 @@ class App extends Component {
               element={this.state.chosen}
               location={location}
               onClickDiscardSearch={this.onClickDiscardSearch}
+              onClickSearch={this.onNavBarClick}
             />
           </div>
         </div>
@@ -85,6 +86,10 @@ class App extends Component {
   onClickDiscardSearch = () => {
     const chosen = null;
     this.setState({ chosen });
+  };
+
+  onNavBarClick = () => {
+    console.log("NavBar Clicked");
   };
 }
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SideBarHeader from "./sideBarHeader";
-import Item from "./Item";
 import SideBarCategory from "./SideBarCategory";
 import SideBarInitial from "./SideBarInitial";
 
@@ -23,7 +22,7 @@ class SideBar extends Component {
 
   getTypeOfSidebar() {
     return this.props.element === null ? (
-      <SideBarInitial />
+      <SideBarInitial onClickSearch={this.props.onClickSearch} />
     ) : (
       <SideBarCategory
         element={this.props.element}
