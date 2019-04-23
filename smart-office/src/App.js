@@ -15,8 +15,8 @@ class App extends Component {
     this.state = {
       elements: elements,
       chosen: null,
-      navBarClick: false
-    };
+	  navBarClick: false
+	};
   }
 
   loadElements = () => {
@@ -60,6 +60,7 @@ class App extends Component {
             <Main
               onItemClick={this.onItemClick}
               elements={this.state.elements}
+              chosen={this.state.chosen}
             />
           </div>
           <div className="App-right">
@@ -75,14 +76,22 @@ class App extends Component {
     );
   }
 
+  onItemClickMaiSmechera = (ID, V) => {
+    if (V != null) {
+      for (let i = 0; i < V.length; i++) {
+        if (V[i].ID === ID){
+			return V[i];
+		}
+        else if (V[i].type !== "item") return this.onItemClickMaiSmechera(ID, V[i].elements);
+      }
+    }
+    return null;
+  };
+
   onItemClick = ID => {
     this.setState((state, props) => ({
       chosen: (() => {
-        for (let i = 0; i < state.elements.length; i++)
-          if (state.elements[i].ID === ID) {
-            return state.elements[i];
-          }
-        return state.elements[0];
+        return this.onItemClickMaiSmechera(ID, state.elements);
       })()
     }));
   };

@@ -4,17 +4,44 @@ import "../resources/styles/main.css";
 
 class Main extends Component {
   render() {
+    let chestie = [];
+    let localChosen = this.props.chosen;
+
+    let chestie2 = [];
+
+    if (localChosen !== null) {
+      if (localChosen.type !== "item") chestie2 = localChosen.elements;
+      else chestie2 = this.getParent(localChosen.ID, this.props.elements).elements;
+
+      while (localChosen.parentID !== null) {
+        chestie.push(localChosen);
+		localChosen = this.getParent(localChosen.ID, this.props.elements);
+		if(localChosen === null) break;
+      }
+		
+    } 
+	else if (localChosen == null) {
+      chestie2 = this.props.elements;
+    }
+
     return (
       <div className="MainContainer">
         <div className="breadcrumbs">
           <p>
             All items
-            <i className="material-icons">arrow_right</i>
+            {chestie.reverse().map(element => {
+              return (
+                <div>
+                  <i className="material-icons">arrow_right</i>
+                  <p>{element.name}</p>
+                </div>
+              );
+            })}
           </p>
         </div>
 
         <div className="Main">
-          {this.props.elements.map(element => {
+          {chestie2.map(element => {
             return (
               <Item
                 click={this.props.onItemClick}
@@ -27,6 +54,20 @@ class Main extends Component {
       </div>
     );
   }
+  
+  getParent = (ID, V) => {
+	if(ID.parentID !== null) {
+	  for (let j = 0; j < V.length; j++) {
+	    for (let i = 0; i < V[j].elements.length; i++) {
+	      if (ID === V[j].elements[i].ID) {
+		    return V[j];  
+	      }
+	    } 
+		if (V[j].type !== "item") return this.getParent(ID, V[j].elements);
+	  }
+	}
+	return null;
+  };
 }
 
 export default Main;
