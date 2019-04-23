@@ -1,54 +1,61 @@
-
-.MainContainer{
+.MainContainer {
   box-sizing: content-box;
   width: calc(100% - 2 * 20px);
   height: calc(100% - 2 * 20px);
   padding: 20px;
   overflow-y: scroll;
-
 }
 
-.MainContainer > .breadcrumbs{
+.MainContainer > .breadcrumbs {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-bottom: 20px;
-
 }
-.MainContainer > .breadcrumbs > p{
+.MainContainer > .breadcrumbs > p {
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
 }
-.MainContainer > .breadcrumbs > p > i{
-  color: #0DD2A3;
+
+.MainContainer > .breadcrumbs > p > div {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
+.MainContainer > .breadcrumbs > p > div > i {
+  color: #0dd2a3;
+}
+
+.MainContainer > .breadcrumbs > p > div > p {
+  padding: 0;
+  margin: 0;
+}
 
 .Main {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
 
-@media all and (max-width: 1000px){
+@media all and (max-width: 1000px) {
   .Main {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-
-@media all and (max-width: 850px){
+@media all and (max-width: 850px) {
   .Main {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media all and (max-width: 700px){
+@media all and (max-width: 700px) {
   .Main {
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-
