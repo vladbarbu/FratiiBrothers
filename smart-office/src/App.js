@@ -58,7 +58,7 @@ class App extends Component {
               discardSearch={this.discardSearch}
             />
             <Main
-              onItemClick={(this.onItemClick, this.discardSearch)}
+              onItemClick={this.onItemClick}
               elements={this.state.elements}
             />
           </div>
