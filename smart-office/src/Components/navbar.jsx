@@ -3,6 +3,21 @@ import "../resources/styles/nav.css";
 import Logo from "./../resources/images/logo.svg";
 
 class NavBar extends Component {
+  componentWillMount() {
+    document.addEventListener("mouseDown", this.handleClick, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mouseDown", this.handleClick, false);
+  }
+
+  handleClick = e => {
+    if (this.node.contains(e.target)) {
+      this.props.onClickNavBar();
+    } else {
+      this.props.onClickDiscardSearch();
+    }
+  };
   render() {
     let style = { right: "258px" };
     return (
@@ -29,6 +44,7 @@ class NavBar extends Component {
               <ul
                 id="search-list"
                 {...(this.props.element.parentID ? (style = { style }) : null)}
+                ref={node => (this.node = node)}
               >
                 {this.props.elements.map(element =>
                   element.elements.map(element =>
