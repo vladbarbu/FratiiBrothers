@@ -14,7 +14,7 @@ class App extends Component {
 
     this.state = {
       elements: elements,
-      chosen: elements[0]
+      chosen: null
     };
   }
 
@@ -59,7 +59,11 @@ class App extends Component {
             />
           </div>
           <div className="App-right">
-            <SideBar element={this.state.chosen} location={location} />
+            <SideBar
+              element={this.state.chosen}
+              location={location}
+              onClickDiscardSearch={this.onClickDiscardSearch}
+            />
           </div>
         </div>
       </div>
@@ -77,11 +81,13 @@ class App extends Component {
       })()
     }));
   };
-} /*
-onNavBarClick = name => {
-  this.setState((state, props) => ({
-    chosen: (() => {
-      for (let i = 0; i < state.elements.length; i++)
+
+
+  onClickDiscardSearch = () => {
+    const chosen = null;
+    this.setState({ chosen });
+  };
+}
 
     })()
   }));
