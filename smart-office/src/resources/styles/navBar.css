@@ -1,0 +1,12 @@
+form .material-icons-two-tone {
+  position: relative;
+  bottom: 7px;
+  right: 7px;
+  filter: invert(70%) sepia(15%) saturate(7499%) hue-rotate(118deg)
+    brightness(98%) contrast(90%);
+}
+
+form button {
+  max-width: 58px;
+  max-height: 64px;
+}

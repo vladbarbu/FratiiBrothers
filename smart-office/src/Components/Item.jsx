@@ -11,21 +11,21 @@ class Item extends Component {
       borderBottomLeftRadius: "5px",
       padding: "8px",
       position: "relative",
-      bottom: "7px",
-      left: "73px"
+      bottom: "3px",
+      left: "87px"
     };
-    const leftIconStyle = { position: "relative", bottom: "8px", left: "10px" };
+    const leftIconStyle = { position: "relative", bottom: "4px", left: "10px" };
     const bottomTextStyle = {
       position: "relative",
-      bottom: "15px",
+      bottom: "11px",
       left: "20px"
     };
     return (
       <div className="Item">
         <img src={this.props.imagePath} alt="" />
-        <h3 className="Name">{this.props.name}</h3>
+        <h5 className="Name">{this.props.name}</h5>
         <div className="Quantity">
-          <i className="material-icons" style={leftIconStyle}>
+          <i className="material-icons-two-tone" style={leftIconStyle}>
             label
           </i>
           <strong style={bottomTextStyle}>{this.props.quantity} items</strong>

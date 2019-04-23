@@ -1,6 +1,6 @@
 .Item {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 210px;
+  max-height: 240px;
   background: white;
   border-color: #dedede;
   border-width: 1px;
@@ -11,8 +11,8 @@
 }
 
 .Item img {
-  height: 125px;
-  width: 198px;
+  height: 150px;
+  width: 210px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -20,4 +20,17 @@
 .Quantity {
   color: #0dd2a3;
   font-size: 0.9em;
+  font-weight: lighter;
+}
+
+.Item h5 {
+  position: relative;
+  margin-top: 20px;
+  top: -5px;
+  left: 10px;
+  font-weight: bold;
+}
+.material-icons-two-tone {
+  filter: invert(70%) sepia(15%) saturate(7499%) hue-rotate(118deg)
+    brightness(98%) contrast(90%);
 }

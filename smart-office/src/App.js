@@ -4,7 +4,7 @@ import "./App.css";
 import ItemsContainer from "./Components/ItemsContainer";
 import SideBar from "./Components/sideBar";
 
-import NavBar from "./Components/navbar";
+import NavBar from "./Components/navBar";
 class App extends Component {
   state = {};
 
