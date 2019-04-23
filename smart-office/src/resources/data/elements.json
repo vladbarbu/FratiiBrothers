@@ -3,6 +3,7 @@
     "ID": 1,
     "type": "category",
     "name": "Cups",
+    "parentID": 1,
     "image": "images/category_1.png",
     "elements": [
       {
@@ -40,30 +41,7 @@
         "type": "category",
         "name": "Glass Cups",
         "parentID": 1,
-        "image": "images/category_9.png",
-        "elements": [
-          {
-            "ID": 1,
-            "type": "item",
-            "name": "Glass Cups Small",
-            "parentID": 9,
-            "image": "images/item_1.png"
-          },
-          {
-            "ID": 2,
-            "type": "item",
-            "name": "Glass Cups Medium",
-            "parentID": 9,
-            "image": "images/item_2.png"
-          },
-          {
-            "ID": 3,
-            "type": "item",
-            "name": "Glass Cups Large",
-            "parentID": 9,
-            "image": "images/item_3.png"
-          }
-        ]
+        "image": "images/category_9.png"
       },
       {
         "ID": 10,
