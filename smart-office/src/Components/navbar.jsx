@@ -20,14 +20,13 @@ class NavBar extends Component {
               list="search-list"
             />
             <datalist id="search-list">
-              <option value="Tea" />
-              <option value="Coffee" />
-              <option value="Cups" />
-              <option value="Apple" />
-              <option value="Orange juice" />
-              <option value="Orange juice" />
-              <option value="Orange juice" />
-              <option value="Orange juice" />
+              {this.props.elements.map(element =>
+                element.elements.map(element =>
+                  element.elements.map(element => (
+                    <option>{element.name}</option>
+                  ))
+                )
+              )}
             </datalist>
           </div>
         </div>

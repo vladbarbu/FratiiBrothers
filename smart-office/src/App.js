@@ -48,7 +48,10 @@ class App extends Component {
       <div id="App">
         <div className="App-container">
           <div className="App-left">
-            <NavBar />
+            <NavBar
+              onNavBarClick={this.onNavBarClick}
+              elements={this.state.elements}
+            />
             <Main
               onItemClick={this.onItemClick}
               elements={this.state.elements}
