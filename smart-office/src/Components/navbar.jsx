@@ -5,7 +5,7 @@ import Logo from "./../resources/images/logo.svg";
 class NavBar extends Component {
   constructor(props) {
     super(props);
-
+    this.pressed = 0;
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.state = {
@@ -23,6 +23,7 @@ class NavBar extends Component {
 
   setWrapperRef(node) {
     this.wrapperRef = node;
+    console.log(node);
   }
   /**
    * Alert if clicked on outside of element
@@ -33,12 +34,18 @@ class NavBar extends Component {
       //this.state.inputValue = "";
       this.props.discardSearch();
     }
+    if (this.wrapperRef && this.wrapperRef.contains(event.target))
+      console.log("You clicked inside of me ;) !" + this.pressed);
   }
 
   onClickGoBack = ID => {
     this.props.onClickGoBack(
       this.getParent(this.props.element.ID, this.props.elements)
     );
+  };
+
+  onClickOption = ID => {
+    this.props.onClickOption(ID.ID);
   };
 
   updateInputValue(evt) {
@@ -99,16 +106,18 @@ class NavBar extends Component {
                     element.elements.map(element =>
                       this.searchInName(element.name) ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
                         ID < 6 ? ( //Limitam lista la 6 iteme
-                          <div
+                          <button
                             key={++ID}
                             className="searchItem"
-                            onClick={console.log(ID)}
+                            onClick={() => {
+                              this.onClickOption(element);
+                            }}
                           >
                             <img
                               src={require("./../resources/" + element.image)}
                             />{" "}
                             <span>{+" " + element.name}</span>
-                          </div>
+                          </button>
                         ) : null
                       ) : null
                     )

@@ -80,6 +80,7 @@ class App extends Component {
               elements={this.state.elements}
               navBarClick={this.state.navBarClick}
               discardSearch={this.discardSearch}
+              onClickOption={this.onClickOption}
             />
             <Main
               onItemClick={this.onItemClick}
@@ -106,6 +107,15 @@ class App extends Component {
       </div>
     );
   }
+
+  onClickOption = ID => {
+    console.log(ID);
+    this.setState((state, props) => ({
+      chosen: (() => {
+        return this.onItemClickMaiSmechera(ID, state.elements);
+      })()
+    }));
+  };
 
   onClickGoBack = ID => {
     //console.log(ID);
