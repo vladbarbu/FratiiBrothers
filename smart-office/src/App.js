@@ -100,7 +100,7 @@ class App extends Component {
           {this.state.showRequestPopup ? (
             <RequestItemPopup
               togglePopup={this.toggleRequestPopup}
-              onSubmit={this.toggleRequestPopup}
+              onSubmit={this.onRequestSubmit}
             />
           ) : null}
         </div>
@@ -177,6 +177,14 @@ class App extends Component {
 
   onNavBarClick = () => {
     this.setState({ navBarClick: true });
+  };
+
+  onRequestSubmit = (name, description, employee) => {
+    /**
+     * gets the input from the fields in the request item form
+     */
+    console.log(name + description + employee);
+    this.toggleRequestPopup();
   };
 }
 

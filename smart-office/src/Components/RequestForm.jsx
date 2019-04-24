@@ -34,17 +34,23 @@ class RequestForm extends Component {
   render() {
     return (
       <form
-        // onSubmit={() =>
-        //   this.props.handleSubmit(
-        //     this.state.name,
-        //     this.state.description,
-        //     this.state.employee
-        //   )
-        // }
-        onSubmit={() => {
-          console.log("Submit");
-          this.props.onSubmit();
-        }}
+      // onSubmit={() =>
+      //   this.props.handleSubmit(
+      //     this.state.name,
+      //     this.state.description,
+      //     this.state.employee
+      //   )
+      // }
+      // onSubmit={() => {
+      //   try {
+      //     console.log("Submit");
+      //     console.log(
+      //       this.state.name + this.state.description + this.state.description
+      //     );
+      //   } catch (e) {
+      //     console.error(e);
+      //   }
+      // }}
       >
         <label>
           Name of the item
@@ -72,7 +78,17 @@ class RequestForm extends Component {
             onChange={this.handleEmployeeChange}
           />
         </label>
-        <input type="submit" value="Submit" />
+        <button
+          onClick={() => {
+            this.props.onSubmit(
+              this.state.name,
+              this.state.description,
+              this.state.employee
+            );
+          }}
+        >
+          Submit
+        </button>
       </form>
     );
   }
