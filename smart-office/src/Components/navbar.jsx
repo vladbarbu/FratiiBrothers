@@ -5,32 +5,9 @@ import Logo from "./../resources/images/logo.svg";
 class NavBar extends Component {
   constructor(props) {
     super(props);
-
-    this.setWrapperRef = this.setWrapperRef.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-  }
-  componentWillMount() {
-    document.addEventListener("mouseDown", this.handleClick);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("mouseDown", this.handleClick);
-  }
-
-  /**
-   * Set the wrapper ref
-   */
-  setWrapperRef(node) {
-    this.wrapperRef = node;
-  }
-
-  /**
-   * Alert if clicked on outside of element
-   */
-  handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      console.log("Mere ??");
-    }
+    this.state = {
+      inputValue: ""
+    };
   }
 
   onClickGoBack = ID => {
@@ -38,9 +15,19 @@ class NavBar extends Component {
       this.getParent(this.props.element.ID, this.props.elements)
     );
   };
+
+  updateInputValue(evt) {
+    console.log(evt.target.value);
+    this.setState({
+      inputValue: evt.target.value
+    });
+  }
+
   render() {
     let ID = 0;
-    let style = { right: "258px" };
+    let searchHidden = false;
+    let style = { right: "238px" };
+    const styleSearch = { hidden: "true" };
     return (
       <nav className="NavBar">
         <div className="logo">
@@ -68,26 +55,39 @@ class NavBar extends Component {
             <input
               placeholder="Search for a specific item"
               onClick={() => this.props.onClickNavBar()}
+              value={this.state.inputValue}
+              onChange={evt => this.updateInputValue(evt)}
             />
 
             {this.props.navBarClick ? (
               <div
                 id="search-list"
                 {...(this.props.element ? (style = { style }) : null)}
-                ref={this.setWrapperRef}
               >
                 {this.props.elements.map(element =>
                   element.elements.map(element =>
-                    element.elements.map(element => (
-                      <div
-                        key={++ID}
-                        className="searchItem"
-                        onMouseEnter={console.log(element.name)}
-                      >
-                        <img src={require("./../resources/" + element.image)} />{" "}
-                        <span>{+" " + element.name}</span>
-                      </div>
-                    ))
+                    element.elements.map(element =>
+                      element.name.indexOf(this.state.inputValue) > -1 ? (
+                        <div
+                          key={++ID}
+                          className="searchItem"
+                          {...(element.name.indexOf(this.state.inputValue) > -1
+                            ? console.log(
+                                element.name +
+                                  " " +
+                                  element.name.search(this.state.inputValue)
+                              )
+                            : (style = { styleSearch }))}
+
+                          //style = { styleSearch }
+                        >
+                          <img
+                            src={require("./../resources/" + element.image)}
+                          />{" "}
+                          <span>{+" " + element.name}</span>
+                        </div>
+                      ) : null
+                    )
                   )
                 )}
               </div>
