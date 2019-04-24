@@ -27,17 +27,15 @@ class Main extends Component {
     return (
       <div className="MainContainer">
         <div className="breadcrumbs">
-          <p>
-            All items
+          <p onClick={() => { this.props.onItemClick(null); }}> All items </p>
             {chestie.reverse().map(element => {
               return (
-                <div>
+                <div onClick={() => { this.props.onItemClick(element.ID); }}>
                   <i className="material-icons">arrow_right</i>
                   <p>{element.name}</p>
                 </div>
               );
             })}
-          </p>
         </div>
 
         <div className="Main">

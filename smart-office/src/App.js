@@ -108,10 +108,10 @@ class App extends Component {
   }
 
   onClickGoBack = ID => {
-    console.log(ID);
+    //console.log(ID);
     if (ID !== null) {
       if (ID.parentID !== null) {
-        console.log(ID.parentID);
+        //console.log(ID.parentID);
         this.setState((state, props) => ({
           chosen: (() => {
             return this.onItemClickMaiSmechera(ID.parentID, state.elements);

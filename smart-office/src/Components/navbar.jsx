@@ -42,7 +42,7 @@ class NavBar extends Component {
   };
 
   updateInputValue(evt) {
-    console.log(evt.target.value);
+    //console.log(evt.target.value);
     this.setState({
       inputValue: evt.target.value
     });
@@ -66,7 +66,7 @@ class NavBar extends Component {
             <button
               className="button goBack"
               onClick={() => {
-                console.log(this.props.element.ID);
+                //console.log(this.props.element.ID);
                 this.onClickGoBack(
                   this.getParent(this.props.element.ID, this.props.elements)
                 );
