@@ -24,7 +24,7 @@ class Item extends Component {
         </div>
         <div className="footer">
           <div className="quantity">
-            <i className="material-icons-two-tone">label</i>
+            <i className="material-icons">label</i>
             <p>{this.props.item.quantity} items</p>
           </div>
           <div className="button">

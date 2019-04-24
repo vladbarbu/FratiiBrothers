@@ -12,6 +12,7 @@
 #SideBar{
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 #SideBar > header{
@@ -44,4 +45,122 @@
 #SideBar > .body .Item > .footer > .button{
   display: none;
 }
+#SideBar > .sideBarInitial{
+  padding: 20px;
+  width: calc(100% - 2 * 20px);
+  overflow-y: scroll;
+}
+#SideBar > .sideBarInitial > .icon > i{
+  font-size: 60pt;
+  color: #0dd2a3;
+}
 
+#SideBar > .sideBarInitial > h3{
+  color: #2c2c2c;
+  font-weight: 700;
+}
+
+#SideBar > .sideBarInitial > .subtitle{
+  font-size: 10pt;
+  color: #aaa;
+  font-weight: 400;
+}
+
+#SideBar .button.grey{
+  width: calc(100% - 2 * 15px);
+  padding: 10px 15px;
+  height: calc(80px - 2 *10px);
+  border-radius: 4px;
+  border: none;
+  background: #eee;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+#SideBar .button.grey:hover, #SideBar .button.grey:active{
+  background: #ddd;
+  transition: background 0.2s;
+}
+
+#SideBar .divider{
+  height: 1px;
+  width: 100%;
+  background: #eeeeee;
+  margin-bottom: 20px;
+}
+
+
+#SideBar .button.grey > i {
+  font-size: 18pt;
+  color: #888;
+  margin-right: 1px;
+}
+
+
+#SideBar .button.grey > .content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 10px;
+}
+
+#SideBar .button.grey > .content > p{
+ font-size: 11pt;
+  color: #2c2c2c;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+
+}
+#SideBar .button.grey > .content > span{
+  font-size: 9pt;
+  color: #2c2c2c;
+  font-weight: 400;
+  margin: 0;
+}
+
+#SideBar .notifications > .header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+#SideBar .notifications > .header > *:not(button){
+  margin-right: auto;
+  margin-bottom: 0;
+}
+#SideBar .notifications  > .header > button{
+  border: 1px solid #eee;
+  outline: none;
+  border-radius: 2px;
+  padding: 4px 8px;
+  background: #ffffff;
+  color: #2c2c2c;
+  text-align: center;
+}
+
+#SideBar .notifications  > .notification-item > h5{
+  color: #aaaaaa;
+  margin-bottom: 3px;
+}
+#SideBar .notifications  > .notification-item > .notification-item-message{
+
+  background: #eee;
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 4px;
+
+}
+#SideBar .notifications  > .notification-item > .notification-item-message > h6{
+  font-weight: 300;
+  font-size: 9pt;
+  color: #888;
+  margin: 0;
+}

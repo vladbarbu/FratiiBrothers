@@ -30,28 +30,40 @@ class SideBarInitial extends Component {
     ]
   };
 
-  getInstructions() {
+
+  static getInstructions() {
     const message =
       "If your station is lacking a certain item, find it in the platform and mark it unavailable. Management will try to fix the supply issue as soon as possible.";
 
     return message;
   }
-  getAddItemInfo() {
+  static getAddItemInfo() {
     const message =
       "If the item was never made available, you can request it to be included in the station stock in the future.";
     return message;
   }
   render() {
     return (
-      <div>
+      <div className="sideBarInitial">
+        <div className="icon"><i className="material-icons">explore</i></div>
         <h3>How it works</h3>
-        <br />
-        <h6>{this.getInstructions()}</h6>
-        <button onClick={() => this.props.onClickSearch()}>
-          Search and mark unavailable
+         <p className="subtitle">{SideBarInitial.getInstructions()}</p>
+        <button className="button grey" onClick={() => this.props.onClickSearch()}>
+            <i className="material-icons">search</i>
+            <div className="content">
+                <p>Search and mark unavailable</p>
+                <span>or pick it from a category on the left side</span>
+            </div>
         </button>
-        <h6>{this.getAddItemInfo()}</h6>
-        <button>Request new item</button>
+
+        <p className="subtitle">{SideBarInitial.getAddItemInfo()}</p>
+          <button className="button grey" onClick={() => this.props.onClickSearch()}>
+              <i className="material-icons">add</i>
+              <div className="content">
+                  <p>Request new item</p>
+              </div>
+          </button>
+          <div className="divider"/>
         <SideBarNotifications
           notificationsArray={this.state.notificationsArray}
         />

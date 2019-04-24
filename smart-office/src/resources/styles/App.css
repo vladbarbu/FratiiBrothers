@@ -22,7 +22,7 @@
 
 #App > .App-container > .App-right{
   z-index: 1;
-  width: 320px;
+  width: 360px;
   height: 100%;
   background: #ffffff;
   box-shadow: 0 0 3px rgba(0,0,0,0.05);

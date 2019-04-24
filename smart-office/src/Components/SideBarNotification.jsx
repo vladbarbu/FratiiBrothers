@@ -3,7 +3,7 @@ import NotificationMessage from "./NotificationMessage";
 class SideBarNotification extends Component {
   render() {
     return (
-      <div>
+      <div className="notification-item">
         <h5>{this.props.itemName}</h5>
         <h5>{this.props.timeStamp}</h5>
         <NotificationMessage

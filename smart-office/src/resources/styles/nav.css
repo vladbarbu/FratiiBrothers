@@ -37,6 +37,9 @@
   height: 100%;
   flex: 1;
 }
+.NavBar > .body i{
+  color: #0dd2a3;
+}
 .NavBar > .body > .button.notifications {
   height: 100%;
   width: 50px;
@@ -68,7 +71,8 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
   cursor: pointer;
   transition: background 0.2s;
-  background: #dedede;
+  background: #f5f5f5;
+  margin-right: 10px;
 }
 .NavBar > .body > .button.goBack:hover,
 .NavBar > .body > .button.goBack:active {

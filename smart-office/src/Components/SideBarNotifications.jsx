@@ -8,9 +8,11 @@ class SideBarNotifications extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Notifications</h3>
-        <button>View all</button>
+      <div className="notifications">
+        <div className="header">
+            <h4>Notifications</h4>
+            <button>View all</button>
+        </div>
         {this.state.notificationsArray.map(notification => (
           <SideBarNotification
             itemName={notification.itemName}

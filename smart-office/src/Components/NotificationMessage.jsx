@@ -12,7 +12,7 @@ class NotificationMessage extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="notification-item-message">
         <h6 className={this.getMessageClassName()}>{this.props.message}</h6>
       </div>
     );

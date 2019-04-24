@@ -43,11 +43,11 @@ class NavBar extends Component {
         <div className="body">
           {this.props.element.parentID ? (
             <button className="button goBack">
-              <i className="material-icons-two-tone"> arrow_back</i>
+              <i className="material-icons"> arrow_back</i>
             </button>
           ) : null}
           <button className="button notifications">
-            <i className="material-icons-two-tone"> notifications</i>
+            <i className="material-icons"> notifications</i>
           </button>
           <div className="searchBar">
             <input
