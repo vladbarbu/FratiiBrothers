@@ -99,7 +99,7 @@ class App extends Component {
           {this.state.showRequestPopup ? (
             <RequestItemPopup
               togglePopup={this.toggleRequestPopup}
-              onSubmit={this.handleFormSubmit}
+              onSubmit={this.toggleRequestPopup}
             />
           ) : null}
         </div>

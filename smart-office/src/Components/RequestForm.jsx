@@ -34,13 +34,17 @@ class RequestForm extends Component {
   render() {
     return (
       <form
-        onSubmit={() =>
-          this.props.handleSubmit(
-            this.state.name,
-            this.state.description,
-            this.state.employee
-          )
-        }
+        // onSubmit={() =>
+        //   this.props.handleSubmit(
+        //     this.state.name,
+        //     this.state.description,
+        //     this.state.employee
+        //   )
+        // }
+        onSubmit={() => {
+          console.log("Submit");
+          this.props.onSubmit();
+        }}
       >
         <label>
           Name of the item
@@ -68,6 +72,7 @@ class RequestForm extends Component {
             onChange={this.handleEmployeeChange}
           />
         </label>
+        <input type="submit" value="Submit" />
       </form>
     );
   }
