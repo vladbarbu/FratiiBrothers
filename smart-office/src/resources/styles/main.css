@@ -12,6 +12,7 @@
   align-items: center;
   padding-bottom: 20px;
 }
+
 .MainContainer > .breadcrumbs > p {
   padding: 0;
   margin: 0;
@@ -19,18 +20,18 @@
   align-items: center;
 }
 
-.MainContainer > .breadcrumbs > p > div {
+.MainContainer > .breadcrumbs > div {
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
 }
 
-.MainContainer > .breadcrumbs > p > div > i {
+.MainContainer > .breadcrumbs > div > i {
   color: #0dd2a3;
 }
 
-.MainContainer > .breadcrumbs > p > div > p {
+.MainContainer > .breadcrumbs > div > p {
   padding: 0;
   margin: 0;
 }
