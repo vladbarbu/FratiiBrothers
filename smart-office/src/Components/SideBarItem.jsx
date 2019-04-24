@@ -7,6 +7,20 @@ import "../resources/styles/sideBar.css";
 import NotificationMessage from "./NotificationMessage";
 
 class SideBarItem extends Component {
+  state = {
+    element: this.props.element
+  };
+
+  getItemNotifications = () => {
+    if (this.props.element.notifications.length === 0)
+      return <p>No notifications</p>;
+
+    let notifications = this.props.element.notifications.map(notification => (
+      <p>{notification.content}</p>
+    ));
+    return notifications;
+  };
+
   render() {
     return (
       <div className="ItemBar sideBarItem">
@@ -14,15 +28,8 @@ class SideBarItem extends Component {
           src={require("./../resources/" + this.props.element.image)}
           alt=""
         />
-        {/* <h4>3 other notifications have been sent to the management regarding this item in the last day.</h4> */}
-        <NotificationMessage
-          messageClassName="semiImportant"
-          message="3 other notifications have been sent to the management regarding this item in the last day."
-        />
-        <NotificationMessage
-          messageClassName="important"
-          message="Message from management: We have notified the supplier and we are waiting for their response."
-        />
+        {/* <h4>3 other notifications have been sent to the management regarding this item in the last day.</h4> */
+        this.getItemNotifications()}
         <h2>{this.props.element.name}</h2>
         <button>None left at the station</button>
         <button>A few left</button>
