@@ -33,6 +33,7 @@ class NavBar extends Component {
     }
   }
   render() {
+    let ID = 0;
     let style = { right: "258px" };
     return (
       <nav className="NavBar">
@@ -64,7 +65,7 @@ class NavBar extends Component {
                 {this.props.elements.map(element =>
                   element.elements.map(element =>
                     element.elements.map(element => (
-                      <div className="searchItem" onMouseEnter={console.log(element.name)}>
+                      <div key={++ID} className="searchItem" onMouseEnter={console.log(element.name)}>
                         <img src={require("./../resources/" + element.image)} /> <span>{ + " " + element.name}</span>
                       </div>
                     ))

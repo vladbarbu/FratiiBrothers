@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/Components/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/nav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/sideBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/sideBar.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/navbar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="66" column="48" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="48" />
+            <state relative-caret-position="445">
+              <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -83,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/styles/sideBar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+            <state relative-caret-position="422">
+              <caret line="99" column="14" lean-forward="true" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -152,9 +150,9 @@
         <option value="$PROJECT_DIR$/src/Components/SideBarNotifications.jsx" />
         <option value="$PROJECT_DIR$/src/Components/SideBarNotification.jsx" />
         <option value="$PROJECT_DIR$/src/Components/NotificationMessage.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/navbar.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/nav.css" />
         <option value="$PROJECT_DIR$/src/resources/styles/sideBar.css" />
+        <option value="$PROJECT_DIR$/src/Components/navbar.jsx" />
       </list>
     </option>
   </component>
@@ -288,12 +286,12 @@
       <option name="presentableId" value="Default" />
       <updated>1556013103113</updated>
       <workItem from="1556013105321" duration="13973000" />
-      <workItem from="1556080450491" duration="1928000" />
+      <workItem from="1556080450491" duration="2063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15903000" />
+    <option name="totallyTimeSpent" value="16038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -480,16 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/navbar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="66" column="48" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/item.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
@@ -506,8 +494,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/sideBar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        <state relative-caret-position="422">
+          <caret line="99" column="14" lean-forward="true" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/navbar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
