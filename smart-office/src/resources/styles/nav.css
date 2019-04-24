@@ -23,8 +23,8 @@
 
 .NavBar > .body > .searchBar > #search-list {
   position: relative;
-  top: 60px;
-  right: 284px;
+  top: 100px;
+  right: 264px;
   list-style-type: none;
   max-width: 1000px;
   width: 100%;
@@ -38,7 +38,7 @@
   height: 100%;
   flex: 1;
 }
-.NavBar > .body i{
+.NavBar > .body i {
   color: #0dd2a3;
 }
 .NavBar > .body > .button.notifications {
@@ -119,14 +119,14 @@
   padding: 10px;
 }
 
-.NavBar .searchItem{
+.NavBar .searchItem {
   display: flex;
   align-content: center;
   padding: 5px;
   background: #ffffff;
   z-index: 100;
 }
-.NavBar .searchItem > img{
+.NavBar .searchItem > img {
   border: 1px solid #eeeeee;
   height: 30px;
   width: 30px;
@@ -134,7 +134,7 @@
   object-fit: cover;
   margin-right: 15px;
 }
-.NavBar .searchItem > span{
+.NavBar .searchItem > span {
   font-size: 12pt;
   color: #2c2c2c;
   font-weight: 500;
