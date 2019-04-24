@@ -98,12 +98,14 @@ class NavBar extends Component {
                   element.elements.map(element =>
                     element.elements.map(element =>
                       element.name.indexOf(this.state.inputValue) > -1 ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
-                        <div key={++ID} className="searchItem">
-                          <img
-                            src={require("./../resources/" + element.image)}
-                          />{" "}
-                          <span>{+" " + element.name}</span>
-                        </div>
+                        ID < 6 ? (
+                          <div key={++ID} className="searchItem">
+                            <img
+                              src={require("./../resources/" + element.image)}
+                            />{" "}
+                            <span>{+" " + element.name}</span>
+                          </div>
+                        ) : null
                       ) : null
                     )
                   )
@@ -128,7 +130,7 @@ class NavBar extends Component {
         if (V[j].type !== "item") {
           found = this.getParent(ID, V[j].elements);
           if (found !== null) break;
-        } 
+        }
       }
     }
     return found;

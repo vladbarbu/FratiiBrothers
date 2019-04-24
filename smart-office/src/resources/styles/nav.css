@@ -23,7 +23,7 @@
 
 .NavBar > .body > .searchBar > #search-list {
   position: relative;
-  top: 100px;
+  top: 160px;
   right: 264px;
   list-style-type: none;
   max-width: 1000px;
