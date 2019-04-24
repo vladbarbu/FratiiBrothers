@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import RequestForm from "./RequestForm";
+
+import "../resources/styles/RequestPopup.css";
 class RequestItemPopup extends Component {
   render() {
     return (
