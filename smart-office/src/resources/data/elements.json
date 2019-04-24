@@ -195,7 +195,7 @@
         "ID": 12,
         "type": "category",
         "name": "Glass Coffee",
-        "parentID": 1,
+        "parentID": 3,
         "image": "images/category_9.png",
         "elements": [
           {
