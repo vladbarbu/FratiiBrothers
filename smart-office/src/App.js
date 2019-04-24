@@ -5,19 +5,36 @@ import SideBar from "./Components/sideBar";
 import NavBar from "./Components/navbar";
 
 import Element from "./model/Element";
+import Notification from "./model/Notification";
+// import Item from "./Components/Item";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     let elements = this.loadElements();
-
+    let notifications = this.loadNotifications(elements);
     this.state = {
       elements: elements,
+      notifications: notifications,
       chosen: null,
       navBarClick: false
     };
   }
+
+  loadNotifications = elements => {
+    let data = [];
+    for (let i = 0; i < elements.length; i++)
+      for (let j = 0; j < elements[i].elements.length; j++)
+        for (let k = 0; k < elements[i].elements[j].elements.length; k++) {
+          let notifications =
+            elements[i].elements[j].elements[k]["notifications"];
+          for (let n = 0; n < notifications.length; n++)
+            // data.push(new Notification(notifications[n]));
+            data.push(notifications[n]);
+        }
+    return data;
+  };
 
   loadElements = () => {
     /**

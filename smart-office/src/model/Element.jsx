@@ -1,3 +1,5 @@
+import Notification from "./Notification.jsx";
+
 class Element {
   get quantity() {
     return this._quantity;
@@ -81,6 +83,17 @@ class Element {
     })();
 
     this.quantity = this.elements.length;
+
+    this.notifications = (() => {
+      let data = [];
+      let notifications = object.hasOwnProperty("notifications")
+        ? object["notifications"]
+        : [];
+      if (notifications && notifications.length > 0)
+        for (let i = 0; i < notifications.length; i++)
+          data.push(new Notification(notifications[i]));
+      return data;
+    })();
   }
 }
 
