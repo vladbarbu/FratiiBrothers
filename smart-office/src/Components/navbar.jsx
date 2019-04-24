@@ -64,9 +64,9 @@ class NavBar extends Component {
                 {this.props.elements.map(element =>
                   element.elements.map(element =>
                     element.elements.map(element => (
-                      <button onMouseEnter={console.log(element.name)}>
-                        {element.img + " " + element.name}
-                      </button>
+                      <div className="searchItem" onMouseEnter={console.log(element.name)}>
+                        <img src={require("./../resources/" + element.image)} /> <span>{ + " " + element.name}</span>
+                      </div>
                     ))
                   )
                 )}

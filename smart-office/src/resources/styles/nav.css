@@ -8,6 +8,7 @@
   align-items: center;
   background: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+  z-index: 10;
 }
 
 .NavBar > .logo {
@@ -116,4 +117,25 @@
 }
 .NavBar > .body .searchBar > datalist {
   padding: 10px;
+}
+
+.NavBar .searchItem{
+  display: flex;
+  align-content: center;
+  padding: 5px;
+  background: #ffffff;
+  z-index: 100;
+}
+.NavBar .searchItem > img{
+  border: 1px solid #eeeeee;
+  height: 30px;
+  width: 30px;
+  border-radius: 2px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+.NavBar .searchItem > span{
+  font-size: 12pt;
+  color: #2c2c2c;
+  font-weight: 500;
 }
