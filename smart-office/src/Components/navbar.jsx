@@ -24,13 +24,13 @@ class NavBar extends Component {
   setWrapperRef(node) {
     this.wrapperRef = node;
   }
-
   /**
    * Alert if clicked on outside of element
    */
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       console.log("You clicked outside of me!");
+      //this.state.inputValue = "";
       this.props.discardSearch();
     }
   }
@@ -62,7 +62,7 @@ class NavBar extends Component {
         </div>
 
         <div className="body">
-          {this.props.element !== null ? (
+          {this.props.element !== null ? ( //Daca nu e pe pagina principala apare
             <button
               className="button goBack"
               onClick={() => {
@@ -83,7 +83,7 @@ class NavBar extends Component {
               placeholder="Search for a specific item"
               onClick={() => this.props.onClickNavBar()}
               value={this.state.inputValue}
-              onChange={evt => this.updateInputValue(evt)}
+              onChange={evt => this.updateInputValue(evt)} //Apelam pentru a salva inputul din search bar
             />
 
             {this.props.navBarClick ? ( // Verificam daca a fost apasat searchBarul
@@ -97,9 +97,13 @@ class NavBar extends Component {
                 ) =>
                   element.elements.map(element =>
                     element.elements.map(element =>
-                      element.name.indexOf(this.state.inputValue) > -1 ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
-                        ID < 6 ? (
-                          <div key={++ID} className="searchItem">
+                      this.searchInName(element.name) ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
+                        ID < 6 ? ( //Limitam lista la 6 iteme
+                          <div
+                            key={++ID}
+                            className="searchItem"
+                            onClick={console.log(ID)}
+                          >
                             <img
                               src={require("./../resources/" + element.image)}
                             />{" "}
@@ -117,6 +121,12 @@ class NavBar extends Component {
       </nav>
     );
   }
+
+  searchInName = name => {
+    name = name.toLowerCase();
+    if (name.indexOf(this.state.inputValue) !== -1) return true;
+    return false;
+  };
 
   getParent = (ID, V) => {
     let found = null;
