@@ -164,3 +164,9 @@
   color: #888;
   margin: 0;
 }
+
+
+#SideBar > .sideBarItem img{
+  max-width: 100%;
+  object-fit: contain;
+}

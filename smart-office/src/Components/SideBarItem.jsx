@@ -9,7 +9,7 @@ import NotificationMessage from "./NotificationMessage";
 class SideBarItem extends Component {
   render() {
     return (
-      <div className="ItemBar">
+      <div className="ItemBar sideBarItem">
         <img
           src={require("./../resources/" + this.props.element.image)}
           alt=""
