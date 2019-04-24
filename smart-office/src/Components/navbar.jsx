@@ -25,9 +25,11 @@ class NavBar extends Component {
 
   render() {
     let ID = 0;
-    let searchHidden = false;
     let style = { right: "238px" };
-    const styleSearch = { hidden: "true" };
+    const styleSearch = {
+      position: "relative",
+      bottom: "50px"
+    };
     return (
       <nav className="NavBar">
         <div className="logo">
@@ -68,19 +70,7 @@ class NavBar extends Component {
                   element.elements.map(element =>
                     element.elements.map(element =>
                       element.name.indexOf(this.state.inputValue) > -1 ? (
-                        <div
-                          key={++ID}
-                          className="searchItem"
-                          {...(element.name.indexOf(this.state.inputValue) > -1
-                            ? console.log(
-                                element.name +
-                                  " " +
-                                  element.name.search(this.state.inputValue)
-                              )
-                            : (style = { styleSearch }))}
-
-                          //style = { styleSearch }
-                        >
+                        <div key={++ID} className="searchItem">
                           <img
                             src={require("./../resources/" + element.image)}
                           />{" "}
