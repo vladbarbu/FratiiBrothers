@@ -32,6 +32,12 @@ class NavBar extends Component {
       console.log("Mere ??");
     }
   }
+
+  onClickGoBack = ID => {
+    this.props.onClickGoBack(
+      this.getParent(this.props.element.ID, this.props.elements)
+    );
+  };
   render() {
     let ID = 0;
     let style = { right: "258px" };
@@ -43,7 +49,15 @@ class NavBar extends Component {
 
         <div className="body">
           {this.props.element !== null ? (
-            <button className="button goBack">
+            <button
+              className="button goBack"
+              onClick={() => {
+                console.log(this.props.element.ID);
+                this.onClickGoBack(
+                  this.getParent(this.props.element.ID, this.props.elements)
+                );
+              }}
+            >
               <i className="material-icons"> arrow_back</i>
             </button>
           ) : null}
@@ -59,7 +73,7 @@ class NavBar extends Component {
             {this.props.navBarClick ? (
               <div
                 id="search-list"
-                {...(this.props.element.parentID ? (style = { style }) : null)}
+                {...(this.props.element ? (style = { style }) : null)}
                 ref={this.setWrapperRef}
               >
                 {this.props.elements.map(element =>
@@ -83,6 +97,19 @@ class NavBar extends Component {
       </nav>
     );
   }
+  getParent = (ID, V) => {
+    if (ID.parentID !== null) {
+      for (let j = 0; j < V.length; j++) {
+        for (let i = 0; i < V[j].elements.length; i++) {
+          if (ID === V[j].elements[i].ID) {
+            return V[j];
+          }
+        }
+        if (V[j].type !== "item") return this.getParent(ID, V[j].elements);
+      }
+    }
+    return null;
+  };
 }
 
 export default NavBar;
