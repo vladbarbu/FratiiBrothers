@@ -111,6 +111,7 @@ class NavBar extends Component {
                             className="searchItem"
                             onClick={() => {
                               this.onClickOption(element);
+                              this.props.discardSearch();
                             }}
                           >
                             <img
