@@ -116,8 +116,8 @@ class NavBar extends Component {
                           >
                             <img
                               src={require("./../resources/" + element.image)}
-                            />{" "}
-                            <span>{+" " + element.name}</span>
+                            />
+                            <span>{" " + element.name}</span>
                           </button>
                         ) : null
                       ) : null
