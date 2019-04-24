@@ -7,6 +7,7 @@ class NotificationMessage extends Component {
   };
   getMessageClassName() {
     if (this.state.className === "important") return "red-message";
+    else if (this.state.className === "semiImportant") return "green-message";
     else return "normal-message";
   }
   render() {

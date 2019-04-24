@@ -7,7 +7,6 @@ class Item extends Component {
   onItemClick = ID => {
     this.props.click(this.props.item.ID);
   };
-
   render() {
     return (
       <div
