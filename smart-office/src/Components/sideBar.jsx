@@ -23,7 +23,10 @@ class SideBar extends Component {
 
   getTypeOfSidebar() {
     return this.props.element === null ? (
-      <SideBarInitial onClickSearch={this.props.onClickSearch} />
+      <SideBarInitial
+        onClickSearch={this.props.onClickSearch}
+        onClickRequest={this.props.onClickRequest}
+      />
     ) : this.props.element.type === "item" ? (
       <SideBarItem
         element={this.props.element}

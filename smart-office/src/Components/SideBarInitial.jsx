@@ -30,7 +30,6 @@ class SideBarInitial extends Component {
     ]
   };
 
-
   static getInstructions() {
     const message =
       "If your station is lacking a certain item, find it in the platform and mark it unavailable. Management will try to fix the supply issue as soon as possible.";
@@ -45,25 +44,33 @@ class SideBarInitial extends Component {
   render() {
     return (
       <div className="sideBarInitial">
-        <div className="icon"><i className="material-icons">explore</i></div>
+        <div className="icon">
+          <i className="material-icons">explore</i>
+        </div>
         <h3>How it works</h3>
-         <p className="subtitle">{SideBarInitial.getInstructions()}</p>
-        <button className="button grey" onClick={() => this.props.onClickSearch()}>
-            <i className="material-icons">search</i>
-            <div className="content">
-                <p>Search and mark unavailable</p>
-                <span>or pick it from a category on the left side</span>
-            </div>
+        <p className="subtitle">{SideBarInitial.getInstructions()}</p>
+        <button
+          className="button grey"
+          onClick={() => this.props.onClickSearch()}
+        >
+          <i className="material-icons">search</i>
+          <div className="content">
+            <p>Search and mark unavailable</p>
+            <span>or pick it from a category on the left side</span>
+          </div>
         </button>
 
         <p className="subtitle">{SideBarInitial.getAddItemInfo()}</p>
-          <button className="button grey" onClick={() => this.props.onClickSearch()}>
-              <i className="material-icons">add</i>
-              <div className="content">
-                  <p>Request new item</p>
-              </div>
-          </button>
-          <div className="divider"/>
+        <button
+          className="button grey"
+          onClick={() => this.props.onClickRequest()}
+        >
+          <i className="material-icons">add</i>
+          <div className="content">
+            <p>Request new item</p>
+          </div>
+        </button>
+        <div className="divider" />
         <SideBarNotifications
           notificationsArray={this.state.notificationsArray}
         />

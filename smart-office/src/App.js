@@ -3,6 +3,7 @@ import "./resources/styles/App.css";
 import Main from "./Components/Main";
 import SideBar from "./Components/sideBar";
 import NavBar from "./Components/navbar";
+import RequestItemPopup from "./Components/RequestItemPopup";
 
 import Element from "./model/Element";
 import Notification from "./model/Notification";
@@ -18,9 +19,15 @@ class App extends Component {
       elements: elements,
       notifications: notifications,
       chosen: null,
-      navBarClick: false
+      navBarClick: false,
+      showRequestPopup: false
     };
   }
+
+  toggleRequestPopup = () => {
+    // console.log("Arata-te!");
+    this.setState({ showRequestPopup: !this.state.showRequestPopup });
+  };
 
   loadNotifications = elements => {
     let data = [];
@@ -86,8 +93,15 @@ class App extends Component {
               location={location}
               onClickDiscardSearch={this.onClickDiscardSearch}
               onClickSearch={this.onNavBarClick}
+              onClickRequest={this.toggleRequestPopup}
             />
           </div>
+          {this.state.showRequestPopup ? (
+            <RequestItemPopup
+              togglePopup={this.toggleRequestPopup}
+              onSubmit={this.handleFormSubmit}
+            />
+          ) : null}
         </div>
       </div>
     );
@@ -127,7 +141,7 @@ class App extends Component {
           return V[i];
         } else if (V[i].type !== "item")
           found = this.onItemClickMaiSmechera(ID, V[i].elements);
-          if(found !== null) break;
+        if (found !== null) break;
       }
     }
     return found;
