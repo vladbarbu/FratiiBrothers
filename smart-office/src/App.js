@@ -120,15 +120,17 @@ class App extends Component {
   };
 
   onItemClickMaiSmechera = (ID, V) => {
+    let found = null;
     if (V != null) {
       for (let i = 0; i < V.length; i++) {
         if (V[i].ID === ID) {
           return V[i];
         } else if (V[i].type !== "item")
-          return this.onItemClickMaiSmechera(ID, V[i].elements);
+          found = this.onItemClickMaiSmechera(ID, V[i].elements);
+          if(found !== null) break;
       }
     }
-    return null;
+    return found;
   };
 
   onItemClick = ID => {

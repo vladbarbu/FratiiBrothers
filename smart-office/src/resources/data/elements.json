@@ -17,14 +17,39 @@
             "type": "item",
             "name": "Paper Cups Small",
             "parentID": 8,
-            "image": "images/item_1.png"
+            "image": "images/item_1.png",
+            "notifications": [
+              {
+                "ID": "123ABC",
+                "type": "from_management",
+                "createdAt": "24-04-2019 19:25:00",
+                "content": "We have notified the supplier and are waiting for their response.",
+                "itemID": 70
+              },
+              {
+                "ID": "CBA123",
+                "type": "from_platform",
+                "createdAt": "24-04-2019 19:20:00",
+                "content": "3 other notifications have been sent about this item.",
+                "itemID": 70
+              }
+            ]
           },
           {
             "ID": 71,
             "type": "item",
             "name": "Paper Cups Medium",
             "parentID": 8,
-            "image": "images/item_2.png"
+            "image": "images/item_2.png",
+            "notifications": [
+              {
+                "ID": "CBD123",
+                "type": "from_platform",
+                "createdAt": "24-04-2019 19:20:00",
+                "content": "4 other notifications have been sent about this item.",
+                "itemID": 71
+              }
+            ]
           },
           {
             "ID": 72,
@@ -40,7 +65,55 @@
         "type": "category",
         "name": "Glass Cups",
         "parentID": 1,
-        "image": "images/category_9.png"
+        "image": "images/category_9.png",
+        "elements": [
+          {
+            "ID": 73,
+            "type": "item",
+            "name": "Glass Cups Small",
+            "parentID": 9,
+            "image": "images/item_1.png",
+            "notifications": [
+              {
+                "ID": "123ABD",
+                "type": "from_management",
+                "createdAt": "24-04-2019 19:25:00",
+                "content": "We have notified the supplier and are waiting for their response.",
+                "itemID": 73
+              },
+              {
+                "ID": "DBA123",
+                "type": "from_platform",
+                "createdAt": "24-04-2019 19:20:00",
+                "content": "3 other notifications have been sent about this item.",
+                "itemID": 73
+              }
+            ]
+          },
+          {
+            "ID": 74,
+            "type": "item",
+            "name": "Glass Cups Medium",
+            "parentID": 9,
+            "image": "images/item_2.png",
+            "notifications": [
+              {
+                "ID": "DBD123",
+                "type": "from_platform",
+                "createdAt": "24-04-2019 19:20:00",
+                "content": "4 other notifications have been sent about this item.",
+                "itemID": 74
+              }
+            ]
+          },
+          {
+            "ID": 75,
+            "type": "item",
+            "name": "Glass Cups Large",
+            "parentID": 9,
+            "image": "images/item_3.png"
+          }
+        ]
       },
       {
         "ID": 10,
@@ -61,7 +134,126 @@
     "ID": 3,
     "type": "category",
     "name": "Coffee",
-    "image": "images/category_3.png"
+    "image": "images/category_3.png",
+    "elements": [
+      {
+        "ID": 11,
+        "type": "category",
+        "name": "Paper Coffee",
+        "parentID": 1,
+        "image": "images/category_8.png",
+        "elements": [
+          {
+            "ID": 76,
+            "type": "item",
+            "name": "Paper Coffee Small",
+            "parentID": 11,
+            "image": "images/item_1.png",
+            "notifications": [
+              {
+                "ID": "124ABC",
+                "type": "from_management",
+                "createdAt": "24-04-2019 19:25:00",
+                "content": "We have notified the supplier and are waiting for their response.",
+                "itemID": 76
+              },
+              {
+                "ID": "CBA124",
+                "type": "from_platform",
+                "createdAt": "24-04-2019 19:20:00",
+                "content": "3 other notifications have been sent about this item.",
+                "itemID": 76
+              }
+            ]
+          },
+          {
+            "ID": 77,
+            "type": "item",
+            "name": "Paper Coffee Medium",
+            "parentID": 11,
+            "image": "images/item_2.png",
+            "notifications": [
+              {
+                "ID": "CBD124",
+                "type": "from_platform",
+                "createdAt": "24-04-2019 19:20:00",
+                "content": "4 other notifications have been sent about this item.",
+                "itemID": 77
+              }
+            ]
+          },
+          {
+            "ID": 78,
+            "type": "item",
+            "name": "Paper Coffee Large",
+            "parentID": 11,
+            "image": "images/item_3.png"
+          }
+        ]
+      },
+      {
+        "ID": 12,
+        "type": "category",
+        "name": "Glass Coffee",
+        "parentID": 1,
+        "image": "images/category_9.png",
+        "elements": [
+          {
+            "ID": 79,
+            "type": "item",
+            "name": "Glass Coffee Small",
+            "parentID": 12,
+            "image": "images/item_1.png",
+            "notifications": [
+              {
+                "ID": "143ABD",
+                "type": "from_management",
+                "createdAt": "24-04-2019 19:25:00",
+                "content": "We have notified the supplier and are waiting for their response.",
+                "itemID": 79
+              },
+              {
+                "ID": "DBA143",
+                "type": "from_platform",
+                "createdAt": "24-04-2019 19:20:00",
+                "content": "3 other notifications have been sent about this item.",
+                "itemID": 79
+              }
+            ]
+          },
+          {
+            "ID": 80,
+            "type": "item",
+            "name": "Glass Coffee Medium",
+            "parentID": 12,
+            "image": "images/item_2.png",
+            "notifications": [
+              {
+                "ID": "DBD143",
+                "type": "from_platform",
+                "createdAt": "24-04-2019 19:20:00",
+                "content": "4 other notifications have been sent about this item.",
+                "itemID": 80
+              }
+            ]
+          },
+          {
+            "ID": 81,
+            "type": "item",
+            "name": "Glass Coffee Large",
+            "parentID": 12,
+            "image": "images/item_3.png"
+          }
+        ]
+      },
+      {
+        "ID": 13,
+        "type": "category",
+        "name": "Plastic Coffee",
+        "parentID": 1,
+        "image": "images/category_10.png"
+      }
+    ]
   },
   {
     "ID": 4,

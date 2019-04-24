@@ -115,7 +115,9 @@ class NavBar extends Component {
       </nav>
     );
   }
+
   getParent = (ID, V) => {
+    let found = null;
     if (ID.parentID !== null) {
       for (let j = 0; j < V.length; j++) {
         for (let i = 0; i < V[j].elements.length; i++) {
@@ -123,10 +125,13 @@ class NavBar extends Component {
             return V[j];
           }
         }
-        if (V[j].type !== "item") return this.getParent(ID, V[j].elements);
+        if (V[j].type !== "item") {
+          found = this.getParent(ID, V[j].elements);
+          if (found !== null) break;
+        } 
       }
     }
-    return null;
+    return found;
   };
 }
 
