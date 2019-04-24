@@ -15,8 +15,8 @@ class App extends Component {
     this.state = {
       elements: elements,
       chosen: null,
-	  navBarClick: false
-	};
+      navBarClick: false
+    };
   }
 
   loadElements = () => {
@@ -52,7 +52,7 @@ class App extends Component {
             <NavBar
               onClickNavBar={this.onNavBarClick}
               onClickDiscardSearch={this.onClickDiscardSearch}
-              element={this.state.chosen ? this.state.chosen : "no"}
+              element={this.state.chosen}
               elements={this.state.elements}
               navBarClick={this.state.navBarClick}
               discardSearch={this.discardSearch}
@@ -79,10 +79,10 @@ class App extends Component {
   onItemClickMaiSmechera = (ID, V) => {
     if (V != null) {
       for (let i = 0; i < V.length; i++) {
-        if (V[i].ID === ID){
-			return V[i];
-		}
-        else if (V[i].type !== "item") return this.onItemClickMaiSmechera(ID, V[i].elements);
+        if (V[i].ID === ID) {
+          return V[i];
+        } else if (V[i].type !== "item")
+          return this.onItemClickMaiSmechera(ID, V[i].elements);
       }
     }
     return null;

@@ -42,7 +42,7 @@ class NavBar extends Component {
         </div>
 
         <div className="body">
-          {this.props.element.parentID ? (
+          {this.props.element !== null ? (
             <button className="button goBack">
               <i className="material-icons"> arrow_back</i>
             </button>
@@ -65,8 +65,13 @@ class NavBar extends Component {
                 {this.props.elements.map(element =>
                   element.elements.map(element =>
                     element.elements.map(element => (
-                      <div key={++ID} className="searchItem" onMouseEnter={console.log(element.name)}>
-                        <img src={require("./../resources/" + element.image)} /> <span>{ + " " + element.name}</span>
+                      <div
+                        key={++ID}
+                        className="searchItem"
+                        onMouseEnter={console.log(element.name)}
+                      >
+                        <img src={require("./../resources/" + element.image)} />{" "}
+                        <span>{+" " + element.name}</span>
                       </div>
                     ))
                   )

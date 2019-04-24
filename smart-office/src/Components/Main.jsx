@@ -11,16 +11,16 @@ class Main extends Component {
 
     if (localChosen !== null) {
       if (localChosen.type !== "item") chestie2 = localChosen.elements;
-      else chestie2 = this.getParent(localChosen.ID, this.props.elements).elements;
+      else
+        chestie2 = this.getParent(localChosen.ID, this.props.elements).elements;
 
       while (localChosen.parentID !== null) {
         chestie.push(localChosen);
-		localChosen = this.getParent(localChosen.ID, this.props.elements);
-		if(localChosen === null) break;
+        localChosen = this.getParent(localChosen.ID, this.props.elements);
+        if (localChosen === null) break;
       }
-		
-    } 
-	else if (localChosen == null) {
+      chestie.push(localChosen);
+    } else if (localChosen == null) {
       chestie2 = this.props.elements;
     }
 
@@ -54,19 +54,19 @@ class Main extends Component {
       </div>
     );
   }
-  
+
   getParent = (ID, V) => {
-	if(ID.parentID !== null) {
-	  for (let j = 0; j < V.length; j++) {
-	    for (let i = 0; i < V[j].elements.length; i++) {
-	      if (ID === V[j].elements[i].ID) {
-		    return V[j];  
-	      }
-	    } 
-		if (V[j].type !== "item") return this.getParent(ID, V[j].elements);
-	  }
-	}
-	return null;
+    if (ID.parentID !== null) {
+      for (let j = 0; j < V.length; j++) {
+        for (let i = 0; i < V[j].elements.length; i++) {
+          if (ID === V[j].elements[i].ID) {
+            return V[j];
+          }
+        }
+        if (V[j].type !== "item") return this.getParent(ID, V[j].elements);
+      }
+    }
+    return null;
   };
 }
 

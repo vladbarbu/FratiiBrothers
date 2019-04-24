@@ -3,7 +3,6 @@
     "ID": 1,
     "type": "category",
     "name": "Cups",
-    "parentID": 1,
     "image": "images/category_1.png",
     "elements": [
       {
