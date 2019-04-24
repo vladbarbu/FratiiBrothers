@@ -51,7 +51,7 @@ class App extends Component {
           <div className="App-left">
             <NavBar
               onClickNavBar={this.onNavBarClick}
-              onClickDiscardSearch={this.onClickDiscardSearch}
+              onClickGoBack={this.onClickGoBack}
               element={this.state.chosen}
               elements={this.state.elements}
               navBarClick={this.state.navBarClick}
@@ -75,6 +75,32 @@ class App extends Component {
       </div>
     );
   }
+
+  onClickGoBack = ID => {
+    console.log(ID);
+    if (ID !== null) {
+      if (ID.parentID !== null) {
+        console.log(ID.parentID);
+        this.setState((state, props) => ({
+          chosen: (() => {
+            return this.onItemClickMaiSmechera(ID.parentID, state.elements);
+          })()
+        }));
+      } else {
+        this.setState((state, props) => ({
+          chosen: (() => {
+            return this.onItemClickMaiSmechera(ID.ID, state.elements);
+          })()
+        }));
+      }
+    } else {
+      this.setState((state, props) => ({
+        chosen: (() => {
+          return this.onItemClickMaiSmechera(ID, state.elements);
+        })()
+      }));
+    }
+  };
 
   onItemClickMaiSmechera = (ID, V) => {
     if (V != null) {
