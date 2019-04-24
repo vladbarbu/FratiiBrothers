@@ -5,9 +5,34 @@ import Logo from "./../resources/images/logo.svg";
 class NavBar extends Component {
   constructor(props) {
     super(props);
+
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
     this.state = {
       inputValue: ""
     };
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+
+  setWrapperRef(node) {
+    this.wrapperRef = node;
+  }
+
+  /**
+   * Alert if clicked on outside of element
+   */
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      console.log("You clicked outside of me!");
+      this.props.discardSearch();
+    }
   }
 
   onClickGoBack = ID => {
@@ -61,15 +86,18 @@ class NavBar extends Component {
               onChange={evt => this.updateInputValue(evt)}
             />
 
-            {this.props.navBarClick ? (
+            {this.props.navBarClick ? ( // Verificam daca a fost apasat searchBarul
               <div
                 id="search-list"
-                {...(this.props.element ? (style = { style }) : null)}
+                {...(this.props.element ? (style = { style }) : null)} // Verificam daca avem buton de GoBack
+                ref={this.setWrapperRef}
               >
-                {this.props.elements.map(element =>
+                {this.props.elements.map((
+                  element // Parcurgem Item-ele
+                ) =>
                   element.elements.map(element =>
                     element.elements.map(element =>
-                      element.name.indexOf(this.state.inputValue) > -1 ? (
+                      element.name.indexOf(this.state.inputValue) > -1 ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
                         <div key={++ID} className="searchItem">
                           <img
                             src={require("./../resources/" + element.image)}
