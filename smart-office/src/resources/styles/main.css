@@ -3,7 +3,7 @@
   width: calc(100% - 2 * 20px);
   height: calc(100% - 2 * 20px);
   padding: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .MainContainer > .breadcrumbs {
@@ -11,13 +11,6 @@
   flex-direction: row;
   align-items: center;
   padding-bottom: 20px;
-}
-
-.MainContainer > .breadcrumbs > p {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
 }
 
 .MainContainer > .breadcrumbs > div {
