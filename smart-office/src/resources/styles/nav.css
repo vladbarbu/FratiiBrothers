@@ -142,4 +142,6 @@
 
 .NavBar .searchItem {
   border-bottom: solid #15d1a2 1px;
+  max-width: 220;
+  width: 100%;
 }
