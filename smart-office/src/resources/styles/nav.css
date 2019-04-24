@@ -139,3 +139,7 @@
   color: #2c2c2c;
   font-weight: 500;
 }
+
+.NavBar .searchItem {
+  border-bottom: solid #15d1a2 1px;
+}

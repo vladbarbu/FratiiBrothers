@@ -7,7 +7,8 @@
     "bootstrap-select": "^1.13.9",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-scrollable-anchor": "^0.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
