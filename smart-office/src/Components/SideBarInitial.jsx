@@ -63,7 +63,7 @@ class SideBarInitial extends Component {
         <p className="subtitle">{SideBarInitial.getAddItemInfo()}</p>
         <button
           className="button grey"
-          onClick={() => this.props.onClickSearch()}
+          onClick={() => this.props.onClickRequest()}
         >
           <i className="material-icons">add</i>
           <div className="content">
