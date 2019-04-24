@@ -18,7 +18,7 @@ class SideBarCategory extends Component {
     return (
       <div id="SideBar">
         <div className="body">
-          <Item item={this.props.element} />
+          <Item item={this.props.element} sideBarCheck={true} />
           <h2>How it works</h2>
           <h5>{this.getInstructions()}</h5>
           <button onClick={() => this.props.onClickDiscardSearch()}>

@@ -10,7 +10,11 @@ class Item extends Component {
   render() {
     return (
       <div
-        onClick={this.onItemClick.bind(this, this.props.item.ID)}
+        onClick={
+          this.props.sideBarCheck
+            ? null
+            : this.onItemClick.bind(this, this.props.item.ID)
+        }
         className="Item"
       >
         <div className="image">
