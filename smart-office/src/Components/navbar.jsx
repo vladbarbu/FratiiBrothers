@@ -124,7 +124,7 @@ class NavBar extends Component {
 
   searchInName = name => {
     name = name.toLowerCase();
-    if (name.indexOf(this.state.inputValue) !== -1) return true;
+    if (name.indexOf(this.state.inputValue.toLowerCase()) !== -1) return true;
     return false;
   };
 
