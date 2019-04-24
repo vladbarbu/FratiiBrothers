@@ -76,11 +76,11 @@ class App extends Component {
             <NavBar
               onClickNavBar={this.onNavBarClick}
               onClickGoBack={this.onClickGoBack}
+              onClickOption={this.onClickOption}
+              navBarClick={this.state.navBarClick}
               element={this.state.chosen}
               elements={this.state.elements}
-              navBarClick={this.state.navBarClick}
               discardSearch={this.discardSearch}
-              onClickOption={this.onClickOption}
             />
             <Main
               onItemClick={this.onItemClick}
