@@ -36,9 +36,10 @@ class App extends Component {
         for (let k = 0; k < elements[i].elements[j].elements.length; k++) {
           let notifications =
             elements[i].elements[j].elements[k]["notifications"];
-          for (let n = 0; n < notifications.length; n++)
-            // data.push(new Notification(notifications[n]));
+          for (let n = 0; n < notifications.length; n++) {
+            //data.push(new Notification(notifications[n]));
             data.push(notifications[n]);
+          }
         }
     return data;
   };
@@ -76,11 +77,11 @@ class App extends Component {
             <NavBar
               onClickNavBar={this.onNavBarClick}
               onClickGoBack={this.onClickGoBack}
-              onClickOption={this.onClickOption}
-              navBarClick={this.state.navBarClick}
               element={this.state.chosen}
               elements={this.state.elements}
+              navBarClick={this.state.navBarClick}
               discardSearch={this.discardSearch}
+              onClickOption={this.onClickOption}
             />
             <Main
               onItemClick={this.onItemClick}
