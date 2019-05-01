@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-// import SideBarHeader from "./sideBarHeader";
-// import SideBarCategory from "./SideBarCategory";
-// import SideBarInitial from "./SideBarInitial";
-
-import "../resources/styles/sideBar.css";
-import NotificationMessage from "./NotificationMessage";
+import "../resources/styles/SideBar.scss";
 
 class SideBarItem extends Component {
   state = {
@@ -12,13 +7,14 @@ class SideBarItem extends Component {
   };
 
   getItemNotifications = () => {
-    if (this.props.element.notifications.length === 0)
-      return <p>No notifications</p>;
+    if (this.props.element.notifications.length === 0) return <p>No notifications</p>;
 
-    let notifications = this.props.element.notifications.map(notification => (
-      <p>{notification.content}</p>
-    ));
-    return notifications;
+    return this.props.element.notifications.map((notification,key) => {
+      return <div key={key} className={"notification " + notification.type}>
+          <p>{(notification.type === "from_management" ? <b>Message from management:</b> : "")} {notification.content}</p>
+      </div>
+    });
+
   };
 
   render() {
@@ -28,14 +24,29 @@ class SideBarItem extends Component {
           src={require("./../resources/" + this.props.element.image)}
           alt=""
         />
-        {/* <h4>3 other notifications have been sent to the management regarding this item in the last day.</h4> */
-        this.getItemNotifications()}
-        <h2>{this.props.element.name}</h2>
-        <button>None left at the station</button>
-        <button>A few left</button>
-        <button onClick={() => this.props.onClickDiscardSearch()}>
-          Discard
-        </button>
+        <div className="body">
+            <div className="notifications"> {this.getItemNotifications()}</div>
+            <h2>{this.props.element.name}</h2>
+        </div>
+        <div className="footer">
+            <div className="button none" onClick={()=>{this.props.onActionConfirmation()}}>
+                <div className="content">
+                    <p>None left at the station</p>
+                </div>
+            </div>
+            <div className="button few">
+                <div className="content">
+                    <p>A few left</p>
+                    <span>requires quantity input</span>
+                </div>
+            </div>
+            <div className="button discard" onClick={() => this.props.onClickDiscardSearch()}>
+                <i className="material-icons">close</i>
+                <div className="content">
+                    <p>Discard</p>
+                </div>
+            </div>
+        </div>
       </div>
     );
   }

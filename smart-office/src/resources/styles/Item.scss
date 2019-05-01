@@ -1,0 +1,123 @@
+@import "config";
+.Item {
+  background: white;
+  border-color: #eeeeee;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border 0.2s;
+  cursor: pointer;
+
+  &:hover, &:active{
+    border-color: $colorPrimary;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.2s, border 0.2s;
+  }
+
+  & > .image{
+    & > img{
+      height: 130px;
+      width: 100%;
+      object-fit: cover;
+      border-bottom: 1px solid #eeeeee;
+    }
+  }
+
+  & > .body{
+    flex: 1;
+
+    padding: 15px 10px;
+    width: calc(100% - 2 * 10px);
+
+    & > p.name {
+      font-size: 12pt;
+
+      font-weight: 600;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  & > .footer {
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 8px);
+    padding-left: 8px;
+
+    & > .button{
+      background: $colorPrimary;
+      border-radius: 6px 0 3px 0;
+      height: 38px;
+      width: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+
+      & > i{
+        font-size: 16pt;
+        color: white;
+        transform: rotate(90deg);
+      }
+    }
+    & > .quantity{
+      color: $colorPrimary;
+      font-size: 0.9em;
+      font-weight: lighter;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & > i{
+        margin-right: 5px;
+        font-size: 16pt;
+      }
+      & > p{
+        margin: 0;
+        font-weight: 600;
+        font-size: 10pt;
+      }
+    }
+  }
+
+
+  &.final{
+    & > .footer{
+      & > .quantity{
+        visibility: hidden;
+      }
+      & > .button{
+        & > i{
+          font-size: 14pt;
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+  &.chosen{
+    &:hover, &:active{
+      border-color: $red;
+    }
+    & > .footer{
+      & > .button{
+        background: $red;
+        & > i{
+          font-size: 14pt;
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+}
+
+
+.material-icons-two-tone {
+  filter: invert(70%) sepia(15%) saturate(7499%) hue-rotate(118deg) brightness(98%) contrast(90%);
+}

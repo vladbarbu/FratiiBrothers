@@ -4,8 +4,7 @@ class SideBarNotification extends Component {
   render() {
     return (
       <div className="notification-item">
-        <h5>{this.props.itemName}</h5>
-        <h5>{this.props.timeStamp}</h5>
+        <div className="header"><p>{this.props.itemName}</p><p className="time">{this.props.timeStamp}</p></div>
         <NotificationMessage
           messageClassName={this.props.type}
           message={this.props.message}

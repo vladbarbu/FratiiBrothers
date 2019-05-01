@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "../resources/styles/sideBar.css";
+import "../resources/styles/SideBar.scss";
 
 class SideBarHeader extends Component {
   state = {
@@ -12,6 +12,9 @@ class SideBarHeader extends Component {
   render() {
     return (
       <header>
+        <button onClick={()=>{this.props.onToggleMobileDrawer()}} className="button menu">
+          <i className="material-icons">close</i>
+        </button>
         <p>
           {this.props.location.building} . {this.props.location.floor} .{" "}
           {this.props.location.table}

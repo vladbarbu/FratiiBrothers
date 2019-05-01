@@ -1,0 +1,377 @@
+@import "config";
+
+#sideBarHeaderList {
+  text-align: center;
+}
+#sideBarHeaderList li {
+  display: inline-block;
+}
+#sideBarContainer {
+  width: 100%;
+}
+
+
+
+#SideBar{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  & > header{
+    flex-shrink: 0;
+    height: calc(#{$navHeight} - 2 * 10px);
+    padding: 10px 20px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    & > p{
+      margin: 0;
+      color: $colorSecondary;
+      font-size: 12pt;
+    }
+    & > .button{
+      position: absolute;
+      left: 15px;
+      background: #fff;
+      height: 50px;
+      width: 50px;
+      border: 1px solid #eeeeee;
+      box-sizing: border-box;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+      cursor: pointer;
+      transition: background 0.2s;
+
+      & > i{
+        color: $red;
+      }
+
+      &:hover, &:active{
+        background: #f5f5f5;
+        transition: background 0.2s;
+      }
+
+      &.menu{
+        display: none;
+      }
+    }
+  }
+
+  & > .body{
+    padding: 10px;
+    flex: 1;
+  }
+
+  .Item{
+    box-shadow: none;
+    transform: none;
+    cursor: default;
+
+    & > .footer{
+      padding-bottom: 10px;
+      & > .button{
+        display: none;
+      }
+    }
+
+
+    &:hover, &:active{
+      box-shadow: none;
+      transform: none;
+      border-color: #eee;
+    }
+  }
+
+
+  & > .sideBarInitial, & > .sideBarCategory{
+    height: 100%;
+    padding: 20px 15px;
+    width: calc(100% - 2 * 15px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+
+
+    & > *{
+      flex-shrink: 0;
+    }
+
+    & > .icon {
+      margin-bottom: 20px;
+       & > i{
+         font-size: 60pt;
+         color: #0dd2a3;
+        }
+
+    }
+
+    & > h3{
+      color: #2c2c2c;
+      font-weight: 700;
+      margin-bottom: 0;
+      margin-top:0;
+    }
+    & > .subtitle{
+      margin: 15px 0;
+      font-size: 10pt;
+      line-height: 1.4;
+      color: #aaa;
+      font-weight: 400;
+    }
+
+    & > .notifications{
+      width: calc(100% - 2 * 10px);
+      padding: 10px 10px 0;
+      flex: 1;
+      background: #fff;
+
+      border-radius: 2px;
+      border: 1px solid #eee;
+      & > .header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        & > *:not(button){
+         margin: 0 auto 0 0;
+        }
+        & > button{
+          border: 1px solid #eee;
+          outline: none;
+          border-radius: 2px;
+          padding: 8px 16px;
+          background: #ffffff;
+          color: #2c2c2c;
+          text-align: center;
+          font-size: 10pt;
+          cursor: pointer;
+
+          &:hover, &:active{
+            background: #eee;
+          }
+        }
+      }
+
+      & > .notification-item{
+        margin-bottom: 10px;
+        & > .header{
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          p{
+            margin: 0;
+            font-size: 10pt;
+            color: #aaa;
+
+            &.time{
+              margin-left: auto;
+            }
+          }
+
+        }
+        & > .notification-item-message{
+
+          background: #f5f5f5;
+          border: 1px solid #eeeeee;
+          padding: 10px;
+          border-radius: 2px;
+
+          & > h6{
+            font-weight: 300;
+            font-size: 10pt;
+            color: #aaa;
+            margin: 0;
+          }
+        }
+      }
+
+    }
+
+    & > .spacer{
+      flex: 1;
+    }
+    & >  .divider{
+      height: 1px;
+      width: 100%;
+      background: #eeeeee;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+
+  .button.grey{
+    @include big-button;
+  }
+
+  & > .sideBarItem{
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+    & > *{
+      flex-shrink: 0;
+    }
+
+    & >img{
+      max-width: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+    & > .body{
+      width: calc(100% - 2 * 15px);
+      padding: 15px 15px 5px;
+      flex: 1;
+
+      h2{
+        font-size: 18pt;
+        font-weight: 500;
+        margin: 0;
+        padding-bottom: 30px;
+      }
+
+
+      & > .notifications{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 10px;
+        & > p{
+          color: #aaaaaa;
+          font-style: italic;
+          font-weight: 400;
+        }
+        & > .notification{
+          width: calc(100% - 2 * 15px);
+          height: auto;
+          padding: 15px;
+          text-align: left;
+          margin-bottom: 10px;
+
+          &.from_management{
+            order: 2;
+            background: lighten($red, 35%);
+            border: 1px solid $red;
+            border-radius: 4px;
+
+            & > p{
+              margin: 0;
+              font-size: 10pt;
+              font-weight: 300;
+              color: $red;
+
+              b{
+                color: $red;
+                font-weight: 500;
+              }
+            }
+          }
+          &.from_platform{
+            background: lighten($colorPrimary, 50%);
+            border: 1px solid $colorPrimary;
+            border-radius: 4px;
+            order: 1;
+
+            & > p{
+              margin: 0;
+              font-size: 10pt;
+              font-weight: 300;
+              color: $colorPrimary;
+
+              b{
+                color: $colorPrimary;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    & > .footer{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      width: calc(100% - 2 * 15px);
+      padding: 0 15px 15px;
+
+      & > .button{
+        @include big-button;
+
+
+        &.none{
+          grid-column: span 2;
+          background: $red;
+          & > .content{
+            &  > p, & > span{
+              color: #fff;
+            }
+          }
+          &:hover, &:active{
+            background: darken($red,10%);
+          }
+        }
+        &.few{
+          background: #4c4c4c;
+          & > .content{
+            &  > p, & > span{
+              color: #fff;
+            }
+          }
+          &:hover, &:active{
+            background: #2c2c2c;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media #{$top-tablet} {
+  #SideBar{
+    & > header{
+      min-height: calc(#{$navHeight} - 2 * 10px);
+      height: auto;
+      & > .button{
+        display: flex !important;
+      }
+      & > p{
+        margin: 0;
+        color: $colorSecondary;
+        font-size: 12pt;
+        padding-left: 50px;
+      }
+    }
+
+
+    & > .sideBarInitial{
+      & > .icon {
+        margin: 0 auto 20px auto;
+        & > i{
+          font-size: 90pt;
+          color: #0dd2a3;
+        }
+
+      }
+    }
+
+
+
+  }
+}
+

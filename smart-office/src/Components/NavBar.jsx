@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../resources/styles/nav.css";
+import "../resources/styles/Nav.scss";
 import Logo from "./../resources/images/logo.svg";
 
 class NavBar extends Component {
@@ -31,7 +31,6 @@ class NavBar extends Component {
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       console.log("You clicked outside of me!");
-      //this.state.inputValue = "";
       this.props.discardSearch();
     }
     if (this.wrapperRef && this.wrapperRef.contains(event.target))
@@ -58,10 +57,7 @@ class NavBar extends Component {
   render() {
     let ID = 0;
     let style = { right: "238px" };
-    const styleSearch = {
-      position: "relative",
-      bottom: "50px"
-    };
+
     return (
       <nav className="NavBar">
         <div className="logo">
@@ -69,18 +65,8 @@ class NavBar extends Component {
         </div>
 
         <div className="body">
-          {this.props.element !== null ? ( //Daca nu e pe pagina principala apare
-            <button
-              className="button goBack"
-              onClick={() => {
-                //console.log(this.props.element.ID);
-                this.onClickGoBack(
-                  this.getParent(this.props.element.ID, this.props.elements)
-                );
-              }}
-            >
-              <i className="material-icons"> arrow_back</i>
-            </button>
+          {this.props.element !== null ? (
+            <button className="button goBack" onClick={() => {this.onClickGoBack(this.getParent(this.props.element.ID, this.props.elements));}}><i className="material-icons"> arrow_back</i></button>
           ) : null}
           <button className="button notifications">
             <i className="material-icons"> notifications</i>
@@ -106,19 +92,11 @@ class NavBar extends Component {
                     element.elements.map(element =>
                       this.searchInName(element.name) ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
                         ID < 6 ? ( //Limitam lista la 6 iteme
-                          <button
-                            key={++ID}
-                            className="searchItem"
-                            onClick={() => {
-                              this.onClickOption(element);
-                              this.props.discardSearch();
-                            }}
-                          >
-                            <img
-                              src={require("./../resources/" + element.image)}
-                            />
-                            <span>{" " + element.name}</span>
-                          </button>
+                          <div key={++ID}  className="searchItem"  onClick={() => {this.onClickOption(element); this.props.discardSearch();}}>
+                            <img alt="Item" src={require("./../resources/" + element.image)}/>
+                            <p>{" " + element.name}</p>
+                            <div className="btn"><i className="material-icons">play_arrow</i></div>
+                          </div>
                         ) : null
                       ) : null
                     )
@@ -127,6 +105,9 @@ class NavBar extends Component {
               </div>
             ) : null}
           </div>
+          <button onClick={()=>{this.props.onToggleMobileDrawer()}} className="button menu">
+            <i className="material-icons">menu</i>
+          </button>
         </div>
       </nav>
     );
