@@ -112,6 +112,7 @@ class NavBar extends Component {
                             onClick={() => {
                               this.onClickOption(element);
                               this.props.discardSearch();
+                              this.resetValue();
                             }}
                           >
                             <img
@@ -131,6 +132,10 @@ class NavBar extends Component {
       </nav>
     );
   }
+
+  resetValue = () => {
+    this.setState({ inputValue: "" });
+  };
 
   searchInName = name => {
     name = name.toLowerCase();
