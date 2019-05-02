@@ -1,0 +1,99 @@
+@import "config";
+
+.MainContainer {
+  box-sizing: content-box;
+  width: calc(100% - 2 * 20px);
+  height: calc(100% - 2 * 20px);
+  padding: 20px;
+  overflow-y: auto;
+
+  & > .breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+
+    & > p{
+      margin: 0;
+      &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    & > div{
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      & > i{
+        color: $colorPrimary;
+        font-size: 14pt;
+        line-height: 0.5;
+      }
+      & > p{
+          padding: 0;
+          margin: 0;
+      }
+
+      &:hover{
+        & > p{
+          text-decoration: underline;
+        }
+      }
+
+      &:last-of-type{
+        & > p{
+          color: $colorPrimary;
+        }
+      }
+    }
+  }
+
+
+  & > .Main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+
+
+
+
+
+@media #{$top-tablet} {
+  .MainContainer {
+    width: calc(100% - 2 * 15px);
+    height: calc(100% - 2 * 15px);
+    padding: 15px;
+
+    & > .Main {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media #{$top-mobile} {
+  .MainContainer {
+    & > .Main {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media #{$top-micro} {
+  .MainContainer {
+    & > .Main {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+
+
+

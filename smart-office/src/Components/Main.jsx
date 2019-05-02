@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Item from "./Item";
-import "../resources/styles/main.css";
+import "../resources/styles/Main.scss";
 
 class Main extends Component {
   render() {
@@ -28,9 +28,9 @@ class Main extends Component {
       <div className="MainContainer">
         <div className="breadcrumbs">
           <p onClick={() => { this.props.onItemClick(null); }}> All items </p>
-            {chestie.reverse().map(element => {
+            {chestie.reverse().map((element, key) => {
               return (
-                <div onClick={() => { this.props.onItemClick(element.ID); }}>
+                <div key={key} onClick={() => { this.props.onItemClick(element.ID); }}>
                   <i className="material-icons">arrow_right</i>
                   <p>{element.name}</p>
                 </div>

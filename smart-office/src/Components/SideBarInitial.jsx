@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SideBarNotifications from "./SideBarNotifications";
 
-import "../resources/styles/sideBar.css";
+import "../resources/styles/SideBar.scss";
 
 class SideBarInitial extends Component {
   state = {
@@ -31,15 +31,11 @@ class SideBarInitial extends Component {
   };
 
   static getInstructions() {
-    const message =
-      "If your station is lacking a certain item, find it in the platform and mark it unavailable. Management will try to fix the supply issue as soon as possible.";
-
-    return message;
+    return"If your station is lacking a certain item, find it in the platform and mark it unavailable. Management will try to fix the supply issue as soon as possible.";
   }
   static getAddItemInfo() {
-    const message =
-      "If the item was never made available, you can request it to be included in the station stock in the future.";
-    return message;
+   return  "If the item was never made available, you can request it to be included in the station stock in the future.";
+
   }
   render() {
     return (
@@ -61,10 +57,7 @@ class SideBarInitial extends Component {
         </button>
 
         <p className="subtitle">{SideBarInitial.getAddItemInfo()}</p>
-        <button
-          className="button grey"
-          onClick={() => this.props.onClickRequest()}
-        >
+        <button className="button grey" onClick={() => this.props.onClickRequest()}>
           <i className="material-icons">add</i>
           <div className="content">
             <p>Request new item</p>

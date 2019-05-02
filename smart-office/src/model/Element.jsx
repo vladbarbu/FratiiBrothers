@@ -1,4 +1,4 @@
-import Notification from "./Notification.jsx";
+
 
 class Element {
   get quantity() {
@@ -62,8 +62,16 @@ class Element {
     this._ID = ID;
   }
 
+  get chosen() {
+    return this._chosen;
+  }
+
+  set chosen(value) {
+    this._chosen = value;
+  }
   constructor(object) {
     if (object === null) return;
+    this.chosen = false;
     this.ID = object.hasOwnProperty("ID") ? object["ID"] : null;
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
@@ -91,7 +99,7 @@ class Element {
         : [];
       if (notifications && notifications.length > 0)
         for (let i = 0; i < notifications.length; i++)
-          data.push(new Notification(notifications[i]));
+          data.push(notifications[i]);
       return data;
     })();
   }

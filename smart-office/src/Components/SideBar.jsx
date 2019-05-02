@@ -1,25 +1,18 @@
 import React, { Component } from "react";
-import SideBarHeader from "./sideBarHeader";
+import SideBarHeader from "./SideBarHeader";
 import SideBarCategory from "./SideBarCategory";
 import SideBarInitial from "./SideBarInitial";
 import SideBarItem from "./SideBarItem";
 
-import "../resources/styles/sideBar.css";
+
+import "../resources/styles/SideBar.scss";
+
 
 class SideBar extends Component {
   state = {
     element: this.props.element,
     actions: ["Action1", "Action2", "Action3"]
   };
-  //
-  // static getDerivedStateFromProps(nextProps, prevState){
-  //     console.log(prevState);
-  //     console.log(nextProps);
-  //     if(nextProps.element !== prevState.element){
-  //         return { element: nextProps.element};
-  //     }
-  //     else return null;
-  // }
 
   getTypeOfSidebar() {
     return this.props.element === null ? (
@@ -31,6 +24,7 @@ class SideBar extends Component {
       <SideBarItem
         element={this.props.element}
         onClickDiscardSearch={this.props.onClickDiscardSearch}
+        onActionConfirmation = {this.props.onActionConfirmation}
       />
     ) : (
       <SideBarCategory
@@ -42,14 +36,11 @@ class SideBar extends Component {
   render() {
     return (
       <div id="SideBar">
-        <SideBarHeader location={this.props.location} />
+        <SideBarHeader  onToggleMobileDrawer = {this.props.onToggleMobileDrawer} location={this.props.location} />
         {this.getTypeOfSidebar()}
-        {/* <SideBarCategory element={this.props.element} /> */}
-        {/* <div className="body">
-          <Item item={this.props.element} />
-        </div> */}
       </div>
     );
+
   }
 }
 

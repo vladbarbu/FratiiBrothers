@@ -1,0 +1,153 @@
+@import "config";
+
+.ActionItemPopupConfirmation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 400;
+
+  & > .inner {
+    width: calc(100% - 2 * 10px);
+    height: calc(100% - 2 * 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+
+    & > .card{
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      max-height: 800px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 4px;
+
+      & > .container{
+        width: calc(100% - 2 * 30px);
+        max-height: calc(100vh -  2 * 30px);
+        padding: 30px;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        & > *{
+          flex-shrink: 0;
+        }
+
+        & > .header{
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          margin-bottom: 30px;
+          i{
+            font-size: 70pt;
+            margin-bottom: 20px;
+            color: $colorPrimary;
+          }
+          h2{
+            margin: 0;
+            flex: 1;
+            font-weight: 600;
+            font-size: 20pt;
+            color: $colorPrimary;
+
+          }
+
+        }
+
+        & > p{
+          font-size: 12pt;
+          margin: 0;
+          font-weight: 300;
+          line-height: 1.4;
+          color: #2c2c2c;
+          max-width: 450px;
+          text-align: center;
+        }
+
+        & > .button.return{
+          margin-top: 40px;
+          margin-bottom: 40px;
+          @include big-button;
+          width: auto;
+          height: calc(60px - 2 * 10px);
+
+        }
+        
+        
+        @keyframes loading {
+          0%{
+            width: 0;
+          }
+          100%{
+            width: 100%;
+          }
+          
+        }
+
+
+
+        & > .footer{
+          width: 100%;
+          & > .loader{
+            max-width: 400px;
+            margin: 0 auto;
+            height: calc(12px - 2 * 2px);
+            width: calc(100% - 2 * 2px);
+            padding: 2px;
+            border-radius: 6px;
+            background: #eeeeee;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            & > .inner{
+              height: 100%;
+              width: 0;
+              border-radius: 4px;
+              background: $colorPrimary;
+              animation-fill-mode: forwards;
+              animation-name: loading;
+              animation-duration: 5s;
+              animation-iteration-count: infinite;
+              animation-timing-function: ease-in;
+
+            }
+
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+@media #{$top-mobile-big}{
+  .ActionItemPopupConfirmation {
+    & > .inner {
+      & > .card {
+        & > .container {
+          width: calc(100% - 2 * 15px);
+          max-height: calc(100vh -  2 * 20px);
+          padding: 20px 15px;
+          & > .header{
+              .button.return{
+                display: none;
+              }
+          }
+        }
+      }
+    }
+  }
+}

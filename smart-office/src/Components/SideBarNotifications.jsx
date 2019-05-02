@@ -7,6 +7,7 @@ class SideBarNotifications extends Component {
   };
 
   render() {
+      let i = 0;
     return (
       <div className="notifications">
         <div className="header">
@@ -15,6 +16,7 @@ class SideBarNotifications extends Component {
         </div>
         {this.state.notificationsArray.map(notification => (
           <SideBarNotification
+            key = {++i}
             itemName={notification.itemName}
             timeStamp={notification.timeStamp}
             message={notification.message}

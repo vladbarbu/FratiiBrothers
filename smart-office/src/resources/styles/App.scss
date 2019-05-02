@@ -1,0 +1,59 @@
+@import "config";
+
+#App {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #FBFDFF;
+  font-family: 'CircularStd', sans-serif;
+  font-weight: 600;
+
+  & > .App-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    & > .App-left{
+      flex: 1;
+      height: 100%;
+    }
+
+    & > .App-right{
+      width: 360px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: 0 0 3px rgba(0,0,0,0.05);
+      z-index: $zIndex-SideBar;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+  }
+}
+
+
+@media #{$top-tablet} {
+  #App {
+    & > .App-container{
+      & > .App-right{
+        position: fixed;
+        right: 0;
+        width: 90%;
+        transform: translateX(100%);
+        transition: transform 0.3s, box-shadow 0.3s;
+        will-change: transform;
+
+
+
+        &[data-visible="true"]{
+          transform: translateX(0);
+          transition: transform 0.3s, box-shadow 0.3s;
+          will-change: transform;
+          box-shadow: -10px 0 40px rgba(0,0,0,0.32);
+        }
+      }
+    }
+  }
+}
