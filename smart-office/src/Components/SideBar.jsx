@@ -4,9 +4,7 @@ import SideBarCategory from "./SideBarCategory";
 import SideBarInitial from "./SideBarInitial";
 import SideBarItem from "./SideBarItem";
 
-
 import "../resources/styles/SideBar.scss";
-
 
 class SideBar extends Component {
   state = {
@@ -24,7 +22,8 @@ class SideBar extends Component {
       <SideBarItem
         element={this.props.element}
         onClickDiscardSearch={this.props.onClickDiscardSearch}
-        onActionConfirmation = {this.props.onActionConfirmation}
+        onActionConfirmation={this.props.onActionConfirmation}
+        onClickFew={this.props.onClickFew}
       />
     ) : (
       <SideBarCategory
@@ -36,11 +35,13 @@ class SideBar extends Component {
   render() {
     return (
       <div id="SideBar">
-        <SideBarHeader  onToggleMobileDrawer = {this.props.onToggleMobileDrawer} location={this.props.location} />
+        <SideBarHeader
+          onToggleMobileDrawer={this.props.onToggleMobileDrawer}
+          location={this.props.location}
+        />
         {this.getTypeOfSidebar()}
       </div>
     );
-
   }
 }
 

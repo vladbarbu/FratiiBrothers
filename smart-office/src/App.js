@@ -7,7 +7,7 @@ import NavBar from "./Components/NavBar";
 import RequestItemPopup from "./Components/RequestItemPopup";
 import Element from "./model/Element";
 import ActionItemPopupConfirmation from "./Components/ActionItemPopupConfirmation";
-
+import FewLeftPopup from "./Components/FewLeftPopup";
 
 class App extends Component {
   constructor(props) {
@@ -16,14 +16,15 @@ class App extends Component {
     let elements = this.loadElements();
     let notifications = this.loadNotifications(elements);
     this.state = {
-      drawer_visible : false,
+      drawer_visible: false,
       elements: elements,
       notifications: notifications,
       chosen: null,
       navBarClick: false,
       showRequestPopup: false,
-      showActionConfirmationPopup : false,
-      timeoutActionConfirmationPopup : null
+      showFewLeftPopup: false,
+      showActionConfirmationPopup: false,
+      timeoutActionConfirmationPopup: null
     };
   }
 
@@ -31,12 +32,15 @@ class App extends Component {
     this.setState({ showRequestPopup: !this.state.showRequestPopup });
   };
 
+  toggleFewLeftPopup = () => {
+    this.setState({ showFewLeftPopup: !this.state.showFewLeftPopup });
+  };
+
   toggleActionConfirmationPopup = (force_close = false) => {
-
-    this.setState({ showActionConfirmationPopup: !force_close && !this.state.showActionConfirmationPopup });
-
- 
-
+    this.setState({
+      showActionConfirmationPopup:
+        !force_close && !this.state.showActionConfirmationPopup
+    });
   };
 
   loadNotifications = elements => {
@@ -92,7 +96,7 @@ class App extends Component {
               navBarClick={this.state.navBarClick}
               discardSearch={this.discardSearch}
               onClickOption={this.onClickOption}
-              onToggleMobileDrawer = {this.onToggleMobileDrawer}
+              onToggleMobileDrawer={this.onToggleMobileDrawer}
             />
             <Main
               onItemClick={this.onItemClick}
@@ -108,7 +112,8 @@ class App extends Component {
               onClickSearch={this.onNavBarClick}
               onClickRequest={this.toggleRequestPopup}
               onActionConfirmation={this.toggleActionConfirmationPopup}
-              onToggleMobileDrawer = {this.onToggleMobileDrawer}
+              onToggleMobileDrawer={this.onToggleMobileDrawer}
+              onClickFew={this.toggleFewLeftPopup}
             />
           </div>
           {this.state.showRequestPopup ? (
@@ -119,9 +124,16 @@ class App extends Component {
           ) : null}
 
           {this.state.showActionConfirmationPopup ? (
-              <ActionItemPopupConfirmation
-                  togglePopup={this.toggleActionConfirmationPopup}
-              />
+            <ActionItemPopupConfirmation
+              togglePopup={this.toggleActionConfirmationPopup}
+            />
+          ) : null}
+
+          {this.state.showFewLeftPopup ? (
+            <FewLeftPopup
+              togglePopup={this.toggleFewLeftPopup}
+              onConfirm={this.onFewLeftSubmit}
+            />
           ) : null}
         </div>
       </div>
@@ -144,7 +156,9 @@ class App extends Component {
         //console.log(ID.parentID);
         this.setState((state, props) => ({
           chosen: (() => {
-            return this.onItemClickMaiSmechera(ID.parentID, state.elements)["chosen"];
+            return this.onItemClickMaiSmechera(ID.parentID, state.elements)[
+              "chosen"
+            ];
           })()
         }));
       } else {
@@ -171,8 +185,8 @@ class App extends Component {
         if (String(V[i].ID) === String(ID)) {
           V[i].chosen = true;
           return {
-            chosen : V[i],
-            elements : V,
+            chosen: V[i],
+            elements: V
           };
         } else if (V[i].type !== Config.ELEMENT_TYPE_ITEM)
           found = this.onItemClickMaiSmechera(ID, V[i].elements)["chosen"];
@@ -180,27 +194,29 @@ class App extends Component {
       }
     }
     return {
-      chosen : found,
-      elements : V
+      chosen: found,
+      elements: V
     };
   };
 
   onItemClick = ID => {
-
-    let elements = this.onItemClickMaiSmechera("Use this recursive function to make every chosen flag false",this.state.elements)["elements"];
+    let elements = this.onItemClickMaiSmechera(
+      "Use this recursive function to make every chosen flag false",
+      this.state.elements
+    )["elements"];
     let object = this.onItemClickMaiSmechera(ID, elements);
     let item = object.chosen;
-    if(item && item.type === Config.ELEMENT_TYPE_ITEM) {this.onToggleMobileDrawer("open");}
-
-
+    if (item && item.type === Config.ELEMENT_TYPE_ITEM) {
+      this.onToggleMobileDrawer("open");
+    }
 
     this.setState((previousState, props) => {
       return {
-        elements : object.elements,
+        elements: object.elements,
         chosen: (() => {
           return item;
         })()
-      }
+      };
     });
   };
 
@@ -216,7 +232,7 @@ class App extends Component {
 
   onNavBarClick = () => {
     this.setState({
-      drawer_visible : false,
+      drawer_visible: false,
       navBarClick: true
     });
   };
@@ -229,15 +245,19 @@ class App extends Component {
     this.toggleRequestPopup();
   };
 
-
-
+  onFewLeftSubmit = amount => {
+    console.log(amount);
+    if (amount === "") alert("No amount inserted!");
+    else {
+      this.toggleFewLeftPopup();
+      this.toggleActionConfirmationPopup();
+    }
+  };
   onToggleMobileDrawer = (force = null) => {
-    this.setState((state,props) => ({
-      drawer_visible : force !== null ? ( force === "open") : !state.drawer_visible
-    }))
-  }
-
-
+    this.setState((state, props) => ({
+      drawer_visible: force !== null ? force === "open" : !state.drawer_visible
+    }));
+  };
 }
 
 export default App;
