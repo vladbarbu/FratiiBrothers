@@ -185,7 +185,7 @@
 }
 
 @media #{$top-mobile-big} {
-  .RequestPopup {
+  .FewLeftPopup {
     & > .inner {
       & > .card {
         & > .container {
@@ -197,6 +197,35 @@
               display: none;
             }
           }
+
+          & > .display {
+            width: calc(100% - 2 * 8px);
+            padding: 8px;
+            & > p{
+              font-size: 28pt;
+
+            }
+          }
+
+          & > .keyboard {
+            width: 100%;
+            padding: 0;
+            grid-gap: 10px;
+            & > div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 5px;
+              & > span, & > i{
+                height: 70px;
+                width: 70px;
+                border-radius: 4px;
+              }
+
+            }
+          }
+
+
         }
       }
     }
