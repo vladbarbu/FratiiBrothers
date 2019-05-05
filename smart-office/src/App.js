@@ -126,7 +126,7 @@ class App extends Component {
           {this.state.showActionConfirmationPopup ? (
             <ActionItemPopupConfirmation
               togglePopup={this.toggleActionConfirmationPopup}
-              onReturnToDashboard={() => {this.onItemClick(null); this.props.onToggleMobileDrawer("close")}}
+              onReturnToDashboard={() => {this.onItemClick(null); this.toggleActionConfirmationPopup("close")}}
             />
           ) : null}
 
