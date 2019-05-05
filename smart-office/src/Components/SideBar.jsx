@@ -17,18 +17,27 @@ class SideBar extends Component {
       <SideBarInitial
         onClickSearch={this.props.onClickSearch}
         onClickRequest={this.props.onClickRequest}
+        notifications={this.props.notifications}
+        items={this.props.items}
+        onClickNotifications={this.props.onClickNotifications}
       />
     ) : this.props.element.type === "item" ? (
       <SideBarItem
         element={this.props.element}
-        onClickDiscardSearch={() => {this.props.onClickDiscardSearch(); this.props.onToggleMobileDrawer("close")}}
+        onClickDiscardSearch={() => {
+          this.props.onClickDiscardSearch();
+          this.props.onToggleMobileDrawer("close");
+        }}
         onActionConfirmation={this.props.onActionConfirmation}
         onClickFew={this.props.onClickFew}
       />
     ) : (
       <SideBarCategory
         element={this.props.element}
-        onClickDiscardSearch={() => {this.props.onClickDiscardSearch(); this.props.onToggleMobileDrawer("close")}}
+        onClickDiscardSearch={() => {
+          this.props.onClickDiscardSearch();
+          this.props.onToggleMobileDrawer("close");
+        }}
       />
     );
   }

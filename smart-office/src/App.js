@@ -8,24 +8,28 @@ import RequestItemPopup from "./Components/RequestItemPopup";
 import Element from "./model/Element";
 import ActionItemPopupConfirmation from "./Components/ActionItemPopupConfirmation";
 import FewLeftPopup from "./Components/FewLeftPopup";
+import AllNotificationsPopup from "./Components/AllNotificationsPopup";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     let elements = this.loadElements();
-    let notifications = this.loadNotifications(elements);
+    let items = this.loadItems(elements);
+    let notifications = this.loadNotifications(items);
 
     this.state = {
       drawer_visible: false,
       elements: elements,
+      items: items,
       notifications: notifications,
       chosen: null,
       navBarClick: false,
       showRequestPopup: false,
       showFewLeftPopup: false,
       showActionConfirmationPopup: false,
-      timeoutActionConfirmationPopup: null
+      timeoutActionConfirmationPopup: null,
+      showNotificationsPopup: false
     };
   }
 
@@ -44,6 +48,12 @@ class App extends Component {
     });
   };
 
+  toggleNotificationsPopup = () => {
+    this.setState({
+      showNotificationsPopup: !this.state.showNotificationsPopup
+    });
+  };
+
   // loadNotifications = elements => {
   //   let data = [];
   //   for (let i = 0; i < elements.length; i++)
@@ -59,18 +69,37 @@ class App extends Component {
   //   return data;
   // };
 
-  loadNotifications = elements => {
-    let data = [];
+  // loadNotifications = elements => {
+  //   let data = [];
+  //   for (let i = 0; i < elements.length; i++)
+  //     if (elements[i].type === "category") {
+  //       let subelements = this.loadNotifications(elements[i].elements);
+  //       for (let j = 0; j < subelements.length; j++) data.push(subelements[j]);
+  //     } else {
+  //       if (elements[i].notifications.length)
+  //         for (let j = 0; j < elements[i].notifications.length; j++)
+  //           data.push(elements[i].notifications[j]);
+  //     }
+  //   return data;
+  // };
+  loadNotifications = items => {
+    let notifications = [];
+    for (let i = 0; i < items.length; i++)
+      for (let j = 0; j < items[i].notifications.length; j++)
+        notifications.push(items[i].notifications[j]);
+    return notifications;
+  };
+
+  loadItems = elements => {
+    let items = [];
     for (let i = 0; i < elements.length; i++)
       if (elements[i].type === "category") {
-        let subelements = this.loadNotifications(elements[i].elements);
-        for (let j = 0; j < subelements.length; j++) data.push(subelements[j]);
+        let subelements = this.loadItems(elements[i].elements);
+        for (let j = 0; j < subelements.length; j++) items.push(subelements[j]);
       } else {
-        if (elements[i].notifications.length)
-          for (let j = 0; j < elements[i].notifications.length; j++)
-            data.push(elements[i].notifications[j]);
+        items.push(elements[i]);
       }
-    return data;
+    return items;
   };
 
   loadElements = () => {
@@ -123,12 +152,15 @@ class App extends Component {
             <SideBar
               element={this.state.chosen}
               location={location}
+              items={this.state.items}
+              notifications={this.state.notifications}
               onClickDiscardSearch={this.onClickDiscardSearch}
               onClickSearch={this.onNavBarClick}
               onClickRequest={this.toggleRequestPopup}
               onActionConfirmation={this.toggleActionConfirmationPopup}
               onToggleMobileDrawer={this.onToggleMobileDrawer}
               onClickFew={this.toggleFewLeftPopup}
+              onClickNotifications={this.toggleNotificationsPopup}
             />
           </div>
           {this.state.showRequestPopup ? (
@@ -152,6 +184,14 @@ class App extends Component {
             <FewLeftPopup
               togglePopup={this.toggleFewLeftPopup}
               onConfirm={this.onFewLeftSubmit}
+            />
+          ) : null}
+
+          {this.state.showNotificationsPopup ? (
+            <AllNotificationsPopup
+              togglePopup={this.toggleNotificationsPopup}
+              notifications={this.state.notifications}
+              items={this.state.items}
             />
           ) : null}
         </div>

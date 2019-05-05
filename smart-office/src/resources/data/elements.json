@@ -56,7 +56,16 @@
             "type": "item",
             "name": "Paper Cups Large",
             "parentID": 8,
-            "image": "images/item_3.png"
+            "image": "images/item_3.png",
+            "notifications": [
+              {
+                "ID": "BBB456",
+                "type": "from_management",
+                "createdAt": "28-04-2019 14:00:00",
+                "content": "We have notified the supplier and a new batch is on its way. Thank you for your patience!",
+                "itemID": 72
+              }
+            ]
           }
         ]
       },
