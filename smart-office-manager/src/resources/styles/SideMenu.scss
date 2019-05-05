@@ -1,0 +1,78 @@
+@import "config";
+.SideMenu{
+  margin: 0;
+  padding: 10px;
+  width: calc(240px - 2 * 10px);
+  height: calc(100% - 2 * 10px);
+  background: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+
+  & > .SideMenuItem{
+    flex-shrink: 0;
+    width: calc(100% - 2 * 1px);
+    height: 50px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.2s background, box-shadow 0.2s;
+
+    & > .icon{
+      width: 35px;
+      display: flex;
+      justify-content: flex-end;
+      & > i{
+        color: #333333;
+        font-size: 14pt;
+        transition: 0.2s color;
+      }
+    }
+    & > p{
+      color: #333333;
+      margin: 0 35px 0 0;
+      font-size: 10pt;
+      font-weight: 600;
+      flex: 1;
+      text-align: center;
+      transition: 0.2s color;
+    }
+
+
+    &:hover, &:active{
+      background: #f5f5f5;
+      box-shadow: 0 0 8px rgba(0,0,0,0.02);
+      transition: 0.2s background, box-shadow 0.2s;
+      & > .icon > i, & > p{color: #000; transition: 0.2s color;}
+
+    }
+
+    &[data-active="true"]{
+      border: 1px solid $colorPrimary;
+      background: $colorPrimary;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      transition: 0.2s background, box-shadow 0.2s;
+      & > .icon > i, & > p{color: #ffffff}
+      &:hover, &:active{
+        background: $colorPrimary;
+        box-shadow: 0 0 8px rgba(0,0,0,0.05);
+        & > .icon > i, & > p{color: #ffffff}
+      }
+    }
+
+    &[data-logout="true"]{
+      margin-top: auto;
+      background: #f5f5f5;
+      & > .icon{
+        display: none;
+      }
+      & > p{
+        margin: 0;
+      }
+    }
+  }
+}
