@@ -17,7 +17,7 @@ class ActionItemPopupConfirmation extends Component {
           <p>
             Management has been notified about this. The issue will be fixed as soon as possible. Thank you!
           </p>
-          <div className="button return" onClick={() => this.props.togglePopup(true)}>
+          <div className="button return" onClick={() => {this.props.togglePopup(true); this.props.onReturnToDashboard(); }}>
             Return to dashboard
           </div>
 

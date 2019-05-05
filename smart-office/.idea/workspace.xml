@@ -2,29 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RequestForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RequestItemPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RequestItemPopup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBarCategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBarCategory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBarInitial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBarInitial.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBarItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBarItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBarNotification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBarNotification.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBarNotifications.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBarNotifications.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/sideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/sideBarHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBarHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Element.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Element.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/RequestPopup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/RequestPopup.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/item.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Item.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Nav.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/sideBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/SideBar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ActionItemPopupConfirmation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ActionItemPopupConfirmation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/FewLeftPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/FewLeftPopup.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/styles/FewLeftPopup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/FewLeftPopup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/styles/Nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/styles/SideBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/SideBar.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +20,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/styles/Main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="101">
               <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
             </state>
           </provider>
@@ -47,7 +30,40 @@
         <entry file="file://$PROJECT_DIR$/src/Components/ActionItemPopupConfirmation.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+              <caret line="19" column="120" selection-start-line="19" selection-start-column="120" selection-end-line="19" selection-end-column="120" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/FewLeftPopup.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -56,25 +72,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/Nav.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+            <state relative-caret-position="161">
+              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#309#461#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/SideBar.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="32" column="70" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="70" />
+            <state relative-caret-position="710">
+              <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="166" selection-end-column="11" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#236#1171#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/FewLeftPopup.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="173" column="34" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -83,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/src/Components/SideBarItem.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -92,14 +117,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Element.jsx">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="30">
               <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -125,6 +145,9 @@
       <find>togglePopup</find>
       <find>chosen</find>
       <find>goBack</find>
+      <find>console</find>
+      <find>searc</find>
+      <find>button</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,12 +195,14 @@
         <option value="$PROJECT_DIR$/src/Components/SideBarItem.jsx" />
         <option value="$PROJECT_DIR$/src/model/Element.jsx" />
         <option value="$PROJECT_DIR$/src/Components/SideBar.jsx" />
-        <option value="$PROJECT_DIR$/src/resources/styles/SideBar.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/config.scss" />
-        <option value="$PROJECT_DIR$/src/resources/styles/Nav.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/Main.scss" />
-        <option value="$PROJECT_DIR$/src/Components/ActionItemPopupConfirmation.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/FewLeftPopup.scss" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Components/ActionItemPopupConfirmation.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/FewLeftPopup.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/SideBar.scss" />
+        <option value="$PROJECT_DIR$/src/resources/styles/Nav.scss" />
       </list>
     </option>
   </component>
@@ -305,17 +330,18 @@
       <workItem from="1556080450491" duration="2689000" />
       <workItem from="1556705048680" duration="1302000" />
       <workItem from="1556714251918" duration="19161000" />
+      <workItem from="1557048561532" duration="3241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37127000" />
+    <option name="totallyTimeSpent" value="40368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20314735" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -403,9 +429,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/config.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/config.css" />
     <entry file="file://$PROJECT_DIR$/src/Components/NotificationMessage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -508,12 +532,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/images/loader_default.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/images/loader.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/images/loader_default.svg" />
+    <entry file="file://$PROJECT_DIR$/src/resources/images/loader.svg" />
     <entry file="file://$PROJECT_DIR$/src/resources/styles/Item.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -538,29 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Element.jsx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/SideBar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
-          <caret line="356" column="26" selection-start-line="356" selection-start-column="26" selection-end-line="356" selection-end-column="26" />
-          <folding>
-            <element signature="e#236#1171#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
@@ -571,48 +568,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
+    <entry file="file://$PROJECT_DIR$/src/model/Element.jsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="32" column="70" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="70" />
+        <state relative-caret-position="30">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/Nav.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-          <folding>
-            <element signature="e#309#461#0" />
-            <element signature="e#1239#3519#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/Main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
+        <state relative-caret-position="101">
           <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/FewLeftPopup.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="173" column="34" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/SideBarItem.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/ActionItemPopupConfirmation.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="79" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+        <state relative-caret-position="405">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -621,10 +617,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        <state relative-caret-position="431">
+          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ActionItemPopupConfirmation.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="120" selection-start-line="19" selection-start-column="120" selection-end-line="19" selection-end-column="120" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/FewLeftPopup.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/SideBar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="166" selection-end-column="11" />
+          <folding>
+            <element signature="e#236#1171#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Nav.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding>
+            <element signature="e#309#461#0" />
           </folding>
         </state>
       </provider>

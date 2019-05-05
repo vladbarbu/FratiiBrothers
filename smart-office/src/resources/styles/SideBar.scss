@@ -95,7 +95,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
 
 
     & > *{
@@ -157,6 +158,12 @@
 
           &:hover, &:active{
             background: #eee;
+            outline: 0;
+            -webkit-appearance: none;
+          }
+          &:focus {
+            outline-color: transparent;
+            outline-style: none;
           }
         }
       }
