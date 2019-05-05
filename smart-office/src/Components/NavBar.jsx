@@ -78,7 +78,7 @@ class NavBar extends Component {
               value={this.state.inputValue}
               onChange={evt => this.updateInputValue(evt)} //Apelam pentru a salva inputul din search bar
             />
-
+            <i className="material-icons search-icon">search</i>
             {this.props.navBarClick ? ( // Verificam daca a fost apasat searchBarul
               <div
                 id="search-list"

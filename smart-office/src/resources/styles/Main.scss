@@ -69,7 +69,8 @@
 @media #{$top-tablet} {
   .MainContainer {
     width: calc(100% - 2 * 15px);
-    height: calc(100% - 2 * 15px);
+    height: auto;
+    flex: 1;
     padding: 15px;
 
     & > .Main {

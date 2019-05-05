@@ -37,6 +37,15 @@
 @media #{$top-tablet} {
   #App {
     & > .App-container{
+      & > .App-left{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: $zIndex-NavBar;
+        & > *{
+          flex-shrink: 0;
+        }
+      }
       & > .App-right{
         position: fixed;
         right: 0;

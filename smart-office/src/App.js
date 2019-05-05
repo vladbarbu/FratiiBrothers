@@ -126,7 +126,7 @@ class App extends Component {
           {this.state.showActionConfirmationPopup ? (
             <ActionItemPopupConfirmation
               togglePopup={this.toggleActionConfirmationPopup}
-              onReturnToDashboard={() => this.onItemClick(null)}
+              onReturnToDashboard={() => {this.onItemClick(null); this.props.onToggleMobileDrawer("close")}}
             />
           ) : null}
 
@@ -184,7 +184,7 @@ class App extends Component {
       for (let i = 0; i < V.length; i++) {
         V[i].chosen = false;
         if (String(V[i].ID) === String(ID)) {
-          V[i].chosen = true;
+          V[i].chosen = V[i].type === Config.ELEMENT_TYPE_ITEM;
           return {
             chosen: V[i],
             elements: V
@@ -201,10 +201,7 @@ class App extends Component {
   };
 
   onItemClick = ID => {
-    let elements = this.onItemClickMaiSmechera(
-      "Use this recursive function to make every chosen flag false",
-      this.state.elements
-    )["elements"];
+    let elements = this.onItemClickMaiSmechera("Use this recursive function to make every chosen flag false", this.state.elements)["elements"];
     let object = this.onItemClickMaiSmechera(ID, elements);
     let item = object.chosen;
     if (item && item.type === Config.ELEMENT_TYPE_ITEM) {
