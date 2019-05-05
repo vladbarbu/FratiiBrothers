@@ -66,9 +66,21 @@ class NavBar extends Component {
 
         <div className="body">
           {this.props.element !== null ? (
-            <button className="button goBack" onClick={() => {this.onClickGoBack(this.getParent(this.props.element.ID, this.props.elements));}}><i className="material-icons"> arrow_back</i></button>
+            <button
+              className="button goBack"
+              onClick={() => {
+                this.onClickGoBack(
+                  this.getParent(this.props.element.ID, this.props.elements)
+                );
+              }}
+            >
+              <i className="material-icons"> arrow_back</i>
+            </button>
           ) : null}
-          <button className="button notifications">
+          <button
+            className="button notifications"
+            onClick={() => this.props.onToggleNotificationPopup()}
+          >
             <i className="material-icons"> notifications</i>
           </button>
           <div className="searchBar">
@@ -92,13 +104,23 @@ class NavBar extends Component {
                     element.elements.map(element =>
                       this.searchInName(element.name) ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
                         ID < 6 ? ( //Limitam lista la 6 iteme
-
-                          <div key={++ID}  className="searchItem"  onClick={() => {this.onClickOption(element); this.props.discardSearch();}}>
-                            <img alt="Item" src={require("./../resources/" + element.image)}/>
+                          <div
+                            key={++ID}
+                            className="searchItem"
+                            onClick={() => {
+                              this.onClickOption(element);
+                              this.props.discardSearch();
+                            }}
+                          >
+                            <img
+                              alt="Item"
+                              src={require("./../resources/" + element.image)}
+                            />
                             <p>{" " + element.name}</p>
-                            <div className="btn"><i className="material-icons">play_arrow</i></div>
+                            <div className="btn">
+                              <i className="material-icons">play_arrow</i>
+                            </div>
                           </div>
-
                         ) : null
                       ) : null
                     )
@@ -107,7 +129,12 @@ class NavBar extends Component {
               </div>
             ) : null}
           </div>
-          <button onClick={()=>{this.props.onToggleMobileDrawer()}} className="button menu">
+          <button
+            onClick={() => {
+              this.props.onToggleMobileDrawer();
+            }}
+            className="button menu"
+          >
             <i className="material-icons">menu</i>
           </button>
         </div>

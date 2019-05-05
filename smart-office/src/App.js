@@ -141,6 +141,7 @@ class App extends Component {
               discardSearch={this.discardSearch}
               onClickOption={this.onClickOption}
               onToggleMobileDrawer={this.onToggleMobileDrawer}
+              onToggleNotificationPopup={this.toggleNotificationsPopup}
             />
             <Main
               onItemClick={this.onItemClick}

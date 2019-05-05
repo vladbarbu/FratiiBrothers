@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SideBarInitial from "./SideBarInitial";
+
 import "../resources/styles/AllNotificationsPopup.scss";
 
 class AllNotificationsPopup extends Component {
@@ -83,7 +83,6 @@ class AllNotificationsPopup extends Component {
   };
 
   render() {
-    let obj = new SideBarInitial();
     let i = 0;
     return (
       <div className="AllNotificationsPopup">
