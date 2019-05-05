@@ -15,6 +15,7 @@ class App extends Component {
 
     let elements = this.loadElements();
     let notifications = this.loadNotifications(elements);
+
     this.state = {
       drawer_visible: false,
       elements: elements,
@@ -43,18 +44,32 @@ class App extends Component {
     });
   };
 
+  // loadNotifications = elements => {
+  //   let data = [];
+  //   for (let i = 0; i < elements.length; i++)
+  //     for (let j = 0; j < elements[i].elements.length; j++)
+  //       for (let k = 0; k < elements[i].elements[j].elements.length; k++) {
+  //         let notifications =
+  //           elements[i].elements[j].elements[k]["notifications"];
+  //         for (let n = 0; n < notifications.length; n++) {
+  //           //data.push(new Notification(notifications[n]));
+  //           data.push(notifications[n]);
+  //         }
+  //       }
+  //   return data;
+  // };
+
   loadNotifications = elements => {
     let data = [];
     for (let i = 0; i < elements.length; i++)
-      for (let j = 0; j < elements[i].elements.length; j++)
-        for (let k = 0; k < elements[i].elements[j].elements.length; k++) {
-          let notifications =
-            elements[i].elements[j].elements[k]["notifications"];
-          for (let n = 0; n < notifications.length; n++) {
-            //data.push(new Notification(notifications[n]));
-            data.push(notifications[n]);
-          }
-        }
+      if (elements[i].type === "category") {
+        let subelements = this.loadNotifications(elements[i].elements);
+        for (let j = 0; j < subelements.length; j++) data.push(subelements[j]);
+      } else {
+        if (elements[i].notifications.length)
+          for (let j = 0; j < elements[i].notifications.length; j++)
+            data.push(elements[i].notifications[j]);
+      }
     return data;
   };
 
@@ -126,7 +141,10 @@ class App extends Component {
           {this.state.showActionConfirmationPopup ? (
             <ActionItemPopupConfirmation
               togglePopup={this.toggleActionConfirmationPopup}
-              onReturnToDashboard={() => {this.onItemClick(null); this.toggleActionConfirmationPopup("close")}}
+              onReturnToDashboard={() => {
+                this.onItemClick(null);
+                this.toggleActionConfirmationPopup("close");
+              }}
             />
           ) : null}
 
@@ -201,7 +219,10 @@ class App extends Component {
   };
 
   onItemClick = ID => {
-    let elements = this.onItemClickMaiSmechera("Use this recursive function to make every chosen flag false", this.state.elements)["elements"];
+    let elements = this.onItemClickMaiSmechera(
+      "Use this recursive function to make every chosen flag false",
+      this.state.elements
+    )["elements"];
     let object = this.onItemClickMaiSmechera(ID, elements);
     let item = object.chosen;
     if (item && item.type === Config.ELEMENT_TYPE_ITEM) {
