@@ -1,6 +1,30 @@
 @import "config";
 
-.SideBar{
+.SideBar {
   margin: 0;
   padding: 0;
+
+  & > .body {
+    & > .description {
+      & > .description-element {
+        display: flex;
+        & > .icon {
+          width: 35px;
+          display: flex;
+          justify-content: flex-end;
+          & > i {
+            color: #333333;
+            font-size: 14pt;
+            transition: 0.2s color;
+          }
+        }
+      }
+    }
+  }
+
+  & > .buttons {
+    & > .button {
+      @include big-button;
+    }
+  }
 }
