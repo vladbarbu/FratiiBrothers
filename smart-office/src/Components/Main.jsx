@@ -4,42 +4,58 @@ import "../resources/styles/Main.scss";
 
 class Main extends Component {
   render() {
-    let chestie = [];
+    let breadcrumbs = [];
     let localChosen = this.props.chosen;
 
-    let chestie2 = [];
+    let localElementsContainer = [];
 
     if (localChosen !== null) {
-      if (localChosen.type !== "item") chestie2 = localChosen.elements;
+      if (localChosen.type !== "item")
+        localElementsContainer = localChosen.elements;
       else
-        chestie2 = this.getParent(localChosen.ID, this.props.elements).elements;
+        localElementsContainer = this.getParent(
+          localChosen.ID,
+          this.props.elements
+        ).elements;
 
       while (localChosen.parentID !== null) {
-        chestie.push(localChosen);
+        breadcrumbs.push(localChosen);
         localChosen = this.getParent(localChosen.ID, this.props.elements);
         if (localChosen === null) break;
       }
-      chestie.push(localChosen);
+      breadcrumbs.push(localChosen);
     } else if (localChosen == null) {
-      chestie2 = this.props.elements;
+      localElementsContainer = this.props.elements;
     }
 
     return (
       <div className="MainContainer">
         <div className="breadcrumbs">
-          <p onClick={() => { this.props.onItemClick(null); }}> All items </p>
-            {chestie.reverse().map((element, key) => {
-              return (
-                <div key={key} onClick={() => { this.props.onItemClick(element.ID); }}>
-                  <i className="material-icons">arrow_right</i>
-                  <p>{element.name}</p>
-                </div>
-              );
-            })}
+          <p
+            onClick={() => {
+              this.props.onItemClick(null);
+            }}
+          >
+            {" "}
+            All items{" "}
+          </p>
+          {breadcrumbs.reverse().map((element, key) => {
+            return (
+              <div
+                key={key}
+                onClick={() => {
+                  this.props.onItemClick(element.ID);
+                }}
+              >
+                <i className="material-icons">arrow_right</i>
+                <p>{element.name}</p>
+              </div>
+            );
+          })}
         </div>
 
         <div className="Main">
-          {chestie2.map(element => {
+          {localElementsContainer.map(element => {
             return (
               <Item
                 click={this.props.onItemClick}
@@ -65,7 +81,7 @@ class Main extends Component {
         if (V[j].type !== "item") {
           found = this.getParent(ID, V[j].elements);
           if (found !== null) break;
-        } 
+        }
       }
     }
     return found;
