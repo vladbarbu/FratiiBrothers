@@ -34,7 +34,7 @@ $zIndex-NavBar : 2;
 @mixin big-button{
   width: calc(100% - 2 * 15px);
   padding: 10px 15px;
-  height: calc(80px - 2 *10px);
+  height: calc(80px - 2 * 10px);
   border-radius: 4px;
   border: none;
   background: #eee;

@@ -9,7 +9,7 @@ class Main extends Component {
 
     let localElementsContainer = [];
 
-    if (localChosen !== null) {
+    if (localChosen !== null && localChosen !== undefined) {
       if (localChosen.type !== "item")
         localElementsContainer = localChosen.elements;
       else
@@ -55,15 +55,17 @@ class Main extends Component {
         </div>
 
         <div className="Main">
-          {localElementsContainer.map(element => {
-            return (
-              <Item
-                click={this.props.onItemClick}
-                key={element.ID}
-                item={element}
-              />
-            );
-          })}
+          {localElementsContainer !== undefined
+            ? localElementsContainer.map(element => {
+                return (
+                  <Item
+                    click={this.props.onItemClick}
+                    key={element.ID}
+                    item={element}
+                  />
+                );
+              })
+            : null}
         </div>
       </div>
     );
