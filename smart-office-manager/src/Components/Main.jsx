@@ -1,23 +1,42 @@
-/**
- * Created by @VanSoftware on 2019-05-05.
- */
 import React, { Component } from "react";
 import "../resources/styles/Main.scss";
+import SideBar from "./SideBar.jsx";
 
 class Main extends Component{
 
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+
+    switch(this.props.sideBarChosen) {
+      case 'Notifications':
+        return (<div>
+
+        </div>);
+      case 'Stations':
+        return (<div>
+          <SideBar />
+        </div>);
+      case 'Item Stock':
+        return (<div>
+        
+        </div>);
+      case 'Product Requests':
+        return (<div>
+        
+        </div>);
+      case 'Supply Statistics':
+        return (<div>
+        
+        </div>);
+      default:
+        return (<div>
+
+        </div>);
     }
-
-    render() {
-        return (
-            <main className="Main">
-
-            </main>
-        );
-    }
-
+  }
 }
 
 export default Main;

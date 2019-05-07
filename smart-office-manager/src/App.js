@@ -14,18 +14,6 @@ class App extends Component {
     };
   }
   render() {
-    var content = this.chosenContent;
-    if (this.state.sideBarChosen === "Notifications") content = <div />;
-    if (this.state.sideBarChosen === "Stations")
-      content = (
-        <div>
-          <Main />
-          <SideBar />
-        </div>
-      );
-    if (this.state.sideBarChosen === "Item Stock") content = <div />;
-    if (this.state.sideBarChosen === "Product Requests") content = <div />;
-    if (this.state.sideBarChosen === "Supply Statistics") content = <div />;
 
     return (
       <div className="App">
@@ -35,7 +23,9 @@ class App extends Component {
             onClickSideBar={this.onClickSideBar}
             chosen={this.state.sideBarChosen}
           />
-          {content}
+          <Main
+            sideBarChosen={this.state.sideBarChosen}
+          />
         </div>
       </div>
     );
