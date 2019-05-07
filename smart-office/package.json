@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
-    "react-scrollable-anchor": "^0.6.1"
+    "react-scrollable-anchor": "^0.6.1",
+    "react-test-renderer": "^16.8.6"
   },
   "scripts": {
     "start": "react-scripts start",
