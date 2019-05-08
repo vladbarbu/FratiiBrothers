@@ -30,6 +30,7 @@ class App extends Component {
             sideBarChosen={this.state.sideBarChosen}
             onClickStation={this.onClickStation}
             stationInfo={this.state.stationInfo}
+            goBackToStations={this.goBackToStations}
           />
         </div>
       </div>
@@ -42,6 +43,11 @@ class App extends Component {
 
   onClickStation = element => {
     this.setState({ sideBarChosen: "Station", stationInfo: element });
+  };
+
+  goBackToStations = () => {
+    console.log("Pac");
+    this.setState({ sideBarChosen: "Stations", stationInfo: null });
   };
 }
 

@@ -23,8 +23,10 @@ class Main extends Component {
       case "Station":
         return (
           <div className="Station">
-            {console.log(this.props.stationInfo)}
-            <StationInfo stationInfo={this.props.stationInfo} />
+            <StationInfo
+              stationInfo={this.props.stationInfo}
+              goBackToStations={this.goBackToStations}
+            />
             <SideBar />
           </div>
         );
@@ -45,6 +47,10 @@ class Main extends Component {
   }
   onClickStation = element => {
     this.props.onClickStation(element);
+  };
+
+  goBackToStations = () => {
+    this.props.goBackToStations();
   };
 }
 
