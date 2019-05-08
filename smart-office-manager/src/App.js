@@ -11,16 +11,12 @@ class App extends Component {
     super(props);
     let location = require("./resources/data/data.json").location;
     let stations = this.loadStations();
-    let elements = null;
-    let items = null;
 
     this.state = {
       sideBarChosen: "Stations",
       stationInfo: null,
       location: location,
-      stations: stations,
-      elements: elements
-      //items: items
+      stations: stations
     };
   }
 
@@ -64,8 +60,6 @@ class App extends Component {
             goBackToStations={this.goBackToStations}
             location={this.state.location}
             stations={this.state.stations}
-            elements={this.state.elements}
-            items={this.state.items}
           />
         </div>
       </div>

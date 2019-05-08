@@ -50,8 +50,8 @@ class StationInfo extends Component {
                   <small onClick={() => this.changeActiveChild(element)}>
                     {element.type === "category" && element.parentID === null
                       ? "Category:"
-                      : "Subcategory:"}
-                    {element.type === "item" ? "Item:" : null}
+                      : null}
+
                     {element.name}
                   </small>
                   {element.childActive === true
@@ -65,7 +65,7 @@ class StationInfo extends Component {
                 <div>
                   <small onClick={() => this.changeActiveChild(element)}>
                     {element.type === "item" ? "Item:" : null}
-                    {element.type === "category" ? "Category:" : null}
+                    {element.type === "category" ? "Subcategory:" : null}
                     {element.name}
                   </small>
                   {element.childActive === true
