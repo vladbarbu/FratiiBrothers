@@ -16,7 +16,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar onClickNotifications={this.onClickSideBar} />
+        <NavBar
+          onClickNotifications={this.onClickSideBar}
+          chosen={this.state.sideBarChosen}
+        />
         <div className="App-container">
           <SideMenu
             onClickSideBar={this.onClickSideBar}

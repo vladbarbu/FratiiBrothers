@@ -1,6 +1,5 @@
 @import "config";
 
-
 .NavBar {
   box-sizing: content-box;
   height: calc(#{$navHeight} - 2 * 10px);
@@ -13,9 +12,13 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.06);
   z-index: 10;
 
-  & > .logo{
+  & > .body > .button.returnToStation {
+    width: auto;
+  }
+
+  & > .logo {
     margin-right: 100px;
-    img{
+    img {
       height: 100%;
       max-width: 150px;
       object-fit: contain;
@@ -23,7 +26,7 @@
     }
   }
 
-  & > .body{
+  & > .body {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,9 +38,7 @@
       color: $colorPrimary;
     }
 
-
-
-    & > .button{
+    & > .button {
       background: #fff;
       outline: none;
       height: 50px;
@@ -53,7 +54,8 @@
       transition: background 0.2s;
       position: relative;
 
-      &:hover, &:active{
+      &:hover,
+      &:active {
         background: #f9f9f9;
         transition: background 0.2s;
       }
@@ -62,15 +64,14 @@
         outline-style: none;
       }
 
-      &.notifications{
-        &[data-warning="true"]{
-
-          &:after{
+      &.notifications {
+        &[data-warning="true"] {
+          &:after {
             position: absolute;
             right: -5px;
             top: -5px;
             z-index: 1;
-            content: ' ';
+            content: " ";
             background: $red;
             height: 14px;
             width: 14px;
@@ -78,16 +79,20 @@
           }
         }
       }
-      &.goBack{ margin-right: 10px; & > i{color: $red} }
+      &.goBack {
+        margin-right: 10px;
+        & > i {
+          color: $red;
+        }
+      }
 
-      &.menu{
+      &.menu {
         margin-left: 20px;
         display: none;
       }
     }
 
-
-    & > .searchBar{
+    & > .searchBar {
       height: calc(100% - 2 * 1px);
       width: 100%;
       max-width: 340px;
@@ -101,8 +106,7 @@
       justify-content: flex-start;
       position: relative;
 
-
-      & > input{
+      & > input {
         border: none;
         outline: none;
         font-size: 11pt;
@@ -113,21 +117,22 @@
         background: transparent;
         transition: color 0.2s;
 
-        &::placeholder{
+        &::placeholder {
           color: #aaa;
           font-weight: 400;
         }
 
-        &:hover, &:active, &:focus{
+        &:hover,
+        &:active,
+        &:focus {
           color: #15d1a2;
           transition: color 0.2s;
         }
       }
-      & > .search-icon{
-
+      & > .search-icon {
       }
 
-      & > #search-list{
+      & > #search-list {
         top: $navHeight - 20px;
         left: 0;
         position: absolute;
@@ -138,11 +143,10 @@
         overflow-x: hidden;
         width: 100%;
         padding: 0;
-        box-shadow: 0 0 30px rgba(0,0,0,0.15);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
         z-index: $zIndex-search-list;
 
-
-        & > .searchItem{
+        & > .searchItem {
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -152,14 +156,15 @@
           border-bottom: solid #eee 1px;
           width: calc(100% - 2 * 10px);
           cursor: pointer;
-          &:hover, &:active{
+          &:hover,
+          &:active {
             background: #eeeeee;
-            & > .btn{
+            & > .btn {
               background: $colorSecondary;
             }
           }
 
-          & > img{
+          & > img {
             border: 1px solid #eeeeee;
             height: 40px;
             width: 40px;
@@ -167,14 +172,13 @@
             object-fit: cover;
             margin-right: 15px;
           }
-          & > p{
+          & > p {
             font-size: 12pt;
             color: #2c2c2c;
             font-weight: 500;
             margin: 0;
-
           }
-          & > .btn{
+          & > .btn {
             margin-left: auto;
             height: 30px;
             width: 30px;
@@ -183,27 +187,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            & > i{
+            & > i {
               font-size: 14pt;
               color: #ffffff;
             }
           }
         }
-
       }
     }
-
   }
-
 }
 
-
-
-@media #{$top-tablet}{
-  .NavBar{
-    & > .body{
-      & > .button{
-        &.menu{
+@media #{$top-tablet} {
+  .NavBar {
+    & > .body {
+      & > .button {
+        &.menu {
           display: flex;
         }
       }
@@ -211,79 +210,78 @@
   }
 }
 
-
-
-@media #{$top-tablet}{
-  .NavBar{
+@media #{$top-tablet} {
+  .NavBar {
     height: calc(#{$navHeight} - 2 * 10px);
     width: calc(100% - 2 * 5px);
     padding: 10px 5px;
-    & > .logo{
+    & > .logo {
       display: none !important;
     }
-    & > .body{
-      & > .button{
-        &.goBack{ margin-right: 5px; }
-        &.menu{
+    & > .body {
+      & > .button {
+        &.goBack {
+          margin-right: 5px;
+        }
+        &.menu {
           margin-left: 5px;
         }
       }
-      & > .searchBar{
+      & > .searchBar {
         margin-left: 5px;
       }
     }
   }
 }
 
-
-
-@media #{$top-mobile-big}{
-  .NavBar{
+@media #{$top-mobile-big} {
+  .NavBar {
     height: calc(#{$navHeight} - 2 * 10px);
     width: calc(100% - 2 * 5px);
     padding: 10px 5px;
-    & > .logo{
+    & > .logo {
       display: none !important;
     }
-    & > .body{
-      & > .button{
-        &.goBack{ margin-right: 5px; }
-        &.notifications{
+    & > .body {
+      & > .button {
+        &.goBack {
+          margin-right: 5px;
+        }
+        &.notifications {
           display: none;
         }
-        &.menu{
+        &.menu {
           margin-left: 5px;
         }
       }
-      & > .searchBar{
+      & > .searchBar {
         margin-left: 5px;
-        & > .search-icon{
+        & > .search-icon {
           display: none;
         }
-        & > #search-list{
+        & > #search-list {
           max-height: 400px;
           width: calc(100% - 2 * 10px);
-          margin:  0 10px;
+          margin: 0 10px;
           position: fixed;
           top: $navHeight - 7px;
-          box-shadow: 0 0 30px rgba(0,0,0,0.25);
-          & > .searchItem{
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+          & > .searchItem {
             padding: 7px;
             width: calc(100% - 2 * 7px);
 
-            & > img{
+            & > img {
               height: 30px;
               width: 30px;
               margin-right: 10px;
             }
-            & > p{
+            & > p {
               font-size: 10pt;
-
             }
-            & > .btn{
+            & > .btn {
               height: 30px;
               width: 30px;
-              & > i{
+              & > i {
                 font-size: 12pt;
                 color: #ffffff;
               }
@@ -294,4 +292,3 @@
     }
   }
 }
-
