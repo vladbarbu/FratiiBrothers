@@ -13,7 +13,7 @@ class App extends Component {
     let stations = this.loadStations();
     let elements = null;
     let items = null;
-    console.log(items);
+
     this.state = {
       sideBarChosen: "Stations",
       stationInfo: null,

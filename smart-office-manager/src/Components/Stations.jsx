@@ -13,21 +13,29 @@ class Stations extends Component {
           if (flag !== element.floor) {
             flag = element.floor;
             return (
-              <div className="stations">
+              <div>
                 <span className="floorID">Floor {element.floor}</span>
                 <span className="numberOfStations">
                   &#8226;
                   {element.size} stations
                 </span>
-                <div className="stationList">
-                  <StationList
-                    station={element}
-                    onClickStation={this.onClickStation}
-                  />
-                </div>
+                {this.allStations(flag)}
               </div>
             );
-          } else {
+          }
+        })}
+      </div>
+    );
+  }
+  onClickStation = element => {
+    this.props.onClickStation(element);
+  };
+
+  allStations(flag) {
+    return (
+      <div className="stations">
+        {this.props.stations.map(element => {
+          if (element.floor === flag) {
             return (
               <StationList
                 station={element}
@@ -39,9 +47,6 @@ class Stations extends Component {
       </div>
     );
   }
-  onClickStation = element => {
-    this.props.onClickStation(element);
-  };
 }
 
 export default Stations;
