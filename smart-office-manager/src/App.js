@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./resources/styles/App.scss";
-import Element from "./Model/Element";
 import Station from "./Model/Station";
 import NavBar from "./Components/NavBar";
 import SideMenu from "./Components/SideMenu";
@@ -11,7 +10,6 @@ class App extends Component {
     super(props);
     let location = require("./resources/data/data.json").location;
     let stations = this.loadStations();
-
     this.state = {
       sideBarChosen: "Stations",
       stationInfo: null,
@@ -68,14 +66,38 @@ class App extends Component {
 
   onClickSideBar = chosen => {
     this.setState({ sideBarChosen: chosen });
+    if (chosen === "Station" || chosen === "Item Stock")
+      this.resetActiveChilds();
   };
 
   onClickStation = element => {
-    this.setState({ sideBarChosen: "Station", stationInfo: element });
+    this.setState({
+      sideBarChosen: "Station",
+      stationInfo: element
+    });
+    this.resetActiveChilds();
   };
 
   goBackToStations = () => {
-    this.setState({ sideBarChosen: "Stations", stationInfo: null });
+    this.setState({
+      sideBarChosen: "Stations",
+      stationInfo: null
+    });
+    this.resetActiveChilds();
+  };
+
+  //Reset the item list (Use this to get the initial list)
+  resetActiveChilds = () => {
+    var clone = this.state.stations;
+    clone.map(element => {
+      element.elements.map(element => {
+        element.childActive = false;
+        element.elements.map(element => {
+          element.childActive = false;
+        });
+      });
+    });
+    this.setState({ stations: clone });
   };
 }
 
