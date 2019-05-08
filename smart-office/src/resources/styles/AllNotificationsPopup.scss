@@ -59,10 +59,10 @@
         }
         & > .notifications {
           width: calc(100% - 2 * 10px);
+          max-height: 600px;
           padding: 10px 10px 0;
           flex: 1;
           background: #fff;
-
           border-radius: 2px;
           border: 1px solid #eee;
           & > .header {
