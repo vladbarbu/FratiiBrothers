@@ -1,14 +1,15 @@
 {
-  "location" : {
-    "ID" : 1,
-    "name" : "Centric Iasi"
+  "location": {
+    "ID": 1,
+    "name": "Centric Iasi"
   },
-  "stations" : [
+  "stations": [
     {
-      "stationID" : "1ABCDEF",
-      "stationName" : "A1",
-      "floor" : "1",
-      "elements" : [
+      "stationID": "1ABCDEF",
+      "stationName": "A1",
+      "floor": "1",
+      "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
+      "elements": [
         {
           "ID": 1,
           "type": "category",
@@ -292,10 +293,11 @@
       ]
     },
     {
-      "stationID" : "2ABCDEF",
-      "stationName" : "A2",
-      "floor" : "1",
-      "elements" : [
+      "stationID": "2ABCDEF",
+      "stationName": "A2",
+      "floor": "1",
+      "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
+      "elements": [
         {
           "ID": 1,
           "type": "category",
@@ -579,10 +581,11 @@
       ]
     },
     {
-      "stationID" : "3ABCDEF",
-      "stationName" : "A3",
-      "floor" : "1",
-      "elements" : [
+      "stationID": "3ABCDEF",
+      "stationName": "A3",
+      "floor": "1",
+      "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
+      "elements": [
         {
           "ID": 1,
           "type": "category",
@@ -866,10 +869,11 @@
       ]
     },
     {
-      "stationID" : "1IJKLM",
-      "stationName" : "B1",
-      "floor" : "2",
-      "elements" : [
+      "stationID": "1IJKLM",
+      "stationName": "B1",
+      "floor": "2",
+      "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
+      "elements": [
         {
           "ID": 1,
           "type": "category",
@@ -1153,10 +1157,12 @@
       ]
     },
     {
-      "stationID" : "2IJKLM",
-      "stationName" : "B2",
-      "floor" : "2",
-      "elements" : [
+      "stationID": "2IJKLM",
+      "stationName": "B2",
+      "floor": "2",
+      "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
+
+      "elements": [
         {
           "ID": 1,
           "type": "category",
@@ -1440,10 +1446,11 @@
       ]
     },
     {
-      "stationID" : "1OPQRS",
-      "stationName" : "C1",
-      "floor" : "3",
-      "elements" : [
+      "stationID": "1OPQRS",
+      "stationName": "C1",
+      "floor": "3",
+      "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
+      "elements": [
         {
           "ID": 1,
           "type": "category",
@@ -1728,5 +1735,3 @@
     }
   ]
 }
-
-
