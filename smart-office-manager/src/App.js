@@ -13,10 +13,13 @@ class App extends Component {
     let stations = this.loadStations();
     let elements = this.loadElements(stations);
     let items = this.loadItems(elements);
-    console.log(items);
     this.state = {
       sideBarChosen: "Stations",
-      stationInfo: null
+      stationInfo: null,
+      location: location,
+      stations: stations,
+      elements: elements,
+      items: items
     };
   }
 
@@ -83,6 +86,10 @@ class App extends Component {
             onClickStation={this.onClickStation}
             stationInfo={this.state.stationInfo}
             goBackToStations={this.goBackToStations}
+            location={this.state.location}
+            stations={this.state.stations}
+            elements={this.state.elements}
+            items={this.state.items}
           />
         </div>
       </div>

@@ -17,7 +17,10 @@ class Main extends Component {
       case "Stations":
         return (
           <div>
-            <Stations onClickStation={this.onClickStation} />
+            <Stations
+              stations={this.props.stations}
+              onClickStation={this.onClickStation}
+            />
           </div>
         );
       case "Station":
