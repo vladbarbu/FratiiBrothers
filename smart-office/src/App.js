@@ -306,7 +306,6 @@ class App extends Component {
   };
 
   onFewLeftSubmit = amount => {
-    console.log(amount);
     if (amount === "") alert("No amount inserted!");
     else {
       this.toggleFewLeftPopup();
