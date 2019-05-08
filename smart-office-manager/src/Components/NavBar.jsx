@@ -17,7 +17,7 @@ class NavBar extends Component {
           <img alt="Logo" src={Logo} />
         </div>
         <div className="body">
-          {this.props.chosen === "Stations" ? (
+          {this.props.chosen === "Station" ? (
             <div
               className="button returnToStation"
               onClick={() => this.props.onClickNotifications("Stations")}

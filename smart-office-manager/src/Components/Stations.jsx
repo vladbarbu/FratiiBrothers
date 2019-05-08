@@ -60,7 +60,12 @@ class Stations extends Component {
               </span>
               <div className="stationList">
                 {element.stations.map(element => {
-                  return <StationList element={element} />;
+                  return (
+                    <StationList
+                      element={element}
+                      onClickStation={this.onClickStation}
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -69,6 +74,9 @@ class Stations extends Component {
       </div>
     );
   }
+  onClickStation = element => {
+    this.props.onClickStation(element);
+  };
 }
 
 export default Stations;

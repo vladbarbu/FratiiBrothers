@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sideBarChosen: "Stations"
+      sideBarChosen: "Stations",
+      stationInfo: [{ parentID: 0, stationID: 0 }]
     };
   }
   render() {
@@ -25,7 +26,10 @@ class App extends Component {
             onClickSideBar={this.onClickSideBar}
             chosen={this.state.sideBarChosen}
           />
-          <Main sideBarChosen={this.state.sideBarChosen} />
+          <Main
+            sideBarChosen={this.state.sideBarChosen}
+            onClickStation={this.onClickStation}
+          />
         </div>
       </div>
     );
@@ -33,6 +37,11 @@ class App extends Component {
 
   onClickSideBar = chosen => {
     this.setState({ sideBarChosen: chosen });
+  };
+
+  onClickStation = element => {
+    this.setState({ sideBarChosen: "Station", stationInfo: element });
+    console.log(this.state.stationInfo);
   };
 }
 

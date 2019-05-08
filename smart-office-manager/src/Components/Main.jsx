@@ -16,7 +16,12 @@ class Main extends Component {
       case "Stations":
         return (
           <div>
-            <Stations />
+            <Stations onClickStation={this.onClickStation} />
+          </div>
+        );
+      case "Station":
+        return (
+          <div>
             <SideBar />
           </div>
         );
@@ -30,10 +35,14 @@ class Main extends Component {
             <SideBar_Statistics />
           </div>
         );
+
       default:
         return <div />;
     }
   }
+  onClickStation = element => {
+    this.props.onClickStation(element);
+  };
 }
 
 export default Main;
