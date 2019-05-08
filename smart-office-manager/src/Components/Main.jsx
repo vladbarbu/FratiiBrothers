@@ -29,6 +29,7 @@ class Main extends Component {
             <StationInfo
               stationInfo={this.props.stationInfo}
               goBackToStations={this.goBackToStations}
+              elements={this.props.elements}
             />
             <SideBar />
           </div>

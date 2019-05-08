@@ -7,16 +7,13 @@ class StationList extends Component {
         className="station"
         href="#"
         onClick={() => {
-          this.props.onClickStation(this.props.element);
+          this.props.onClickStation(this.props.station);
         }}
       >
-        <img src={this.props.element.image} className="stationImage" />
+        <img src={this.props.station.image} className="stationImage" />
         <div>
           <i className="material-icons">ev_station</i>
-          <b>
-            Station #{this.props.element.parentID + 64}{" "}
-            {this.props.element.stationID}
-          </b>
+          <b>Station #{this.props.station.stationName}</b>
 
           <div className="info">
             <small>Some info</small>

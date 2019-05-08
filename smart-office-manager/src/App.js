@@ -11,42 +11,18 @@ class App extends Component {
     super(props);
     let location = require("./resources/data/data.json").location;
     let stations = this.loadStations();
-    let elements = this.loadElements(stations);
-    let items = this.loadItems(elements);
+    let elements = null;
+    let items = null;
+    console.log(items);
     this.state = {
       sideBarChosen: "Stations",
       stationInfo: null,
       location: location,
       stations: stations,
-      elements: elements,
-      items: items
+      elements: elements
+      //items: items
     };
   }
-
-  loadItems = elements => {
-    let items = [];
-    for (let i = 0; i < elements.length; i++)
-      if (elements[i].type === "category") {
-        let subelements = this.loadItems(elements[i].elements);
-        for (let j = 0; j < subelements.length; j++) items.push(subelements[j]);
-      } else {
-        items.push(elements[i]);
-      }
-    return items;
-  };
-
-  loadElements = stations => {
-    let elements = [];
-    for (let i = 0; i < stations.length; i++)
-      if (stations[i].floor) {
-        let subelements = this.loadElements(stations[i].elements);
-        for (let j = 0; j < subelements.length; j++)
-          elements.push(subelements[j]);
-      } else {
-        elements.push(stations[i]);
-      }
-    return elements;
-  };
 
   loadStations = () => {
     /**
@@ -105,7 +81,6 @@ class App extends Component {
   };
 
   goBackToStations = () => {
-    console.log("Pac");
     this.setState({ sideBarChosen: "Stations", stationInfo: null });
   };
 }

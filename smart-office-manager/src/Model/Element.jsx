@@ -1,5 +1,3 @@
-
-
 class Element {
   get quantity() {
     return this._quantity;
@@ -69,9 +67,18 @@ class Element {
   set chosen(value) {
     this._chosen = value;
   }
+
+  get childActive() {
+    return this._childActive;
+  }
+
+  set childActive(value) {
+    this._childActive = value;
+  }
   constructor(object) {
     if (object === null) return;
     this.chosen = false;
+    this.childActive = false;
     this.ID = object.hasOwnProperty("ID") ? object["ID"] : null;
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
