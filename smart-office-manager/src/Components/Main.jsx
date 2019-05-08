@@ -3,6 +3,7 @@ import "../resources/styles/Main.scss";
 import SideBar from "./SideBar.jsx";
 import SideBar_Statistics from "./SideBar_Statistics.jsx";
 import Stations from "./Stations";
+import StationInfo from "./StationInfo";
 
 class Main extends Component {
   constructor(props) {
@@ -21,7 +22,9 @@ class Main extends Component {
         );
       case "Station":
         return (
-          <div>
+          <div className="Station">
+            {console.log(this.props.stationInfo)}
+            <StationInfo stationInfo={this.props.stationInfo} />
             <SideBar />
           </div>
         );

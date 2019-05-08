@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       sideBarChosen: "Stations",
-      stationInfo: [{ parentID: 0, stationID: 0 }]
+      stationInfo: null
     };
   }
   render() {
@@ -29,6 +29,7 @@ class App extends Component {
           <Main
             sideBarChosen={this.state.sideBarChosen}
             onClickStation={this.onClickStation}
+            stationInfo={this.state.stationInfo}
           />
         </div>
       </div>
@@ -41,7 +42,6 @@ class App extends Component {
 
   onClickStation = element => {
     this.setState({ sideBarChosen: "Station", stationInfo: element });
-    console.log(this.state.stationInfo);
   };
 }
 
