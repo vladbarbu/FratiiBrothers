@@ -2,7 +2,14 @@
 
 .SideBar {
   margin: 0;
-  padding: 0;
+  position: absolute;
+  right: 0;
+  height: calc(100% - 2 * 15px);
+  background: #ffffff;
+  width: 270px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  overflow-y: auto;
 
   & > .body {
     & > .description {

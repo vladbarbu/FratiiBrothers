@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../resources/styles/Main.scss";
 import SideBar from "./SideBar.jsx";
+import SideBar_Statistics from "./SideBar_Statistics.jsx";
 
 class Main extends Component{
 
@@ -29,7 +30,7 @@ class Main extends Component{
         </div>);
       case 'Supply Statistics':
         return (<div>
-        
+        <SideBar_Statistics/>
         </div>);
       default:
         return (<div>

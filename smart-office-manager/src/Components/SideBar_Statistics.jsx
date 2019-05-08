@@ -4,7 +4,7 @@
 import React, { Component } from "react";
 import "../resources/styles/SideBar.scss";
 
-class SideBar_Statisctics extends Component {
+class SideBar_Statistics extends Component {
   constructor(props) {
     super(props);
   }
@@ -23,11 +23,11 @@ class SideBar_Statisctics extends Component {
           <p>Cups</p>
           <h3>Subcategory</h3>
           <p>Papercups</p>
-          <img arc="subcategory.png" alt="subcategory" />
+          <img alt="subcategory" />
         </div>
       </div>
     );
   }
 }
 
-export default SideBar_Statisctics;
+export default SideBar_Statistics;
