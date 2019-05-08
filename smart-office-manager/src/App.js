@@ -9,26 +9,16 @@ import Main from "./Components/Main";
 class App extends Component {
   constructor(props) {
     super(props);
-    //let elements = this.loadElements();
+    let location = require("./resources/data/data.json").location;
     let stations = this.loadStations();
-    //let items = this.loadItems(elements);
-    console.log(stations);
-    //console.log(elements);
-    //console.log(items);
-    //let notifications = this.loadNotifications(items);
+    let elements = this.loadElements(stations);
+    let items = this.loadItems(elements);
+    console.log(items);
     this.state = {
       sideBarChosen: "Stations",
       stationInfo: null
     };
   }
-
-  loadNotifications = items => {
-    let notifications = [];
-    for (let i = 0; i < items.length; i++)
-      for (let j = 0; j < items[i].notifications.length; j++)
-        notifications.push(items[i].notifications[j]);
-    return notifications;
-  };
 
   loadItems = elements => {
     let items = [];
@@ -42,17 +32,30 @@ class App extends Component {
     return items;
   };
 
+  loadElements = stations => {
+    let elements = [];
+    for (let i = 0; i < stations.length; i++)
+      if (stations[i].floor) {
+        let subelements = this.loadElements(stations[i].elements);
+        for (let j = 0; j < subelements.length; j++)
+          elements.push(subelements[j]);
+      } else {
+        elements.push(stations[i]);
+      }
+    return elements;
+  };
+
   loadStations = () => {
     /**
      * Load our array of elements from the json file
      * Will be replaced by a request once networking is done
      */
     try {
-      let stations = require("./resources/data/data.json");
+      let stations = require("./resources/data/data.json").stations;
+
       if (stations) {
         let data = [];
         for (let i = 0; i < stations.length; i++) {
-          console.log(stations[i]);
           data.push(new Station(stations[i]));
         }
         return data;

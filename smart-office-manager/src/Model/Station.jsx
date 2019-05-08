@@ -1,19 +1,22 @@
+import Element from "./Element";
+
 class Station {
   /**
    *
-   * @returns {Array<Station>}
+   * @returns {Array<Element>}
    */
-  get stations() {
-    return this._stations;
+  get elements() {
+    return this._elements;
   }
 
   /**
    *
-   * @param {Array<Station>} value
+   * @param {Array<Element>} value
    */
-  set stations(value) {
-    this._stations = value;
+  set elements(value) {
+    this._elements = value;
   }
+
   get stationName() {
     return this._name;
   }
@@ -54,28 +57,20 @@ class Station {
       : null;
     this.floor = object.hasOwnProperty("floor") ? object["floor"] : null;
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
+    this.elements = object.hasOwnProperty("elements")
+      ? object["elements"]
+      : null;
 
-    this.stations = (() => {
+    this.elements = (() => {
       let data = [];
-      let stations = object.hasOwnProperty("elements")
+      let elements = object.hasOwnProperty("elements")
         ? object["elements"]
         : [];
-      if (stations && stations.length > 0)
-        for (let i = 0; i < stations.length; i++)
-          data.push(new Station(stations[i]));
+      if (elements && elements.length > 0)
+        for (let i = 0; i < elements.length; i++)
+          data.push(new Element(elements[i]));
       return data;
     })();
-
-    /*this.notifications = (() => {
-      let data = [];
-      let notifications = object.hasOwnProperty("notifications")
-        ? object["notifications"]
-        : [];
-      if (notifications && notifications.length > 0)
-        for (let i = 0; i < notifications.length; i++)
-          data.push(notifications[i]);
-      return data;
-    })();*/
   }
 }
 
