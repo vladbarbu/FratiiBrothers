@@ -60,6 +60,7 @@ class App extends Component {
             location={this.state.location}
             stations={this.state.stations}
             itemChoose={this.itemChoose}
+            chosenItem={this.state.chosenItem}
           />
         </div>
       </div>

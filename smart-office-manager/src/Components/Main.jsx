@@ -32,7 +32,9 @@ class Main extends Component {
               elements={this.props.elements}
               itemChoose={this.itemChoose}
             />
-            <SideBar />
+            {this.props.chosenItem !== null ? (
+              <SideBar chosenItem={this.props.chosenItem} />
+            ) : null}
           </div>
         );
       case "Item Stock":
