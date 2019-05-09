@@ -30,6 +30,7 @@ class Main extends Component {
               stationInfo={this.props.stationInfo}
               goBackToStations={this.goBackToStations}
               elements={this.props.elements}
+              itemChoose={this.itemChoose}
             />
             <SideBar />
           </div>
@@ -55,6 +56,10 @@ class Main extends Component {
 
   goBackToStations = () => {
     this.props.goBackToStations();
+  };
+
+  itemChoose = element => {
+    this.props.itemChoose(element);
   };
 }
 

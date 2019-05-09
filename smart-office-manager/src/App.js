@@ -14,7 +14,8 @@ class App extends Component {
       sideBarChosen: "Stations",
       stationInfo: null,
       location: location,
-      stations: stations
+      stations: stations,
+      chosenItem: null
     };
   }
 
@@ -58,6 +59,7 @@ class App extends Component {
             goBackToStations={this.goBackToStations}
             location={this.state.location}
             stations={this.state.stations}
+            itemChoose={this.itemChoose}
           />
         </div>
       </div>
@@ -68,6 +70,7 @@ class App extends Component {
     this.setState({ sideBarChosen: chosen });
     if (chosen === "Station" || chosen === "Item Stock")
       this.resetActiveChilds();
+    this.resetItemChoose();
   };
 
   onClickStation = element => {
@@ -76,6 +79,7 @@ class App extends Component {
       stationInfo: element
     });
     this.resetActiveChilds();
+    this.resetItemChoose();
   };
 
   goBackToStations = () => {
@@ -84,6 +88,7 @@ class App extends Component {
       stationInfo: null
     });
     this.resetActiveChilds();
+    this.resetItemChoose();
   };
 
   //Reset the item list (Use this to get the initial list)
@@ -98,6 +103,15 @@ class App extends Component {
       });
     });
     this.setState({ stations: clone });
+  };
+
+  itemChoose = element => {
+    console.log(element);
+    this.setState({ chosenItem: element });
+  };
+
+  resetItemChoose = () => {
+    this.setState({ chosenItem: null });
   };
 }
 

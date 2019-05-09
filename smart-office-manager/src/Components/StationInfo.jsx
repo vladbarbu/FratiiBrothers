@@ -102,6 +102,8 @@ class StationInfo extends Component {
       }
 
       this.setState({ stations: element });
+    } else {
+      this.props.itemChoose(active);
     }
   };
 }
