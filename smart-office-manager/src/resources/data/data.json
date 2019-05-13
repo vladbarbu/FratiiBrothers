@@ -29,6 +29,7 @@
                   "name": "Paper Cups Small",
                   "parentID": 8,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABC",
@@ -49,6 +50,7 @@
                 {
                   "ID": 71,
                   "type": "item",
+                  "quantity": 0,
                   "name": "Paper Cups Medium",
                   "parentID": 8,
                   "image": "images/item_2.png",
@@ -67,7 +69,8 @@
                   "type": "item",
                   "name": "Paper Cups Large",
                   "parentID": 8,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 3
                 }
               ]
             },
@@ -84,6 +87,7 @@
                   "name": "Glass Cups Small",
                   "parentID": 9,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABD",
@@ -107,6 +111,7 @@
                   "name": "Glass Cups Medium",
                   "parentID": 9,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD123",
@@ -122,7 +127,8 @@
                   "type": "item",
                   "name": "Glass Cups Large",
                   "parentID": 9,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -160,6 +166,7 @@
                   "name": "Paper Coffee Small",
                   "parentID": 11,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "124ABC",
@@ -183,6 +190,7 @@
                   "name": "Paper Coffee Medium",
                   "parentID": 11,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD124",
@@ -198,7 +206,8 @@
                   "type": "item",
                   "name": "Paper Coffee Large",
                   "parentID": 11,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -215,6 +224,7 @@
                   "name": "Glass Coffee Small",
                   "parentID": 12,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "143ABD",
@@ -238,6 +248,7 @@
                   "name": "Glass Coffee Medium",
                   "parentID": 12,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD143",
@@ -253,7 +264,8 @@
                   "type": "item",
                   "name": "Glass Coffee Large",
                   "parentID": 12,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -317,6 +329,7 @@
                   "name": "Paper Cups Small",
                   "parentID": 8,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABC",
@@ -340,6 +353,7 @@
                   "name": "Paper Cups Medium",
                   "parentID": 8,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD123",
@@ -355,7 +369,8 @@
                   "type": "item",
                   "name": "Paper Cups Large",
                   "parentID": 8,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -372,6 +387,7 @@
                   "name": "Glass Cups Small",
                   "parentID": 9,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABD",
@@ -395,6 +411,7 @@
                   "name": "Glass Cups Medium",
                   "parentID": 9,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD123",
@@ -410,7 +427,8 @@
                   "type": "item",
                   "name": "Glass Cups Large",
                   "parentID": 9,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -448,6 +466,7 @@
                   "name": "Paper Coffee Small",
                   "parentID": 11,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "124ABC",
@@ -471,6 +490,7 @@
                   "name": "Paper Coffee Medium",
                   "parentID": 11,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD124",
@@ -486,7 +506,8 @@
                   "type": "item",
                   "name": "Paper Coffee Large",
                   "parentID": 11,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -503,6 +524,7 @@
                   "name": "Glass Coffee Small",
                   "parentID": 12,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "143ABD",
@@ -526,6 +548,7 @@
                   "name": "Glass Coffee Medium",
                   "parentID": 12,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD143",
@@ -541,7 +564,8 @@
                   "type": "item",
                   "name": "Glass Coffee Large",
                   "parentID": 12,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -605,6 +629,7 @@
                   "name": "Paper Cups Small",
                   "parentID": 8,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABC",
@@ -628,6 +653,7 @@
                   "name": "Paper Cups Medium",
                   "parentID": 8,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD123",
@@ -643,7 +669,8 @@
                   "type": "item",
                   "name": "Paper Cups Large",
                   "parentID": 8,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -660,6 +687,7 @@
                   "name": "Glass Cups Small",
                   "parentID": 9,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABD",
@@ -683,6 +711,7 @@
                   "name": "Glass Cups Medium",
                   "parentID": 9,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD123",
@@ -698,7 +727,8 @@
                   "type": "item",
                   "name": "Glass Cups Large",
                   "parentID": 9,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -736,6 +766,7 @@
                   "name": "Paper Coffee Small",
                   "parentID": 11,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "124ABC",
@@ -759,6 +790,7 @@
                   "name": "Paper Coffee Medium",
                   "parentID": 11,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD124",
@@ -774,7 +806,8 @@
                   "type": "item",
                   "name": "Paper Coffee Large",
                   "parentID": 11,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -791,6 +824,7 @@
                   "name": "Glass Coffee Small",
                   "parentID": 12,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "143ABD",
@@ -814,6 +848,7 @@
                   "name": "Glass Coffee Medium",
                   "parentID": 12,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD143",
@@ -829,7 +864,8 @@
                   "type": "item",
                   "name": "Glass Coffee Large",
                   "parentID": 12,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -893,6 +929,7 @@
                   "name": "Paper Cups Small",
                   "parentID": 8,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABC",
@@ -916,6 +953,7 @@
                   "name": "Paper Cups Medium",
                   "parentID": 8,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD123",
@@ -931,7 +969,8 @@
                   "type": "item",
                   "name": "Paper Cups Large",
                   "parentID": 8,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -948,6 +987,7 @@
                   "name": "Glass Cups Small",
                   "parentID": 9,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABD",
@@ -971,6 +1011,7 @@
                   "name": "Glass Cups Medium",
                   "parentID": 9,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD123",
@@ -986,7 +1027,8 @@
                   "type": "item",
                   "name": "Glass Cups Large",
                   "parentID": 9,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1024,6 +1066,7 @@
                   "name": "Paper Coffee Small",
                   "parentID": 11,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "124ABC",
@@ -1047,6 +1090,7 @@
                   "name": "Paper Coffee Medium",
                   "parentID": 11,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD124",
@@ -1062,7 +1106,8 @@
                   "type": "item",
                   "name": "Paper Coffee Large",
                   "parentID": 11,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1079,6 +1124,7 @@
                   "name": "Glass Coffee Small",
                   "parentID": 12,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "143ABD",
@@ -1102,6 +1148,7 @@
                   "name": "Glass Coffee Medium",
                   "parentID": 12,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD143",
@@ -1117,7 +1164,8 @@
                   "type": "item",
                   "name": "Glass Coffee Large",
                   "parentID": 12,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1182,6 +1230,7 @@
                   "name": "Paper Cups Small",
                   "parentID": 8,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABC",
@@ -1205,6 +1254,7 @@
                   "name": "Paper Cups Medium",
                   "parentID": 8,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD123",
@@ -1220,7 +1270,8 @@
                   "type": "item",
                   "name": "Paper Cups Large",
                   "parentID": 8,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1237,6 +1288,7 @@
                   "name": "Glass Cups Small",
                   "parentID": 9,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABD",
@@ -1260,6 +1312,7 @@
                   "name": "Glass Cups Medium",
                   "parentID": 9,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD123",
@@ -1275,7 +1328,8 @@
                   "type": "item",
                   "name": "Glass Cups Large",
                   "parentID": 9,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1313,6 +1367,7 @@
                   "name": "Paper Coffee Small",
                   "parentID": 11,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "124ABC",
@@ -1336,6 +1391,7 @@
                   "name": "Paper Coffee Medium",
                   "parentID": 11,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD124",
@@ -1351,7 +1407,8 @@
                   "type": "item",
                   "name": "Paper Coffee Large",
                   "parentID": 11,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1368,6 +1425,7 @@
                   "name": "Glass Coffee Small",
                   "parentID": 12,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "143ABD",
@@ -1391,6 +1449,7 @@
                   "name": "Glass Coffee Medium",
                   "parentID": 12,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD143",
@@ -1406,7 +1465,8 @@
                   "type": "item",
                   "name": "Glass Coffee Large",
                   "parentID": 12,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1470,6 +1530,7 @@
                   "name": "Paper Cups Small",
                   "parentID": 8,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABC",
@@ -1493,6 +1554,7 @@
                   "name": "Paper Cups Medium",
                   "parentID": 8,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD123",
@@ -1508,7 +1570,8 @@
                   "type": "item",
                   "name": "Paper Cups Large",
                   "parentID": 8,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1525,6 +1588,7 @@
                   "name": "Glass Cups Small",
                   "parentID": 9,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "123ABD",
@@ -1548,6 +1612,7 @@
                   "name": "Glass Cups Medium",
                   "parentID": 9,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD123",
@@ -1563,7 +1628,8 @@
                   "type": "item",
                   "name": "Glass Cups Large",
                   "parentID": 9,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1601,6 +1667,7 @@
                   "name": "Paper Coffee Small",
                   "parentID": 11,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "124ABC",
@@ -1624,6 +1691,7 @@
                   "name": "Paper Coffee Medium",
                   "parentID": 11,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "CBD124",
@@ -1639,7 +1707,8 @@
                   "type": "item",
                   "name": "Paper Coffee Large",
                   "parentID": 11,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },
@@ -1656,6 +1725,7 @@
                   "name": "Glass Coffee Small",
                   "parentID": 12,
                   "image": "images/item_1.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "143ABD",
@@ -1679,6 +1749,7 @@
                   "name": "Glass Coffee Medium",
                   "parentID": 12,
                   "image": "images/item_2.png",
+                  "quantity": 12,
                   "notifications": [
                     {
                       "ID": "DBD143",
@@ -1694,7 +1765,8 @@
                   "type": "item",
                   "name": "Glass Coffee Large",
                   "parentID": 12,
-                  "image": "images/item_3.png"
+                  "image": "images/item_3.png",
+                  "quantity": 12
                 }
               ]
             },

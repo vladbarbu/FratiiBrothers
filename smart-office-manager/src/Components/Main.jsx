@@ -4,6 +4,7 @@ import SideBar from "./SideBar.jsx";
 import SideBar_Statistics from "./SideBar_Statistics.jsx";
 import Stations from "./Stations";
 import StationInfo from "./StationInfo";
+import ItemStock from "./ItemStock";
 
 class Main extends Component {
   constructor(props) {
@@ -16,12 +17,10 @@ class Main extends Component {
         return <div />;
       case "Stations":
         return (
-          <div>
-            <Stations
-              stations={this.props.stations}
-              onClickStation={this.onClickStation}
-            />
-          </div>
+          <Stations
+            stations={this.props.stations}
+            onClickStation={this.onClickStation}
+          />
         );
       case "Station":
         return (
@@ -38,7 +37,7 @@ class Main extends Component {
           </div>
         );
       case "Item Stock":
-        return <div />;
+        return <ItemStock elements={this.props.elements} />;
       case "Product Requests":
         return <div />;
       case "Supply Statistics":

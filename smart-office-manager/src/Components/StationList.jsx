@@ -18,8 +18,8 @@ class StationList extends Component {
           <div className="info">
             <small>Some info</small>
           </div>
-          <div className="button checkStation">
-            <button>Check Station</button>
+          <div className="small checkStation">
+            <small>Check Station</small>
           </div>
         </div>
       </a>

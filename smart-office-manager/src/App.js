@@ -107,7 +107,6 @@ class App extends Component {
   };
 
   itemChoose = element => {
-    console.log(element);
     this.setState({ chosenItem: element });
   };
 

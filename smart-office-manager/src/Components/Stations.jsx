@@ -7,7 +7,7 @@ class Stations extends Component {
     return (
       <div className="allStations">
         <div className="breadcrumbs">
-          Stations <i className="material-icons">arrow_right</i>
+          Stations <i className="material-icons arrow">arrow_right</i>
         </div>
         {this.props.stations.map(element => {
           if (flag !== element.floor) {
@@ -17,7 +17,8 @@ class Stations extends Component {
                 <span className="floorID">Floor {element.floor}</span>
                 <span className="numberOfStations">
                   &#8226;
-                  {element.size} stations
+                  {this.numberOfStations(flag)}
+                  stations
                 </span>
                 {this.allStations(flag)}
               </div>
@@ -46,6 +47,18 @@ class Stations extends Component {
         })}
       </div>
     );
+  }
+
+  numberOfStations(flag) {
+    var count = 0;
+    {
+      this.props.stations.map(element => {
+        if (element.floor === flag) {
+          count += 1;
+        }
+      });
+    }
+    return count;
   }
 }
 

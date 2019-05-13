@@ -3,7 +3,8 @@ import "../resources/styles/StationInfo.scss";
 
 class StationInfo extends Component {
   state = {
-    stations: this.props.stationInfo.elements
+    stations: this.props.stationInfo.elements,
+    chosen: null
   };
   render() {
     return (
@@ -15,7 +16,7 @@ class StationInfo extends Component {
           {this.props.stationInfo.stationName}
           <i className="material-icons">arrow_right</i>
         </div>
-        <div className="station">
+        <div className="stationInfo">
           <img src={this.props.stationInfo.image} />
           <div>
             <div>
@@ -41,18 +42,23 @@ class StationInfo extends Component {
   }
 
   ItemStock(element) {
+    let style = { backgroundColor: "#0DD2A3" };
     return (
+      //Only category
       <div className="itemStock">
         {element === this.state.stations
           ? this.state.stations.map(element => {
               return (
-                <div>
+                <div className="categoryItem">
                   <small onClick={() => this.changeActiveChild(element)}>
-                    {element.type === "category" && element.parentID === null
-                      ? "Category:"
-                      : null}
+                    <img src={require("./../resources/" + element.image)} />
+                    <div className="itemText">
+                      {element.type === "category" && element.parentID === null
+                        ? "Category:"
+                        : null}
 
-                    {element.name}
+                      {element.name}
+                    </div>
                   </small>
                   {element.childActive === true
                     ? this.ItemStock(element)
@@ -61,13 +67,47 @@ class StationInfo extends Component {
               );
             })
           : element.elements.map(element => {
+              // Items and subcategory
               return (
-                <div>
+                <div className="justItem">
                   <small onClick={() => this.changeActiveChild(element)}>
-                    {element.type === "item" ? "Item:" : null}
-                    {element.type === "category" ? "Subcategory:" : null}
-                    {element.name}
+                    <i class="material-icons subdirectory">
+                      subdirectory_arrow_right
+                    </i>
+                    <img src={require("./../resources/" + element.image)} />
+                    <div className="itemText">
+                      {element.type === "item" ? "Item:" : null}
+                      {element.type === "category" ? "Subcategory:" : null}
+
+                      {element.name}
+                      {element.type === "item" ? ( //Items stock/warnings/notifications
+                        <div className="itemNotification">
+                          <i className="material-icons">layers</i>
+                          {element.quantity} in stock
+                          {element.notification !== null ? (
+                            element.notifications.length > 0 ? (
+                              <b className="warningBadge">New warnings</b>
+                            ) : null
+                          ) : null}
+                        </div>
+                      ) : null}
+                      {element.type === "item" ? (
+                        this.state.chosen === element ? (
+                          <i
+                            className="material-icons itemButton"
+                            style={style}
+                          >
+                            arrow_forward
+                          </i>
+                        ) : (
+                          <i className="material-icons itemButton">
+                            arrow_forward
+                          </i>
+                        )
+                      ) : null}
+                    </div>
                   </small>
+
                   {element.childActive === true
                     ? this.ItemStock(element)
                     : null}
@@ -104,6 +144,7 @@ class StationInfo extends Component {
       this.setState({ stations: element });
     } else {
       this.props.itemChoose(active);
+      this.setState({ chosen: active });
     }
   };
 }

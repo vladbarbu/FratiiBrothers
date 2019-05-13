@@ -75,6 +75,14 @@ class Element {
   set childActive(value) {
     this._childActive = value;
   }
+
+  get quantity() {
+    return this._quantity;
+  }
+
+  set quantity(value) {
+    this._quantity = value;
+  }
   constructor(object) {
     if (object === null) return;
     this.chosen = false;
@@ -85,6 +93,9 @@ class Element {
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
     this.parentID = object.hasOwnProperty("parentID")
       ? object["parentID"]
+      : null;
+    this.quantity = object.hasOwnProperty("quantity")
+      ? object["quantity"]
       : null;
     this.elements = (() => {
       let data = [];
@@ -97,7 +108,7 @@ class Element {
       return data;
     })();
 
-    this.quantity = this.elements.length;
+    //this.quantity = this.elements.length;
 
     this.notifications = (() => {
       let data = [];

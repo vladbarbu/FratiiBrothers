@@ -36,13 +36,12 @@ class SideBar extends Component {
     ];
     return (
       <div className="SideBar">
-        {/* <img
-          src={require("./../resources/" + this.props.element.image)}
+        <img
+          src={require("./../resources/" + this.props.chosenItem.image)}
           alt=""
-        /> */}
+        />
         <div className="body">
-          {/* <h2>{this.props.element.name}</h2> */}
-          <h2>Paper cup medium</h2>
+          <h2>{this.props.chosenItem.name}</h2>
           <div className="description">
             {descriptionItems.map(description => (
               <div className="description-element">

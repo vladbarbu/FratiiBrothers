@@ -1,8 +1,25 @@
 .stationImage {
-  max-width: 200px;
+  max-width: 150px;
   max-height: 100px;
+  border-radius: 3px 0px 0px 3px;
 }
 
 .station {
   display: flex;
+  text-decoration: none;
+  color: black;
+  border: solid gray 0.5px;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+
+.small.checkStation {
+  position: relative;
+  top: 30px;
+  left: 0px;
+  border: solid #0dd2a3 1px;
+  border-radius: 3px 0px 3px 0px;
+  background-color: #0dd2a3;
+  color: white;
+  text-align: center;
 }
