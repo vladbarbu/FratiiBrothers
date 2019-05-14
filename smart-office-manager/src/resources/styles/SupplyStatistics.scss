@@ -1,8 +1,6 @@
 .supplyButtons {
   //for div
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 10px;
 }
 
@@ -28,6 +26,7 @@
 
 .underStation {
   bottom: 12px;
+  margin-bottom: -20px;
   position: relative;
 }
 
@@ -47,4 +46,8 @@
 
 div.calendar {
   margin-top: 20px;
+}
+
+.selectedItem {
+  max-width: 300px;
 }

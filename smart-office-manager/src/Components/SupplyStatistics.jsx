@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../resources/styles/SupplyStatistics.scss";
 import Calendar from "./Calendar";
+
 class SupplyStatistics extends Component {
   state = {
     pressed: "Calendar"
@@ -68,6 +69,11 @@ class SupplyStatistics extends Component {
             </small>
           )}
         </div>
+        <small>
+          {this.props.chosenItem !== null
+            ? this.selectedItem(this.props.chosenItem)
+            : "Please pick an item"}
+        </small>
         {this.state.pressed === "Calendar" ? (
           <Calendar className="supplyCalendar" />
         ) : null}
@@ -77,6 +83,35 @@ class SupplyStatistics extends Component {
 
   setPressed = element => {
     this.setState({ pressed: element });
+  };
+
+  selectedItem = element => {
+    return (
+      <div className="selectedItem">
+        <div className="justItem supplyStock">
+          <small
+            onClick={() => this.changeActiveChild(element)}
+            style={this.state.chosen === element ? { width: "250px" } : null}
+          >
+            {element.type === "item" ? (
+              <img src={require("./../resources/" + element.image)} />
+            ) : null}
+            <div className="itemText">
+              {element.type === "item" ? (
+                <small className="itemColors">Item:</small>
+              ) : null}
+              {element.type === "category" && element.parentID !== null ? (
+                <small className="itemColors">Subcategory:</small>
+              ) : null}
+              {element.type === "category" && element.parentID === null ? (
+                <small className="itemColors">Category:</small>
+              ) : null}
+              <small>{element.name}</small>
+            </div>
+          </small>
+        </div>
+      </div>
+    );
   };
 
   selectedMakeBig = element => {

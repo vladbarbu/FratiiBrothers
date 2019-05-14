@@ -16,9 +16,8 @@ class Stations extends Component {
               <div>
                 <span className="floorID">Floor {element.floor}</span>
                 <span className="numberOfStations">
-                  &#8226;
-                  {this.numberOfStations(flag)}
-                  stations
+                  {" "}
+                  &#8226; {this.numberOfStations(flag)} stations
                 </span>
                 {this.allStations(flag)}
               </div>

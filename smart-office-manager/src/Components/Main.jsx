@@ -54,6 +54,7 @@ class Main extends Component {
               stations={this.props.stations}
               onClickSupplyStation={this.onClickSupplyStation}
               chosenStation={this.props.chosenStation}
+              chosenItem={this.props.chosenItem}
             />
 
             {this.props.chosenStation === this.state.localStation &&

@@ -8,15 +8,16 @@
   display: flex;
   text-decoration: none;
   color: black;
-  border: solid gray 0.5px;
+  border: solid #ababac 0.5px;
   border-radius: 3px;
   margin-right: 20px;
+  width: 300px;
 }
 
 .small.checkStation {
   position: relative;
-  top: 30px;
-  left: 0px;
+  top: 20px;
+  left: 51px;
   border: solid #0dd2a3 1px;
   border-radius: 3px 0px 3px 0px;
   background-color: #0dd2a3;
@@ -27,4 +28,12 @@
 .stationIcon {
   background-color: #0dd2a3;
   color: white;
+}
+
+.numberOfStations {
+  color: #ababac;
+}
+
+.arrow {
+  color: #0dd2a3;
 }
