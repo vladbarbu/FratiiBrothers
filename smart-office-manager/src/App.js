@@ -92,6 +92,8 @@ class App extends Component {
   };
 
   resetChosenStation = () => {
+    this.resetActiveChilds();
+    this.resetItemChoose();
     this.setState({ chosenStation: null });
   };
 
