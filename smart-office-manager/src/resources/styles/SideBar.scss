@@ -29,16 +29,24 @@
     display: flex;
   }
 
-  .itemSidebar > i {
+  .itemSidebar > .choosenBolt {
     position: relative;
-    top: 10px;
-    left: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
     height: 51px;
-    background-color: rgb(249, 232, 22);
+    top: 10px;
+    left: 30px;
+    background-color: #f9e816;
+  }
+
+  .itemSidebar > .choosenBolt > i {
+    position: relative;
+    top: 13px;
   }
 
   .justItem.supplyStock > small {
     margin-left: -10px;
+    width: 210px;
   }
 
   & > .body {

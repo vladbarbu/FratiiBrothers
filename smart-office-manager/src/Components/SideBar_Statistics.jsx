@@ -53,7 +53,14 @@ class SideBar_Statistics extends Component {
                 return (
                   <div className="itemSidebar">
                     <div className="justItem supplyStock">
-                      <small onClick={() => this.changeActiveChild(element)}>
+                      <small
+                        onClick={() => this.changeActiveChild(element)}
+                        style={
+                          this.state.chosen === element
+                            ? { width: "250px" }
+                            : null
+                        }
+                      >
                         {element.type === "item" ? (
                           <img
                             src={require("./../resources/" + element.image)}
@@ -75,14 +82,10 @@ class SideBar_Statistics extends Component {
                         </div>
                       </small>
                     </div>
-                    {element.type === "item" &&
-                    this.state.chosen === element ? (
-                      <i
-                        class="material-icons"
-                        style={{ backgroundColor: "#F9E816" }}
-                      >
-                        offline_bolt
-                      </i>
+                    {this.state.chosen === element ? (
+                      <div className="choosenBolt">
+                        <i className="material-icons">offline_bolt</i>
+                      </div>
                     ) : null}
 
                     {element.childActive === true
