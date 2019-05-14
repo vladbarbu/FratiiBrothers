@@ -58,7 +58,9 @@ class StationInfo extends Component {
         <span>
           <i className="material-icons">list</i> Station Item Stock
         </span>
-        {this.ItemStock(this.state.stations)}
+        <div className="forScroll" style={{ overflow: "auto" }}>
+          {this.ItemStock(this.state.stations)}
+        </div>
       </div>
     );
   }
