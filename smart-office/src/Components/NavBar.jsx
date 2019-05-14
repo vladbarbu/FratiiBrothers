@@ -23,18 +23,17 @@ class NavBar extends Component {
 
   setWrapperRef(node) {
     this.wrapperRef = node;
-    console.log(node);
   }
   /**
    * Alert if clicked on outside of element
    */
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      console.log("You clicked outside of me!");
+      // console.log("You clicked outside of me!");
       this.props.discardSearch();
     }
-    if (this.wrapperRef && this.wrapperRef.contains(event.target))
-      console.log("You clicked inside of me ;) !" + this.pressed);
+    // if (this.wrapperRef && this.wrapperRef.contains(event.target))
+    //   console.log("You clicked inside of me ;) !" + this.pressed);
   }
 
   onClickGoBack = ID => {

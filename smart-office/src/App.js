@@ -9,29 +9,54 @@ import Element from "./model/Element";
 import ActionItemPopupConfirmation from "./Components/ActionItemPopupConfirmation";
 import FewLeftPopup from "./Components/FewLeftPopup";
 import AllNotificationsPopup from "./Components/AllNotificationsPopup";
+import AppContext from './model/AppContext'
+import axios from "axios";
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    let elements = this.loadElements();
-    let items = this.loadItems(elements);
-    let notifications = this.loadNotifications(items);
 
     this.state = {
+      initial : null,
+      station : {},
       drawer_visible: false,
-      elements: elements,
-      items: items,
-      notifications: notifications,
+      elements: [],
+      items: [],
+      notifications: [],
       chosen: null,
       navBarClick: false,
       showRequestPopup: false,
       showFewLeftPopup: false,
       showActionConfirmationPopup: false,
       timeoutActionConfirmationPopup: null,
-      showNotificationsPopup: false
+      showNotificationsPopup: false,
+      loading : false,
+      isSafeToUpdateUniverse : true,
     };
   }
+
+  componentDidMount() {
+
+    this.setState({loading : true});
+    this.doUpdateUniverse().then(()=> {
+      this.setState({loading : false});
+    });
+
+
+    setInterval(() => {this.doUpdateUniverse()}, 30000);
+
+
+
+  }
+
+
+
+
+
+  /**
+   * ------
+   */
 
   toggleRequestPopup = () => {
     this.setState({ showRequestPopup: !this.state.showRequestPopup });
@@ -54,73 +79,15 @@ class App extends Component {
     });
   };
 
-  // loadNotifications = elements => {
-  //   let data = [];
-  //   for (let i = 0; i < elements.length; i++)
-  //     for (let j = 0; j < elements[i].elements.length; j++)
-  //       for (let k = 0; k < elements[i].elements[j].elements.length; k++) {
-  //         let notifications =
-  //           elements[i].elements[j].elements[k]["notifications"];
-  //         for (let n = 0; n < notifications.length; n++) {
-  //           //data.push(new Notification(notifications[n]));
-  //           data.push(notifications[n]);
-  //         }
-  //       }
-  //   return data;
-  // };
 
-  // loadNotifications = elements => {
-  //   let data = [];
-  //   for (let i = 0; i < elements.length; i++)
-  //     if (elements[i].type === "category") {
-  //       let subelements = this.loadNotifications(elements[i].elements);
-  //       for (let j = 0; j < subelements.length; j++) data.push(subelements[j]);
-  //     } else {
-  //       if (elements[i].notifications.length)
-  //         for (let j = 0; j < elements[i].notifications.length; j++)
-  //           data.push(elements[i].notifications[j]);
-  //     }
-  //   return data;
-  // };
-  loadNotifications = items => {
-    let notifications = [];
-    for (let i = 0; i < items.length; i++)
-      for (let j = 0; j < items[i].notifications.length; j++)
-        notifications.push(items[i].notifications[j]);
-    return notifications;
-  };
 
-  loadItems = elements => {
-    let items = [];
-    for (let i = 0; i < elements.length; i++)
-      if (elements[i].type === "category") {
-        let subelements = this.loadItems(elements[i].elements);
-        for (let j = 0; j < subelements.length; j++) items.push(subelements[j]);
-      } else {
-        items.push(elements[i]);
-      }
-    return items;
-  };
 
-  loadElements = () => {
-    /**
-     * Load our array of elements from the json file
-     * Will be replaced by a request once networking is done
-     */
-    try {
-      let elements = require("./resources/data/elements.json");
-      if (elements) {
-        let data = [];
-        for (let i = 0; i < elements.length; i++) {
-          data.push(new Element(elements[i]));
-        }
-        return data;
-      }
-    } catch (e) {
-      console.error(e);
-    }
-    return [];
-  };
+
+
+
+
+
+
 
   render() {
     let location = {
@@ -129,79 +96,82 @@ class App extends Component {
       table: "Table 3"
     };
     return (
-      <div id="App">
-        <div className="App-container">
-          <div className="App-left">
-            <NavBar
-              onClickNavBar={this.onNavBarClick}
-              onClickGoBack={this.onClickGoBack}
-              element={this.state.chosen}
-              elements={this.state.elements}
-              navBarClick={this.state.navBarClick}
-              discardSearch={this.discardSearch}
-              onClickOption={this.onClickOption}
-              onToggleMobileDrawer={this.onToggleMobileDrawer}
-              onToggleNotificationPopup={this.toggleNotificationsPopup}
-            />
-            <Main
-              onItemClick={this.onItemClick}
-              elements={this.state.elements}
-              chosen={this.state.chosen}
-            />
-          </div>
-          <div className="App-right" data-visible={this.state.drawer_visible}>
-            <SideBar
-              element={this.state.chosen}
-              location={location}
-              items={this.state.items}
-              notifications={this.state.notifications}
-              onClickDiscardSearch={this.onClickDiscardSearch}
-              onClickSearch={this.onNavBarClick}
-              onClickRequest={this.toggleRequestPopup}
-              onActionConfirmation={this.toggleActionConfirmationPopup}
-              onToggleMobileDrawer={this.onToggleMobileDrawer}
-              onClickFew={this.toggleFewLeftPopup}
-              onClickNotifications={this.toggleNotificationsPopup}
-            />
-          </div>
-          {this.state.showRequestPopup ? (
-            <RequestItemPopup
-              togglePopup={this.toggleRequestPopup}
-              onSubmit={this.onRequestSubmit}
-            />
-          ) : null}
+        <AppContext.Provider value={Config.generateAppContextValues(this)} >
+            <div id="App">
+              <div className="App-container">
+                <div className="App-left">
+                  <NavBar
+                    onClickNavBar={this.onNavBarClick}
+                    onClickGoBack={this.onClickGoBack}
+                    element={this.state.chosen}
+                    elements={this.state.elements}
+                    navBarClick={this.state.navBarClick}
+                    discardSearch={this.discardSearch}
+                    onClickOption={this.onClickOption}
+                    onToggleMobileDrawer={this.onToggleMobileDrawer}
+                    onToggleNotificationPopup={this.toggleNotificationsPopup}
+                  />
+                  <Main
+                    onItemClick={this.onItemClick}
+                    elements={this.state.elements}
+                    chosen={this.state.chosen}
+                  />
+                </div>
+                <div className="App-right" data-visible={this.state.drawer_visible}>
+                  <SideBar
+                    element={this.state.chosen}
+                    location={location}
+                    items={this.state.items}
+                    notifications={this.state.notifications}
+                    onClickDiscardSearch={this.onClickDiscardSearch}
+                    onClickSearch={this.onNavBarClick}
+                    onClickRequest={this.toggleRequestPopup}
+                    onActionConfirmation={this.toggleActionConfirmationPopup}
+                    onToggleMobileDrawer={this.onToggleMobileDrawer}
+                    onClickFew={this.toggleFewLeftPopup}
+                    onClickNotifications={this.toggleNotificationsPopup}
+                  />
+                </div>
+                {this.state.showRequestPopup ? (
+                  <RequestItemPopup
+                    togglePopup={this.toggleRequestPopup}
+                    onSubmit={this.onRequestSubmit}
+                  />
+                ) : null}
 
-          {this.state.showActionConfirmationPopup ? (
-            <ActionItemPopupConfirmation
-              togglePopup={this.toggleActionConfirmationPopup}
-              onReturnToDashboard={() => {
-                this.onItemClick(null);
-                this.toggleActionConfirmationPopup("close");
-              }}
-            />
-          ) : null}
+                {this.state.showActionConfirmationPopup ? (
+                  <ActionItemPopupConfirmation
+                    togglePopup={this.toggleActionConfirmationPopup}
+                    onReturnToDashboard={() => {
+                      this.onItemClick(null);
+                      this.toggleActionConfirmationPopup("close");
+                    }}
+                  />
+                ) : null}
 
-          {this.state.showFewLeftPopup ? (
-            <FewLeftPopup
-              togglePopup={this.toggleFewLeftPopup}
-              onConfirm={this.onFewLeftSubmit}
-            />
-          ) : null}
+                {this.state.showFewLeftPopup ? (
+                  <FewLeftPopup
+                    togglePopup={this.toggleFewLeftPopup}
+                    onConfirm={this.onFewLeftSubmit}
+                  />
+                ) : null}
 
-          {this.state.showNotificationsPopup ? (
-            <AllNotificationsPopup
-              togglePopup={this.toggleNotificationsPopup}
-              notifications={this.state.notifications}
-              items={this.state.items}
-            />
-          ) : null}
-        </div>
-      </div>
+                {this.state.showNotificationsPopup ? (
+                  <AllNotificationsPopup
+                    togglePopup={this.toggleNotificationsPopup}
+                    notifications={this.state.notifications}
+                    items={this.state.items}
+                  />
+                ) : null}
+
+                <div className={"AppLoader " + (this.state.loading ? "active" : "") }><div><p>Loading...</p></div></div>
+              </div>
+            </div>
+        </AppContext.Provider>
     );
   }
 
   onClickOption = ID => {
-    console.log(ID);
     this.setState((state, props) => ({
       chosen: (() => {
         return this.onItemClickMaiSmechera(ID, state.elements)["chosen"];
@@ -308,6 +278,7 @@ class App extends Component {
   onFewLeftSubmit = amount => {
     if (amount === "") alert("No amount inserted!");
     else {
+      this.doNotificationSend({itemId : this.state.chosen.ID, quantity: amount});
       this.toggleFewLeftPopup();
       this.toggleActionConfirmationPopup();
     }
@@ -317,6 +288,126 @@ class App extends Component {
       drawer_visible: force !== null ? force === "open" : !state.drawer_visible
     }));
   };
+
+
+
+  doUpdateUniverse  = () => {
+
+    console.log(this);
+    let self = this;
+
+    console.log("Updating universe...");
+    if(!self.state.isSafeToUpdateUniverse){
+      console.log("Universe not safe to update.");
+      return new Promise((resolve)=>{resolve();});
+    }
+
+    return new Promise( (resolve, reject) => {
+
+      let request = Config.loadElementsFromAPI();
+
+      request
+          .then((data) => {
+
+            if(self.state.initial !== undefined && self.state.initial !== null){
+              if(JSON.stringify(self.state.initial) ===  JSON.stringify(data)){
+                console.log("Universe was already up to date.");
+                resolve();
+                return;
+              }
+            }
+
+
+            let elements = (()=>{
+              try {
+                let elements = data["elements"];
+                if (elements) {
+                  let data = [];
+                  for (let i = 0; i < elements.length; i++) {
+                    data.push(new Element(elements[i]));
+                  }
+                  return data;
+                }
+              } catch (e) {
+                console.error(e);
+                return [];
+              }
+            })();
+            let items = Config.loadItems(elements);
+            let notifications = Config.loadNotifications(items);
+
+            self.setState({
+              initial : data,
+              station : data["station"],
+              drawer_visible: false,
+              elements: elements,
+              items: items,
+              notifications: notifications,
+              chosen: null,
+              navBarClick: false,
+              showRequestPopup: false,
+              showFewLeftPopup: false,
+              showActionConfirmationPopup: false,
+              timeoutActionConfirmationPopup: null,
+              showNotificationsPopup: false,
+              loading : false,
+            });
+            resolve();
+          })
+          .catch( () => {
+            reject();
+          })
+    });
+  };
+
+  doNotificationSend = (data) => {
+
+    let self = this;
+
+
+    self.setState({
+      loading : true,
+      isSafeToUpdateUniverse : false
+    });
+
+
+
+
+
+    return new Promise((resolve, reject) => {
+      axios.post(Config.API_NOTIFICATION_SEND,{
+        stationId: self.state.station.id,
+        itemId : data.itemId,
+        quantity : Config.isEmpty(data.quantity) ? 0 : data.quantity,
+      })
+          .then((response) => {
+            try {
+              console.log(response);
+              let status = response["status"];
+              if (parseInt(status) === Config.HTTP_REQUEST_STATUS_OK || parseInt(status) === Config.HTTP_REQUEST_STATUS_CREATED ){
+                console.log("[OK] Notification was successful!");
+              }
+              else console.log("Notification encountered errors.")
+            }catch (e) {
+              console.error("Notification failed.");
+              console.error(e);
+              reject();
+            }
+          })
+          .catch((error) => {
+            console.error("Notification failed miserably.");
+            console.error(error);
+            reject();
+          })
+          .finally(() => {
+            self.setState({
+              loading: false,
+            });
+          });
+    })
+  }
+
+
 }
 
 export default App;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../resources/styles/SideBar.scss";
+import AppContext from "../model/AppContext";
 
 class SideBarItem extends Component {
   state = {
@@ -41,6 +42,7 @@ class SideBarItem extends Component {
           <div
             className="button none"
             onClick={() => {
+              this.context.doNotificationSend({itemId : this.props.element.ID, quantity: 0});
               this.props.onActionConfirmation();
             }}
           >
@@ -68,5 +70,5 @@ class SideBarItem extends Component {
     );
   }
 }
-
+SideBarItem.contextType = AppContext;
 export default SideBarItem;

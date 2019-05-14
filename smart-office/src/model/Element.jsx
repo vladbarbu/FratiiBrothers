@@ -72,11 +72,11 @@ class Element {
   constructor(object) {
     if (object === null) return;
     this.chosen = false;
-    this.ID = object.hasOwnProperty("ID") ? object["ID"] : null;
+    this.ID = object.hasOwnProperty("id") ? object["id"] : null;
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
-    this.parentID = object.hasOwnProperty("parentID")
+    this.parentID = object.hasOwnProperty("parentId")
       ? object["parentID"]
       : null;
     this.elements = (() => {

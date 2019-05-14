@@ -31,12 +31,7 @@ class SideBarInitial extends Component {
     ]
   };
 
-  static getInstructions() {
-    return "If your station is lacking a certain item, find it in the platform and mark it unavailable. Management will try to fix the supply issue as soon as possible.";
-  }
-  static getAddItemInfo() {
-    return "If the item was never made available, you can request it to be included in the station stock in the future.";
-  }
+
 
   getItemNameById = ID => {
     let items = this.props.items;
@@ -62,9 +57,10 @@ class SideBarInitial extends Component {
   };
 
   printDate = date => {
-    let parts = date.toString().split(" ");
-    let hour = parts[4].toString().split(":");
-    return parts[1] + " " + parts[2] + " " + hour[0] + ":" + hour[1];
+    return date;
+    // let parts = date.toString().split(" ");
+    // let hour = parts[4].toString().split(":");
+    // return parts[1] + " " + parts[2] + " " + hour[0] + ":" + hour[1];
   };
 
   printNotificationDate = notification => {
@@ -107,7 +103,7 @@ class SideBarInitial extends Component {
           <i className="material-icons">explore</i>
         </div>
         <h3>How it works</h3>
-        <p className="subtitle">{SideBarInitial.getInstructions()}</p>
+        <p className="subtitle">{"If your station is lacking a certain item, find it in the platform and mark it unavailable. Management will try to fix the supply issue as soon as possible."}</p>
         <button
           className="button grey"
           onClick={() => this.props.onClickSearch()}
@@ -119,7 +115,7 @@ class SideBarInitial extends Component {
           </div>
         </button>
 
-        <p className="subtitle">{SideBarInitial.getAddItemInfo()}</p>
+        <p className="subtitle">{"If the item was never made available, you can request it to be included in the station stock in the future."}</p>
         <button
           className="button grey"
           onClick={() => this.props.onClickRequest()}

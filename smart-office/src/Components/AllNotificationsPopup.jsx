@@ -53,9 +53,10 @@ class AllNotificationsPopup extends Component {
   };
 
   printDate = date => {
-    let parts = date.toString().split(" ");
-    let hour = parts[4].toString().split(":");
-    return parts[1] + " " + parts[2] + " " + hour[0] + ":" + hour[1];
+    return date;
+    // let parts = date.toString().split(" ");
+    // let hour = parts[4].toString().split(":");
+    // return parts[1] + " " + parts[2] + " " + hour[0] + ":" + hour[1];
   };
 
   printNotificationDate = notification => {

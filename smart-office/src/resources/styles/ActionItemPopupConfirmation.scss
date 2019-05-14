@@ -73,11 +73,15 @@
         }
 
         & > .button.return {
+
           margin-top: 40px;
           margin-bottom: 40px;
           @include big-button;
           width: auto;
           height: calc(60px - 2 * 10px);
+          opacity: 0.2;
+          user-select: none;
+          pointer-events: none;
         }
 
         @keyframes loading {
@@ -110,7 +114,7 @@
               background: $colorPrimary;
               animation-fill-mode: forwards;
               animation-name: loading;
-              animation-duration: 5s;
+              animation-duration: 4s;
               animation-iteration-count: infinite;
               animation-timing-function: ease-in;
             }

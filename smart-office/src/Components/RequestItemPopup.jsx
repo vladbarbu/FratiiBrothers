@@ -1,11 +1,21 @@
 import React, { Component } from "react";
+import Config from "./../config"
+import AppContext from "./../model/AppContext"
 
 
 import "../resources/styles/RequestPopup.scss";
+import axios from "axios";
 class RequestItemPopup extends Component {
   constructor(props) {
     super(props);
     this.setWrapperRef = this.setWrapperRef.bind(this);
+
+    this.request_name = React.createRef();
+    this.request_description = React.createRef();
+    this.request_badge = React.createRef();
+
+
+
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
@@ -19,7 +29,6 @@ class RequestItemPopup extends Component {
 
   setWrapperRef(node) {
     this.wrapperRef = node;
-    console.log(node);
   }
   /**
    * Alert if clicked on outside of element
@@ -29,6 +38,67 @@ class RequestItemPopup extends Component {
       console.log("You clicked outside of me!");
       this.props.togglePopup();
     }
+  }
+
+  doRequest(){
+    let self = this;
+
+
+    let name = this.request_name.current.value;
+    let description = this.request_description.current.value;
+    let badge = this.request_badge.current.value;
+
+    let flag = false;
+
+    if(Config.isEmpty(name)){ if(!this.request_name.current.classList.contains("warn"))  this.request_name.current.classList += "warn";flag = true;}
+    else if(this.request_name.current.classList.contains("warn")) this.request_name.current.classList -= "warn";
+
+
+    if(Config.isEmpty(description)){if(!this.request_name.current.classList.contains("warn")) this.request_description.current.classList += "warn";flag = true;}
+    else if(this.request_name.current.classList.contains("warn")) this.request_description.current.classList -= "warn";
+
+    badge = Config.isEmpty(badge) ? "-" : badge;
+
+    if(flag === true) return;
+
+
+    this.context.startLoading();
+
+
+    console.log(this.context);
+
+
+
+    return new Promise((resolve, reject) => {
+      axios.post(Config.API_REQUEST_SEND,{
+        locationId: self.context.station.id,
+        name : name,
+        description : description,
+        badge : badge
+      })
+          .then((response) => {
+            try {
+              console.log(response);
+              let status = response["status"];
+              if (parseInt(status) === Config.HTTP_REQUEST_STATUS_OK || parseInt(status) === Config.HTTP_REQUEST_STATUS_CREATED ){
+                  console.log("[OK] Product request was successful!");
+              }
+              else console.log("Product request encountered errors.")
+            }catch (e) {
+              console.error("Product request failed.");
+              console.error(e);
+              reject();
+            }
+          })
+          .catch((error) => {
+            console.error("Product request failed miserably.");
+            console.error(error);
+            reject();
+          })
+          .finally(() => {
+            self.context.stopLoading();
+          });
+    })
   }
 
   render() {
@@ -55,18 +125,18 @@ class RequestItemPopup extends Component {
             <form>
               <div className="field">
 
-                <label htmlFor="request_name">1. Name of the item</label>
-                <input id="request_name" type="text" placeholder="e.g. A special kind of sugar"/>
+                <label htmlFor="request_name">1. Name of the item *</label>
+                <input id="request_name"  ref={this.request_name} type="text" placeholder="e.g. A special kind of sugar"/>
               </div>
 
               <div className="field">
-                <label htmlFor="request_description">2. Description of product and reason for request</label>
-                <input id="request_description" type="text" placeholder="Why would you like to make this product available?" />
+                <label htmlFor="request_description">2. Description of product and reason for request *</label>
+                <input id="request_description" ref={this.request_description} type="text" placeholder="Why would you like to make this product available?" />
               </div>
 
               <div className="field">
                 <label htmlFor="request_badge">3. Your name or badge ID</label>
-                <input id="request_badge" type="text" placeholder="This will help organise the requests and move faster"/>
+                <input id="request_badge" ref={this.request_badge} type="text" placeholder="This will help organise the requests and move faster"/>
               </div>
             </form>
           <div className="footer">
@@ -75,7 +145,7 @@ class RequestItemPopup extends Component {
                 <p>Cancel request</p>
               </div>
             </div>
-            <div className="button submit" >
+            <div className="button submit" onClick={() => {this.doRequest();}} >
               <div className="content">
                 <p>Request Product</p>
               </div>
@@ -88,5 +158,5 @@ class RequestItemPopup extends Component {
     );
   }
 }
-
+RequestItemPopup.contextType = AppContext;
 export default RequestItemPopup;

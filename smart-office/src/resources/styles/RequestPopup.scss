@@ -92,6 +92,15 @@
               font-weight: 400;
               outline: none;
               border: none;
+              &.warn{
+                color: $red;
+                &::placeholder{
+                  color: $red;
+                }
+                & ~ label, & + label{
+                  color: $red;
+                }
+              }
 
               &::placeholder{
                 color: #aaa;

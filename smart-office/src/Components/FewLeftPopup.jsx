@@ -110,7 +110,7 @@ class FewLeftPopup extends Component {
               <div className="footer">
                 <div
                   className="button submit" data-active={this.state.valid}
-                  onClick={() => this.props.onConfirm(this.state.input)}
+                  onClick={() => {this.props.onConfirm(this.state.input)}}
                 >
                   <div className="content">
                     <p>Confirm</p>
