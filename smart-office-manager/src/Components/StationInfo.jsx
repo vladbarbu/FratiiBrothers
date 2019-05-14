@@ -4,9 +4,11 @@ import "../resources/styles/StationInfo.scss";
 class StationInfo extends Component {
   state = {
     stations: this.props.stationInfo.elements,
-    chosen: null
+    chosen: null,
+    notifications: null
   };
   render() {
+    this.checkNotifications();
     return (
       <div className="StationInfo">
         <div className="breadcrumbs">
@@ -20,7 +22,21 @@ class StationInfo extends Component {
           <img src={this.props.stationInfo.image} />
           <div>
             <div>
-              <i className="material-icons">ev_station</i>
+              {this.state.notifications !== null ? (
+                <i
+                  className="material-icons stationIcon"
+                  style={{ backgroundColor: "red" }}
+                >
+                  ev_station
+                </i>
+              ) : (
+                <i
+                  className="material-icons stationIcon"
+                  style={{ backgroundColor: "#0dd2a3" }}
+                >
+                  ev_station
+                </i>
+              )}
               <b>Station #{this.props.stationInfo.stationName}</b>
 
               <div className="info">
@@ -147,6 +163,18 @@ class StationInfo extends Component {
       this.setState({ chosen: active });
     }
   };
+
+  checkNotifications() {
+    this.props.stationInfo.elements.map(element => {
+      element.elements.map(element => {
+        element.elements.map(element => {
+          if (element.notifications.length > 0)
+            if (this.state.notifications === null)
+              this.setState({ notifications: true });
+        });
+      });
+    });
+  }
 }
 
 export default StationInfo;
