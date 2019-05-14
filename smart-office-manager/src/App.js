@@ -15,7 +15,8 @@ class App extends Component {
       stationInfo: null,
       location: location,
       stations: stations,
-      chosenItem: null
+      chosenItem: null,
+      chosenStation: null
     };
   }
 
@@ -61,6 +62,8 @@ class App extends Component {
             stations={this.state.stations}
             itemChoose={this.itemChoose}
             chosenItem={this.state.chosenItem}
+            onClickSupplyStation={this.onClickSupplyStation}
+            chosenStation={this.state.chosenStation}
           />
         </div>
       </div>
@@ -81,6 +84,10 @@ class App extends Component {
     });
     this.resetActiveChilds();
     this.resetItemChoose();
+  };
+
+  onClickSupplyStation = element => {
+    this.setState({ chosenStation: element });
   };
 
   goBackToStations = () => {

@@ -30,22 +30,7 @@
                   "parentID": 8,
                   "image": "images/item_1.png",
                   "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "123ABC",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 70
-                    },
-                    {
-                      "ID": "CBA123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 70
-                    }
-                  ]
+                  "notifications": []
                 },
                 {
                   "ID": 71,
@@ -54,15 +39,7 @@
                   "name": "Paper Cups Medium",
                   "parentID": 8,
                   "image": "images/item_2.png",
-                  "notifications": [
-                    {
-                      "ID": "CBD123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "4 other notifications have been sent about this item.",
-                      "itemID": 71
-                    }
-                  ]
+                  "notifications": []
                 },
                 {
                   "ID": 72,
@@ -88,22 +65,7 @@
                   "parentID": 9,
                   "image": "images/item_1.png",
                   "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "123ABD",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 73
-                    },
-                    {
-                      "ID": "DBA123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 73
-                    }
-                  ]
+                  "notifications": []
                 },
                 {
                   "ID": 74,
@@ -112,15 +74,7 @@
                   "parentID": 9,
                   "image": "images/item_2.png",
                   "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "DBD123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "4 other notifications have been sent about this item.",
-                      "itemID": 74
-                    }
-                  ]
+                  "notifications": []
                 },
                 {
                   "ID": 75,
@@ -167,22 +121,7 @@
                   "parentID": 11,
                   "image": "images/item_1.png",
                   "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "124ABC",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 76
-                    },
-                    {
-                      "ID": "CBA124",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 76
-                    }
-                  ]
+                  "notifications": []
                 },
                 {
                   "ID": 77,
@@ -191,15 +130,7 @@
                   "parentID": 11,
                   "image": "images/item_2.png",
                   "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "CBD124",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "4 other notifications have been sent about this item.",
-                      "itemID": 77
-                    }
-                  ]
+                  "notifications": []
                 },
                 {
                   "ID": 78,
@@ -225,22 +156,7 @@
                   "parentID": 12,
                   "image": "images/item_1.png",
                   "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "143ABD",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 79
-                    },
-                    {
-                      "ID": "DBA143",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 79
-                    }
-                  ]
+                  "notifications": []
                 },
                 {
                   "ID": 80,
@@ -249,15 +165,7 @@
                   "parentID": 12,
                   "image": "images/item_2.png",
                   "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "DBD143",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "4 other notifications have been sent about this item.",
-                      "itemID": 80
-                    }
-                  ]
+                  "notifications": []
                 },
                 {
                   "ID": 81,

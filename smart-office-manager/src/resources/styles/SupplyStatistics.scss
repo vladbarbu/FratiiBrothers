@@ -1,0 +1,14 @@
+.supplyStations {
+  display: flex;
+}
+
+.supplyStation {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.supplyStation > .material-icons {
+  font-size: 40px;
+}

@@ -5,6 +5,7 @@ import SideBar_Statistics from "./SideBar_Statistics.jsx";
 import Stations from "./Stations";
 import StationInfo from "./StationInfo";
 import ItemStock from "./ItemStock";
+import SupplyStatistics from "./SupplyStatistics";
 
 class Main extends Component {
   constructor(props) {
@@ -43,6 +44,11 @@ class Main extends Component {
       case "Supply Statistics":
         return (
           <div>
+            <SupplyStatistics
+              stations={this.props.stations}
+              onClickSupplyStation={this.onClickSupplyStation}
+              chosenStation={this.props.chosenStation}
+            />
             <SideBar_Statistics />
           </div>
         );
@@ -53,6 +59,10 @@ class Main extends Component {
   }
   onClickStation = element => {
     this.props.onClickStation(element);
+  };
+
+  onClickSupplyStation = element => {
+    this.props.onClickSupplyStation(element);
   };
 
   goBackToStations = () => {
