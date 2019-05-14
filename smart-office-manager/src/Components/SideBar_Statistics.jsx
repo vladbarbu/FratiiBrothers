@@ -28,33 +28,69 @@ class SideBar_Statistics extends Component {
           ? null
           : element.elements.map(element => {
               // Items and subcategory
-              return (
-                <div className="justItem supplyStock">
-                  <small onClick={() => this.changeActiveChild(element)}>
-                    {element.type === "item" ? (
-                      <img src={require("./../resources/" + element.image)} />
-                    ) : null}
-                    <div className="itemText">
-                      {element.type === "item" ? (
-                        <small className="itemColors">Item:</small>
-                      ) : null}
-                      {element.type === "category" &&
-                      element.parentID !== null ? (
-                        <small className="itemColors">Subcategory:</small>
-                      ) : null}
-                      {element.type === "category" &&
-                      element.parentID === null ? (
-                        <small className="itemColors">Category:</small>
-                      ) : null}
-                      <small>{element.name}</small>
+              if (element.type !== "item") {
+                return (
+                  <div className="justItem supplyStock">
+                    <small onClick={() => this.changeActiveChild(element)}>
+                      <div className="itemText">
+                        {element.type === "category" &&
+                        element.parentID !== null ? (
+                          <small className="itemColors">Subcategory:</small>
+                        ) : null}
+                        {element.type === "category" &&
+                        element.parentID === null ? (
+                          <small className="itemColors">Category:</small>
+                        ) : null}
+                        <small>{element.name}</small>
+                      </div>
+                    </small>
+                    {element.childActive === true
+                      ? this.ItemStock(element)
+                      : null}
+                  </div>
+                );
+              } else {
+                return (
+                  <div className="itemSidebar">
+                    <div className="justItem supplyStock">
+                      <small onClick={() => this.changeActiveChild(element)}>
+                        {element.type === "item" ? (
+                          <img
+                            src={require("./../resources/" + element.image)}
+                          />
+                        ) : null}
+                        <div className="itemText">
+                          {element.type === "item" ? (
+                            <small className="itemColors">Item:</small>
+                          ) : null}
+                          {element.type === "category" &&
+                          element.parentID !== null ? (
+                            <small className="itemColors">Subcategory:</small>
+                          ) : null}
+                          {element.type === "category" &&
+                          element.parentID === null ? (
+                            <small className="itemColors">Category:</small>
+                          ) : null}
+                          <small>{element.name}</small>
+                        </div>
+                      </small>
                     </div>
-                  </small>
+                    {element.type === "item" &&
+                    this.state.chosen === element ? (
+                      <i
+                        class="material-icons"
+                        style={{ backgroundColor: "#F9E816" }}
+                      >
+                        offline_bolt
+                      </i>
+                    ) : null}
 
-                  {element.childActive === true
-                    ? this.ItemStock(element)
-                    : null}
-                </div>
-              );
+                    {element.childActive === true
+                      ? this.ItemStock(element)
+                      : null}
+                  </div>
+                );
+              }
             })}
       </div>
     );
