@@ -13,6 +13,27 @@
 
 .stationInfo {
   display: flex;
+  overflow-y: auto;
+}
+
+.returnButton {
+  align-self: flex-end;
+  margin-right: 10px;
+  background-color: #efefef;
+  padding: 8px;
+  width: 200px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.viewButton {
+  align-self: flex-end;
+  margin-right: 10px;
+  background-color: #f9e816;
+  padding: 8px;
+  width: 200px;
+  text-align: center;
+  border-radius: 4px;
 }
 
 div.itemStock {

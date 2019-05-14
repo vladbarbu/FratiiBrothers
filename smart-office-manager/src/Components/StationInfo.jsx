@@ -5,7 +5,8 @@ class StationInfo extends Component {
   state = {
     stations: this.props.stationInfo.elements,
     chosen: null,
-    notifications: null
+    notifications: null,
+    numberOfItems: this.searchItems()
   };
   render() {
     this.checkNotifications();
@@ -40,20 +41,27 @@ class StationInfo extends Component {
               <b>Station #{this.props.stationInfo.stationName}</b>
 
               <div className="info">
-                <small>Some info</small>
+                <small style={{ color: "#0DD2A3" }}>
+                  <i class="material-icons">label</i>
+                  {this.state.numberOfItems} unique items
+                </small>
               </div>
             </div>
           </div>
-          <button onClick={() => this.props.goBackToStations()}>
+          <small
+            onClick={() => this.props.goBackToStations()}
+            className="returnButton"
+          >
             Return to stations
-          </button>
-          <button
+          </small>
+          <small
+            className="viewButton"
             onClick={() =>
               this.props.onClickSupplyStation(this.props.stationInfo)
             }
           >
             View statistics for station
-          </button>
+          </small>
         </div>
         <span>
           <i className="material-icons">list</i> Station Item Stock
@@ -66,6 +74,7 @@ class StationInfo extends Component {
   }
 
   ItemStock(element) {
+    var numberOfItems = 0;
     let style = { backgroundColor: "#0DD2A3" };
     return (
       //Only category
@@ -182,6 +191,18 @@ class StationInfo extends Component {
         });
       });
     });
+  }
+
+  searchItems() {
+    var numberOfItems = 0;
+    this.props.stationInfo.elements.map(element => {
+      element.elements.map(element => {
+        element.elements.map(element => {
+          numberOfItems++;
+        });
+      });
+    });
+    return numberOfItems;
   }
 }
 

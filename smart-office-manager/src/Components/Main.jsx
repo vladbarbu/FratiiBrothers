@@ -21,7 +21,7 @@ class Main extends Component {
   render() {
     switch (this.props.sideBarChosen) {
       case "Notifications":
-         return <Notifications />;
+        return <Notifications />;
       case "Stations":
         return (
           <Stations
