@@ -64,11 +64,22 @@ class App extends Component {
             chosenItem={this.state.chosenItem}
             onClickSupplyStation={this.onClickSupplyStation}
             chosenStation={this.state.chosenStation}
+            updateStations={this.updateStations}
           />
         </div>
       </div>
     );
   }
+
+  updateStations = elements => {
+    var clone = this.state.stations;
+    clone.map(element => {
+      element.elements.map(element => {
+        if (element === elements) element = elements;
+      });
+    });
+    this.setState({ stations: clone });
+  };
 
   onClickSideBar = chosen => {
     this.setState({ sideBarChosen: chosen });
@@ -88,12 +99,13 @@ class App extends Component {
   };
 
   onClickSupplyStation = element => {
-    this.setState({ chosenStation: element });
+    this.setState({
+      sideBarChosen: "Supply Statistics",
+      chosenStation: element
+    });
   };
 
   resetChosenStation = () => {
-    this.resetActiveChilds();
-    this.resetItemChoose();
     this.setState({ chosenStation: null });
   };
 
@@ -121,11 +133,12 @@ class App extends Component {
   };
 
   itemChoose = element => {
-    console.log("Ai ales ->", element);
+    console.log("Seeeeet");
     this.setState({ chosenItem: element });
   };
 
   resetItemChoose = () => {
+    console.log("Reset");
     this.setState({ chosenItem: null });
   };
 }

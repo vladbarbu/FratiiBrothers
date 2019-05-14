@@ -6,11 +6,16 @@ import Stations from "./Stations";
 import StationInfo from "./StationInfo";
 import ItemStock from "./ItemStock";
 import SupplyStatistics from "./SupplyStatistics";
+import App from "../App";
 
 class Main extends Component {
   constructor(props) {
     super(props);
   }
+
+  state = {
+    localStation: null
+  };
 
   render() {
     switch (this.props.sideBarChosen) {
@@ -29,6 +34,7 @@ class Main extends Component {
             <StationInfo
               stationInfo={this.props.stationInfo}
               goBackToStations={this.goBackToStations}
+              onClickSupplyStation={this.onClickSupplyStation}
               elements={this.props.elements}
               itemChoose={this.itemChoose}
             />
@@ -49,11 +55,14 @@ class Main extends Component {
               onClickSupplyStation={this.onClickSupplyStation}
               chosenStation={this.props.chosenStation}
             />
-            {this.props.chosenStation !== null ? (
+
+            {this.props.chosenStation === this.state.localStation &&
+            this.props.chosenStation ? (
               <SideBar_Statistics
                 chosenStation={this.props.chosenStation}
                 chosenItem={this.props.chosenItem}
                 itemChoose={this.itemChoose}
+                updateStations={this.updateStations}
               />
             ) : null}
           </div>
@@ -68,6 +77,7 @@ class Main extends Component {
   };
 
   onClickSupplyStation = element => {
+    this.setState({ localStation: element });
     this.props.onClickSupplyStation(element);
   };
 
@@ -77,6 +87,10 @@ class Main extends Component {
 
   itemChoose = element => {
     this.props.itemChoose(element);
+  };
+
+  updateStations = element => {
+    this.props.updateStations(element);
   };
 }
 

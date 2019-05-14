@@ -47,7 +47,13 @@ class StationInfo extends Component {
           <button onClick={() => this.props.goBackToStations()}>
             Return to stations
           </button>
-          <button>View statistics for station</button>
+          <button
+            onClick={() =>
+              this.props.onClickSupplyStation(this.props.stationInfo)
+            }
+          >
+            View statistics for station
+          </button>
         </div>
         <span>
           <i className="material-icons">list</i> Station Item Stock

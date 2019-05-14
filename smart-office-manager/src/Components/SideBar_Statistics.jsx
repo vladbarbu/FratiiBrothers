@@ -5,17 +5,19 @@ import React, { Component } from "react";
 import "../resources/styles/SideBar.scss";
 
 class SideBar_Statistics extends Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
-    stations: this.props.chosenStation.elements,
-    chosen: null,
-    notifications: null
+    chosen: this.props.chosenItem
   };
 
   render() {
     return (
       <div className="SideBar">
         <i className="material-icons">list</i>
-        Station Item Stock{this.ItemStock(this.props.chosenStation)}
+        Station Item Stock
+        {this.ItemStock(this.props.chosenStation)}
       </div>
     );
   }
@@ -24,8 +26,28 @@ class SideBar_Statistics extends Component {
     return (
       //Only category
       <div className="supplyItemStock">
-        {element === this.state.chosenStation
-          ? null
+        {element === this.props.chosenStation
+          ? element.elements.map(element => {
+              return (
+                <div className="justItem supplyStock">
+                  <small
+                    onClick={() => this.changeActiveChild(element)}
+                    style={{ border: "none" }}
+                  >
+                    <div className="itemText">
+                      {element.type === "category" &&
+                      element.parentID === null ? (
+                        <small className="itemColors">Category:</small>
+                      ) : null}
+                      <small>{element.name}</small>
+                    </div>
+                  </small>
+                  {element.childActive === true
+                    ? this.ItemStock(element)
+                    : null}
+                </div>
+              );
+            })
           : element.elements.map(element => {
               // Items and subcategory
               if (element.type !== "item") {
@@ -39,10 +61,6 @@ class SideBar_Statistics extends Component {
                         {element.type === "category" &&
                         element.parentID !== null ? (
                           <small className="itemColors">Subcategory:</small>
-                        ) : null}
-                        {element.type === "category" &&
-                        element.parentID === null ? (
-                          <small className="itemColors">Category:</small>
                         ) : null}
                         <small>{element.name}</small>
                       </div>
@@ -90,10 +108,6 @@ class SideBar_Statistics extends Component {
                         <i className="material-icons">offline_bolt</i>
                       </div>
                     ) : null}
-
-                    {element.childActive === true
-                      ? this.ItemStock(element)
-                      : null}
                   </div>
                 );
               }
@@ -104,7 +118,7 @@ class SideBar_Statistics extends Component {
   changeActiveChild = active => {
     if (active.type !== "item") {
       var flag = false;
-      var element = this.state.stations;
+      var element = this.props.chosenStation.elements;
       element.map(element => {
         if (element === active) {
           flag = true;
@@ -124,8 +138,7 @@ class SideBar_Statistics extends Component {
           });
         });
       }
-
-      this.setState({ stations: element });
+      this.props.updateStations(element);
     } else {
       this.props.itemChoose(active);
       this.setState({ chosen: active });
