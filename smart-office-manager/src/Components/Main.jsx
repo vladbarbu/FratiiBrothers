@@ -6,6 +6,7 @@ import Stations from "./Stations";
 import StationInfo from "./StationInfo";
 import ItemStock from "./ItemStock";
 import SupplyStatistics from "./SupplyStatistics";
+import Notifications from "./Notifications";
 import App from "../App";
 
 class Main extends Component {
@@ -20,7 +21,7 @@ class Main extends Component {
   render() {
     switch (this.props.sideBarChosen) {
       case "Notifications":
-        return <div />;
+         return <Notifications />;
       case "Stations":
         return (
           <Stations
