@@ -43,7 +43,7 @@ class Main extends Component {
         return <div />;
       case "Supply Statistics":
         return (
-          <div>
+          <div className="SupplyStatistics">
             <SupplyStatistics
               stations={this.props.stations}
               onClickSupplyStation={this.onClickSupplyStation}
