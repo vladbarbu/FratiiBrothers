@@ -75,6 +75,7 @@ class App extends Component {
     if (chosen === "Station" || chosen === "Item Stock")
       this.resetActiveChilds();
     this.resetItemChoose();
+    this.resetChosenStation();
   };
 
   onClickStation = element => {
@@ -88,6 +89,10 @@ class App extends Component {
 
   onClickSupplyStation = element => {
     this.setState({ chosenStation: element });
+  };
+
+  resetChosenStation = () => {
+    this.setState({ chosenStation: null });
   };
 
   goBackToStations = () => {
@@ -114,6 +119,7 @@ class App extends Component {
   };
 
   itemChoose = element => {
+    console.log("Ai ales ->", element);
     this.setState({ chosenItem: element });
   };
 

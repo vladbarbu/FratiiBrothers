@@ -49,7 +49,13 @@ class Main extends Component {
               onClickSupplyStation={this.onClickSupplyStation}
               chosenStation={this.props.chosenStation}
             />
-            <SideBar_Statistics />
+            {this.props.chosenStation !== null ? (
+              <SideBar_Statistics
+                chosenStation={this.props.chosenStation}
+                chosenItem={this.props.chosenItem}
+                itemChoose={this.itemChoose}
+              />
+            ) : null}
           </div>
         );
 

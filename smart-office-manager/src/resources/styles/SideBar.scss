@@ -11,6 +11,20 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   overflow-y: auto;
 
+  .itemColors {
+    color: #ababac;
+  }
+  .justItem.supplyStock > small > img {
+    width: 50px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+
+  .justItem.supplyStock {
+    width: 200px;
+  }
+
   & > .body {
     & > .description {
       & > .description-element {
