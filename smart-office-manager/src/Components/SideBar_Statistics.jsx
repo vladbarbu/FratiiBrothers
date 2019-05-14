@@ -31,7 +31,10 @@ class SideBar_Statistics extends Component {
               if (element.type !== "item") {
                 return (
                   <div className="justItem supplyStock">
-                    <small onClick={() => this.changeActiveChild(element)}>
+                    <small
+                      onClick={() => this.changeActiveChild(element)}
+                      style={{ border: "none" }}
+                    >
                       <div className="itemText">
                         {element.type === "category" &&
                         element.parentID !== null ? (
