@@ -1,8 +1,7 @@
 @import "config";
 .stationImage {
-
 }
-$stationBorderRadius : 4px;
+$stationBorderRadius: 4px;
 .Station {
   grid-column: span 1;
   display: flex;
@@ -11,77 +10,78 @@ $stationBorderRadius : 4px;
   background: #ffffff;
   border: solid #eeeeee 1px;
   border-radius: $stationBorderRadius;
-  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
   height: 160px;
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, border 0.2s;
-  &:hover, &:active{
+  &:hover,
+  &:active {
     background: #f9f9f9;
     border: solid $colorSecondary 1px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
     transition: background 0.2s, box-shadow 0.2s, border 0.2s;
-    & > .body > .button{
+    & > .body > .button {
       background: $colorSecondary;
       transition: background 0.2s;
     }
   }
-  p{
+  p {
     margin: 0;
   }
 
-  & > .image{
+  & > .image {
     height: 100%;
     width: 200px;
     border-radius: $stationBorderRadius - 1 0 0 $stationBorderRadius - 1;
     overflow: hidden;
-    & > img{
+    & > img {
       height: 100%;
       width: 100%;
       object-fit: cover;
     }
   }
-  & > .body{
+  & > .body {
     display: flex;
     flex-direction: column;
-    width: calc(100% -  10px);
+    width: calc(100% - 10px);
     height: 100%;
     padding: 10px 0 0 10px;
 
-    & > .title{
+    & > .title {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
-      & > .icon{
+      & > .icon {
         margin-right: 10px;
-        i{
+        i {
           background: $colorPrimary;
           color: #ffffff;
           padding: 5px;
           border-radius: 4px;
         }
       }
-      & > p{
+      & > p {
         font-size: 13pt;
         color: #2c2c2c;
         font-weight: 600;
       }
     }
-    & > .info{
+    & > .info {
       flex: 1;
-      p{
+      p {
         font-size: 12pt;
         color: #aaaaaa;
         font-weight: 300;
       }
     }
-    & > .button{
+    & > .button {
       margin-left: auto;
       border-radius: $stationBorderRadius 0 $stationBorderRadius - 1 0;
       padding: 8px 20px;
       background: $colorPrimary;
       transition: background 0.2s;
 
-      p{
+      p {
         font-weight: 700;
         font-size: 10pt;
         color: white;
@@ -89,9 +89,7 @@ $stationBorderRadius : 4px;
       }
     }
   }
-
 }
-
 
 .numberOfStations {
   color: #ababac;

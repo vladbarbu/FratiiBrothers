@@ -114,7 +114,7 @@ class SideBar_Statistics extends Component {
   }
 
   changeActiveChild = active => {
-    if (active._childActive == true) active._childActive = false;
+    if (active._childActive === true) active._childActive = false;
     else active._childActive = true;
 
     if (active.type === "item") {
