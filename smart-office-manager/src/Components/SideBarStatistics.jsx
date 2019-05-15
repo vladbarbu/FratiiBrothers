@@ -4,7 +4,7 @@
 import React, { Component } from "react";
 import "../resources/styles/SideBar.scss";
 
-class SideBar_Statistics extends Component {
+class SideBarStatistics extends Component {
   state = {
     chosen: this.props.chosenItem
   };
@@ -125,4 +125,4 @@ class SideBar_Statistics extends Component {
   };
 }
 
-export default SideBar_Statistics;
+export default SideBarStatistics;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../resources/styles/Main.scss";
 import SideBar from "./SideBar.jsx";
-import SideBar_Statistics from "./SideBar_Statistics.jsx";
+import SideBarStatistics from "./SideBarStatistics";
 import Stations from "./Stations";
 import StationInfo from "./StationInfo";
 import ItemStock from "./ItemStock";
@@ -72,7 +72,7 @@ class Main extends Component {
 
             {this.props.chosenStation === this.state.localStation &&
             this.props.chosenStation ? (
-              <SideBar_Statistics
+              <SideBarStatistics
                 chosenStation={this.props.chosenStation}
                 chosenItem={this.props.chosenItem}
                 itemChoose={this.itemChoose}
