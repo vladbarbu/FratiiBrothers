@@ -78,6 +78,7 @@ class SideBar extends Component {
               className="button clear-warnings"
               onClick={() => {
                 this.props.clearItemWarnings(this.props.chosenItem);
+                this.props.toggleConfirmationPopup();
               }}
             >
               <div className="content">

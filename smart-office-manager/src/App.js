@@ -4,6 +4,7 @@ import Station from "./Model/Station";
 import NavBar from "./Components/NavBar";
 import SideMenu from "./Components/SideMenu";
 import Main from "./Components/Main";
+import ConfirmationPopup from "./Components/ConfirmationPopup";
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,9 @@ class App extends Component {
       items: items,
       mappedItems: mappedItems,
       chosenItem: null,
-      chosenStation: null
+      chosenStation: null,
+      showConfirmationPopup: false,
+      showInputPopup: false
     };
   }
 
@@ -74,12 +77,22 @@ class App extends Component {
             updateStations={this.updateStations}
             checkItemStatistics={this.checkItemStatistics}
             clearItemWarnings={this.clearItemWarnings}
+            toggleConfirmationPopup={this.toggleConfirmationPopup}
           />
+          {this.state.showConfirmationPopup === true ? (
+            <ConfirmationPopup
+              togglePopup={this.toggleConfirmationPopup}
+              onReturnToDashboard={this.goBackToStations}
+            />
+          ) : null}
         </div>
       </div>
     );
   }
 
+  toggleConfirmationPopup = () => {
+    this.setState({ showConfirmationPopup: !this.state.showConfirmationPopup });
+  };
   updateStations = elements => {
     var clone = this.state.stations;
     clone.map(element => {
