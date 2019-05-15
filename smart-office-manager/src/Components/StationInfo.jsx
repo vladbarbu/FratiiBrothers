@@ -96,6 +96,7 @@ class StationInfo extends Component {
                   {element.childActive === true
                     ? this.ItemStock(element)
                     : null}
+                  {/* {this.ItemStock(element)}*/}
                 </div>
               );
             })
@@ -144,6 +145,7 @@ class StationInfo extends Component {
                   {element.childActive === true
                     ? this.ItemStock(element)
                     : null}
+                  {/*{element.type !== "item" ? this.ItemStock(element) : null}*/}
                 </div>
               );
             })}

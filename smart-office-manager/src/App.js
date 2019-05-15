@@ -83,8 +83,8 @@ class App extends Component {
 
   onClickSideBar = chosen => {
     this.setState({ sideBarChosen: chosen });
-    this.resetActiveChilds();
-    this.resetItemChoose();
+    // this.resetActiveChilds();
+    //this.resetItemChoose();
     this.resetChosenStation();
   };
 
