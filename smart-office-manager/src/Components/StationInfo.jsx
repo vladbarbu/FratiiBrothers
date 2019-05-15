@@ -6,8 +6,7 @@ class StationInfo extends Component {
     stations: this.props.stationInfo.elements,
     chosen: null,
     notifications: null,
-    numberOfItems: this.searchItems(),
-    stationClone: this.props.stationInfo
+    numberOfItems: this.searchItems()
   };
 
   constructor(props) {
@@ -95,7 +94,10 @@ class StationInfo extends Component {
               return (
                 <div className="categoryItem">
                   <small onClick={() => this.changeActiveChild(element)}>
-                    <img src={require("./../resources/" + element.image)} />
+                    <img
+                      src={require("./../resources/" + element.image)}
+                      alt="ok"
+                    />
                     <div className="itemText">
                       {element.type === "category" && element.parentID === null
                         ? "Category:"
