@@ -118,6 +118,7 @@ class App extends Component {
       });
     });
     this.setState({ stations: clone });
+    return 1;
   };
 
   onClickSideBar = chosen => {
@@ -168,6 +169,7 @@ class App extends Component {
       });
     });
     this.setState({ stations: clone });
+    return 1;
   };
 
   itemChoose = element => {

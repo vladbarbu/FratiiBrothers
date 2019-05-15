@@ -6,10 +6,6 @@ import "../resources/styles/Nav.scss";
 import Logo from "./../resources/images/logo-manager.svg";
 
 class NavBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <nav className="NavBar">

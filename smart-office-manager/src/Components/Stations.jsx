@@ -54,12 +54,10 @@ class Stations extends Component {
 
   numberOfStations(flag) {
     let count = 0;
-    {
-      this.props.stations.map(element => {
-        if (element.floor === flag) count += 1;
-        return true;
-      });
-    }
+    this.props.stations.map(element => {
+      if (element.floor === flag) count += 1;
+      return true;
+    });
     return count;
   }
 }

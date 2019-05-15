@@ -5,10 +5,6 @@ import React, { Component } from "react";
 import "../resources/styles/SideBar.scss";
 
 class SideBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   getItemIndex = item => {
     for (let i = 0; i < this.props.items.length; i++)
       if (this.props.items[i].ID === item.ID) return i;
@@ -127,7 +123,7 @@ class SideBar extends Component {
         </div>
         <div className="footer">
           <div className="notifications">
-            {this.props.chosenItem.notifications.length == 0 ? (
+            {this.props.chosenItem.notifications.length === 0 ? (
               <p className="no-warnings">No warnings</p>
             ) : (
               this.props.chosenItem.notifications.map(notification => (

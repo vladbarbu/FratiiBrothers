@@ -9,10 +9,6 @@ class StationInfo extends Component {
     numberOfItems: this.searchItems()
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     console.log(this.props.checkForNotifications(this.props.stationInfo));
     this.setState({
@@ -31,7 +27,7 @@ class StationInfo extends Component {
           <i className="material-icons">arrow_right</i>
         </div>
         <div className="stationInfo">
-          <img src={this.props.stationInfo.image} />
+          <img src={this.props.stationInfo.image} alt="ok" />
           <div>
             <div>
               {this.state.notifications === true ? (
@@ -96,7 +92,10 @@ class StationInfo extends Component {
               return (
                 <div className="categoryItem" key={++i}>
                   <small onClick={() => this.changeActiveChild(element)}>
-                    <img src={require("./../resources/" + element.image)} />
+                    <img
+                      src={require("./../resources/" + element.image)}
+                      alt="ok"
+                    />
                     <div className="itemText">
                       {element.type === "category" && element.parentID === null
                         ? "Category:"
@@ -120,7 +119,10 @@ class StationInfo extends Component {
                     <i className="material-icons subdirectory">
                       subdirectory_arrow_right
                     </i>
-                    <img src={require("./../resources/" + element.image)} />
+                    <img
+                      src={require("./../resources/" + element.image)}
+                      alt="ok"
+                    />
                     <div className="itemText">
                       {element.type === "item" ? "Item:" : null}
                       {element.type === "category" ? "Subcategory:" : null}
