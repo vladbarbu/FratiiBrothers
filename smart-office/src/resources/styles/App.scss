@@ -47,10 +47,10 @@
     pointer-events: none;
     position: absolute;
     bottom: 30px;
+    width: 100%;
     z-index: 10000000;
     display: flex;
     justify-content: center;
-    width: 100%;
     opacity: 0;
     transition: opacity 0.2s, visibility 0s linear 0.2s ;
     @keyframes background-loader-animation {
@@ -62,11 +62,10 @@
       }
     }
     & > div{
-      box-shadow: 0 0 30px rgba($colorPrimary, 0.4);
+      box-shadow: 0 0 35px rgba($colorPrimary, 0.5);
       margin: 0 auto;
       height: 60px;
-      width: 100%;
-      max-width: 200px;
+      width: 200px;
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -117,6 +116,26 @@
           transition: transform 0.3s, box-shadow 0.3s;
           will-change: transform;
           box-shadow: -10px 0 40px rgba(0,0,0,0.32);
+        }
+      }
+    }
+  }
+
+}
+
+
+@media #{$top-mobile-big}{
+  #App {
+    .AppLoader{
+      bottom: 30px;
+      right: auto;
+      left: auto;
+      width: 100%;
+
+      & > div{
+        margin: 0 auto;
+        width: 80%;
+        & > p{
         }
       }
     }

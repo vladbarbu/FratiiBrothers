@@ -1,27 +1,35 @@
 import React, { Component } from "react";
 
 import "../resources/styles/SideBar.scss";
+import AppContext from "../model/AppContext";
+import Config from "../config";
+
 
 class SideBarHeader extends Component {
-  state = {
-    building: "Centric Iasi",
-    floor: "Floor 5",
-    table: "Table 3"
-  };
 
-  render() {
+
+
+
+
+    render() {
+      let station = {
+          building: "Centric Iasi",
+          floor: "Floor "+ (Config.isEmpty(this.context.station.floor) ? "-" :  this.context.station.floor),
+          table: "Station "+ (Config.isEmpty(this.context.station.name) ? "-" :  this.context.station.name),
+      };
     return (
       <header>
         <button onClick={()=>{this.props.onToggleMobileDrawer()}} className="button menu">
           <i className="material-icons">close</i>
         </button>
         <p>
-          {this.props.location.building} . {this.props.location.floor} .{" "}
-          {this.props.location.table}
+          {station.building} . {station.floor} .{" "}
+          {station.table}
         </p>
       </header>
     );
   }
 }
 
+SideBarHeader.contextType = AppContext;
 export default SideBarHeader;

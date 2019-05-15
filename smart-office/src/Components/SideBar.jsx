@@ -46,7 +46,6 @@ class SideBar extends Component {
       <div id="SideBar">
         <SideBarHeader
           onToggleMobileDrawer={this.props.onToggleMobileDrawer}
-          location={this.props.location}
         />
         {this.getTypeOfSidebar()}
       </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../resources/styles/Nav.scss";
 import Logo from "./../resources/images/logo.svg";
-import Item from "./Item";
+
 
 class NavBar extends Component {
   constructor(props) {
@@ -114,9 +114,8 @@ class NavBar extends Component {
   }
 
   searchBarItems(element, flag) {
-    var ID = 0;
-    if (flag === 0)
-      return element.map(element => this.searchBarItems(element, 1));
+    let ID = 0;
+    if (flag === 0) return element.map(element => this.searchBarItems(element, 1));
     else {
       //console.log(element);
       return element.elements.map(element =>

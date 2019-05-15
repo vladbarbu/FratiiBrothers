@@ -40,7 +40,7 @@ class App extends Component {
 
     this.setState({loading : true});
     this.doUpdateUniverse().then(()=> {
-      this.setState({loading : false});
+       this.setState({loading : false});
     });
 
 
@@ -66,10 +66,9 @@ class App extends Component {
     this.setState({ showFewLeftPopup: !this.state.showFewLeftPopup });
   };
 
-  toggleActionConfirmationPopup = (force_close = false) => {
+  toggleActionConfirmationPopup = (force = null) => {
     this.setState({
-      showActionConfirmationPopup:
-        !force_close && !this.state.showActionConfirmationPopup
+      showActionConfirmationPopup: (force !== null ? (force === 'open') : (!this.state.showActionConfirmationPopup))
     });
   };
 
@@ -90,11 +89,7 @@ class App extends Component {
 
 
   render() {
-    let location = {
-      building: "Centric Iasi",
-      floor: "Floor 5",
-      table: "Table 3"
-    };
+
     return (
         <AppContext.Provider value={Config.generateAppContextValues(this)} >
             <div id="App">
@@ -120,7 +115,6 @@ class App extends Component {
                 <div className="App-right" data-visible={this.state.drawer_visible}>
                   <SideBar
                     element={this.state.chosen}
-                    location={location}
                     items={this.state.items}
                     notifications={this.state.notifications}
                     onClickDiscardSearch={this.onClickDiscardSearch}
@@ -273,6 +267,7 @@ class App extends Component {
      */
     console.log(name + description + employee);
     this.toggleRequestPopup();
+    this.toggleActionConfirmationPopup();
   };
 
   onFewLeftSubmit = amount => {

@@ -14,6 +14,8 @@ class RequestItemPopup extends Component {
     this.request_description = React.createRef();
     this.request_badge = React.createRef();
 
+    this.request_modal = React.createRef();
+
 
 
     this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -50,12 +52,12 @@ class RequestItemPopup extends Component {
 
     let flag = false;
 
-    if(Config.isEmpty(name)){ if(!this.request_name.current.classList.contains("warn"))  this.request_name.current.classList += "warn";flag = true;}
-    else if(this.request_name.current.classList.contains("warn")) this.request_name.current.classList -= "warn";
+    if(Config.isEmpty(name)){ if(!this.request_name.current.classList.contains("warn"))  this.request_name.current.classList.add("warn");flag = true;}
+    else if(this.request_name.current.classList.contains("warn")) this.request_name.current.classList.remove("warn");
 
 
-    if(Config.isEmpty(description)){if(!this.request_name.current.classList.contains("warn")) this.request_description.current.classList += "warn";flag = true;}
-    else if(this.request_name.current.classList.contains("warn")) this.request_description.current.classList -= "warn";
+    if(Config.isEmpty(description)){if(!this.request_description.current.classList.contains("warn")) this.request_description.current.classList.add("warn");flag = true;}
+    else if(this.request_description.current.classList.contains("warn")) this.request_description.current.classList.remove("warn");
 
     badge = Config.isEmpty(badge) ? "-" : badge;
 
@@ -63,15 +65,15 @@ class RequestItemPopup extends Component {
 
 
     this.context.startLoading();
+    if(!this.request_modal.current.classList.contains("loading")) this.request_modal.current.classList.add("loading");
 
 
-    console.log(this.context);
 
 
 
     return new Promise((resolve, reject) => {
       axios.post(Config.API_REQUEST_SEND,{
-        locationId: self.context.station.id,
+        stationId: self.context.station.id,
         name : name,
         description : description,
         badge : badge
@@ -82,6 +84,9 @@ class RequestItemPopup extends Component {
               let status = response["status"];
               if (parseInt(status) === Config.HTTP_REQUEST_STATUS_OK || parseInt(status) === Config.HTTP_REQUEST_STATUS_CREATED ){
                   console.log("[OK] Product request was successful!");
+                  self.context.stopLoading();
+                  if(this.request_modal.current.classList.contains("loading")) this.request_modal.current.classList.remove( "loading");
+                  this.props.onSubmit();
               }
               else console.log("Product request encountered errors.")
             }catch (e) {
@@ -92,18 +97,17 @@ class RequestItemPopup extends Component {
           })
           .catch((error) => {
             console.error("Product request failed miserably.");
-            console.error(error);
-            reject();
-          })
-          .finally(() => {
+            console.error(error.response);
             self.context.stopLoading();
-          });
+            if(this.request_modal.current.classList.contains("loading")) this.request_modal.current.classList.remove( "loading");
+            reject();
+           })
     })
   }
 
   render() {
     return (
-      <div className="RequestPopup">
+      <div className="RequestPopup" ref={this.request_modal}>
         <div className="inner" >
           <div className="card" ref={this.setWrapperRef}>
             <div className="container">
