@@ -302,7 +302,7 @@ class App extends Component {
           currentFloor,
           stations
         );
-        console.log(currentFloor + " " + allItems[i].name + " " + currentStock);
+        // console.log(currentFloor + " " + allItems[i].name + " " + currentStock);
         mappedItems[currentFloor][i] = currentStock;
       }
     }
