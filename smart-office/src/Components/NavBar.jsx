@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../resources/styles/Nav.scss";
 import Logo from "./../resources/images/logo.svg";
+import Item from "./Item";
 
 class NavBar extends Component {
   constructor(props) {
@@ -95,7 +96,7 @@ class NavBar extends Component {
                 {...(this.props.element ? (style = { style }) : null)} // Verificam daca avem buton de GoBack
                 ref={this.setWrapperRef}
               >
-                {this.searchBarItems(this.props.elements)}
+                {this.searchBarItems(this.props.elements, 0)}
               </div>
             ) : null}
           </div>
@@ -112,35 +113,41 @@ class NavBar extends Component {
     );
   }
 
-  searchBarItems(element) {
+  searchBarItems(element, flag) {
     var ID = 0;
-    return element.elements.map(element =>
-      element.type === "item" ? (
-        this.searchInName(element.name) ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
-          ID < 6 ? ( //Limitam lista la 6 iteme
-            <div
-              key={++ID}
-              className="searchItem"
-              onClick={() => {
-                this.onClickOption(element);
-                this.props.discardSearch();
-              }}
-            >
-              <img
-                alt="Item"
-                src={require("./../resources/" + element.image)}
-              />
-              <p>{" " + element.name}</p>
-              <div className="btn">
-                <i className="material-icons">play_arrow</i>
+    if (flag === 0)
+      return element.map(element => this.searchBarItems(element, 1));
+    else {
+      console.log(element);
+      return element.elements.map(element =>
+        element.type === "item" ? (
+          this.searchInName(element.name) ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
+            ID < 6 ? ( //Limitam lista la 6 iteme
+              <div
+                key={++ID}
+                className="searchItem"
+                onClick={() => {
+                  this.onClickOption(element);
+                  this.props.discardSearch();
+                }}
+              >
+                {console.log(element)}
+                <img
+                  alt="Item"
+                  src={require("./../resources/" + element.image)}
+                />
+                <p>{" " + element.name}</p>
+                <div className="btn">
+                  <i className="material-icons">play_arrow</i>
+                </div>
               </div>
-            </div>
+            ) : null
           ) : null
-        ) : null
-      ) : (
-        this.searchBarItems(element)
-      )
-    );
+        ) : (
+          this.searchBarItems(element, 1)
+        )
+      );
+    }
   }
 
   resetValue = () => {
