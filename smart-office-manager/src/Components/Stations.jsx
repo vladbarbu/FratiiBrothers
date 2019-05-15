@@ -13,13 +13,13 @@ class Stations extends Component {
           if (flag !== element.floor) {
             flag = element.floor;
             return (
-              <div className="stationFloor" key={"floor-"+element.floor}>
+              <div className="stationFloor" key={"floor-" + element.floor}>
                 <div className={"stationFloorInfo"}>
-                <span className="floorID">Floor {element.floor}</span>
-                <span className="numberOfStations">
-                  {" "}
-                  &#8226; {this.numberOfStations(flag)} stations
-                </span>
+                  <span className="floorID">Floor {element.floor}</span>
+                  <span className="numberOfStations">
+                    {" "}
+                    &#8226; {this.numberOfStations(flag)} stations
+                  </span>
                 </div>
                 {this.allStations(flag)}
               </div>
@@ -36,10 +36,12 @@ class Stations extends Component {
   allStations(flag) {
     return (
       <div className="stations">
-        {this.props.stations.map((element,index) => {
+        {this.props.stations.map((element, index) => {
           if (element.floor === flag) {
             return (
-              <StationList key={index}
+              <StationList
+                key={index}
+                checkForNotifications={this.props.checkForNotifications}
                 station={element}
                 onClickStation={this.onClickStation}
               />

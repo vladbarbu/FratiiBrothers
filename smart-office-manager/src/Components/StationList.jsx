@@ -10,7 +10,9 @@ class StationList extends Component {
   }
 
   componentDidMount() {
-    this.checkForNotifications(this.props.station);
+    this.setState({
+      notifications: this.props.checkForNotifications(this.props.station)
+    });
   }
 
   render() {
@@ -27,8 +29,7 @@ class StationList extends Component {
 
         <div className={"body"}>
           <div className={"title"}>
-            {this.state.notifications !== null &&
-            this.state.notifications !== undefined ? (
+            {this.state.notifications !== false ? (
               <div className="icon">
                 <i
                   className="material-icons"
@@ -53,18 +54,6 @@ class StationList extends Component {
         </div>
       </div>
     );
-  }
-
-  checkForNotifications(element) {
-    element.elements.map(element => {
-      if (element.type === "item") {
-        if (element.notifications.length > 0) {
-          this.setState({ notifications: true });
-        }
-      } else {
-        this.checkForNotifications(element);
-      }
-    });
   }
 }
 

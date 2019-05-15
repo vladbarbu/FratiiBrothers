@@ -8,8 +8,18 @@ class StationInfo extends Component {
     notifications: null,
     numberOfItems: this.searchItems()
   };
+
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    console.log(this.props.checkForNotifications(this.props.stationInfo));
+    this.setState({
+      notifications: this.props.checkForNotifications(this.props.stationInfo)
+    });
+  }
   render() {
-    this.checkNotifications();
     return (
       <div className="StationInfo">
         <div className="breadcrumbs">
@@ -23,7 +33,7 @@ class StationInfo extends Component {
           <img src={this.props.stationInfo.image} />
           <div>
             <div>
-              {this.state.notifications !== null ? (
+              {this.state.notifications === true ? (
                 <i
                   className="material-icons stationIcon"
                   style={{ backgroundColor: "red" }}
@@ -182,18 +192,6 @@ class StationInfo extends Component {
       this.setState({ chosen: active });
     }
   };
-
-  checkNotifications() {
-    this.props.stationInfo.elements.map(element => {
-      element.elements.map(element => {
-        element.elements.map(element => {
-          if (element.notifications.length > 0)
-            if (this.state.notifications === null)
-              this.setState({ notifications: true });
-        });
-      });
-    });
-  }
 
   searchItems() {
     var numberOfItems = 0;

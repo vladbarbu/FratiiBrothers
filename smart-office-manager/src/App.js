@@ -77,6 +77,7 @@ class App extends Component {
             updateStations={this.updateStations}
             checkItemStatistics={this.checkItemStatistics}
             clearItemWarnings={this.clearItemWarnings}
+            checkForNotifications={this.checkForNotifications}
             toggleConfirmationPopup={this.toggleConfirmationPopup}
           />
           {this.state.showConfirmationPopup === true ? (
@@ -154,7 +155,6 @@ class App extends Component {
   };
 
   itemChoose = element => {
-    console.log("Seeeeet");
     this.setState({ chosenItem: element });
   };
 
@@ -191,6 +191,18 @@ class App extends Component {
   getStationItems = station => {
     let items = this.loadItems(station.elements);
     return items;
+  };
+
+  checkForNotifications = station => {
+    var items = this.getStationItems(station);
+
+    var numberofNotif = 0;
+    items.forEach(element => {
+      if (element.notifications.length > 0) numberofNotif++;
+    });
+
+    if (numberofNotif === 0) return false;
+    else return true;
   };
 
   getStationItemStock = (item, station) => {

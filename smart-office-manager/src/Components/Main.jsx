@@ -25,6 +25,7 @@ class Main extends Component {
       case "Stations":
         return (
           <Stations
+            checkForNotifications={this.props.checkForNotifications}
             stations={this.props.stations}
             onClickStation={this.onClickStation}
           />
@@ -33,6 +34,7 @@ class Main extends Component {
         return (
           <div className="Station">
             <StationInfo
+              checkForNotifications={this.props.checkForNotifications}
               stationInfo={this.props.stationInfo}
               goBackToStations={this.goBackToStations}
               onClickSupplyStation={this.onClickSupplyStation}
@@ -60,6 +62,7 @@ class Main extends Component {
         return (
           <div className="SupplyStatistics">
             <SupplyStatistics
+              checkForNotifications={this.props.checkForNotifications}
               stations={this.props.stations}
               onClickSupplyStation={this.onClickSupplyStation}
               chosenStation={this.props.chosenStation}

@@ -115,9 +115,9 @@ class SupplyStatistics extends Component {
   };
 
   selectedMakeBig = element => {
-    var hasNotifications = this.checkForNotifications(element);
+    var hasNotifications = this.props.checkForNotifications(element);
     console.log(hasNotifications);
-    return hasNotifications !== true ? (
+    return hasNotifications === true ? (
       this.props.chosenStation === element ? (
         <i
           className="material-icons stationIcon"
@@ -140,15 +140,6 @@ class SupplyStatistics extends Component {
     ) : (
       <i className="material-icons stationIcon">ev_station</i>
     );
-  };
-
-  checkForNotifications = element => {
-    element.elements.forEach(element => {
-      if (element.type !== "item") this.checkForNotifications(element);
-      else {
-        if (element.notifications.length > 0) return true;
-      }
-    });
   };
 }
 
