@@ -112,34 +112,16 @@ class SideBar_Statistics extends Component {
       </div>
     );
   }
-  changeActiveChild = active => {
-    if (active.type !== "item") {
-      var flag = false;
-      var element = this.props.chosenStation.elements;
-      element.map(element => {
-        if (element === active) {
-          flag = true;
-          if (element.childActive === false) element.childActive = true;
-          else element.childActive = false;
-        }
-      });
 
-      if (flag === false) {
-        element.map(element => {
-          element.elements.map(element => {
-            if (element === active) {
-              flag = true;
-              if (element.childActive === false) element.childActive = true;
-              else element.childActive = false;
-            }
-          });
-        });
-      }
-      this.props.updateStations(element);
-    } else {
+  changeActiveChild = active => {
+    if (active._childActive == true) active._childActive = false;
+    else active._childActive = true;
+
+    if (active.type === "item") {
       this.props.itemChoose(active);
       this.setState({ chosen: active });
     }
+    this.setState({ stations: this.state.stations });
   };
 }
 

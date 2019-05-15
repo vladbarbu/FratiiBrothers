@@ -10,6 +10,10 @@ class StationInfo extends Component {
     stationClone: this.props.stationInfo
   };
 
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     console.log(this.props.checkForNotifications(this.props.stationInfo));
     this.setState({
@@ -17,7 +21,6 @@ class StationInfo extends Component {
     });
   }
   render() {
-    let i = 0;
     return (
       <div className="StationInfo">
         <div className="breadcrumbs">
@@ -28,7 +31,7 @@ class StationInfo extends Component {
           <i className="material-icons">arrow_right</i>
         </div>
         <div className="stationInfo">
-          <img src={this.props.stationInfo.image} alt="ok" />
+          <img src={this.props.stationInfo.image} />
           <div>
             <div>
               {this.state.notifications === true ? (
@@ -82,8 +85,7 @@ class StationInfo extends Component {
   }
 
   ItemStock(element) {
-    // var numberOfItems = 0;
-    let i = 0;
+    var numberOfItems = 0;
     let style = { backgroundColor: "#0DD2A3" };
     return (
       //Only category
@@ -91,22 +93,9 @@ class StationInfo extends Component {
         {element === this.state.stations
           ? this.state.stations.map(element => {
               return (
-<<<<<<< HEAD
                 <div className="categoryItem">
-                  <small
-                    onClick={() =>
-                      this.changeActiveChild(element, this.state.stationClone)
-                    }
-                  >
-                    <img src={require("./../resources/" + element.image)} />
-=======
-                <div className="categoryItem" key={++i}>
                   <small onClick={() => this.changeActiveChild(element)}>
-                    <img
-                      src={require("./../resources/" + element.image)}
-                      alt="ok"
-                    />
->>>>>>> a41b261bd9f5b02c4d9807873de088170414b55b
+                    <img src={require("./../resources/" + element.image)} />
                     <div className="itemText">
                       {element.type === "category" && element.parentID === null
                         ? "Category:"
@@ -125,24 +114,12 @@ class StationInfo extends Component {
           : element.elements.map(element => {
               // Items and subcategory
               return (
-<<<<<<< HEAD
                 <div className="justItem">
-                  <small
-                    onClick={() =>
-                      this.changeActiveChild(element, this.state.stationClone)
-                    }
-                  >
-=======
-                <div className="justItem" key={++i}>
                   <small onClick={() => this.changeActiveChild(element)}>
->>>>>>> a41b261bd9f5b02c4d9807873de088170414b55b
                     <i className="material-icons subdirectory">
                       subdirectory_arrow_right
                     </i>
-                    <img
-                      src={require("./../resources/" + element.image)}
-                      alt="ok"
-                    />
+                    <img src={require("./../resources/" + element.image)} />
                     <div className="itemText">
                       {element.type === "item" ? "Item:" : null}
                       {element.type === "category" ? "Subcategory:" : null}
@@ -186,29 +163,15 @@ class StationInfo extends Component {
       </div>
     );
   }
-  changeActiveChild = (active, element) => {
-    if (active.type !== "item") {
-      var flag = false;
-      element.elements.map(element => {
-        if (flag === false)
-          if (element.type !== "item") {
-            if (element === active) {
-              flag = true;
-              if (element.childActive === true) element.childActive = false;
-              else {
-                element.childActive = true;
-                this.setState({ stations: this.state.stationClone });
-              }
-            } else this.changeActiveChild(active, element);
-          } else {
-            this.props.itemChoose(active);
-            this.setState({ chosen: active });
-          }
-      });
-    } else {
+  changeActiveChild = active => {
+    if (active._childActive == true) active._childActive = false;
+    else active._childActive = true;
+
+    if (active.type === "item") {
       this.props.itemChoose(active);
       this.setState({ chosen: active });
     }
+    this.setState({ stations: this.state.stations });
   };
 
   searchItems() {
