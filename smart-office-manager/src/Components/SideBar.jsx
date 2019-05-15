@@ -74,7 +74,12 @@ class SideBar extends Component {
                 <p>Edit stock</p>
               </div>
             </div>
-            <div className="button clear-warnings">
+            <div
+              className="button clear-warnings"
+              onClick={() => {
+                this.props.clearItemWarnings(this.props.chosenItem);
+              }}
+            >
               <div className="content">
                 <p>Clear warnings</p>
               </div>

@@ -73,6 +73,7 @@ class App extends Component {
             chosenStation={this.state.chosenStation}
             updateStations={this.updateStations}
             checkItemStatistics={this.checkItemStatistics}
+            clearItemWarnings={this.clearItemWarnings}
           />
         </div>
       </div>
@@ -155,6 +156,10 @@ class App extends Component {
       chosenItem: item,
       sideBarChosen: "Supply Statistics"
     });
+  };
+
+  clearItemWarnings = item => {
+    console.log("No more warnings for itemid =" + item.ID);
   };
   /* functii pentru stock-ul si indexarea itemelor pe statii si pe etaje */
 
