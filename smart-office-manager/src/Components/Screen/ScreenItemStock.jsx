@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SideBar from "../SideBar";
 
 class ScreenItemStock extends Component {
   state = {
@@ -14,9 +15,30 @@ class ScreenItemStock extends Component {
   }
 
   render() {
-    return <div>{this.itemStock(this.state.itemTree)}</div>;
+    return (
+      <div className="itemStockWrapper">
+        <div className="itemTree">{this.itemStock(this.state.itemTree)}</div>
+        {/* {this.renderSideBar()} */}
+      </div>
+    );
+  }
+  renderSideBar() {
+    return this.props.chosenItem !== null ? (
+      <SideBar
+        chosenItem={this.props.chosenItem}
+        chosenStation={this.props.stationInfo}
+        items={this.props.items}
+        itemStocks={this.props.itemStocks}
+        checkItemStatistics={this.props.checkItemStatistics}
+        clearItemWarnings={this.props.clearItemWarnings}
+        refillStock={this.props.refillStock}
+        toggleConfirmationPopup={this.props.toggleConfirmationPopup}
+        toggleInputPopup={this.props.toggleInputPopup}
+      />
+    ) : null;
   }
 
+  renderItemStations() {}
   itemStock(itemTree) {
     return (
       <div>

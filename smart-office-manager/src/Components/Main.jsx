@@ -48,7 +48,15 @@ class Main extends Component {
       stations: this.props.stations,
       chosenItem: this.props.chosenItem,
       itemChoose: this.itemChoose,
-      onClickStation: this.onClickStation
+      onClickStation: this.onClickStation,
+      chosenStation: this.props.stationInfo,
+      items: this.props.items,
+      itemStocks: this.props.itemStocks,
+      checkItemStatistics: this.props.checkItemStatistics,
+      clearItemWarnings: this.props.clearItemWarnings,
+      refillStock: this.props.refillStock,
+      toggleConfirmationPopup: this.props.toggleConfirmationPopup,
+      toggleInputPopup: this.props.toggleInputPopup
     };
 
     switch (this.props.sideBarChosen) {
