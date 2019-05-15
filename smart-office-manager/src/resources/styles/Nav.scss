@@ -11,10 +11,8 @@
   background: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.06);
   z-index: 10;
+  flex-shrink: 0;
 
-  & > .body > .button.returnToStation {
-    width: auto;
-  }
 
   & > .logo {
     margin-right: 100px;
@@ -79,10 +77,21 @@
           }
         }
       }
-      &.goBack {
-        margin-right: 10px;
+      &.returnToStation {
+        margin-right: auto;
+        width: auto;
+        padding: 0 15px 0 10px;
+        transition: border 0.2s;
         & > i {
-          color: $red;
+          color: #2c2c2c;
+          margin-right: 10px;
+        }
+        & > p{
+          color: #2c2c2c;
+        }
+        &:hover{
+          transition: border 0.2s;
+          border: 1px solid #ddd;
         }
       }
 

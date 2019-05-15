@@ -42,7 +42,7 @@ class StationInfo extends Component {
 
               <div className="info">
                 <small style={{ color: "#0DD2A3" }}>
-                  <i class="material-icons">label</i>
+                  <i className="material-icons">label</i>
                   {this.state.numberOfItems} unique items
                 </small>
               </div>
@@ -104,7 +104,7 @@ class StationInfo extends Component {
               return (
                 <div className="justItem">
                   <small onClick={() => this.changeActiveChild(element)}>
-                    <i class="material-icons subdirectory">
+                    <i className="material-icons subdirectory">
                       subdirectory_arrow_right
                     </i>
                     <img src={require("./../resources/" + element.image)} />

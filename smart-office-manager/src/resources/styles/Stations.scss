@@ -1,8 +1,61 @@
-.stations {
+@import "config";
+
+.allStations{
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.breadcrumbs{
+  margin-bottom: 20px;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  p{
+    margin: 0;
+  }
+}
+
+.stationFloor{
+  width: 100%;
+  margin-bottom: 20px;
+
+  & > .stationFloorInfo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    & > .floorID{
+      margin-right: 7px;
+      color: $colorPrimary;
+    }
+    & > .numberOfStations{
+      color: #2c2c2c;
+    }
+  }
+}
+.stations {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
 }
 
 .arrow {
   position: relative;
   top: 8px;
+}
+
+
+@media all and (max-width: 1190px){
+  .stations{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media #{$top-mobile-big}{
+  .stations{
+    grid-template-columns: 1fr;
+  }
 }

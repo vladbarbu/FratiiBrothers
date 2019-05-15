@@ -3,22 +3,24 @@ import StationList from "./StationList";
 import "../resources/styles/Stations.scss";
 class Stations extends Component {
   render() {
-    var flag = 0;
+    let flag = 0;
     return (
       <div className="allStations">
         <div className="breadcrumbs">
-          Stations <i className="material-icons arrow">arrow_right</i>
+          <p>Stations</p> <i className="material-icons">arrow_right</i>
         </div>
         {this.props.stations.map(element => {
           if (flag !== element.floor) {
             flag = element.floor;
             return (
-              <div>
+              <div className="stationFloor" key={"floor-"+element.floor}>
+                <div className={"stationFloorInfo"}>
                 <span className="floorID">Floor {element.floor}</span>
                 <span className="numberOfStations">
                   {" "}
                   &#8226; {this.numberOfStations(flag)} stations
                 </span>
+                </div>
                 {this.allStations(flag)}
               </div>
             );
@@ -34,10 +36,10 @@ class Stations extends Component {
   allStations(flag) {
     return (
       <div className="stations">
-        {this.props.stations.map(element => {
+        {this.props.stations.map((element,index) => {
           if (element.floor === flag) {
             return (
-              <StationList
+              <StationList key={index}
                 station={element}
                 onClickStation={this.onClickStation}
               />
@@ -49,12 +51,11 @@ class Stations extends Component {
   }
 
   numberOfStations(flag) {
-    var count = 0;
+    let count = 0;
     {
       this.props.stations.map(element => {
-        if (element.floor === flag) {
-          count += 1;
-        }
+        if (element.floor === flag) count += 1;
+        return true;
       });
     }
     return count;
