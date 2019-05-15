@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ItemStock extends Component {
+class ScreenItemStock extends Component {
   state = {
     itemTree: []
   };
@@ -68,4 +68,4 @@ class ItemStock extends Component {
   }
 }
 
-export default ItemStock;
+export default ScreenItemStock;

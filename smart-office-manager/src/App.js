@@ -131,7 +131,7 @@ class App extends Component {
 
   onClickStation = element => {
     this.setState({
-      sideBarChosen: "Station",
+      sideBarChosen: "Stations",
       stationInfo: element
     });
     //this.resetActiveChilds();

@@ -1,65 +1,50 @@
 import React, { Component } from "react";
 import "../resources/styles/Main.scss";
-import SideBar from "./SideBar.jsx";
 import SideBarStatistics from "./SideBarStatistics";
-import Stations from "./Stations";
-import StationInfo from "./StationInfo";
-import ItemStock from "./ItemStock";
+import ScreenItemStock from "./Screen/ScreenItemStock";
 import SupplyStatistics from "./SupplyStatistics";
-import Notifications from "./Notifications";
+import ScreenNotifications from "./Screen/ScreenNotifications";
+import ScreenRequests from './Screen/ScreenRequests';
+import ScreenStations from './Screen/ScreenStations';
+
 
 class Main extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+
 
   state = {
     localStation: null
   };
 
   render() {
+
+    let stationProps = {
+      checkForNotifications : this.props.checkForNotifications,
+      stationInfo : this.props.stationInfo,
+      goBackToStations : this.goBackToStations,
+      onClickSupplyStation: this.onClickSupplyStation,
+      elements : this.props.elements,
+      itemChoose : this.itemChoose,
+      getStationItems : this.props.getStationItems,
+      chosenItem: this.props.chosenItem,
+      chosenStation : this.props.stationInfo,
+      items: this.props.items,
+      itemStocks : this.props.itemStocks,
+      checkItemStatistics  : this.props.checkItemStatistics,
+      clearItemWarnings : this.props.clearItemWarnings,
+      refillStock : this.props.refillStock,
+      toggleConfirmationPopup : this.props.toggleConfirmationPopup,
+      toggleInputPopup : this.props.toggleInputPopup,
+      stations : this.props.stations,
+      onClickStation : this.onClickStation,
+    };
+
+
+
     switch (this.props.sideBarChosen) {
-      case "Notifications":
-        return <Notifications />;
-      case "Stations":
-        return (
-          <Stations
-            checkForNotifications={this.props.checkForNotifications}
-            stations={this.props.stations}
-            onClickStation={this.onClickStation}
-          />
-        );
-      case "Station":
-        return (
-          <div className="Station">
-            <StationInfo
-              checkForNotifications={this.props.checkForNotifications}
-              stationInfo={this.props.stationInfo}
-              goBackToStations={this.goBackToStations}
-              onClickSupplyStation={this.onClickSupplyStation}
-              elements={this.props.elements}
-              itemChoose={this.itemChoose}
-              getStationItems={this.props.getStationItems}
-            />
-            {this.props.chosenItem !== null ? (
-              <SideBar
-                chosenItem={this.props.chosenItem}
-                chosenStation={this.props.stationInfo}
-                items={this.props.items}
-                itemStocks={this.props.itemStocks}
-                checkItemStatistics={this.props.checkItemStatistics}
-                clearItemWarnings={this.props.clearItemWarnings}
-                refillStock={this.props.refillStock}
-                toggleConfirmationPopup={this.props.toggleConfirmationPopup}
-                toggleInputPopup={this.props.toggleInputPopup}
-              />
-            ) : null}
-          </div>
-        );
-      case "Item Stock":
-        return <ItemStock stations={this.props.stations} />;
-      case "Product Requests":
-        return <div />;
+      case "Notifications": return <ScreenNotifications />;
+      case "Stations": return (<ScreenStations {...stationProps} />);
+      case "Item Stock": return <ScreenItemStock stations={this.props.stations} />;
+      case "Product Requests": return <ScreenRequests />;
       case "Supply Statistics":
         return (
           <div className="SupplyStatistics">

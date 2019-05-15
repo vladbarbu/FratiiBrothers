@@ -2,7 +2,7 @@
  * Created by @VanSoftware on 2019-05-05.
  */
 import React, { Component } from "react";
-import "./../../resources/styles/Nav.scss";
+import "../resources/styles/Nav.scss";
 
 class SideMenuItem extends Component {
   render() {

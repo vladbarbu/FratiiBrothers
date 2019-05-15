@@ -86,9 +86,9 @@ class StationInfo extends Component {
       //Only category
       <div className="itemStock">
         {element === this.state.stations
-          ? this.state.stations.map(element => {
+          ? this.state.stations.map((element,index) => {
               return (
-                <div className="categoryItem">
+                <div key={index} className="categoryItem">
                   <small onClick={() => this.changeActiveChild(element)}>
                     <img
                       src={require("./../resources/" + element.image)}

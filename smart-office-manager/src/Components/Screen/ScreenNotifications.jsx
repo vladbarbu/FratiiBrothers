@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Notifications extends Component {
+class ScreenNotifications extends Component {
   state = {
     notifications: [
       "No more papercups on Second Floor!",
@@ -15,8 +15,8 @@ class Notifications extends Component {
       <div>
         <p>Notifications/Warnings</p>
         <div>
-          {this.state.notifications.map(notifications => {
-            return <p>{notifications}</p>;
+          {this.state.notifications.map((notifications,index) => {
+            return <p key={index}>{notifications}</p>;
           })}
         </div>
       </div>
@@ -24,4 +24,4 @@ class Notifications extends Component {
   }
 }
 
-export default Notifications;
+export default ScreenNotifications;

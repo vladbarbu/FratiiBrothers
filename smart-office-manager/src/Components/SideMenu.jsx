@@ -2,8 +2,9 @@
  * Created by @VanSoftware on 2019-05-05.
  */
 import React, { Component } from "react";
-import SideMenuItem from "./SideMenu/SideMenuItem";
+import SideMenuItem from "./SideMenuItem";
 import "../resources/styles/SideMenu.scss";
+
 
 class SideMenu extends Component {
   render() {

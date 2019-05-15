@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/RequestItemPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/RequestItemPopup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBarHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBarHeader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/RequestPopup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/RequestPopup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/ItemStock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenItemStock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Notifications.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenNotifications.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideMenu/SideMenuItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideMenuItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.c49d4b7c8a1916006382731aad6a621f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.534a9a45.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.534a9a45.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.9a7dda6b.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.9a7dda6b.chunk.js.map" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="565">
-              <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -336,12 +344,12 @@
       <workItem from="1557048561532" duration="7553000" />
       <workItem from="1557289716619" duration="268000" />
       <workItem from="1557845732749" duration="16722000" />
-      <workItem from="1557929803897" duration="3048000" />
+      <workItem from="1557929803897" duration="3904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64718000" />
+    <option name="totallyTimeSpent" value="65574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -698,7 +706,7 @@
     <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="565">
-          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
