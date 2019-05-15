@@ -3,18 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenStations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenStations.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SupplyStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SupplyStatistics.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Station.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/Station.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/data/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/SideMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/SideMenu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Station.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Station.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/StationInfo.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Stations.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/config.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +46,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/App.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="82" column="22" lean-forward="true" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/styles/Main.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
@@ -61,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/SideBarHeader.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -85,10 +99,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/RequestItemPopup.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
+            <state relative-caret-position="2417">
               <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="42" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -100,7 +114,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/styles/RequestPopup.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
+            <state relative-caret-position="179">
               <caret line="114" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <element signature="e#867#1235#0" />
@@ -342,12 +356,12 @@
       <workItem from="1557048561532" duration="7553000" />
       <workItem from="1557289716619" duration="268000" />
       <workItem from="1557845732749" duration="16722000" />
-      <workItem from="1557929803897" duration="3904000" />
+      <workItem from="1557929803897" duration="5064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65574000" />
+    <option name="totallyTimeSpent" value="66734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -505,13 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Element.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -587,16 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding>
-            <element signature="e#1895#2569#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/ActionItemPopupConfirmation.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
@@ -621,28 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/RequestPopup.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-          <folding>
-            <element signature="e#867#1235#0" />
-            <element signature="e#1250#1388#0" />
-            <element signature="e#1406#2412#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/Main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-          <folding>
-            <element signature="e#185#892#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
@@ -664,16 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/RequestItemPopup.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="42" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -715,6 +680,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="107" selection-start-line="17" selection-start-column="107" selection-end-line="17" selection-end-column="107" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="82" column="22" lean-forward="true" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+          <folding>
+            <element signature="e#185#892#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/RequestPopup.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#867#1235#0" />
+            <element signature="e#1250#1388#0" />
+            <element signature="e#1406#2412#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/RequestItemPopup.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2417">
+          <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="42" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

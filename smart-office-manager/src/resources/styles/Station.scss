@@ -8,6 +8,7 @@ STATION LIST
 
 
 .StationList{
+  padding: 20px;
   flex: 1;
   overflow-y: auto;
 
@@ -75,7 +76,7 @@ STATION LIST
 
 /**
 ---------------
-STATION WHAT?
+STATION CARD
 ---------------
  */
 
@@ -123,7 +124,7 @@ $stationBorderRadius: 4px;
     display: flex;
     flex-direction: column;
     flex: 0.6;
-    height: 100%;
+    height: calc(100% - 10px);
     padding: 10px 0 0 10px;
 
     & > .title {
@@ -176,20 +177,193 @@ $stationBorderRadius: 4px;
 
 /**
 ---------------
-STATION INFO
+STATION PROFILE
 ---------------
  */
 
-
-.StationInfo{
-
+.StationProfileContainer{
+  height: 100%;
 }
+
+
+.StationProfile{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  & > *{
+    flex-shrink: 0;
+  }
+
+
+
+  & > .header{
+    width: calc(100% - 2 * 20px);
+    padding: 20px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    box-shadow: 0 0 5px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+    z-index: 4;
+
+    & > .breadcrumbs{
+      height: 30px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 0.2s;
+      p{
+        font-size: 12pt;
+        margin: 0;
+      }
+      i{
+        font-size: 18pt;
+        margin: 2px 0 0 0;
+        color: $colorPrimary;
+      }
+    }
+
+    & > .inner{
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+      height: 180px;
+
+      & > .image{
+        margin-right: 20px;
+        height: 100%;
+        width: 180px;
+        max-width: 180px;
+        max-height: 180px;
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 6px;
+        overflow: hidden;
+        & > img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      & > .info{
+        height: calc(100% - 2 * 10px);
+        flex: 1;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        & > .title{
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          & > .icon{
+            margin-right: 10px;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            background: $colorPrimary;
+            &.warn{
+              background: $red;
+            }
+            i{
+              font-size: 18pt;
+              color: #ffffff;
+
+            }
+          }
+          & > p{
+            flex: 1;
+            font-size: 16pt;
+            font-weight: 700;
+            color: #2c2c2c;
+            margin: 0;
+          }
+        }
+        & > .description{
+          flex: 1;
+          max-width: 300px;
+          p{
+            margin: 0;
+            font-size: 12pt;
+            color: #aaa;
+            font-weight: 300;
+          }
+
+        }
+        & > .data{
+          display: flex;
+          flex-direction: column;
+          & > .itemCount{
+            display: flex;
+            align-items: center;
+            color: $colorPrimary;
+            & > i{
+              margin-right: 5px;
+            }
+          }
+        }
+
+      }
+      & > .actions{
+        height: 100%;
+        align-items: flex-end;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        flex-direction: row;
+        & > .returnButton{
+          @include medium-button($statistic, #4c4c4c);
+
+        }
+        & > .viewButton{
+          @include medium-button(#eeeeee, #4c4c4c);
+        }
+      }
+    }
+
+  }
+}
+
+
+.sectionTitle{
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  & > i{
+    color: #2c2c2c;
+    font-size: 18pt;
+    margin-right: 6px;
+  }
+  & > p{
+    color: #2c2c2c;
+    font-size: 14pt;
+    font-weight: 700;
+  }
+}
+
+.itemTree{
+  width: calc(100% - 2 * 20px);
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  & > *{
+    flex-shrink: 0;
+  }
+}
+
 
 
 
 .subdirectory {
   position: relative;
-  top: 15px;
+  margin-top: 15px;
 }
 
 .stationInfo > img {
@@ -205,7 +379,7 @@ STATION INFO
   overflow-y: auto;
 }
 
-.returnButton {
+.returnButtonO {
   align-self: flex-end;
   margin-right: 10px;
   background-color: #efefef;
@@ -215,10 +389,10 @@ STATION INFO
   border-radius: 4px;
 }
 
-.viewButton {
+.viewButtonO {
   align-self: flex-end;
   margin-right: 10px;
-  background-color: #f9e816;
+  background-color: $statistic;
   padding: 8px;
   width: 200px;
   text-align: center;
@@ -259,7 +433,7 @@ div.itemStock {
 
 .justItem {
   position: relative;
-  left: 20px;
+  padding-left: 20px;
 }
 
 .justItem > small > img {

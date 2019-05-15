@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import "../../resources/styles/Station.scss";
 
 class StationProfile extends Component {
+
+  constructor(props){
+    super(props);
+    this.scrollReference = React.createRef();
+  }
+
   state = {
     stations: this.props.stationInfo.elements,
     chosen: null,
@@ -9,76 +15,72 @@ class StationProfile extends Component {
     numberOfItems: this.searchItems(this.props.stationInfo)
   };
 
-  componentDidMount() {
-    console.log(this.props.checkForNotifications(this.props.stationInfo));
-    this.setState({
-      notifications: this.props.checkForNotifications(this.props.stationInfo)
-    });
-  }
-  render() {
-    let i = 0;
-    return (
-      <div className="StationInfo">
-        <div className="breadcrumbs">
-          <div onClick={this.props.goBackToStations}>Stations</div>{" "}
-          <i className="material-icons">arrow_right</i>
-          Floor {this.props.stationInfo.floor} &#45; {" Station #"}
-          {this.props.stationInfo.name}
-          <i className="material-icons">arrow_right</i>
-        </div>
-        <div className="stationInfo">
-          <img src={this.props.stationInfo.image} alt="ok" />
-          <div>
-            <div>
-              {this.state.notifications === true ? (
-                <i
-                  className="material-icons stationIcon"
-                  style={{ backgroundColor: "red" }}
-                >
-                  ev_station
-                </i>
-              ) : (
-                <i
-                  className="material-icons stationIcon"
-                  style={{ backgroundColor: "#0dd2a3" }}
-                >
-                  ev_station
-                </i>
-              )}
-              <b>Station #{this.props.stationInfo.name}</b>
 
-              <div className="info">
-                <small style={{ color: "#0DD2A3" }}>
-                  <i className="material-icons">label</i>
-                  {this.state.numberOfItems} unique items
-                </small>
+
+  render() {
+    return (
+      <div className="StationProfile" ref={this.scrollReference}>
+        <div className={"header"}>
+          <div className="breadcrumbs"><div onClick={this.props.goBackToStations}>Stations</div>{" "}<i className="material-icons">arrow_right</i>Floor {this.props.stationInfo.floor} &#45; {" Station #"}{this.props.stationInfo.name}<i className="material-icons">arrow_right</i></div>
+          <div className={"inner"}>
+            <div className={"image"}><img alt="Station profile"  src={this.props.stationInfo.image} /></div>
+            <div className={"info"}>
+              <div className={"title"}>
+                <div className={"icon " + (this.state.notifications === true ? "warn" : "") }><i className="material-icons">ev_station</i></div>
+                <p>Station #{this.props.stationInfo.name}</p>
               </div>
+              <div className={"description"}><p>{this.props.stationInfo.description}</p></div>
+
+              <div className={"data"}>
+                <div className={"itemCount"}><i className="material-icons">label</i>{this.state.numberOfItems} unique items</div>
+              </div>
+
             </div>
+
+            <div className={"actions"}>
+              <div className="returnButton" onClick={() => this.props.goBackToStations()}><p>Return to stations</p></div>
+              <div className="viewButton" onClick={() => this.props.onClickSupplyStation(this.props.stationInfo)}><p>View statistics for station</p></div>
+            </div>
+
+
+
           </div>
-          <small
-            onClick={() => this.props.goBackToStations()}
-            className="returnButton"
-          >
-            Return to stations
-          </small>
-          <small
-            className="viewButton"
-            onClick={() =>
-              this.props.onClickSupplyStation(this.props.stationInfo)
-            }
-          >
-            View statistics for station
-          </small>
         </div>
-        <span>
-          <i className="material-icons">list</i> Station Item Stock
-        </span>
-        <div className="forScroll" style={{ overflow: "auto" }}>
+
+        <div className="itemTree">
+          <span className={"sectionTitle"}><i className="material-icons">list</i> Station Item Stock</span>
           {this.ItemStock(this.state.stations)}
         </div>
       </div>
     );
   }
+
+  componentDidMount() {
+    console.log(this.props.checkForNotifications(this.props.stationInfo));
+    this.setState({notifications: this.props.checkForNotifications(this.props.stationInfo)});
+
+
+    this.scrollReference.current.addEventListener('scroll', this.listenToScroll);
+  }
+
+  componentWillUnmount() {
+    this.scrollReference.current.removeEventListener('scroll', this.listenToScroll);
+  }
+
+  listenToScroll = () => {
+
+    let scroll = this.scrollReference.current.scrollTop;
+    console.log(scroll);
+
+  };
+
+  /**
+   *
+   *
+   *
+   *
+   *
+   */
 
   ItemStock(element) {
     let style = { backgroundColor: "#0DD2A3" };
@@ -178,6 +180,9 @@ class StationProfile extends Component {
   searchItems(element) {
     return this.props.getStationItems(element).length;
   }
+
+
+
 }
 
 export default StationProfile;

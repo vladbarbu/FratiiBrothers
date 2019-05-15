@@ -2,7 +2,7 @@
 
 .NavBar {
   box-sizing: content-box;
-  height: calc(#{$navHeight} - 2 * 10px);
+  height: calc(#{$navHeight} - 2 * 10px - 1px);
   width: calc(100% - 2 * 20px);
   padding: 10px 20px;
   display: flex;
@@ -10,6 +10,7 @@
   align-items: center;
   background: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid #eee;
   z-index: 10;
   flex-shrink: 0;
 

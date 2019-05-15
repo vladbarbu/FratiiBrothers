@@ -49,7 +49,7 @@ class ScreenStations extends Component {
 
     renderStationProfile(){
         return (
-            <div className="Station">
+            <div className={"StationProfileContainer"}>
                 <StationProfile
                     checkForNotifications={this.props.checkForNotifications}
                     stationInfo={this.props.stationInfo}
