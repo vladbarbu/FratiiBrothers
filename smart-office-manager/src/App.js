@@ -78,6 +78,7 @@ class App extends Component {
             updateStations={this.updateStations}
             checkItemStatistics={this.checkItemStatistics}
             clearItemWarnings={this.clearItemWarnings}
+            refillStock={this.refillStock}
             checkForNotifications={this.checkForNotifications}
             toggleConfirmationPopup={this.toggleConfirmationPopup}
             toggleInputPopup={this.toggleInputPopup}
@@ -95,6 +96,7 @@ class App extends Component {
               onReturnToDashboard={this.goBackToStations}
               onConfirm={this.confirmStock}
               chosenItem={this.state.chosenItem}
+              chosenStation={this.state.chosenStation}
             />
           ) : null}
         </div>
@@ -108,9 +110,7 @@ class App extends Component {
   toggleInputPopup = () => {
     this.setState({ showInputPopup: !this.state.showInputPopup });
   };
-  confirmStock = (item, stock) => {
-    console.log("update stock item " + item.ID + " amount " + stock);
-  };
+
   updateStations = elements => {
     var clone = this.state.stations;
     clone.map(element => {
@@ -180,6 +180,17 @@ class App extends Component {
     this.setState({ chosenItem: null });
   };
 
+  confirmStock = (item, station, stock) => {
+    console.log(
+      "update stock item " +
+        item.ID +
+        " from station " +
+        station._ID +
+        " amount " +
+        stock
+    );
+  };
+
   checkItemStatistics = (station, item) => {
     this.setState({
       chosenStation: station,
@@ -188,8 +199,16 @@ class App extends Component {
     });
   };
 
-  clearItemWarnings = item => {
-    console.log("No more warnings for itemid =" + item.ID);
+  clearItemWarnings = (item, station) => {
+    console.log(
+      "No more warnings for itemid =" + item.ID + " from station " + station._ID
+    );
+  };
+
+  refillStock = (item, station) => {
+    console.log(
+      "Refill the stock for itemid=" + item.ID + " from station " + station._ID
+    );
   };
   /* functii pentru stock-ul si indexarea itemelor pe statii si pe etaje */
 

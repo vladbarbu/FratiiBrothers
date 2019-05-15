@@ -63,7 +63,20 @@ class SideBar extends Component {
             ))}
           </div>
           <div className="buttons">
-            <div className="button refill">
+            <div
+              className="button refill"
+              onClick={() => {
+                this.props.clearItemWarnings(
+                  this.props.chosenItem,
+                  this.props.chosenStation
+                );
+                this.props.refillStock(
+                  this.props.chosenItem,
+                  this.props.chosenStation
+                );
+                this.props.toggleConfirmationPopup();
+              }}
+            >
               <div className="content">
                 <p>Refill stock</p>
                 <span>and clear warnings</span>
@@ -80,7 +93,10 @@ class SideBar extends Component {
             <div
               className="button clear-warnings"
               onClick={() => {
-                this.props.clearItemWarnings(this.props.chosenItem);
+                this.props.clearItemWarnings(
+                  this.props.chosenItem,
+                  this.props.chosenStation
+                );
                 this.props.toggleConfirmationPopup();
               }}
             >

@@ -49,6 +49,7 @@ class Main extends Component {
                 itemStocks={this.props.itemStocks}
                 checkItemStatistics={this.props.checkItemStatistics}
                 clearItemWarnings={this.props.clearItemWarnings}
+                refillStock={this.props.refillStock}
                 toggleConfirmationPopup={this.props.toggleConfirmationPopup}
                 toggleInputPopup={this.props.toggleInputPopup}
               />
