@@ -9,10 +9,6 @@ class StationInfo extends Component {
     numberOfItems: this.searchItems()
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     console.log(this.props.checkForNotifications(this.props.stationInfo));
     this.setState({
@@ -20,6 +16,7 @@ class StationInfo extends Component {
     });
   }
   render() {
+    let i = 0;
     return (
       <div className="StationInfo">
         <div className="breadcrumbs">
@@ -30,7 +27,7 @@ class StationInfo extends Component {
           <i className="material-icons">arrow_right</i>
         </div>
         <div className="stationInfo">
-          <img src={this.props.stationInfo.image} />
+          <img src={this.props.stationInfo.image} alt="ok" />
           <div>
             <div>
               {this.state.notifications === true ? (
@@ -84,7 +81,6 @@ class StationInfo extends Component {
   }
 
   ItemStock(element) {
-    var numberOfItems = 0;
     let style = { backgroundColor: "#0DD2A3" };
     return (
       //Only category
@@ -121,7 +117,10 @@ class StationInfo extends Component {
                     <i className="material-icons subdirectory">
                       subdirectory_arrow_right
                     </i>
-                    <img src={require("./../resources/" + element.image)} />
+                    <img
+                      src={require("./../resources/" + element.image)}
+                      alt="ok"
+                    />
                     <div className="itemText">
                       {element.type === "item" ? "Item:" : null}
                       {element.type === "category" ? "Subcategory:" : null}
@@ -166,14 +165,34 @@ class StationInfo extends Component {
     );
   }
   changeActiveChild = active => {
-    if (active._childActive == true) active._childActive = false;
-    else active._childActive = true;
+    if (active.type !== "item") {
+      var flag = false;
+      var element = this.state.stations;
+      element.map(element => {
+        if (element === active) {
+          flag = true;
+          if (element.childActive === false) element.childActive = true;
+          else element.childActive = false;
+        }
+      });
 
-    if (active.type === "item") {
+      if (flag === false) {
+        element.map(element => {
+          element.elements.map(element => {
+            if (element === active) {
+              flag = true;
+              if (element.childActive === false) element.childActive = true;
+              else element.childActive = false;
+            }
+          });
+        });
+      }
+
+      this.setState({ stations: element });
+    } else {
       this.props.itemChoose(active);
       this.setState({ chosen: active });
     }
-    this.setState({ stations: this.state.stations });
   };
 
   searchItems() {

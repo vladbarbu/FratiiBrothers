@@ -56,7 +56,7 @@ class Main extends Component {
           </div>
         );
       case "Item Stock":
-        return <ItemStock elements={this.props.elements} />;
+        return <ItemStock stations={this.props.stations} />;
       case "Product Requests":
         return <div />;
       case "Supply Statistics":
