@@ -6,7 +6,7 @@ class StationInfo extends Component {
     stations: this.props.stationInfo.elements,
     chosen: null,
     notifications: null,
-    numberOfItems: this.searchItems()
+    numberOfItems: this.searchItems(this.props.stationInfo)
   };
 
   componentDidMount() {
@@ -165,46 +165,18 @@ class StationInfo extends Component {
     );
   }
   changeActiveChild = active => {
-    if (active.type !== "item") {
-      var flag = false;
-      var element = this.state.stations;
-      element.map(element => {
-        if (element === active) {
-          flag = true;
-          if (element.childActive === false) element.childActive = true;
-          else element.childActive = false;
-        }
-      });
+    if (active._childActive === true) active._childActive = false;
+    else active._childActive = true;
 
-      if (flag === false) {
-        element.map(element => {
-          element.elements.map(element => {
-            if (element === active) {
-              flag = true;
-              if (element.childActive === false) element.childActive = true;
-              else element.childActive = false;
-            }
-          });
-        });
-      }
-
-      this.setState({ stations: element });
-    } else {
+    if (active.type === "item") {
       this.props.itemChoose(active);
       this.setState({ chosen: active });
     }
+    this.setState({ stations: this.state.stations });
   };
 
-  searchItems() {
-    var numberOfItems = 0;
-    this.props.stationInfo.elements.map(element => {
-      element.elements.map(element => {
-        element.elements.map(element => {
-          numberOfItems++;
-        });
-      });
-    });
-    return numberOfItems;
+  searchItems(element) {
+    return this.props.getStationItems(element).length;
   }
 }
 

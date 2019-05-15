@@ -82,6 +82,7 @@ class App extends Component {
             checkForNotifications={this.checkForNotifications}
             toggleConfirmationPopup={this.toggleConfirmationPopup}
             toggleInputPopup={this.toggleInputPopup}
+            getStationItems={this.getStationItems}
           />
           {this.state.showConfirmationPopup === true ? (
             <ConfirmationPopup

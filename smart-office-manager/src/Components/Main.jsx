@@ -39,6 +39,7 @@ class Main extends Component {
               onClickSupplyStation={this.onClickSupplyStation}
               elements={this.props.elements}
               itemChoose={this.itemChoose}
+              getStationItems={this.props.getStationItems}
             />
             {this.props.chosenItem !== null ? (
               <SideBar
