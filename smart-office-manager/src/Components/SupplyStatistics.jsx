@@ -115,7 +115,9 @@ class SupplyStatistics extends Component {
   };
 
   selectedMakeBig = element => {
-    return this.checkForNotifications(element) !== true ? (
+    var hasNotifications = this.checkForNotifications(element);
+    console.log(hasNotifications);
+    return hasNotifications !== true ? (
       this.props.chosenStation === element ? (
         <i
           className="material-icons stationIcon"
@@ -141,23 +143,12 @@ class SupplyStatistics extends Component {
   };
 
   checkForNotifications = element => {
-    var flag = true;
-    {
-      element.elements.map(element => {
-        if (flag === true)
-          element.elements.map(element => {
-            if (flag === true)
-              element.elements.map(element => {
-                if (flag === true)
-                  if (element.notifications !== null)
-                    if (element.notifications.length > 0) {
-                      flag = false;
-                    }
-              });
-          });
-      });
-    }
-    return flag;
+    element.elements.forEach(element => {
+      if (element.type !== "item") this.checkForNotifications(element);
+      else {
+        if (element.notifications.length > 0) return true;
+      }
+    });
   };
 }
 
