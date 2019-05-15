@@ -13,6 +13,7 @@ class App extends Component {
     let location = require("./resources/data/data.json").location;
     let stations = this.loadStations();
     let items = this.getAllItems(stations);
+
     let mappedItems = this.mapItemsToStock(stations);
     this.state = {
       sideBarChosen: "Stations",
@@ -95,7 +96,7 @@ class App extends Component {
               onReturnToDashboard={this.goBackToStations}
               onConfirm={this.confirmStock}
               chosenItem={this.state.chosenItem}
-              chosenStation={this.state.stationInfo}
+              chosenStation={this.state.chosenStation}
             />
           ) : null}
         </div>
@@ -118,13 +119,12 @@ class App extends Component {
       });
     });
     this.setState({ stations: clone });
-    return 1;
   };
 
   onClickSideBar = chosen => {
     this.setState({ sideBarChosen: chosen });
     // this.resetActiveChilds();
-    this.resetItemChoose();
+    //this.resetItemChoose();
     this.resetChosenStation();
   };
 
@@ -169,7 +169,6 @@ class App extends Component {
       });
     });
     this.setState({ stations: clone });
-    return 1;
   };
 
   itemChoose = element => {
@@ -194,9 +193,9 @@ class App extends Component {
 
   checkItemStatistics = (station, item) => {
     this.setState({
+      sideBarChosen: "Supply Statistics",
       chosenStation: station,
-      chosenItem: item,
-      sideBarChosen: "Supply Statistics"
+      chosenItem: item
     });
   };
 
@@ -255,7 +254,7 @@ class App extends Component {
     let stock = 0;
     // console.log(item.name + " " + floor);
     for (let i = 0; i < stations.length; i++) {
-      if (stations[i]._floor === floor) {
+      if (stations[i]._floor == floor) {
         // console.log(stations[i]._name + " " + floor + " " + stations[i]._floor);
         stock += this.getStationItemStock(item, stations[i]);
       }
@@ -303,7 +302,7 @@ class App extends Component {
           currentFloor,
           stations
         );
-        // console.log(currentFloor + " " + allItems[i].name + " " + currentStock);
+        console.log(currentFloor + " " + allItems[i].name + " " + currentStock);
         mappedItems[currentFloor][i] = currentStock;
       }
     }
