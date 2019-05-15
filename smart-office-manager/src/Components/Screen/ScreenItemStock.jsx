@@ -6,7 +6,7 @@ class ScreenItemStock extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.stations);
+    // console.log(this.props.stations);
     for (let i = 0; i < this.props.stations.length; i++) {
       this.mergeStations(this.state.itemTree, this.props.stations[i].elements);
     }
@@ -23,7 +23,13 @@ class ScreenItemStock extends Component {
         {itemTree.map((element, index) => {
           return (
             <div key={index}>
-              <div onClick={() => this.changeActiveChild(element)}>
+              <div
+                onClick={() =>
+                  element._type === "category"
+                    ? this.changeActiveChild(element)
+                    : this.props.itemChoose(element)
+                }
+              >
                 <div className="element-props">
                   <p className="element-name">
                     {element._type === "category"
