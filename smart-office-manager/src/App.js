@@ -10,11 +10,16 @@ class App extends Component {
     super(props);
     let location = require("./resources/data/data.json").location;
     let stations = this.loadStations();
+    let items = this.getAllItems(stations);
+    let nrOfFloors = this.getNumberOfFloors(stations);
+    let mappedItems = this.mapItemsToStock(stations);
     this.state = {
       sideBarChosen: "Stations",
       stationInfo: null,
       location: location,
       stations: stations,
+      items: items,
+      mappedItems: mappedItems,
       chosenItem: null,
       chosenStation: null
     };
@@ -139,6 +144,93 @@ class App extends Component {
   resetItemChoose = () => {
     console.log("Reset");
     this.setState({ chosenItem: null });
+  };
+
+  /* functii pentru stock-ul si indexarea itemelor pe statii si pe etaje */
+
+  loadItems = elements => {
+    let items = [];
+    for (let i = 0; i < elements.length; i++)
+      if (elements[i].type === "category") {
+        let subelements = this.loadItems(elements[i].elements);
+        for (let j = 0; j < subelements.length; j++) items.push(subelements[j]);
+      } else {
+        items.push(elements[i]);
+      }
+    return items;
+  };
+
+  getStationItems = station => {
+    let items = this.loadItems(station.elements);
+    return items;
+  };
+
+  getStationItemStock = (item, station) => {
+    let stock = 0;
+    let stationItems = this.getStationItems(station);
+    // console.log(item.name + " " + station._name);
+    for (let i = 0; i < stationItems.length; i++)
+      if (stationItems[i]._name === item._name)
+        stock += stationItems[i]._quantity;
+    return stock;
+  };
+  getFloorStock = (item, floor, stations) => {
+    let stock = 0;
+    // console.log(item.name + " " + floor);
+    for (let i = 0; i < stations.length; i++) {
+      if (stations[i]._floor == floor) {
+        // console.log(stations[i]._name + " " + floor + " " + stations[i]._floor);
+        stock += this.getStationItemStock(item, stations[i]);
+      }
+    }
+    return stock;
+  };
+
+  getAllItems = stations => {
+    let allItems = [];
+    for (let i = 0; i < stations.length; i++) {
+      let currentItems = this.loadItems(stations[i].elements);
+      for (let j = 0; j < currentItems.length; j++) {
+        let currentID = currentItems[j].ID;
+        let okToAdd = true;
+        for (let k = 0; k < allItems.length; k++)
+          if (allItems[k].ID === currentID) {
+            // exista deja item-ul
+            okToAdd = false;
+            break;
+          }
+        if (okToAdd) allItems.push(currentItems[j]);
+      }
+    }
+    return allItems;
+  };
+
+  getNumberOfFloors = stations => {
+    let floors = 0;
+    for (let i = 0; i < stations.length; i++)
+      if (stations[i]._floor > floors) floors = stations[i]._floor;
+    return floors;
+  };
+
+  mapItemsToStock = stations => {
+    let allItems = this.getAllItems(stations);
+    let nrOfFloors = this.getNumberOfFloors(stations);
+    let mappedItems = new Array(nrOfFloors + 1);
+    for (let i = 1; i <= nrOfFloors; i++)
+      mappedItems[i] = new Array(allItems.length);
+
+    for (let i = 0; i < allItems.length; i++) {
+      for (let currentFloor = 1; currentFloor <= nrOfFloors; currentFloor++) {
+        let currentStock = this.getFloorStock(
+          allItems[i],
+          currentFloor,
+          stations
+        );
+        console.log(currentFloor + " " + allItems[i].name + " " + currentStock);
+        mappedItems[currentFloor][i] = currentStock;
+      }
+    }
+    return mappedItems;
   };
 }
 
