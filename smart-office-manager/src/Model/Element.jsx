@@ -80,6 +80,9 @@ class Element {
     return this._quantity;
   }
 
+  /**
+   * @param {any} value
+   */
   set quantity(value) {
     this._quantity = value;
   }

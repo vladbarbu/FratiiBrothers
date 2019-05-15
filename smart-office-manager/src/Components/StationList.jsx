@@ -5,10 +5,6 @@ class StationList extends Component {
     notifications: null
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.setState({
       notifications: this.props.checkForNotifications(this.props.station)

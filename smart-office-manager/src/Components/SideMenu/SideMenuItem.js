@@ -5,10 +5,6 @@ import React, { Component } from "react";
 import "./../../resources/styles/Nav.scss";
 
 class SideMenuItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     if (this.props.chosen === this.props.item.name)
       this.props.item.active = true;

@@ -6,10 +6,6 @@ import SideMenuItem from "./SideMenu/SideMenuItem";
 import "../resources/styles/SideMenu.scss";
 
 class SideMenu extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <menu className="SideMenu">

@@ -7,6 +7,7 @@ class SupplyStatistics extends Component {
     pressed: "Calendar"
   };
   render() {
+    let i = 0;
     return (
       <div className="supplyStats">
         <i className="material-icons">list</i>
@@ -16,6 +17,7 @@ class SupplyStatistics extends Component {
             return (
               <div
                 className="supplyStation"
+                key={++i}
                 onClick={() => this.props.onClickSupplyStation(element)}
               >
                 {this.selectedMakeBig(element)}
@@ -98,7 +100,7 @@ class SupplyStatistics extends Component {
             style={this.state.chosen === element ? { width: "250px" } : null}
           >
             {element.type === "item" ? (
-              <img src={require("./../resources/" + element.image)} />
+              <img src={require("./../resources/" + element.image)} alt="ok" />
             ) : null}
             <div className="itemText">
               {element.type === "item" ? (

@@ -95,7 +95,7 @@ class Calendar extends React.Component {
   }
 
   onDateClick = day => {
-    var day = this.state.currentDay;
+    day = this.state.currentDay;
     this.setState({
       selectedDate: day
     });

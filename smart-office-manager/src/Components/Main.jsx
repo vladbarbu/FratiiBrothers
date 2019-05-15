@@ -7,12 +7,11 @@ import StationInfo from "./StationInfo";
 import ItemStock from "./ItemStock";
 import SupplyStatistics from "./SupplyStatistics";
 import Notifications from "./Notifications";
-import App from "../App";
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   state = {
     localStation: null
@@ -71,7 +70,8 @@ class Main extends Component {
               chosenItem={this.props.chosenItem}
             />
 
-            {this.props.chosenStation !== null ? (
+            {this.props.chosenStation === this.state.localStation &&
+            this.props.chosenStation ? (
               <SideBar_Statistics
                 chosenStation={this.props.chosenStation}
                 chosenItem={this.props.chosenItem}

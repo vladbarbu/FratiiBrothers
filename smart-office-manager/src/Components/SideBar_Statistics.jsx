@@ -5,9 +5,6 @@ import React, { Component } from "react";
 import "../resources/styles/SideBar.scss";
 
 class SideBar_Statistics extends Component {
-  constructor(props) {
-    super(props);
-  }
   state = {
     chosen: this.props.chosenItem
   };
@@ -22,7 +19,6 @@ class SideBar_Statistics extends Component {
     );
   }
   ItemStock(element) {
-    let style = { backgroundColor: "#0DD2A3" };
     return (
       //Only category
       <div className="supplyItemStock">
@@ -85,6 +81,7 @@ class SideBar_Statistics extends Component {
                         {element.type === "item" ? (
                           <img
                             src={require("./../resources/" + element.image)}
+                            alt="ok"
                           />
                         ) : null}
                         <div className="itemText">
