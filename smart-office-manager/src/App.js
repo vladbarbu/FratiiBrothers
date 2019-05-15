@@ -193,9 +193,9 @@ class App extends Component {
 
   checkItemStatistics = (station, item) => {
     this.setState({
+      sideBarChosen: "Supply Statistics",
       chosenStation: station,
-      chosenItem: item,
-      sideBarChosen: "Supply Statistics"
+      chosenItem: item
     });
   };
 

@@ -71,8 +71,7 @@ class Main extends Component {
               chosenItem={this.props.chosenItem}
             />
 
-            {this.props.chosenStation === this.state.localStation &&
-            this.props.chosenStation ? (
+            {this.props.chosenStation !== null ? (
               <SideBar_Statistics
                 chosenStation={this.props.chosenStation}
                 chosenItem={this.props.chosenItem}
