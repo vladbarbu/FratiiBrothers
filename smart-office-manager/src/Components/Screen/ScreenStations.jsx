@@ -1,27 +1,47 @@
 import React, { Component } from "react";
-import StationInfo from "../StationInfo";
+import StationProfile from "../Station/StationProfile";
 import SideBar from "../SideBar";
 
-import Stations from "./../Stations"
+import StationCard from "../Station/StationCard";
 
 class ScreenStations extends Component {
 
 
 
     renderStationList(){
+        let flag = 0;
         return (
-            <Stations
-                checkForNotifications={this.props.checkForNotifications}
-                stations={this.props.stations}
-                onClickStation={this.props.onClickStation}
-            />
+            <div className="StationList">
+                <div className="breadcrumbs">
+                    <p>Stations</p> <i className="material-icons">arrow_right</i>
+                </div>
+                {this.props.stations.map(element => {
+                    if (flag !== element.floor) {
+                        flag = element.floor;
+                        return (
+                            <div className="stationFloor" key={"floor-" + element.floor}>
+                                <div className={"stationFloorInfo"}>
+                                    <span className="floorID">Floor {element.floor}</span>
+                                    <span className="numberOfStations">
+                    {" "}
+                                        &#8226; {this.numberOfStations(flag)} stations
+                  </span>
+                                </div>
+                                {this.allStations(flag)}
+                            </div>
+                        );
+                    }
+                    return null;
+                })}
+            </div>
+
         )
     }
 
     renderStationProfile(){
         return (
             <div className="Station">
-                <StationInfo
+                <StationProfile
                     checkForNotifications={this.props.checkForNotifications}
                     stationInfo={this.props.stationInfo}
                     goBackToStations={this.props.goBackToStations}
@@ -51,6 +71,47 @@ class ScreenStations extends Component {
 
     render() {
         return (this.props.renderList || this.props.stationInfo === null ) ? this.renderStationList() : this.renderStationProfile();
+    }
+
+
+    /**
+     *
+     *
+     * Helper functions
+     *
+     * ----------
+     * @param flag
+     * @returns {number}
+     */
+
+    numberOfStations(flag) {
+        let count = 0;
+        this.props.stations.forEach(element => {
+            if (element.floor === flag) count += 1;
+        });
+        return count;
+    }
+
+
+
+    allStations(flag) {
+        return (
+            <div className="stations">
+                {this.props.stations.map((element, index) => {
+                    if (element.floor === flag) {
+                        return (
+                            <StationCard
+                                key={index}
+                                checkForNotifications={this.props.checkForNotifications}
+                                station={element}
+                                onClickStation={this.props.onClickStation}
+                            />
+                        );
+                    }
+                    return null;
+                })}
+            </div>
+        );
     }
 }
 

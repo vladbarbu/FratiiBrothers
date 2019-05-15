@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../resources/styles/StationInfo.scss";
+import "../../resources/styles/StationInfo.scss";
 
-class StationInfo extends Component {
+class StationProfile extends Component {
   state = {
     stations: this.props.stationInfo.elements,
     chosen: null,
@@ -91,7 +91,7 @@ class StationInfo extends Component {
                 <div key={index} className="categoryItem">
                   <small onClick={() => this.changeActiveChild(element)}>
                     <img
-                      src={require("./../resources/" + element.image)}
+                      src={require("./../../resources/" + element.image)}
                       alt="ok"
                     />
                     <div className="itemText">
@@ -118,7 +118,7 @@ class StationInfo extends Component {
                       subdirectory_arrow_right
                     </i>
                     <img
-                      src={require("./../resources/" + element.image)}
+                      src={require("./../../resources/" + element.image)}
                       alt="ok"
                     />
                     <div className="itemText">
@@ -180,4 +180,4 @@ class StationInfo extends Component {
   }
 }
 
-export default StationInfo;
+export default StationProfile;

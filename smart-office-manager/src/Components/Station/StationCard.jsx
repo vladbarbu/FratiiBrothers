@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "../resources/styles/Station.scss";
-class StationList extends Component {
+import "../../resources/styles/Station.scss";
+class StationCard extends Component {
   state = {
     notifications: null
   };
@@ -53,4 +53,4 @@ class StationList extends Component {
   }
 }
 
-export default StationList;
+export default StationCard;
