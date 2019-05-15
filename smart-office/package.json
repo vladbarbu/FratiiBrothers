@@ -28,7 +28,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "jest": "^24.8.0"
-  }
+  "devDependencies": {}
 }
