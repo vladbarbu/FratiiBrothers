@@ -54,7 +54,6 @@ class NavBar extends Component {
   }
 
   render() {
-    let ID = 0;
     let style = { right: "238px" };
 
     return (
@@ -114,7 +113,8 @@ class NavBar extends Component {
   }
 
   searchBarItems(element) {
-    return element.map(element =>
+    var ID = 0;
+    return element.elements.map(element =>
       element.type === "item" ? (
         this.searchInName(element.name) ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
           ID < 6 ? ( //Limitam lista la 6 iteme
