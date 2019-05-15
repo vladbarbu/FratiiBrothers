@@ -9,6 +9,12 @@ class SideBar extends Component {
     super(props);
   }
 
+  getItemIndex = item => {
+    for (let i = 0; i < this.props.items.length; i++)
+      if (this.props.items[i].ID === item.ID) return i;
+    return -1;
+  };
+
   render() {
     let descriptionItems = [
       {
@@ -22,8 +28,18 @@ class SideBar extends Component {
         value: this.props.chosenItem._quantity
       },
       { icon: "calendar_today", text: "Expected expiry date for stock: " },
-      { icon: "error", text: "Stock on the entire floor: " },
-      { icon: "warning", text: "Item warnings on this station: " }
+      {
+        icon: "error",
+        text: "Stock on the entire floor: ",
+        value: this.props.itemStocks[this.props.chosenStation._floor][
+          this.getItemIndex(this.props.chosenItem)
+        ]
+      },
+      {
+        icon: "warning",
+        text: "Item warnings on this station: ",
+        value: this.props.chosenItem.notifications.length
+      }
     ];
 
     let notifications = [
@@ -88,22 +104,26 @@ class SideBar extends Component {
         </div>
         <div className="footer">
           <div className="notifications">
-            {notifications.map(notification => (
-              <div className="notification-item">
-                <div className="header">
-                  <p>{notification.itemID}</p>
-                  <p className="time">{notification.createdAt}</p>
+            {this.props.chosenItem.notifications.length == 0 ? (
+              <p className="no-warnings">No warnings</p>
+            ) : (
+              this.props.chosenItem.notifications.map(notification => (
+                <div className="notification-item">
+                  <div className="header">
+                    <p>{notification.itemID}</p>
+                    <p className="time">{notification.createdAt}</p>
+                  </div>
+                  <div className="notification-item-message">
+                    <h6>
+                      {notification.type === "from_station"
+                        ? "From station: "
+                        : null}{" "}
+                      {notification.content}
+                    </h6>
+                  </div>
                 </div>
-                <div className="notification-item-message">
-                  <h6>
-                    {notification.type === "from_station"
-                      ? "From station: "
-                      : null}{" "}
-                    {notification.content}
-                  </h6>
-                </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>

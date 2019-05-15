@@ -43,6 +43,8 @@ class Main extends Component {
               <SideBar
                 chosenItem={this.props.chosenItem}
                 chosenStation={this.props.stationInfo}
+                items={this.props.items}
+                itemStocks={this.props.itemStocks}
               />
             ) : null}
           </div>

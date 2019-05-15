@@ -65,6 +65,8 @@ class App extends Component {
             goBackToStations={this.goBackToStations}
             location={this.state.location}
             stations={this.state.stations}
+            items={this.state.items}
+            itemStocks={this.state.mappedItems}
             itemChoose={this.itemChoose}
             chosenItem={this.state.chosenItem}
             onClickSupplyStation={this.onClickSupplyStation}
