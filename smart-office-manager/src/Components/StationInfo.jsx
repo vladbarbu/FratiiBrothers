@@ -20,6 +20,7 @@ class StationInfo extends Component {
     });
   }
   render() {
+    let i = 0;
     return (
       <div className="StationInfo">
         <div className="breadcrumbs">
@@ -84,7 +85,8 @@ class StationInfo extends Component {
   }
 
   ItemStock(element) {
-    var numberOfItems = 0;
+    // var numberOfItems = 0;
+    let i = 0;
     let style = { backgroundColor: "#0DD2A3" };
     return (
       //Only category
@@ -92,7 +94,7 @@ class StationInfo extends Component {
         {element === this.state.stations
           ? this.state.stations.map(element => {
               return (
-                <div className="categoryItem">
+                <div className="categoryItem" key={++i}>
                   <small onClick={() => this.changeActiveChild(element)}>
                     <img src={require("./../resources/" + element.image)} />
                     <div className="itemText">
@@ -113,7 +115,7 @@ class StationInfo extends Component {
           : element.elements.map(element => {
               // Items and subcategory
               return (
-                <div className="justItem">
+                <div className="justItem" key={++i}>
                   <small onClick={() => this.changeActiveChild(element)}>
                     <i className="material-icons subdirectory">
                       subdirectory_arrow_right

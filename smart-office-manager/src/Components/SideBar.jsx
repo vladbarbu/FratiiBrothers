@@ -15,6 +15,12 @@ class SideBar extends Component {
     return -1;
   };
 
+  getItemNameById = id => {
+    for (let i = 0; i < this.props.items.length; i++)
+      if (this.props.items[i].ID === id) return this.props.items[i].name;
+    return null;
+  };
+
   render() {
     let descriptionItems = [
       {
@@ -41,7 +47,7 @@ class SideBar extends Component {
         value: this.props.chosenItem.notifications.length
       }
     ];
-
+    let i = 0;
     return (
       <div className="SideBar">
         <img
@@ -52,7 +58,7 @@ class SideBar extends Component {
           <h2>{this.props.chosenItem.name}</h2>
           <div className="description">
             {descriptionItems.map(description => (
-              <div className="description-element">
+              <div className="description-element" key={++i}>
                 <div className="icon">
                   <i className="material-icons-round">{description.icon} </i>
                 </div>
@@ -93,9 +99,10 @@ class SideBar extends Component {
             <div
               className="button clear-warnings"
               onClick={() => {
-                let item = this.props.chosenItem;
-                item.chosen = true;
-                this.props.clearItemWarnings(item, this.props.chosenStation);
+                this.props.clearItemWarnings(
+                  this.props.chosenItem,
+                  this.props.chosenStation
+                );
                 this.props.toggleConfirmationPopup();
               }}
             >
@@ -124,9 +131,9 @@ class SideBar extends Component {
               <p className="no-warnings">No warnings</p>
             ) : (
               this.props.chosenItem.notifications.map(notification => (
-                <div className="notification-item">
+                <div className="notification-item" key={++i}>
                   <div className="header">
-                    <p>{notification.itemID}</p>
+                    <p>{this.getItemNameById(notification.itemID)}</p>
                     <p className="time">{notification.createdAt}</p>
                   </div>
                   <div className="notification-item-message">
