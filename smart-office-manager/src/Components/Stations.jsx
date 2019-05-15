@@ -25,6 +25,7 @@ class Stations extends Component {
               </div>
             );
           }
+          return null;
         })}
       </div>
     );
@@ -47,6 +48,7 @@ class Stations extends Component {
               />
             );
           }
+          return null;
         })}
       </div>
     );
@@ -54,9 +56,8 @@ class Stations extends Component {
 
   numberOfStations(flag) {
     let count = 0;
-    this.props.stations.map(element => {
+    this.props.stations.forEach(element => {
       if (element.floor === flag) count += 1;
-      return true;
     });
     return count;
   }

@@ -3,20 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/ItemStock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenItemStock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Notifications.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenNotifications.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideMenu/SideMenuItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideMenuItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/precache-manifest.c49d4b7c8a1916006382731aad6a621f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.534a9a45.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.534a9a45.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.9a7dda6b.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.9a7dda6b.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideBarStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideBarStatistics.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Stations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Stations.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SupplyStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SupplyStatistics.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

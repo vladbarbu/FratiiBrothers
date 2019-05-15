@@ -113,9 +113,9 @@ class App extends Component {
   };
 
   updateStations = elements => {
-    var clone = this.state.stations;
-    clone.map(element => {
-      element.elements.map(element => {
+    let clone = this.state.stations;
+    clone.forEach(element => {
+      element.elements.forEach(element => {
         if (element === elements) element = elements;
       });
     });
@@ -124,7 +124,7 @@ class App extends Component {
 
   onClickSideBar = chosen => {
     this.setState({ sideBarChosen: chosen });
-    // this.resetActiveChilds();
+    // this.resetActiveChildren();
     //this.resetItemChoose();
     this.resetChosenStation();
   };
@@ -134,7 +134,7 @@ class App extends Component {
       sideBarChosen: "Stations",
       stationInfo: element
     });
-    //this.resetActiveChilds();
+    //this.resetActiveChildren();
     //this.resetItemChoose();
   };
 
@@ -154,17 +154,17 @@ class App extends Component {
       sideBarChosen: "Stations",
       stationInfo: null
     });
-    this.resetActiveChilds();
+    this.resetActiveChildren();
     this.resetItemChoose();
   };
 
   //Reset the item list (Use this to get the initial list)
-  resetActiveChilds = () => {
-    var clone = this.state.stations;
-    clone.map(element => {
-      element.elements.map(element => {
+  resetActiveChildren = () => {
+    let clone = this.state.stations;
+    clone.forEach(element => {
+      element.elements.forEach(element => {
         element.childActive = false;
-        element.elements.map(element => {
+        element.elements.forEach(element => {
           element.childActive = false;
         });
       });
@@ -226,8 +226,7 @@ class App extends Component {
   };
 
   getStationItems = station => {
-    let items = this.loadItems(station.elements);
-    return items;
+    return this.loadItems(station.elements);
   };
 
   checkForNotifications = station => {
@@ -255,11 +254,12 @@ class App extends Component {
     let stock = 0;
     // console.log(item.name + " " + floor);
     for (let i = 0; i < stations.length; i++) {
-      if (stations[i]._floor == floor) {
+      if (String(stations[i]._floor) === String(floor)) {
         // console.log(stations[i]._name + " " + floor + " " + stations[i]._floor);
         stock += this.getStationItemStock(item, stations[i]);
       }
     }
+
     return stock;
   };
 
@@ -298,13 +298,11 @@ class App extends Component {
 
     for (let i = 0; i < allItems.length; i++) {
       for (let currentFloor = 1; currentFloor <= nrOfFloors; currentFloor++) {
-        let currentStock = this.getFloorStock(
-          allItems[i],
-          currentFloor,
-          stations
-        );
-        // console.log(currentFloor + " " + allItems[i].name + " " + currentStock);
-        mappedItems[currentFloor][i] = currentStock;
+
+        mappedItems[currentFloor][i] = this.getFloorStock(
+            allItems[i],
+            currentFloor,
+            stations);
       }
     }
     return mappedItems;
@@ -312,3 +310,4 @@ class App extends Component {
 }
 
 export default App;
+

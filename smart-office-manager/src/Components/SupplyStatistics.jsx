@@ -13,11 +13,11 @@ class SupplyStatistics extends Component {
         <i className="material-icons">list</i>
         Stations
         <div className="supplyStations">
-          {this.props.stations.map(element => {
+          {this.props.stations.map((element,index) => {
             return (
               <div
                 className="supplyStation"
-                key={++i}
+                key={index}
                 onClick={() => this.props.onClickSupplyStation(element)}
               >
                 {this.selectedMakeBig(element)}
@@ -31,7 +31,7 @@ class SupplyStatistics extends Component {
           })}
         </div>
         <div>
-          <i class="material-icons">show_chart</i>
+          <i className="material-icons">show_chart</i>
           Supply Statistics
         </div>
         <div className="supplyButtons">
@@ -41,14 +41,14 @@ class SupplyStatistics extends Component {
               onClick={() => this.setPressed("Calendar")}
               style={{ backgroundColor: "#F9E816" }}
             >
-              <i class="material-icons">calendar_today</i>Supply Calendar
+              <i className="material-icons">calendar_today</i>Supply Calendar
             </small>
           ) : (
             <small
               className="supplyButton"
               onClick={() => this.setPressed("Calendar")}
             >
-              <i class="material-icons">calendar_today</i>Supply Calendar
+              <i className="material-icons">calendar_today</i>Supply Calendar
             </small>
           )}
 
@@ -59,7 +59,7 @@ class SupplyStatistics extends Component {
               style={{ backgroundColor: "#F9E816" }}
             >
               {" "}
-              <i class="material-icons">graphic_eq</i>Supply Graph
+              <i className="material-icons">graphic_eq</i>Supply Graph
             </small>
           ) : (
             <small
@@ -67,7 +67,7 @@ class SupplyStatistics extends Component {
               onClick={() => this.setPressed("Graph")}
             >
               {" "}
-              <i class="material-icons">graphic_eq</i>Supply Graph
+              <i className="material-icons">graphic_eq</i>Supply Graph
             </small>
           )}
         </div>

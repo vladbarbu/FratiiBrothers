@@ -23,9 +23,9 @@ class SideBarStatistics extends Component {
       //Only category
       <div className="supplyItemStock">
         {element === this.props.chosenStation
-          ? element.elements.map(element => {
+          ? element.elements.map((element,index) => {
               return (
-                <div className="justItem supplyStock">
+                <div key={index} className="justItem supplyStock">
                   <small
                     onClick={() => this.changeActiveChild(element)}
                     style={{ border: "none" }}
@@ -44,11 +44,11 @@ class SideBarStatistics extends Component {
                 </div>
               );
             })
-          : element.elements.map(element => {
+          : element.elements.map((element,index) => {
               // Items and subcategory
               if (element.type !== "item") {
                 return (
-                  <div className="justItem supplyStock">
+                  <div key={index} className="justItem supplyStock">
                     <small
                       onClick={() => this.changeActiveChild(element)}
                       style={{ border: "none" }}
@@ -68,7 +68,7 @@ class SideBarStatistics extends Component {
                 );
               } else {
                 return (
-                  <div className="itemSidebar">
+                  <div key={index} className="itemSidebar">
                     <div className="justItem supplyStock">
                       <small
                         onClick={() => this.changeActiveChild(element)}

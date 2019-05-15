@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "../resources/styles/Main.scss";
-import SideBarStatistics from "./SideBarStatistics";
 import ScreenItemStock from "./Screen/ScreenItemStock";
-import SupplyStatistics from "./SupplyStatistics";
 import ScreenNotifications from "./Screen/ScreenNotifications";
 import ScreenRequests from './Screen/ScreenRequests';
 import ScreenStations from './Screen/ScreenStations';
+import ScreenStatistics from './Screen/ScreenStatistics';
+
 
 
 class Main extends Component {
@@ -17,7 +17,7 @@ class Main extends Component {
 
   render() {
 
-    let stationProps = {
+    let stationsProps = {
       checkForNotifications : this.props.checkForNotifications,
       stationInfo : this.props.stationInfo,
       goBackToStations : this.goBackToStations,
@@ -38,35 +38,25 @@ class Main extends Component {
       onClickStation : this.onClickStation,
     };
 
+    let statisticsProps = {
+      checkForNotifications : this.props.checkForNotifications,
+      stations : this.props.stations,
+      onClickSupplyStation : this.onClickSupplyStation,
+      chosenStation : this.props.chosenStation,
+      chosenItem : this.props.chosenItem,
+      itemChoose : this.itemChoose,
+      updateStations : this.updateStations,
+      localStation  : this.state.localStation
+    };
+
 
 
     switch (this.props.sideBarChosen) {
       case "Notifications": return <ScreenNotifications />;
-      case "Stations": return (<ScreenStations {...stationProps} />);
+      case "Stations": return (<ScreenStations {...stationsProps} />);
       case "Item Stock": return <ScreenItemStock stations={this.props.stations} />;
       case "Product Requests": return <ScreenRequests />;
-      case "Supply Statistics":
-        return (
-          <div className="SupplyStatistics">
-            <SupplyStatistics
-              checkForNotifications={this.props.checkForNotifications}
-              stations={this.props.stations}
-              onClickSupplyStation={this.onClickSupplyStation}
-              chosenStation={this.props.chosenStation}
-              chosenItem={this.props.chosenItem}
-            />
-
-            {this.props.chosenStation === this.state.localStation &&
-            this.props.chosenStation ? (
-              <SideBarStatistics
-                chosenStation={this.props.chosenStation}
-                chosenItem={this.props.chosenItem}
-                itemChoose={this.itemChoose}
-                updateStations={this.updateStations}
-              />
-            ) : null}
-          </div>
-        );
+      case "Supply Statistics": return <ScreenStatistics {...statisticsProps} />;
 
       default:
         return <div />;

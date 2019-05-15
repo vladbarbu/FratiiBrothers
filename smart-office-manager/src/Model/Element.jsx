@@ -1,11 +1,5 @@
 class Element {
-  get quantity() {
-    return this._quantity;
-  }
 
-  set quantity(value) {
-    this._quantity = value;
-  }
 
   get parentID() {
     return this._parentID;
@@ -81,7 +75,7 @@ class Element {
   }
 
   /**
-   * @param {any} value
+   * @param {*} value
    */
   set quantity(value) {
     this._quantity = value;

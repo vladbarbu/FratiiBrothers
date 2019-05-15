@@ -20,7 +20,7 @@ class StationInfo extends Component {
     return (
       <div className="StationInfo">
         <div className="breadcrumbs">
-          <a onClick={this.props.goBackToStations}>Stations</a>{" "}
+          <div onClick={this.props.goBackToStations}>Stations</div>{" "}
           <i className="material-icons">arrow_right</i>
           Floor {this.props.stationInfo.floor} &#45; {" Station #"}
           {this.props.stationInfo.stationName}
@@ -109,10 +109,10 @@ class StationInfo extends Component {
                 </div>
               );
             })
-          : element.elements.map(element => {
+          : element.elements.map((element,index) => {
               // Items and subcategory
               return (
-                <div className="justItem">
+                <div key={index} className="justItem">
                   <small onClick={() => this.changeActiveChild(element)}>
                     <i className="material-icons subdirectory">
                       subdirectory_arrow_right
