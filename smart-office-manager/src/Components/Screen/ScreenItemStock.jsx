@@ -20,13 +20,21 @@ class ScreenItemStock extends Component {
   itemStock(itemTree) {
     return (
       <div>
-        {itemTree.map((element,index) => {
+        {itemTree.map((element, index) => {
           return (
             <div key={index}>
               <div onClick={() => this.changeActiveChild(element)}>
-                <p>
-                  {element._name}, {element._quantity}
-                </p>
+                <div className="element-props">
+                  <p className="element-name">
+                    {element._type === "category"
+                      ? element._parentID === null
+                        ? "Category: "
+                        : "Subcategory: "
+                      : "Item: "}
+                    {element._name}{" "}
+                    {element._type === "item" ? element._quantity : null}
+                  </p>
+                </div>
               </div>
               {element._childActive === true
                 ? this.itemStock(element._elements)
