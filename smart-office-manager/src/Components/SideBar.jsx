@@ -69,7 +69,10 @@ class SideBar extends Component {
                 <span>and clear warnings</span>
               </div>
             </div>
-            <div className="button edit-stock">
+            <div
+              className="button edit-stock"
+              onClick={this.props.toggleInputPopup}
+            >
               <div className="content">
                 <p>Edit stock</p>
               </div>

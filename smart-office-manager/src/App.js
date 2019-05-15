@@ -5,6 +5,7 @@ import NavBar from "./Components/NavBar";
 import SideMenu from "./Components/SideMenu";
 import Main from "./Components/Main";
 import ConfirmationPopup from "./Components/ConfirmationPopup";
+import InputPopup from "./Components/InputPopup";
 
 class App extends Component {
   constructor(props) {
@@ -79,11 +80,21 @@ class App extends Component {
             clearItemWarnings={this.clearItemWarnings}
             checkForNotifications={this.checkForNotifications}
             toggleConfirmationPopup={this.toggleConfirmationPopup}
+            toggleInputPopup={this.toggleInputPopup}
           />
           {this.state.showConfirmationPopup === true ? (
             <ConfirmationPopup
               togglePopup={this.toggleConfirmationPopup}
               onReturnToDashboard={this.goBackToStations}
+            />
+          ) : null}
+          {this.state.showInputPopup === true ? (
+            <InputPopup
+              togglePopup={this.toggleInputPopup}
+              toggleConfirmPopup={this.toggleConfirmationPopup}
+              onReturnToDashboard={this.goBackToStations}
+              onConfirm={this.confirmStock}
+              chosenItem={this.state.chosenItem}
             />
           ) : null}
         </div>
@@ -93,6 +104,12 @@ class App extends Component {
 
   toggleConfirmationPopup = () => {
     this.setState({ showConfirmationPopup: !this.state.showConfirmationPopup });
+  };
+  toggleInputPopup = () => {
+    this.setState({ showInputPopup: !this.state.showInputPopup });
+  };
+  confirmStock = (item, stock) => {
+    console.log("update stock item " + item.ID + " amount " + stock);
   };
   updateStations = elements => {
     var clone = this.state.stations;

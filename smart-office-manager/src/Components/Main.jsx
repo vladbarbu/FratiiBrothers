@@ -50,6 +50,7 @@ class Main extends Component {
                 checkItemStatistics={this.props.checkItemStatistics}
                 clearItemWarnings={this.props.clearItemWarnings}
                 toggleConfirmationPopup={this.props.toggleConfirmationPopup}
+                toggleInputPopup={this.props.toggleInputPopup}
               />
             ) : null}
           </div>
