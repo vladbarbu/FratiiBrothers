@@ -116,8 +116,8 @@ class App extends Component {
       sideBarChosen: "Station",
       stationInfo: element
     });
-    this.resetActiveChilds();
-    this.resetItemChoose();
+    //this.resetActiveChilds();
+    //this.resetItemChoose();
   };
 
   onClickSupplyStation = element => {

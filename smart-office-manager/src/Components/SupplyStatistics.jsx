@@ -75,7 +75,11 @@ class SupplyStatistics extends Component {
             : "Please pick an item"}
         </small>
         {this.state.pressed === "Calendar" ? (
-          <Calendar className="supplyCalendar" />
+          this.props.chosenItem === null ? (
+            <Calendar className="supplyCalendar" style={{ opacity: "0.3" }} />
+          ) : (
+            <Calendar className="supplyCalendar" />
+          )
         ) : null}
       </div>
     );
