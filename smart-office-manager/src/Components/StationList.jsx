@@ -10,23 +10,14 @@ class StationList extends Component {
   }
 
   componentDidMount() {
-    this.props.station.elements.map(element => {
-      element.elements.map(element => {
-        element.elements.map(element => {
-          if (element.notifications.length > 0)
-            if (this.state.notifications === null)
-            {
-              this.setState({ notifications: true });
-            }
-        });
-      });
-    });
+    this.checkForNotifications(this.props.station);
   }
 
   render() {
-
     return (
-      <div  className="Station" onClick={() => {
+      <div
+        className="Station"
+        onClick={() => {
           this.props.onClickStation(this.props.station);
         }}
       >
@@ -36,12 +27,22 @@ class StationList extends Component {
 
         <div className={"body"}>
           <div className={"title"}>
-          {this.state.notifications !== null ? (
-              <div className="icon"><i className="material-icons"  style={{ backgroundColor: "red" }}>ev_station</i></div>
-          ) : (
-              <div className="icon"><i className="material-icons">ev_station</i></div>
-          )}
-          <p>Station #{this.props.station.stationName}</p>
+            {this.state.notifications !== null &&
+            this.state.notifications !== undefined ? (
+              <div className="icon">
+                <i
+                  className="material-icons"
+                  style={{ backgroundColor: "red" }}
+                >
+                  ev_station
+                </i>
+              </div>
+            ) : (
+              <div className="icon">
+                <i className="material-icons">ev_station</i>
+              </div>
+            )}
+            <p>Station #{this.props.station.stationName}</p>
           </div>
           <div className="info">
             <p>Some info</p>
@@ -52,6 +53,18 @@ class StationList extends Component {
         </div>
       </div>
     );
+  }
+
+  checkForNotifications(element) {
+    element.elements.map(element => {
+      if (element.type === "item") {
+        if (element.notifications.length > 0) {
+          this.setState({ notifications: true });
+        }
+      } else {
+        this.checkForNotifications(element);
+      }
+    });
   }
 }
 
