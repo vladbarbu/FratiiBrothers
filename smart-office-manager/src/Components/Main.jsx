@@ -40,7 +40,10 @@ class Main extends Component {
               itemChoose={this.itemChoose}
             />
             {this.props.chosenItem !== null ? (
-              <SideBar chosenItem={this.props.chosenItem} />
+              <SideBar
+                chosenItem={this.props.chosenItem}
+                chosenStation={this.props.stationInfo}
+              />
             ) : null}
           </div>
         );

@@ -47,7 +47,8 @@
                   "name": "Paper Cups Large",
                   "parentID": 8,
                   "image": "images/item_3.png",
-                  "quantity": 3
+                  "quantity": 3,
+                  "notifications": []
                 }
               ]
             },
@@ -82,7 +83,8 @@
                   "name": "Glass Cups Large",
                   "parentID": 9,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -138,7 +140,8 @@
                   "name": "Paper Coffee Large",
                   "parentID": 11,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -173,7 +176,8 @@
                   "name": "Glass Coffee Large",
                   "parentID": 12,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -278,7 +282,8 @@
                   "name": "Paper Cups Large",
                   "parentID": 8,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -336,7 +341,8 @@
                   "name": "Glass Cups Large",
                   "parentID": 9,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -447,7 +453,8 @@
                   "name": "Paper Cups Large",
                   "parentID": 8,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -505,7 +512,8 @@
                   "name": "Glass Cups Large",
                   "parentID": 9,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -584,7 +592,8 @@
                   "name": "Paper Coffee Large",
                   "parentID": 11,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -642,7 +651,8 @@
                   "name": "Glass Coffee Large",
                   "parentID": 12,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -747,7 +757,8 @@
                   "name": "Paper Cups Large",
                   "parentID": 8,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -805,7 +816,8 @@
                   "name": "Glass Cups Large",
                   "parentID": 9,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -884,7 +896,8 @@
                   "name": "Paper Coffee Large",
                   "parentID": 11,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -942,7 +955,8 @@
                   "name": "Glass Coffee Large",
                   "parentID": 12,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -1048,7 +1062,8 @@
                   "name": "Paper Cups Large",
                   "parentID": 8,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -1106,7 +1121,8 @@
                   "name": "Glass Cups Large",
                   "parentID": 9,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -1185,7 +1201,8 @@
                   "name": "Paper Coffee Large",
                   "parentID": 11,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -1243,7 +1260,8 @@
                   "name": "Glass Coffee Large",
                   "parentID": 12,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -1348,7 +1366,8 @@
                   "name": "Paper Cups Large",
                   "parentID": 8,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -1406,7 +1425,8 @@
                   "name": "Glass Cups Large",
                   "parentID": 9,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -1485,7 +1505,8 @@
                   "name": "Paper Coffee Large",
                   "parentID": 11,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },
@@ -1543,7 +1564,8 @@
                   "name": "Glass Coffee Large",
                   "parentID": 12,
                   "image": "images/item_3.png",
-                  "quantity": 12
+                  "quantity": 12,
+                  "notifications": []
                 }
               ]
             },

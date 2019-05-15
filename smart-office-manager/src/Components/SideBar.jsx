@@ -11,8 +11,16 @@ class SideBar extends Component {
 
   render() {
     let descriptionItems = [
-      { icon: "ev_station", text: "Context: " },
-      { icon: "error", text: "Stock for this station: " },
+      {
+        icon: "ev_station",
+        text: "Context: ",
+        value: this.props.chosenStation._name
+      },
+      {
+        icon: "error",
+        text: "Stock for this station: ",
+        value: this.props.chosenItem._quantity
+      },
       { icon: "calendar_today", text: "Expected expiry date for stock: " },
       { icon: "error", text: "Stock on the entire floor: " },
       { icon: "warning", text: "Item warnings on this station: " }
@@ -48,7 +56,9 @@ class SideBar extends Component {
                 <div className="icon">
                   <i className="material-icons-round">{description.icon} </i>
                 </div>
-                <p>{description.text}</p>
+                <p>
+                  {description.text} {description.value}
+                </p>
               </div>
             ))}
           </div>
