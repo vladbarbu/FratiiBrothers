@@ -1,4 +1,4 @@
-# Live prototype (Employee App)
+# Live prototype (Employee/Manager App)
 https://sketch.cloud/s/8YoYw
 
 # FratiiBrothers
