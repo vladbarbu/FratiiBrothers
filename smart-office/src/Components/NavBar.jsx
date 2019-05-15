@@ -118,7 +118,7 @@ class NavBar extends Component {
     if (flag === 0)
       return element.map(element => this.searchBarItems(element, 1));
     else {
-      console.log(element);
+      //console.log(element);
       return element.elements.map(element =>
         element.type === "item" ? (
           this.searchInName(element.name) ? ( //Verificam daca string-ul din input se regaseste in numele item-elor
@@ -131,7 +131,6 @@ class NavBar extends Component {
                   this.props.discardSearch();
                 }}
               >
-                {console.log(element)}
                 <img
                   alt="Item"
                   src={require("./../resources/" + element.image)}

@@ -6,7 +6,8 @@ class StationInfo extends Component {
     stations: this.props.stationInfo.elements,
     chosen: null,
     notifications: null,
-    numberOfItems: this.searchItems()
+    numberOfItems: this.searchItems(),
+    stationClone: this.props.stationInfo
   };
 
   constructor(props) {
@@ -93,7 +94,11 @@ class StationInfo extends Component {
           ? this.state.stations.map(element => {
               return (
                 <div className="categoryItem">
-                  <small onClick={() => this.changeActiveChild(element)}>
+                  <small
+                    onClick={() =>
+                      this.changeActiveChild(element, this.state.stationClone)
+                    }
+                  >
                     <img src={require("./../resources/" + element.image)} />
                     <div className="itemText">
                       {element.type === "category" && element.parentID === null
@@ -114,7 +119,11 @@ class StationInfo extends Component {
               // Items and subcategory
               return (
                 <div className="justItem">
-                  <small onClick={() => this.changeActiveChild(element)}>
+                  <small
+                    onClick={() =>
+                      this.changeActiveChild(element, this.state.stationClone)
+                    }
+                  >
                     <i className="material-icons subdirectory">
                       subdirectory_arrow_right
                     </i>
@@ -162,31 +171,25 @@ class StationInfo extends Component {
       </div>
     );
   }
-  changeActiveChild = active => {
+  changeActiveChild = (active, element) => {
     if (active.type !== "item") {
       var flag = false;
-      var element = this.state.stations;
-      element.map(element => {
-        if (element === active) {
-          flag = true;
-          if (element.childActive === false) element.childActive = true;
-          else element.childActive = false;
-        }
-      });
-
-      if (flag === false) {
-        element.map(element => {
-          element.elements.map(element => {
+      element.elements.map(element => {
+        if (flag === false)
+          if (element.type !== "item") {
             if (element === active) {
               flag = true;
-              if (element.childActive === false) element.childActive = true;
-              else element.childActive = false;
-            }
-          });
-        });
-      }
-
-      this.setState({ stations: element });
+              if (element.childActive === true) element.childActive = false;
+              else {
+                element.childActive = true;
+                this.setState({ stations: this.state.stationClone });
+              }
+            } else this.changeActiveChild(active, element);
+          } else {
+            this.props.itemChoose(active);
+            this.setState({ chosen: active });
+          }
+      });
     } else {
       this.props.itemChoose(active);
       this.setState({ chosen: active });
