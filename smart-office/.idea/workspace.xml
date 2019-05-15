@@ -3,10 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenStations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenStations.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/StationInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/StationList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Stations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Stations.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Station/StationProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SupplyStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SupplyStatistics.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Station.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/Station.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/data/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Station.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Station.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/StationInfo.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Stations.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

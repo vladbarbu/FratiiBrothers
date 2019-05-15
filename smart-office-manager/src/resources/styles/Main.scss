@@ -1,13 +1,7 @@
 @import "config";
 
 .Main {
+  flex: 1;
+  padding: 20px;
   margin: 0;
-}
-
-.Station {
-  display: flex;
-}
-
-.SupplyStatistics {
-  display: flex;
 }

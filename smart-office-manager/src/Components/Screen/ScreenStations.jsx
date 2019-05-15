@@ -7,14 +7,11 @@ import StationCard from "../Station/StationCard";
 class ScreenStations extends Component {
 
 
-
     renderStationList(){
         let flag = 0;
         return (
             <div className="StationList">
-                <div className="breadcrumbs">
-                    <p>Stations</p> <i className="material-icons">arrow_right</i>
-                </div>
+                <div className="breadcrumbs"> <p>Stations</p> <i className="material-icons">arrow_right</i> </div>
                 {this.props.stations.map(element => {
                     if (flag !== element.floor) {
                         flag = element.floor;
@@ -22,12 +19,24 @@ class ScreenStations extends Component {
                             <div className="stationFloor" key={"floor-" + element.floor}>
                                 <div className={"stationFloorInfo"}>
                                     <span className="floorID">Floor {element.floor}</span>
-                                    <span className="numberOfStations">
-                    {" "}
-                                        &#8226; {this.numberOfStations(flag)} stations
-                  </span>
+                                    <span className="numberOfStations">{" "}&#8226; {this.numberOfStations(flag)} stations</span>
                                 </div>
-                                {this.allStations(flag)}
+                                <div className="stationFloorList">
+                                    {this.props.stations.map((element, index) => {
+                                        if (element.floor === flag) {
+                                            return (
+                                                <StationCard
+                                                    key={index}
+                                                    checkForNotifications={this.props.checkForNotifications}
+                                                    station={element}
+                                                    onClickStation={this.props.onClickStation}
+                                                />
+                                            );
+                                        }
+                                        return null;
+                                    })}
+                                </div>
+
                             </div>
                         );
                     }
@@ -70,7 +79,7 @@ class ScreenStations extends Component {
 
 
     render() {
-        return (this.props.renderList || this.props.stationInfo === null ) ? this.renderStationList() : this.renderStationProfile();
+        return (this.props.stationInfo === null ) ? this.renderStationList() : this.renderStationProfile();
     }
 
 
@@ -94,25 +103,6 @@ class ScreenStations extends Component {
 
 
 
-    allStations(flag) {
-        return (
-            <div className="stations">
-                {this.props.stations.map((element, index) => {
-                    if (element.floor === flag) {
-                        return (
-                            <StationCard
-                                key={index}
-                                checkForNotifications={this.props.checkForNotifications}
-                                station={element}
-                                onClickStation={this.props.onClickStation}
-                            />
-                        );
-                    }
-                    return null;
-                })}
-            </div>
-        );
-    }
 }
 
 export default ScreenStations;

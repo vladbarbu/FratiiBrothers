@@ -5,8 +5,9 @@
   },
   "stations": [
     {
-      "stationID": "1ABCDEF",
-      "stationName": "A1",
+      "ID": "1ABCDEF",
+      "name": "A1",
+      "description" : "North of the Wall, behind the office of the Night King",
       "floor": "1",
       "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
       "elements": [
@@ -217,8 +218,9 @@
       ]
     },
     {
-      "stationID": "2ABCDEF",
-      "stationName": "A2",
+      "ID": "2ABCDEF",
+      "name": "A2",
+      "description" : "South-East corner of the first floor",
       "floor": "1",
       "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
       "elements": [
@@ -388,8 +390,9 @@
       ]
     },
     {
-      "stationID": "3ABCDEF",
-      "stationName": "A3",
+      "ID": "3ABCDEF",
+      "name": "A3",
+      "description" : "Near the ruins of the Great Sept of Baelor, King's Landing",
       "floor": "1",
       "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
       "elements": [
@@ -692,8 +695,9 @@
       ]
     },
     {
-      "stationID": "1IJKLM",
-      "stationName": "B1",
+      "ID": "1IJKLM",
+      "name": "B1",
+      "description" : "Winterfell, behind the walls of the castle",
       "floor": "2",
       "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
       "elements": [
@@ -996,8 +1000,9 @@
       ]
     },
     {
-      "stationID": "2IJKLM",
-      "stationName": "B2",
+      "ID": "2IJKLM",
+      "name": "B2",
+      "description" : "At the end of the long hallway",
       "floor": "2",
       "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
 
@@ -1301,8 +1306,9 @@
       ]
     },
     {
-      "stationID": "1OPQRS",
-      "stationName": "C1",
+      "ID": "1OPQRS",
+      "name": "C1",
+      "description" : "You know where it is",
       "floor": "3",
       "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
       "elements": [
@@ -1606,3 +1612,4 @@
     }
   ]
 }
+

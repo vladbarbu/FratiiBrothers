@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../resources/styles/StationInfo.scss";
+import "../../resources/styles/Station.scss";
 
 class StationProfile extends Component {
   state = {
@@ -23,7 +23,7 @@ class StationProfile extends Component {
           <div onClick={this.props.goBackToStations}>Stations</div>{" "}
           <i className="material-icons">arrow_right</i>
           Floor {this.props.stationInfo.floor} &#45; {" Station #"}
-          {this.props.stationInfo.stationName}
+          {this.props.stationInfo.name}
           <i className="material-icons">arrow_right</i>
         </div>
         <div className="stationInfo">
@@ -45,7 +45,7 @@ class StationProfile extends Component {
                   ev_station
                 </i>
               )}
-              <b>Station #{this.props.stationInfo.stationName}</b>
+              <b>Station #{this.props.stationInfo.name}</b>
 
               <div className="info">
                 <small style={{ color: "#0DD2A3" }}>

@@ -22,7 +22,7 @@ class SupplyStatistics extends Component {
               >
                 {this.selectedMakeBig(element)}
                 <small>Floor {element.floor}</small>
-                <b>#{element.stationName}</b>
+                <b>#{element.name}</b>
                 {this.props.chosenStation === element ? (
                   <i className="material-icons underStation">arrow_drop_up</i>
                 ) : null}

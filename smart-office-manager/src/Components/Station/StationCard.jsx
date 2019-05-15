@@ -13,36 +13,17 @@ class StationCard extends Component {
 
   render() {
     return (
-      <div
-        className="Station"
-        onClick={() => {
-          this.props.onClickStation(this.props.station);
-        }}
-      >
-        <div className="image">
-          <img alt="Station" src={this.props.station.image} className="image" />
-        </div>
-
+      <div className="StationCard" onClick={() => {this.props.onClickStation(this.props.station);}}>
+        <div className="image"><img alt="Station" src={this.props.station.image} className="image" /></div>
         <div className={"body"}>
           <div className={"title"}>
-            {this.state.notifications !== false ? (
-              <div className="icon">
-                <i
-                  className="material-icons"
-                  style={{ backgroundColor: "red" }}
-                >
-                  ev_station
-                </i>
-              </div>
-            ) : (
-              <div className="icon">
-                <i className="material-icons">ev_station</i>
-              </div>
-            )}
-            <p>Station #{this.props.station.stationName}</p>
+            {this.state.notifications !== false ?
+                (<div className="icon"><i className="material-icons" style={{ backgroundColor: "red" }}>ev_station</i></div>) :
+                (<div className="icon"><i className="material-icons">ev_station</i></div>)}
+            <p>Station #{this.props.station.name}</p>
           </div>
           <div className="info">
-            <p>Some info</p>
+            <p>{this.props.station.description}</p>
           </div>
           <div className="button">
             <p>Check Station</p>

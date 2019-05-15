@@ -1,6 +1,13 @@
 import Element from "./Element";
 
 class Station {
+  get description() {
+    return this._description;
+  }
+
+  set description(value) {
+    this._description = value;
+  }
   /**
    *
    * @returns {Array<Element>}
@@ -17,11 +24,11 @@ class Station {
     this._elements = value;
   }
 
-  get stationName() {
+  get name() {
     return this._name;
   }
 
-  set stationName(value) {
+  set name(value) {
     this._name = value;
   }
   get image() {
@@ -32,10 +39,10 @@ class Station {
     this._image = value;
   }
 
-  get stationID() {
+  get ID() {
     return this._ID;
   }
-  set stationID(ID) {
+  set ID(ID) {
     this._ID = ID;
   }
 
@@ -49,12 +56,9 @@ class Station {
 
   constructor(object) {
     if (object === null) return;
-    this.stationID = object.hasOwnProperty("stationID")
-      ? object["stationID"]
-      : null;
-    this.stationName = object.hasOwnProperty("stationName")
-      ? object["stationName"]
-      : null;
+    this.ID = object.hasOwnProperty("ID") ? object["ID"] : null;
+    this.name = object.hasOwnProperty("name") ? object["name"] : null;
+    this.description = object.hasOwnProperty("description") ? object["description"] : null;
     this.floor = object.hasOwnProperty("floor") ? object["floor"] : null;
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
     this.elements = object.hasOwnProperty("elements")

@@ -59,21 +59,29 @@ class Main extends Component {
       toggleInputPopup: this.props.toggleInputPopup
     };
 
-    switch (this.props.sideBarChosen) {
-      case "Notifications":
-        return <ScreenNotifications />;
-      case "Stations":
-        return <ScreenStations {...stationsProps} />;
-      case "Item Stock":
-        return <ScreenItemStock {...itemStockProps} />;
-      case "Product Requests":
-        return <ScreenRequests />;
-      case "Supply Statistics":
-        return <ScreenStatistics {...statisticsProps} />;
 
-      default:
-        return <div />;
-    }
+    return (
+        <div className={"Main"}>
+          {
+            (()=>{
+              switch (this.props.sideBarChosen) {
+                case "Notifications":
+                  return <ScreenNotifications />;
+                case "Stations":
+                  return <ScreenStations {...stationsProps} />;
+                case "Item Stock":
+                  return <ScreenItemStock {...itemStockProps} />;
+                case "Product Requests":
+                  return <ScreenRequests />;
+                case "Supply Statistics":
+                  return <ScreenStatistics {...statisticsProps} />;
+                default:
+                  return <div />;
+              }
+            })()
+          }
+        </div>
+    )
   }
   onClickStation = element => {
     this.props.onClickStation(element);
