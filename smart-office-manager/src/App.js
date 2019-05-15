@@ -254,7 +254,7 @@ class App extends Component {
     let stock = 0;
     // console.log(item.name + " " + floor);
     for (let i = 0; i < stations.length; i++) {
-      if (stations[i]._floor == floor) {
+      if (stations[i]._floor === floor) {
         // console.log(stations[i]._name + " " + floor + " " + stations[i]._floor);
         stock += this.getStationItemStock(item, stations[i]);
       }
