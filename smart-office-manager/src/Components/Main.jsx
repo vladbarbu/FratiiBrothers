@@ -45,6 +45,7 @@ class Main extends Component {
                 chosenStation={this.props.stationInfo}
                 items={this.props.items}
                 itemStocks={this.props.itemStocks}
+                checkItemStatistics={this.props.checkItemStatistics}
               />
             ) : null}
           </div>

@@ -72,6 +72,7 @@ class App extends Component {
             onClickSupplyStation={this.onClickSupplyStation}
             chosenStation={this.state.chosenStation}
             updateStations={this.updateStations}
+            checkItemStatistics={this.checkItemStatistics}
           />
         </div>
       </div>
@@ -148,6 +149,13 @@ class App extends Component {
     this.setState({ chosenItem: null });
   };
 
+  checkItemStatistics = (station, item) => {
+    this.setState({
+      chosenStation: station,
+      chosenItem: item,
+      sideBarChosen: "Supply Statistics"
+    });
+  };
   /* functii pentru stock-ul si indexarea itemelor pe statii si pe etaje */
 
   loadItems = elements => {

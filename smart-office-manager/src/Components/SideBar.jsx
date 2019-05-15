@@ -42,22 +42,6 @@ class SideBar extends Component {
       }
     ];
 
-    let notifications = [
-      {
-        ID: "123",
-        type: "from_station",
-        content: "No more items of this type are available.",
-        createdAt: "06-05-2019 15:10:00",
-        itemID: 71
-      },
-      {
-        ID: "234",
-        type: "from_station",
-        content: "Only 5 items of this kind left.",
-        createdAt: "06-05-2019 16:20:00",
-        itemID: 70
-      }
-    ];
     return (
       <div className="SideBar">
         <img
@@ -95,7 +79,15 @@ class SideBar extends Component {
                 <p>Clear warnings</p>
               </div>
             </div>
-            <div className="button check-stats">
+            <div
+              className="button check-stats"
+              onClick={() => {
+                this.props.checkItemStatistics(
+                  this.props.chosenStation,
+                  this.props.chosenItem
+                );
+              }}
+            >
               <div className="content">
                 <p>Check item statistics</p>
               </div>
