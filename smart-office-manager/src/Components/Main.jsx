@@ -13,24 +13,45 @@ class Main extends Component {
 
   render() {
     let stationsProps = {
-      checkForNotifications: this.props.checkForNotifications,
-      stationInfo: this.props.stationInfo,
-      goBackToStations: this.goBackToStations,
-      onClickSupplyStation: this.onClickSupplyStation,
-      elements: this.props.elements,
-      itemChoose: this.itemChoose,
-      getStationItems: this.props.getStationItems,
-      chosenItem: this.props.chosenItem,
-      chosenStation: this.props.stationInfo,
-      items: this.props.items,
-      itemStocks: this.props.itemStocks,
-      checkItemStatistics: this.props.checkItemStatistics,
-      clearItemWarnings: this.props.clearItemWarnings,
-      refillStock: this.props.refillStock,
-      toggleConfirmationPopup: this.props.toggleConfirmationPopup,
-      toggleInputPopup: this.props.toggleInputPopup,
-      stations: this.props.stations,
-      onClickStation: this.onClickStation
+
+        /**
+         * Flow: Show stations --> *1*Choose station* --> Show tree of elements --> *2*Choose element* --> Show sidebar
+         * -------
+         * *1* chosenStation
+         * *2* chosenElement
+         *
+         * TODO declare another element for the stock
+         */
+        chosenElement: this.props.chosenElement,
+        chosenStation: this.props.chosenStation,
+
+
+        /**
+         * Persistent data -- TODO change later into Context API
+         */
+
+        stations: this.props.stations,
+        items: this.props.items,
+        itemStocks: this.props.itemStocks,
+
+        /**
+         * Functionality
+         */
+
+        checkForNotifications: this.props.checkForNotifications,
+        goBackToStations: this.goBackToStations,
+
+        onClickStation: this.onClickStation,
+        onClickSupplyStation: this.onClickSupplyStation,
+
+        getStationItems: this.props.getStationItems,
+        checkItemStatistics: this.props.checkItemStatistics,
+        clearItemWarnings: this.props.clearItemWarnings,
+        refillStock: this.props.refillStock,
+
+
+        toggleConfirmationPopup: this.props.toggleConfirmationPopup,
+        toggleInputPopup: this.props.toggleInputPopup,
     };
 
     let statisticsProps = {

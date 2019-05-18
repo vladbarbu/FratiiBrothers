@@ -13,13 +13,14 @@ class NavBar extends Component {
           <img alt="Logo" src={Logo} />
         </div>
         <div className="body">
-          {this.props.chosen === "Station" ? (
+          {this.props.isReturnToStationsAvailable ? (
             <div
               className="button returnToStation"
-              onClick={() => this.props.onClickNotifications("Stations")}
+              onClick={() => this.props.goBackToStations()}
             >
-              <i className="material-icons">arrow_back</i>
-              <b>Return to Stations</b>
+                <i className="material-icons">arrow_back</i>
+                <div className={"content"}><p>Return to Stations</p></div>
+
             </div>
           ) : null}
 

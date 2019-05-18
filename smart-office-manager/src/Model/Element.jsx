@@ -1,4 +1,25 @@
 class Element {
+  get activeInStock() {
+    return this._activeInStock;
+  }
+
+  set activeInStock(value) {
+    this._activeInStock = value;
+  }
+  get activeInStations() {
+    return this._activeInStations;
+  }
+
+  set activeInStations(value) {
+    this._activeInStations = value;
+  }
+  get notifications() {
+    return this._notifications;
+  }
+
+  set notifications(value) {
+    this._notifications = value;
+  }
 
 
   get parentID() {
@@ -88,12 +109,8 @@ class Element {
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
-    this.parentID = object.hasOwnProperty("parentID")
-      ? object["parentID"]
-      : null;
-    this.quantity = object.hasOwnProperty("quantity")
-      ? object["quantity"]
-      : null;
+    this.parentID = object.hasOwnProperty("parentID") ? object["parentID"] : null;
+    this.quantity = object.hasOwnProperty("quantity") ? object["quantity"] : null;
     this.elements = (() => {
       let data = [];
       let elements = object.hasOwnProperty("elements")
@@ -104,9 +121,6 @@ class Element {
           data.push(new Element(elements[i]));
       return data;
     })();
-
-    //this.quantity = this.elements.length;
-
     this.notifications = (() => {
       let data = [];
       let notifications = object.hasOwnProperty("notifications")
@@ -117,6 +131,10 @@ class Element {
           data.push(notifications[i]);
       return data;
     })();
+
+
+    this.activeInStations = false;
+    this.activeInStock = false;
   }
 }
 

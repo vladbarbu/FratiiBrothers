@@ -3,55 +3,55 @@
  */
 import React, { Component } from "react";
 import "../resources/styles/SideBar.scss";
+import Config from "../config";
 
 class SideBar extends Component {
-  getItemIndex = item => {
-    for (let i = 0; i < this.props.items.length; i++)
-      if (this.props.items[i].ID === item.ID) return i;
-    return -1;
-  };
 
-  getItemNameById = id => {
-    for (let i = 0; i < this.props.items.length; i++)
-      if (this.props.items[i].ID === id) return this.props.items[i].name;
-    return null;
-  };
+    constructor(props) {
+        super(props);
+        this.sideBarReference = React.createRef();
+    }
 
-  render() {
+
+
+
+    render() {
+
+
+
     let descriptionItems = [
       {
         icon: "ev_station",
         text: "Context: ",
-        value: this.props.chosenStation._name
+        value: this.props.chosenStation !== null  &&  !Config.isEmpty(this.props.chosenStation.name) ? this.props.chosenStation.name : "-"
       },
       {
         icon: "error",
         text: "Stock for this station: ",
-        value: this.props.chosenItem._quantity
+        value:  this.props.chosenElement !== null  &&  !Config.isEmpty(this.props.chosenElement.quantity) ? this.props.chosenElement.quantity : "-"
       },
       { icon: "calendar_today", text: "Expected expiry date for stock: " },
       {
         icon: "error",
         text: "Stock on the entire floor: ",
-        value: this.props.itemStocks[this.props.chosenStation._floor][
-          this.getItemIndex(this.props.chosenItem)
-        ]
+        value: "2"
       },
       {
         icon: "warning",
         text: "Item warnings on this station: ",
-        value: this.props.chosenItem.notifications.length
+        value:  this.props.chosenElement !== null  &&  !Config.isEmpty(this.props.chosenElement.notifications.length) ? this.props.chosenElement.notifications.length : "-"
       }
     ];
     let i = 0;
     return (
-      <div className="SideBar">
+      <div className={"SideBar" + (this.props.chosenElement !== null ? " active" : "")} ref = {this.sideBarReference}  >
+          <div className={"inner"}>
         <img
-          src={require("./../resources/" + this.props.chosenItem.image)}
+          src={this.props.chosenElement !== null  &&  !Config.isEmpty(this.props.chosenElement.image) ? require("./../resources/" + this.props.chosenElement.image) : ""}
           alt=""
         />
         <div className="body">
-          <h2>{this.props.chosenItem.name}</h2>
+          <h2>{this.props.chosenElement !== null  &&  !Config.isEmpty(this.props.chosenElement.name) ? this.props.chosenElement.name : ""}</h2>
           <div className="description">
             {descriptionItems.map(description => (
               <div className="description-element" key={++i}>
@@ -69,11 +69,11 @@ class SideBar extends Component {
               className="button refill"
               onClick={() => {
                 this.props.clearItemWarnings(
-                  this.props.chosenItem,
+                  this.props.chosenElement,
                   this.props.chosenStation
                 );
                 this.props.refillStock(
-                  this.props.chosenItem,
+                  this.props.chosenElement,
                   this.props.chosenStation
                 );
                 this.props.toggleConfirmationPopup();
@@ -96,7 +96,7 @@ class SideBar extends Component {
               className="button clear-warnings"
               onClick={() => {
                 this.props.clearItemWarnings(
-                  this.props.chosenItem,
+                  this.props.chosenElement,
                   this.props.chosenStation
                 );
                 this.props.toggleConfirmationPopup();
@@ -111,7 +111,7 @@ class SideBar extends Component {
               onClick={() => {
                 this.props.checkItemStatistics(
                   this.props.chosenStation,
-                  this.props.chosenItem
+                  this.props.chosenElement
                 );
               }}
             >
@@ -123,28 +123,31 @@ class SideBar extends Component {
         </div>
         <div className="footer">
           <div className="notifications">
-            {this.props.chosenItem.notifications.length === 0 ? (
               <p className="no-warnings">No warnings</p>
-            ) : (
-              this.props.chosenItem.notifications.map(notification => (
-                <div className="notification-item" key={++i}>
-                  <div className="header">
-                    <p>{this.getItemNameById(notification.itemID)}</p>
-                    <p className="time">{notification.createdAt}</p>
-                  </div>
-                  <div className="notification-item-message">
-                    <h6>
-                      {notification.type === "from_station"
-                        ? "From station: "
-                        : null}{" "}
-                      {notification.content}
-                    </h6>
-                  </div>
-                </div>
-              ))
-            )}
+
+            {/*{this.props.chosenElement.notifications.length === 0 ? (*/}
+            {/*  <p className="no-warnings">No warnings</p>*/}
+            {/*) : (*/}
+            {/*  this.props.chosenElement.notifications.map(notification => (*/}
+            {/*    <div className="notification-item" key={++i}>*/}
+            {/*      <div className="header">*/}
+            {/*        <p>{this.props.chosenElement.name}</p>*/}
+            {/*        <p className="time">{notification.createdAt}</p>*/}
+            {/*      </div>*/}
+            {/*      <div className="notification-item-message">*/}
+            {/*        <h6>*/}
+            {/*          {notification.type === "from_station"*/}
+            {/*            ? "From station: "*/}
+            {/*            : null}{" "}*/}
+            {/*          {notification.content}*/}
+            {/*        </h6>*/}
+            {/*      </div>*/}
+            {/*    </div>*/}
+            {/*  ))*/}
+            {/*)}*/}
           </div>
         </div>
+          </div>
       </div>
     );
   }

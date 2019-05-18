@@ -51,27 +51,13 @@ class ScreenStations extends Component {
         return (
             <div className={"StationProfileContainer"}>
                 <StationProfile
+                    chosenStation={this.props.chosenStation}
+                    chosenElement={this.props.chosenElement}
                     checkForNotifications={this.props.checkForNotifications}
-                    stationInfo={this.props.stationInfo}
                     goBackToStations={this.props.goBackToStations}
                     onClickSupplyStation={this.props.onClickSupplyStation}
-                    elements={this.props.elements}
-                    itemChoose={this.props.itemChoose}
                     getStationItems={this.props.getStationItems}
                 />
-                {this.props.chosenItem !== null ? (
-                    <SideBar
-                        chosenItem={this.props.chosenItem}
-                        chosenStation={this.props.stationInfo}
-                        items={this.props.items}
-                        itemStocks={this.props.itemStocks}
-                        checkItemStatistics={this.props.checkItemStatistics}
-                        clearItemWarnings={this.props.clearItemWarnings}
-                        refillStock={this.props.refillStock}
-                        toggleConfirmationPopup={this.props.toggleConfirmationPopup}
-                        toggleInputPopup={this.props.toggleInputPopup}
-                    />
-                ) : null}
             </div>
         )
     }
@@ -79,7 +65,7 @@ class ScreenStations extends Component {
 
 
     render() {
-        return (this.props.stationInfo === null ) ? this.renderStationList() : this.renderStationProfile();
+        return (this.props.chosenStation === null ) ? this.renderStationList() : this.renderStationProfile();
     }
 
 

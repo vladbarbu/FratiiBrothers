@@ -2,7 +2,7 @@ $colorPrimary : #0dd2a3;
 $colorSecondary: #08A68B;
 $red : #F44336;
 $statistic : #f9e816;
-
+$backgroundColor : #FBFDFF;
 $navHeight : 70px;
 
 
@@ -107,7 +107,7 @@ $zIndex-NavBar : 2;
 @mixin medium-button($backgroundColor, $textColor){
   width: calc(100% - 2 * 15px);
   padding: 6px 15px;
-  height: calc(60px - 2 * 10px);
+  height: calc(40px - 2 * 6px);
   border-radius: 4px;
   border: none;
   background: $backgroundColor;
@@ -118,6 +118,8 @@ $zIndex-NavBar : 2;
   box-sizing: content-box;
   transition: background 0.2s;
   cursor: pointer;
+
+
 
   &:hover, &:active, &:focus{
     background: darken($backgroundColor, 5%);
@@ -133,14 +135,15 @@ $zIndex-NavBar : 2;
     text-align: center;
     flex-direction: column;
     flex: 1;
-    margin-right: 10px;
 
     & > p{
-      font-size: 12pt;
+      font-size: 10pt;
       color: $textColor;
-      font-weight: 700;
+      font-weight: 600;
       margin: 0;
     }
+
+
     & > span{
       margin: 5px 0 0 0;
       font-size: 9pt;
@@ -163,7 +166,7 @@ $zIndex-NavBar : 2;
 
     & > .content{
       & > p{
-        font-size: 11pt;
+        font-size: 10pt;
       }
       & > span{
         margin: 5px 0 0 0;

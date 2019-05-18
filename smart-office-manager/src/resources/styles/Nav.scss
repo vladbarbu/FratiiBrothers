@@ -87,9 +87,12 @@
           color: #2c2c2c;
           margin-right: 10px;
         }
-        & > p{
-          color: #2c2c2c;
+        & > .content{
+          & > p{
+            color: #2c2c2c;
+          }
         }
+
         &:hover{
           transition: border 0.2s;
           border: 1px solid #ddd;

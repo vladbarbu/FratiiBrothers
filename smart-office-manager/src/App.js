@@ -6,6 +6,9 @@ import SideMenu from "./Components/SideMenu";
 import Main from "./Components/Main";
 import ConfirmationPopup from "./Components/ConfirmationPopup";
 import InputPopup from "./Components/InputPopup";
+import AppContext from './Model/AppContext'
+import Config from "./config";
+import SideBar from "./Components/SideBar";
 
 class App extends Component {
   constructor(props) {
@@ -15,15 +18,17 @@ class App extends Component {
     let items = this.getAllItems(stations);
 
     let mappedItems = this.mapItemsToStock(stations);
+
+
     this.state = {
+      chosenElement: null,
+      chosenStation: null,
+
       sideBarChosen: "Stations",
-      stationInfo: null,
       location: location,
       stations: stations,
       items: items,
       mappedItems: mappedItems,
-      chosenItem: null,
-      chosenStation: null,
       showConfirmationPopup: false,
       showInputPopup: false
     };
@@ -50,12 +55,15 @@ class App extends Component {
     return [];
   };
 
+
   render() {
     return (
+        <AppContext.Provider value={Config.generateAppContextValues(this)} >
       <div className="App">
         <NavBar
           onClickNotifications={this.onClickSideBar}
-          chosen={this.state.sideBarChosen}
+          goBackToStations = {this.goBackToStations}
+          isReturnToStationsAvailable={ (this.state.sideBarChosen === "Stations" && this.state.chosenStation !== null) }
         />
         <div className="App-container">
           <SideMenu
@@ -63,18 +71,21 @@ class App extends Component {
             chosen={this.state.sideBarChosen}
           />
           <Main
+
+            chosenStation={this.state.chosenStation}
+            chosenElement={this.state.chosenElement}
+
+
             sideBarChosen={this.state.sideBarChosen}
             onClickStation={this.onClickStation}
-            stationInfo={this.state.stationInfo}
             goBackToStations={this.goBackToStations}
             location={this.state.location}
             stations={this.state.stations}
             items={this.state.items}
             itemStocks={this.state.mappedItems}
             itemChoose={this.itemChoose}
-            chosenItem={this.state.chosenItem}
+
             onClickSupplyStation={this.onClickSupplyStation}
-            chosenStation={this.state.chosenStation}
             updateStations={this.updateStations}
             checkItemStatistics={this.checkItemStatistics}
             clearItemWarnings={this.clearItemWarnings}
@@ -84,6 +95,22 @@ class App extends Component {
             toggleInputPopup={this.toggleInputPopup}
             getStationItems={this.getStationItems}
           />
+
+
+
+          <SideBar
+              chosenElement={this.state.chosenElement}
+              chosenStation={this.state.chosenStation}
+              checkItemStatistics={this.checkItemStatistics}
+              clearItemWarnings={this.clearItemWarnings}
+              refillStock={this.refillStock}
+              toggleConfirmationPopup={this.toggleConfirmationPopup}
+              toggleInputPopup={this.toggleInputPopup}
+          />
+
+
+
+
           {this.state.showConfirmationPopup === true ? (
             <ConfirmationPopup
               togglePopup={this.toggleConfirmationPopup}
@@ -92,16 +119,19 @@ class App extends Component {
           ) : null}
           {this.state.showInputPopup === true ? (
             <InputPopup
+
+                chosenElement={this.state.chosenElement}
+                chosenStation={this.state.chosenStation}
+
               togglePopup={this.toggleInputPopup}
               toggleConfirmPopup={this.toggleConfirmationPopup}
               onReturnToDashboard={this.goBackToStations}
               onConfirm={this.confirmStock}
-              chosenItem={this.state.chosenItem}
-              chosenStation={this.state.chosenStation}
             />
           ) : null}
         </div>
       </div>
+        </AppContext.Provider>
     );
   }
 
@@ -124,18 +154,14 @@ class App extends Component {
 
   onClickSideBar = chosen => {
     this.setState({ sideBarChosen: chosen });
-    // this.resetActiveChildren();
-    //this.resetItemChoose();
-    this.resetChosenStation();
+    //this.resetChosenStation(); //TODO In order to keep the state of the trees (collapsed or expanded) we won't reset this
   };
 
   onClickStation = element => {
     this.setState({
       sideBarChosen: "Stations",
-      stationInfo: element
+      chosenStation: element
     });
-    //this.resetActiveChildren();
-    //this.resetItemChoose();
   };
 
   onClickSupplyStation = element => {
@@ -152,7 +178,7 @@ class App extends Component {
   goBackToStations = () => {
     this.setState({
       sideBarChosen: "Stations",
-      stationInfo: null
+      chosenStation: null
     });
     this.resetActiveChildren();
     this.resetItemChoose();
@@ -173,12 +199,12 @@ class App extends Component {
   };
 
   itemChoose = element => {
-    this.setState({ chosenItem: element });
+    this.setState({ chosenElement: element });
   };
 
   resetItemChoose = () => {
     console.log("Reset");
-    this.setState({ chosenItem: null });
+    this.setState({ chosenElement: null });
   };
 
   confirmStock = (item, station, stock) => {
@@ -196,7 +222,7 @@ class App extends Component {
     this.setState({
       sideBarChosen: "Supply Statistics",
       chosenStation: station,
-      chosenItem: item
+      chosenElement: item
     });
   };
 
@@ -230,9 +256,9 @@ class App extends Component {
   };
 
   checkForNotifications = station => {
-    var items = this.getStationItems(station);
+    let items = this.getStationItems(station);
 
-    var numberofNotif = 0;
+    let numberofNotif = 0;
     items.forEach(element => {
       if (element.notifications.length > 0) numberofNotif++;
     });
@@ -307,6 +333,10 @@ class App extends Component {
     }
     return mappedItems;
   };
+
+
+
+
 }
 
 export default App;

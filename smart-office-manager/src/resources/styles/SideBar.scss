@@ -2,77 +2,95 @@
 
 .SideBar {
   margin: 0;
-  position: absolute;
   right: 0;
-  height: calc(100% - 2 * 15px);
-  background: #ffffff;
-  width: 330px;
-  padding: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  overflow-y: auto;
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  width: 360px;
+  transform: translateX(500px);
+  transition: transform 0.3s;
+  will-change: transform;
 
-  .itemColors {
-    color: #ababac;
-  }
-  .justItem.supplyStock > small > img {
-    width: 50px;
-    height: 40px;
-    margin: 5px;
-    border-radius: 5px;
+  &.active {
+    transform: translateX(0);
+    transition: transform 0.3s;
+    will-change: transform;
   }
 
-  .justItem.supplyStock {
-    width: 190px;
-  }
+  & > .inner {
+    height: calc(100% - 2 * 15px);
+    width: calc(100% - 2 * 15px);
+    padding: 15px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
 
-  .itemSidebar {
-    display: flex;
-  }
+    .itemColors {
+      color: #ababac;
+    }
 
-  .itemSidebar > .choosenBolt {
-    position: relative;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 51px;
-    top: 10px;
-    left: 30px;
-    border-radius: 0px 5px 5px 0px;
-    background-color: #f9e816;
-  }
+    .justItem.supplyStock > small > img {
+      width: 50px;
+      height: 40px;
+      margin: 5px;
+      border-radius: 5px;
+    }
 
-  .itemSidebar > .choosenBolt > i {
-    position: relative;
-    top: 13px;
-  }
+    .justItem.supplyStock {
+      width: 190px;
+    }
 
-  .justItem.supplyStock > small {
-    margin-left: -10px;
-    width: 210px;
-    background-color: transparent;
-    border-radius: 5px;
-  }
+    .itemSidebar {
+      display: flex;
+    }
 
-  & > .body {
-    & > .description {
-      & > .description-element {
-        display: flex;
-        & > .icon {
-          width: 35px;
+    .itemSidebar > .choosenBolt {
+      position: relative;
+      padding-left: 15px;
+      padding-right: 15px;
+      height: 51px;
+      top: 10px;
+      left: 30px;
+      border-radius: 0px 5px 5px 0px;
+      background-color: #f9e816;
+    }
+
+    .itemSidebar > .choosenBolt > i {
+      position: relative;
+      top: 13px;
+    }
+
+    .justItem.supplyStock > small {
+      margin-left: -10px;
+      width: 210px;
+      background-color: transparent;
+      border-radius: 5px;
+    }
+
+    & > .body {
+      & > .description {
+        & > .description-element {
           display: flex;
-          justify-content: flex-end;
-          & > i {
-            color: #333333;
-            font-size: 14pt;
-            transition: 0.2s color;
+
+          & > .icon {
+            width: 35px;
+            display: flex;
+            justify-content: flex-end;
+
+            & > i {
+              color: #333333;
+              font-size: 14pt;
+              transition: 0.2s color;
+            }
           }
         }
       }
     }
-  }
 
-  & > .buttons {
-    & > .button {
-      @include big-button;
+    & > .buttons {
+      & > .button {
+        @include big-button;
+      }
     }
   }
 }
