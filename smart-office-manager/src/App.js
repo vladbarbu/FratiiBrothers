@@ -27,6 +27,14 @@ class App extends Component {
       initial : data,
       chosenElement: null,
       chosenStation: null,
+
+
+      /**
+       * To keep the tree structure separate for both the Stations Screen and the Item Stock Screen, we will se separate chosens
+       */
+      chosenStockElement : null,
+      chosenStockStation : null,
+
       sideBarChosen: "Stations",
       location: location,
       stations: stations,
@@ -85,6 +93,9 @@ class App extends Component {
             chosenStation={this.state.chosenStation}
             chosenElement={this.state.chosenElement}
 
+            chosenStockElement = {this.state.chosenStockElement}
+            chosenStockStation = {this.state.chosenStockStation}
+
             stockHolder = {this.state.stockHolder}
 
             sideBarChosen={this.state.sideBarChosen}
@@ -112,6 +123,8 @@ class App extends Component {
           <SideBar
               chosenElement={this.state.chosenElement}
               chosenStation={this.state.chosenStation}
+              chosenStockElement = {this.state.chosenStockElement}
+              chosenStockStation = {this.state.chosenStockStation}
               checkItemStatistics={this.checkItemStatistics}
               clearItemWarnings={this.clearItemWarnings}
               refillStock={this.refillStock}
@@ -133,6 +146,8 @@ class App extends Component {
 
                 chosenElement={this.state.chosenElement}
                 chosenStation={this.state.chosenStation}
+                chosenStockElement = {this.state.chosenStockElement}
+                chosenStockStation = {this.state.chosenStockStation}
 
               togglePopup={this.toggleInputPopup}
               toggleConfirmPopup={this.toggleConfirmationPopup}

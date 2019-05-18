@@ -12,8 +12,11 @@ class Category extends PureComponent{
 
 
     render() {
+
+        let active = this.context.screen === "Stations" ? this.props.element.activeInStations : (this.context.screen === "Item Stock" ? this.props.element.activeInStock : false);
+
         return (<div className={"Category"}>
-            <div className={"card" + (this.props.element.activeInStations ? " active" : "") } onClick={() => {this.context.doTreeElementToggle(this.props.element.ID);}}>
+            <div className={"card" + ( active ? " active" : "") } onClick={() => {this.context.doTreeElementToggle(this.props.element.ID);}}>
                 <div className={"image"}><img alt={this.props.element.name} src={require("./../../resources/" + this.props.element.image)}/></div>
                 <div className={"content"}>
                     <p className={"label"}>Category:</p>
@@ -21,7 +24,7 @@ class Category extends PureComponent{
                 </div>
                 {!Config.isEmpty(this.props.element.elements) ? <div className={"toggle" }><div className={"icon"}><img alt={"Toggle"} src={require("./../../resources/images/icon/ic_keyboard_arrow_down_grey.svg")}/></div></div> : null}
             </div>
-            { !Config.isEmpty(this.props.element.elements) && this.props.element.activeInStations ?
+            { !Config.isEmpty(this.props.element.elements) && active ?
                 <div className={"innerTree"}><Tree elements={this.props.element.elements} /></div> : null}
 
         </div>);

@@ -6,6 +6,8 @@ const AppContext = React.createContext({
      * Values declared here for variables *should* be redundant. Initialize them in the Context provider
      */
 
+    screen : 'Stations' ,
+
     /**
      * Changes the expand/collapse state of the element (Element.activeInStations)
      * Useful only for Category and Subcategory

@@ -7,6 +7,7 @@ class Config{
 
     static generateAppContextValues(scope){
         return {
+            screen : scope.state.sideBarChosen,
             doTreeElementToggle : Config.doTreeElementToggle.bind(scope),
             doChooseStationsElement : Config.doChooseStationsElement.bind(scope),
         }
@@ -54,6 +55,13 @@ class Config{
             }
             scope.setState({
                 stations : scope.state.stations
+            });
+        }
+        else if(scope.state.sideBarChosen === "Item Stock"){
+            scope.state.stockHolder.elementsFlat[elementID].activeInStock = ( force!== null ? ( force === 'open') : ! scope.state.stockHolder.elementsFlat[elementID].activeInStock);
+
+            scope.setState({
+                stockHolder : scope.state.stockHolder
             });
         }
 
