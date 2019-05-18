@@ -225,24 +225,24 @@
       "image": "http://www.iida.org/resources/content/9/3/9/5/images/42_resizedc800x530.jpg",
       "elements": [
         {
-          "ID": 1,
+          "ID": 951,
           "type": "category",
-          "name": "Cups",
-          "image": "images/category_1.png",
+          "name": "Fruits",
+          "image": "images/fruits.png",
           "elements": [
             {
-              "ID": 8,
+              "ID": 9511,
               "type": "category",
-              "name": "Paper Cups",
+              "name": "Fruits Subcategory",
               "parentID": 1,
-              "image": "images/category_8.png",
+              "image": "images/fruits.png",
               "elements": [
                 {
-                  "ID": 70,
+                  "ID": 95111,
                   "type": "item",
-                  "name": "Paper Cups Small",
+                  "name": "Fruits Small",
                   "parentID": 8,
-                  "image": "images/item_1.png",
+                  "image": "images/fruits.png",
                   "quantity": 100,
                   "notifications": [
                     {
@@ -262,11 +262,11 @@
                   ]
                 },
                 {
-                  "ID": 71,
+                  "ID": 95112,
                   "type": "item",
-                  "name": "Paper Cups Medium",
+                  "name": "Fruits Medium",
                   "parentID": 8,
-                  "image": "images/item_2.png",
+                  "image": "images/fruits.png",
                   "quantity": 12,
                   "notifications": [
                     {
@@ -277,15 +277,6 @@
                       "itemID": 71
                     }
                   ]
-                },
-                {
-                  "ID": 72,
-                  "type": "item",
-                  "name": "Paper Cups Large",
-                  "parentID": 8,
-                  "image": "images/item_3.png",
-                  "quantity": 12,
-                  "notifications": []
                 }
               ]
             },
@@ -321,39 +312,14 @@
                   ]
                 },
                 {
-                  "ID": 74,
+                  "ID": 74213,
                   "type": "item",
-                  "name": "Glass Cups Medium",
+                  "name": "Books",
                   "parentID": 9,
-                  "image": "images/item_2.png",
-                  "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "DBD123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "4 other notifications have been sent about this item.",
-                      "itemID": 74
-                    }
-                  ]
-                },
-                {
-                  "ID": 75,
-                  "type": "item",
-                  "name": "Glass Cups Large",
-                  "parentID": 9,
-                  "image": "images/item_3.png",
-                  "quantity": 12,
-                  "notifications": []
+                  "image": "images/books.png",
+                  "quantity": 12
                 }
               ]
-            },
-            {
-              "ID": 10,
-              "type": "category",
-              "name": "Plastic Cups",
-              "parentID": 1,
-              "image": "images/category_10.png"
             }
           ]
         },
@@ -362,30 +328,6 @@
           "type": "category",
           "name": "Stationary",
           "image": "images/category_2.png"
-        },
-        {
-          "ID": 4,
-          "type": "category",
-          "name": "Snacks",
-          "image": "images/category_4.png"
-        },
-        {
-          "ID": 5,
-          "type": "category",
-          "name": "Tea",
-          "image": "images/category_5.png"
-        },
-        {
-          "ID": 6,
-          "type": "category",
-          "name": "Soft Drinks",
-          "image": "images/category_6.png"
-        },
-        {
-          "ID": 7,
-          "type": "category",
-          "name": "Sugar & Salt Packs",
-          "image": "images/category_7.png"
         }
       ]
     },

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import StationProfile from "../Station/StationProfile";
-import SideBar from "../SideBar";
+
 
 import StationCard from "../Station/StationCard";
 

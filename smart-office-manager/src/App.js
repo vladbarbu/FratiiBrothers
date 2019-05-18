@@ -13,34 +13,44 @@ import SideBar from "./Components/SideBar";
 class App extends Component {
   constructor(props) {
     super(props);
-    let location = require("./resources/data/data.json").location;
-    let stations = this.loadStations();
-    let items = this.getAllItems(stations);
 
+    let data = require("./resources/data/data.json");
+    let location = data["location"];
+    let stations = this.loadStations(data["stations"]);
+    let items = this.getAllItems(stations);
     let mappedItems = this.mapItemsToStock(stations);
 
-
     this.state = {
+      /**
+       * Store the initial dataset
+       */
+      initial : data,
       chosenElement: null,
       chosenStation: null,
-
       sideBarChosen: "Stations",
       location: location,
       stations: stations,
       items: items,
       mappedItems: mappedItems,
       showConfirmationPopup: false,
-      showInputPopup: false
+      showInputPopup: false,
+
+      /**
+       * The stockHolder will represent an imaginary Station, that will hold every unique item in the platform.
+       * Also, when declaring this, we will compute other "global" data items that we need (e.g. entire stock for each item)
+       */
+      stockHolder : this.createStockHolder(data, stations)
     };
+
   }
 
-  loadStations = () => {
+
+  loadStations = (stations) => {
     /**
      * Load our array of elements from the json file
      * Will be replaced by a request once networking is done
      */
     try {
-      let stations = require("./resources/data/data.json").stations;
 
       if (stations) {
         let data = [];
@@ -75,6 +85,7 @@ class App extends Component {
             chosenStation={this.state.chosenStation}
             chosenElement={this.state.chosenElement}
 
+            stockHolder = {this.state.stockHolder}
 
             sideBarChosen={this.state.sideBarChosen}
             onClickStation={this.onClickStation}
@@ -180,23 +191,10 @@ class App extends Component {
       sideBarChosen: "Stations",
       chosenStation: null
     });
-    this.resetActiveChildren();
+
     this.resetItemChoose();
   };
 
-  //Reset the item list (Use this to get the initial list)
-  resetActiveChildren = () => {
-    let clone = this.state.stations;
-    clone.forEach(element => {
-      element.elements.forEach(element => {
-        element.childActive = false;
-        element.elements.forEach(element => {
-          element.childActive = false;
-        });
-      });
-    });
-    this.setState({ stations: clone });
-  };
 
   itemChoose = element => {
     this.setState({ chosenElement: element });
@@ -335,6 +333,47 @@ class App extends Component {
   };
 
 
+  /**
+   * Let's create an imaginary Station, in order to take advantage of the Tree system from inside the Station Profile.
+   * ----
+   * The stockHolder will represent an imaginary Station, that will hold every unique item in the platform.
+   * Also, when declaring this, we will compute other "global" data items that we need (e.g. entire stock for each item)
+   *
+   */
+  createStockHolder = (data,stations) => {
+
+
+    try {
+      /** As cloning a fully functional Object isn't that pretty, we will recreate the first station to us as a holder */
+      let stockHolder = new Station(data["stations"][0]);
+      for (let i = 1; i < stations.length; i++) {
+        Object.keys(stations[i].elementsFlat).forEach(key => {
+          if (stockHolder.elementsFlat.hasOwnProperty(String(key))
+              && stockHolder.elementsFlat[String(key)].type === Config.ELEMENT_TYPE_ITEM
+              && stations[i].elementsFlat[String(key)].type === Config.ELEMENT_TYPE_ITEM
+          ) {
+            stockHolder.elementsFlat[String(key)].quantity += stations[i].elementsFlat[String(key)].quantity;
+          }
+
+          /**
+           * Too much brain-fuck if we take into account different element-trees and try to merge them.
+           * E.g.
+           * S1 - A->A1,A2 + B->B1
+           * and
+           * S2 - A->B->A1,A2,B1
+           * Solution : Elements that do not exist in the first Station will not be printed.
+           * Real life: return a flag for an item that won't be available, to separate it from 0-quantity-but-available items
+           */
+        });
+      }
+
+      console.log(stockHolder);
+      return stockHolder;
+    }catch (e) {
+      console.error(e);
+    }
+    return null;
+  }
 
 
 }

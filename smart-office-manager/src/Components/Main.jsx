@@ -65,20 +65,6 @@ class Main extends Component {
       localStation: this.state.localStation
     };
 
-    let itemStockProps = {
-      stations: this.props.stations,
-      chosenItem: this.props.chosenItem,
-      itemChoose: this.itemChoose,
-      onClickStation: this.onClickStation,
-      chosenStation: this.props.stationInfo,
-      items: this.props.items,
-      itemStocks: this.props.itemStocks,
-      checkItemStatistics: this.props.checkItemStatistics,
-      clearItemWarnings: this.props.clearItemWarnings,
-      refillStock: this.props.refillStock,
-      toggleConfirmationPopup: this.props.toggleConfirmationPopup,
-      toggleInputPopup: this.props.toggleInputPopup
-    };
 
 
     return (
@@ -90,8 +76,8 @@ class Main extends Component {
                   return <ScreenNotifications />;
                 case "Stations":
                   return <ScreenStations {...stationsProps} />;
-                case "Item Stock":
-                  return <ScreenItemStock {...itemStockProps} />;
+                  case "Item Stock":
+                  return <ScreenItemStock stockHolder={this.props.stockHolder} />;
                 case "Product Requests":
                   return <ScreenRequests />;
                 case "Supply Statistics":

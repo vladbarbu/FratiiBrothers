@@ -90,7 +90,7 @@ $stationBorderRadius: 4px;
   background: #ffffff;
   border: solid #eeeeee 1px;
   border-radius: $stationBorderRadius;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.08);
   height: 170px;
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, border 0.2s;
@@ -98,7 +98,7 @@ $stationBorderRadius: 4px;
   &:active {
     background: #f9f9f9;
     border: 1px solid $colorSecondary;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.09);
     transition: background 0.2s, box-shadow 0.2s, border 0.2s;
     & > .body > .button {
       background: $colorSecondary;
