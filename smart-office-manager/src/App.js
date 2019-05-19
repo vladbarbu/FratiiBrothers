@@ -173,6 +173,7 @@ class App extends Component {
   };
 
   itemChoose = element => {
+    console.log("Ai ales ->", element);
     this.setState({ chosenItem: element });
   };
 
@@ -298,11 +299,11 @@ class App extends Component {
 
     for (let i = 0; i < allItems.length; i++) {
       for (let currentFloor = 1; currentFloor <= nrOfFloors; currentFloor++) {
-
         mappedItems[currentFloor][i] = this.getFloorStock(
-            allItems[i],
-            currentFloor,
-            stations);
+          allItems[i],
+          currentFloor,
+          stations
+        );
       }
     }
     return mappedItems;
@@ -310,4 +311,3 @@ class App extends Component {
 }
 
 export default App;
-
