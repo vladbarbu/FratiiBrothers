@@ -2,8 +2,9 @@
  * Created by @VanSoftware on 2019-05-05.
  */
 import React, { Component } from "react";
-import "../resources/styles/Nav.scss";
+import "../resources/styles/NavBar.scss";
 import Logo from "./../resources/images/logo-manager.svg";
+import AppContext from "../Model/AppContext";
 
 class NavBar extends Component {
   render() {
@@ -13,14 +14,12 @@ class NavBar extends Component {
           <img alt="Logo" src={Logo} />
         </div>
         <div className="body">
+            <div onClick={() => {this.context.doToggleMobileDrawer();}} className="button menu"><i className="material-icons">menu</i></div>
+
           {this.props.isReturnToStationsAvailable ? (
-            <div
-              className="button returnToStation"
-              onClick={() => this.props.goBackToStations()}
-            >
+            <div className="button returnToStation" onClick={() => this.props.goBackToStations()}>
                 <i className="material-icons">arrow_back</i>
                 <div className={"content"}><p>Return to Stations</p></div>
-
             </div>
           ) : null}
 
@@ -40,5 +39,5 @@ class NavBar extends Component {
     );
   }
 }
-
+NavBar.contextType = AppContext;
 export default NavBar;

@@ -11,10 +11,42 @@
   transition: transform 0.3s;
   will-change: transform;
 
+
+  &.placeholder{
+    & > .inner {
+      width: 100%;
+      & > .image {
+        width: 100%;
+        height: 160px;
+        background: #eee;
+      }
+      & > .breadcrumbs{
+        width: 100%;
+        height: 60px;
+        margin: 10px 10px 40px;
+        border-radius: 4px;
+        background: #f5f5f5;
+      }
+      & > .data{
+        margin: 10px;
+        width: 100%;
+        height: 40px;
+        border-radius: 4px;
+        background: #f5f5f5;
+      }
+    }
+  }
+
   &.active {
     transform: translateX(0);
     transition: transform 0.3s;
     will-change: transform;
+  }
+  &.hideMeForever{
+    transform: translateX(500px);
+    transition: transform 0.3s;
+    will-change: transform;
+
   }
 
   & > .inner {
@@ -23,6 +55,43 @@
     background: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     overflow-y: auto;
+    & > .preHeader{
+      display: none;
+      height: $navHeight;
+      width: calc(100% - 2 * 10px);
+      padding:  0 10px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      & > .button {
+        display: flex !important;
+        margin-right: auto;
+        &.menu{
+          background: #fff;
+          height: 50px;
+          width: 50px;
+          border: 1px solid #eeeeee;
+          box-sizing: border-box;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+          cursor: pointer;
+          transition: background 0.2s;
+          position: relative;
+          & > i{
+            color: $red;
+          }
+
+          &:hover, &:active{
+            background: #f5f5f5;
+            transition: background 0.2s;
+          }
+        }
+      }
+    }
+
     & > .header{
       width: 100%;
       display: flex;
@@ -174,4 +243,25 @@
   }
 }
 
+
+@media #{$top-tablet-big} {
+  .SideBar {
+    opacity: 0;
+    transform: translateX(500px);
+    transition: transform 0.3s linear 0.3s;
+    will-change: transform;
+
+    &.active{
+      opacity: 1;
+      transform: translateX(0);
+      transition: transform 0.3s linear 0.3s;
+      will-change: transform;
+    }
+    & > .inner{
+      & > .preHeader{
+        display: flex;
+      }
+    }
+  }
+}
 

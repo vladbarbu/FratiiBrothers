@@ -6,5 +6,11 @@
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+}
 
+@media #{$top-tablet} {
+  .Main{
+    height: calc(100% - #{$navHeight});
+    padding-top: $navHeight;
+  }
 }

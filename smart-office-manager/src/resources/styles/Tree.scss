@@ -705,3 +705,43 @@
     }
   }
 }
+
+
+@media #{$top-tablet-big} {
+  .Tree{
+    .Category, .Subcategory{
+      & > .innerTree{
+        width: calc(100% - 4px);
+        padding-left: 4px;
+      }
+    }
+    .Subcategory > .card{
+      background: #f5f5f5;
+    }
+    .Subcategory, .Item{
+      & > .card{
+        max-width: calc(100% - 2px - 2 * 4px);
+        padding: 4px;
+
+
+        & > .icon{
+          margin-left: 0;
+          margin-right: 5px;
+        }
+      }
+    }
+    .Item{
+      & > .card > .content{
+        width: calc(100% - 2px - 2 * 4px);
+        flex-wrap: wrap;
+        & > * {
+          margin-bottom: 4px !important;
+        }
+        & > .data{
+          margin-left: 0;
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+}

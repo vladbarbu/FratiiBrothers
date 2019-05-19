@@ -22,6 +22,15 @@ class Config{
 
             getChosenStation : Config.getChosenStation.bind(scope),
             getChosenElement : Config.getChosenElement.bind(scope),
+
+            /**
+             * ----
+             * DESIGN UTILITIES
+             * ----
+             */
+            doToggleMobileDrawer : Config.doToggleMobileDrawer.bind(scope),
+            doToggleSideBar : Config.doToggleSideBar.bind(scope),
+            doToggleSideBarStatistics : Config.doToggleSideBarStatistics.bind(scope),
         }
     }
 
@@ -178,10 +187,16 @@ class Config{
 
 
     static doShowScreenSupplyStation (station, element){
+
+
         /**
          * The scope will be bound to App.js
          */
         let scope = this;
+
+        console.log(element);
+        console.log(scope.state.chosenStatisticsElement);
+        if(element === null && scope.state.chosenStatisticsElement !== null) scope.state.chosenStatisticsElement.activeInStatistics = false;
 
         if(scope.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS){
             Object.keys(station.elementsFlat).forEach((key) => {
@@ -222,6 +237,7 @@ class Config{
             })
         }
 
+
         scope.setState({
             stations : scope.state.stations,
             sideBarChosen: "Supply Statistics",
@@ -261,6 +277,53 @@ class Config{
     }
 
 
+
+    /**
+     *
+     *
+     * -------------
+     *
+     * DESIGN UTILITIES
+     *
+     * -------------
+     *
+     */
+
+    static doToggleMobileDrawer(force = null){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        scope.setState((prevState, prevProps) => {
+            return { isMobileDrawerExpanded: (force !== null) ? (force === 'open') : !prevState.isMobileDrawerExpanded}
+        })
+
+    }
+
+    static doToggleSideBar(force = null){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        scope.setState((prevState, prevProps) => {
+            return { isSideBarExpanded: (force !== null) ? (force === 'open') : !prevState.isSideBarExpanded}
+        })
+
+    }
+
+    static doToggleSideBarStatistics(force = null){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        scope.setState((prevState, prevProps) => {
+            return { isSideBarStatisticsExpanded: (force !== null) ? (force === 'open') : !prevState.isSideBarStatisticsExpanded}
+        })
+
+    }
 }
 
 

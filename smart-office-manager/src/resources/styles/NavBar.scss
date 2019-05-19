@@ -41,7 +41,7 @@
       background: #fff;
       outline: none;
       height: 50px;
-      width: 50px;
+      width: calc(50px - 2 * 1px);
       border: 1px solid #eeeeee;
       box-sizing: border-box;
       border-radius: 4px;
@@ -52,6 +52,7 @@
       cursor: pointer;
       transition: background 0.2s;
       position: relative;
+      flex-shrink: 0;
 
       &:hover,
       &:active {
@@ -107,7 +108,7 @@
 
     & > .searchBar {
       height: calc(100% - 2 * 1px);
-      width: 100%;
+      width: calc(100% - 2 * 1px);
       max-width: 340px;
       padding: 0 8px;
       border: 1px solid #eeeeee;
@@ -211,33 +212,50 @@
   }
 }
 
-@media #{$top-tablet} {
-  .NavBar {
-    & > .body {
-      & > .button {
-        &.menu {
-          display: flex;
-        }
-      }
-    }
-  }
-}
 
-@media #{$top-tablet} {
+
+@media #{$top-tablet-big} {
   .NavBar {
-    height: calc(#{$navHeight} - 2 * 10px);
+    height: calc(#{$navHeight} - 2 * 10px - 1px);
     width: calc(100% - 2 * 5px);
     padding: 10px 5px;
+    position: absolute;
+    z-index: $zIndex-NavBar-mobile;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
     & > .logo {
       display: none !important;
     }
     & > .body {
+      height: 100%;
       & > .button {
         &.goBack {
           margin-right: 5px;
         }
         &.menu {
+          display: flex;
+          margin-left: 0;
+          flex-shrink: 0;
+          padding: 0 2px;
+        }
+
+        &.returnToStation{
+          padding: 12px;
           margin-left: 5px;
+          flex-shrink: 0;
+          & > i {
+            color: $red;
+            margin-right: 0;
+          }
+          & > .content{
+            display: none;
+          }
+
+          &:hover{
+            transition: border 0.2s;
+            border: 1px solid #ddd;
+          }
         }
       }
       & > .searchBar {
@@ -264,7 +282,7 @@
           display: none;
         }
         &.menu {
-          margin-left: 5px;
+          margin-left: 0;
         }
       }
       & > .searchBar {
@@ -305,3 +323,4 @@
     }
   }
 }
+

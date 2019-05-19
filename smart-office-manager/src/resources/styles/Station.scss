@@ -56,6 +56,12 @@ STATION LIST
 
 }
 
+@media #{$top-tablet} {
+  .StationList{
+    padding: 15px;
+    width: calc(100% - 2 * 15px);
+  }
+}
 
 
 /**
@@ -227,6 +233,7 @@ STATION PROFILE
 
     & > .breadcrumbs{
       height: 30px;
+      margin-top: 2px;
       margin-bottom: 20px;
       display: flex;
       flex-wrap: wrap;
@@ -400,7 +407,6 @@ STATION PROFILE
   }
 }
 
-
 .sectionTitle{
   margin-bottom: 20px;
   display: flex;
@@ -428,6 +434,130 @@ STATION PROFILE
     flex-shrink: 0;
   }
 }
+
+
+@media #{$top-tablet-big} {
+  .StationProfile{
+
+    & > .header{
+      width: calc(100% - 2 * 15px);
+      padding: 15px;
+      height: auto;
+      z-index: $zIndex-AppContainer-mobile;
+
+      & > .breadcrumbs{
+        height: auto;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        padding-top: 1px;
+      }
+
+      & > .inner{
+        max-width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        height: auto;
+
+        & > .image{
+          margin-right: 0;
+          height: 160px;
+          max-height: 160px;
+          width: 100%;
+          max-width: 100%;
+          border-radius: 2px;
+          margin-bottom: 10px;
+          & > img{
+            border-radius: 2px;
+          }
+        }
+        & > .info{
+          height: auto;
+          flex: none;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          & > .title{
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+
+            & > p{
+
+            }
+          }
+          & > .description{
+            flex: 1;
+            max-width: 100%;
+            margin-bottom: 15px;
+            p{
+              margin: 0;
+              font-size: 11pt;
+              color: #aaa;
+              font-weight: 300;
+            }
+
+          }
+          & > .data{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            & > .itemCount{
+              width: 100%;
+              display: flex;
+              align-items: center;
+              color: $colorPrimary;
+              border-bottom: 1px solid #eee;
+              padding-bottom: 10px;
+              margin-bottom: 10px;
+
+              & > i{
+                margin-right: 5px;
+              }
+            }
+
+            & > .actions{
+              height: 100%;
+              align-items: flex-end;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-gap: 15px;
+              flex-direction: row;
+              & > .returnButton{
+                @include medium-button(#eeeeee, #4c4c4c);
+
+              }
+              & > .viewButton{
+                @include medium-button($statistic, #4c4c4c);
+
+              }
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+
+
+    & > .itemTree{
+      max-width: calc(100%  - 2 * 5px);
+      padding: 15px 5px 5px 5px;
+    }
+  }
+
+  .itemTree{
+    max-width: calc(100%  - 2 * 5px);
+    width: calc(100% - 2 * 5px);
+    padding: 15px 5px 5px 5px;
+  }
+}
+
 
 
 

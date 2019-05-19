@@ -13,9 +13,7 @@ class SideBar extends Component {
         this.sideBarReference = React.createRef();
     }
 
-
-
-
+    
     render() {
 
 
@@ -35,7 +33,21 @@ class SideBar extends Component {
         (this.props.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK ? this.props.chosenStockStation : null );
 
 
-    if(Config.isEmpty(element) || Config.isEmpty(station)) return null;
+    if(Config.isEmpty(element) || Config.isEmpty(station))
+        return (
+            <div className={"SideBar placeholder"}>
+                <div className={"inner"}>
+                    <div className={"image"}/>
+                    <div className={"breadcrumbs"}/>
+                    <div className={"data"}/>
+                    <div className={"data"}/>
+                    <div className={"data"}/>
+                    <div className={"data"}/>
+                    <div className={"data"}/>
+                    <div className={"data"}/>
+                </div>
+            </div>
+        );
 
 
     let breadcrumbs = [];
@@ -98,8 +110,11 @@ class SideBar extends Component {
 
 
     return (
-      <div className={"SideBar" + (element !== null ? " active" : "")} ref = {this.sideBarReference}  >
+      <div className={"SideBar" + (element !== null  ? " active" : "") + (!this.props.shouldPrintSideBar? " hideMeForever" : "")  } ref = {this.sideBarReference}  >
           <div className={"inner"}>
+              <div className={"preHeader"}>
+                  <div onClick={() => {this.context.doToggleSideBar("close");}} className="button menu"><i className="material-icons">close</i></div>
+              </div>
               <div className={"header"}>
                   <div className={"image"}>
                       <img alt={"Item element"} src={require("./../resources/" + element.image)}/>

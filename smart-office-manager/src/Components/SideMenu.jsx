@@ -4,12 +4,22 @@
 import React, { Component } from "react";
 import SideMenuItem from "./SideMenuItem";
 import "../resources/styles/SideMenu.scss";
-
+import AppContext from "../Model/AppContext";
+import Logo from "./../resources/images/logo-manager.svg";
 
 class SideMenu extends Component {
   render() {
     return (
-      <menu className="SideMenu">
+      <menu className={"SideMenu" + (this.props.isMobileDrawerExpanded ? " active" : "")}>
+
+        <header>
+            <div className="logo">
+                <img alt="Logo" src={Logo} />
+            </div>
+            <div onClick={()=>{this.context.doToggleMobileDrawer("close")}} className="button menu">
+                <i className="material-icons">close</i>
+            </div>
+        </header>
         <SideMenuItem
           item={{ icon: "notifications", name: "Notifications", active: false }}
           chosen={this.props.chosen}
@@ -58,4 +68,5 @@ class SideMenu extends Component {
   };
 }
 
+SideMenu.contextType = AppContext;
 export default SideMenu;

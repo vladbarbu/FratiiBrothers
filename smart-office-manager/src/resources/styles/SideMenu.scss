@@ -5,14 +5,20 @@
   width: calc(#{$sideMenuWidth} - 2 * 10px - 1px);
   height: calc(100% - 2 * 10px);
   background: #ffffff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
   z-index: 5;
   border-right: 1px solid #eee;
   box-sizing: content-box;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s, box-shadow 0.3s;
+  transform : translateX(0);
+  will-change: transform;
 
+  & > header{
+    display: none;
+  }
 
 
   & > .SideMenuItem{
@@ -79,6 +85,75 @@
       & > p{
         margin: 0;
       }
+    }
+  }
+}
+
+@media #{$top-tablet} {
+  .SideMenu{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-width: 90%;
+    z-index: $zIndex-SideBar-mobile;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
+    & > header {
+      display: flex;
+      min-height: calc(#{$navHeight} - 2 * 10px);
+      height: auto;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 10px;
+      & > .logo{
+        height: 36px;
+        & > img{
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      & > .button {
+        display: flex !important;
+        &.menu{
+          background: #fff;
+          height: 50px;
+          width: 50px;
+          border: 1px solid #eeeeee;
+          box-sizing: border-box;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+          cursor: pointer;
+          transition: background 0.2s;
+          margin-left: auto;
+          position: relative;
+          & > i{
+            color: $red;
+          }
+
+          &:hover, &:active{
+            background: #f5f5f5;
+            transition: background 0.2s;
+          }
+        }
+      }
+
+      & > p {
+        margin: 0;
+        color: $colorSecondary;
+        font-size: 12pt;
+        padding-left: 50px;
+      }
+    }
+
+    &:not(.active){
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.03);
+      transform : translateX(- 120%);
+      transition: transform 0.3s, box-shadow 0.3s;
+      will-change: transform;
     }
   }
 }

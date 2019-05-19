@@ -51,7 +51,25 @@ class App extends Component {
        * The stockHolder will represent an imaginary Station, that will hold every unique item in the platform.
        * Also, when declaring this, we will compute other "global" data items that we need (e.g. entire stock for each item)
        */
-      stockHolder : this.createStockHolder(data, stations)
+      stockHolder : this.createStockHolder(data, stations),
+
+
+      /**
+       *
+       *
+       * -------------
+       *
+       * DESIGN UTILITIES
+       *
+       * -------------
+       *
+       */
+
+
+      isMobileDrawerExpanded : false,
+      isSideBarExpanded : false,
+      isSideBarStatisticsExpanded: false,
+
     };
 
   }
@@ -79,6 +97,19 @@ class App extends Component {
 
 
   render() {
+
+    let shouldPrintSideBar = false;
+
+    if(this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS
+        && !Config.isEmpty(this.state.chosenStation) && !Config.isEmpty(this.state.chosenElement)
+        && this.state.chosenStation.elementsFlat.hasOwnProperty(String(this.state.chosenElement.ID))
+    ) shouldPrintSideBar = true;
+
+    if(this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK
+        && !Config.isEmpty(this.state.chosenStockStation) && !Config.isEmpty(this.state.chosenStockElement)
+        && this.state.chosenStockStation.elementsFlat.hasOwnProperty(String(this.state.chosenStockElement.ID))
+    ) shouldPrintSideBar = true;
+
     return (
         <AppContext.Provider value={Config.generateAppContextValues(this)} >
       <div className="App">
@@ -91,6 +122,7 @@ class App extends Component {
           <SideMenu
             onClickSideBar={this.onClickSideBar}
             chosen={this.state.sideBarChosen}
+            isMobileDrawerExpanded ={this.state.isMobileDrawerExpanded}
           />
           <Main
 
@@ -104,6 +136,8 @@ class App extends Component {
             chosenStatisticsStation = {this.state.chosenStatisticsStation}
 
             stockHolder = {this.state.stockHolder}
+
+            isSideBarStatisticsExpanded ={this.state.isSideBarStatisticsExpanded}
 
             sideBarChosen={this.state.sideBarChosen}
             onClickStation={this.onClickStation}
@@ -122,42 +156,29 @@ class App extends Component {
 
 
 
-          { (()=> {
 
-            let shouldPrintSideBar = false;
+          <SideBar
+              shouldPrintSideBar = {shouldPrintSideBar}
 
-            if(this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS
-              && !Config.isEmpty(this.state.chosenStation) && !Config.isEmpty(this.state.chosenElement)
-                && this.state.chosenStation.elementsFlat.hasOwnProperty(String(this.state.chosenElement.ID))
-             ) shouldPrintSideBar = true;
+              isSideBarExpanded ={this.state.isSideBarExpanded}
+              chosenElement={this.state.chosenElement}
+              chosenStation={this.state.chosenStation}
+              chosenStockElement={this.state.chosenStockElement}
+              chosenStockStation={this.state.chosenStockStation}
+              chosenStatisticsElement={this.state.chosenStatisticsElement}
+              chosenStatisticsStation={this.state.chosenStatisticsStation}
 
-            if(this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK
-                && !Config.isEmpty(this.state.chosenStockStation) && !Config.isEmpty(this.state.chosenStockElement)
-                && this.state.chosenStockStation.elementsFlat.hasOwnProperty(String(this.state.chosenStockElement.ID))
-            ) shouldPrintSideBar = true;
+              stockHolder={this.state.stockHolder}
 
-            return shouldPrintSideBar ?
-                <SideBar
-                    chosenElement={this.state.chosenElement}
-                    chosenStation={this.state.chosenStation}
-                    chosenStockElement={this.state.chosenStockElement}
-                    chosenStockStation={this.state.chosenStockStation}
-                    chosenStatisticsElement={this.state.chosenStatisticsElement}
-                    chosenStatisticsStation={this.state.chosenStatisticsStation}
-
-                    stockHolder={this.state.stockHolder}
-
-                    sideBarChosen={this.state.sideBarChosen}
+              sideBarChosen={this.state.sideBarChosen}
 
 
-                    clearItemWarnings={this.clearItemWarnings}
-                    refillStock={this.refillStock}
-                    toggleConfirmationPopup={this.toggleConfirmationPopup}
-                    toggleInputPopup={this.toggleInputPopup}
-                />
-                : null
-          })()
-          }
+              clearItemWarnings={this.clearItemWarnings}
+              refillStock={this.refillStock}
+              toggleConfirmationPopup={this.toggleConfirmationPopup}
+              toggleInputPopup={this.toggleInputPopup}
+              />
+
 
 
 

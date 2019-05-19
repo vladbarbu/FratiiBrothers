@@ -51,5 +51,20 @@ const AppContext = React.createContext({
     doShowScreenSupplyStation : (station, element) => {},
 
 
+    /**
+     *
+     *
+     * -------------
+     *
+     * DESIGN UTILITIES
+     *
+     * -------------
+     *
+     */
+
+    doToggleMobileDrawer : (force = null) => {},
+    doToggleSideBar : (force = null) => {},
+    doToggleSideBarStatistics : (force = null) => {},
+
 });
 export default AppContext;
