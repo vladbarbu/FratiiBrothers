@@ -60,6 +60,8 @@ class Main extends Component {
 
         stockHolder : this.props.stockHolder,
 
+        isSideBarStatisticsExpanded : this.props.isSideBarStatisticsExpanded,
+
         stations: this.props.stations,
         updateStations: this.updateStations,
         localStation: this.state.localStation

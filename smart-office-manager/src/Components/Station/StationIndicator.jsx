@@ -7,7 +7,10 @@ class StationIndicator extends PureComponent {
         return (
             <div
                 className={"StationIndicator" + (this.props.station.hasWarning ? " warn" : "") + (this.props.active ? " active" : "")}
-                onClick={()=>{this.context.doShowScreenSupplyStation(this.props.station, null);}}
+                onClick={()=>{
+                    this.context.doShowScreenSupplyStation(this.props.station, null);
+                    this.context.doToggleSideBarStatistics("open");
+                }}
             >
                 <div className={"icon"}>
                     <i className={"material-icons"}>ev_station</i>

@@ -11,7 +11,7 @@ class ScreenStatistics extends Component {
 
     state = {
         activeTabIndex : 0
-    }
+    };
 
 
 
@@ -60,16 +60,16 @@ class ScreenStatistics extends Component {
                 </div>
 
 
-                <SideBarStatistics chosenStatisticsStation={this.props.chosenStatisticsStation} />
+                <SideBarStatistics isSideBarStatisticsExpanded={this.props.isSideBarStatisticsExpanded}  chosenStatisticsStation={this.props.chosenStatisticsStation} />
             </div>
         )
     }
 
     doChooseTab = (index) => {
-        console.log(index);
+
         this.setState({
-            activeTabIndex : index
-        })
+            activeTabIndex : index,
+        });
     }
 
 }

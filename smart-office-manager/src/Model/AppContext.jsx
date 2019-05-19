@@ -66,5 +66,9 @@ const AppContext = React.createContext({
     doToggleSideBar : (force = null) => {},
     doToggleSideBarStatistics : (force = null) => {},
 
+    getToggleSideBarStatistics : () => {},
+
+
+
 });
 export default AppContext;

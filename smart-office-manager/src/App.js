@@ -70,6 +70,7 @@ class App extends Component {
       isSideBarExpanded : false,
       isSideBarStatisticsExpanded: false,
 
+
     };
 
   }
@@ -103,6 +104,7 @@ class App extends Component {
         <AppContext.Provider value={Config.generateAppContextValues(this)} >
       <div className="App">
         <NavBar
+          sideBarChosen = {this.state.sideBarChosen}
           onClickNotifications={this.onClickSideBar}
           goBackToStations = {this.goBackToStations}
           isReturnToStationsAvailable={ (this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS && this.state.chosenStation !== null) }
@@ -365,6 +367,8 @@ class App extends Component {
     }
     return null;
   }
+
+
 
 
 }

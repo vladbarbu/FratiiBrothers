@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import "../resources/styles/NavBar.scss";
 import Logo from "./../resources/images/logo-manager.svg";
 import AppContext from "../Model/AppContext";
+import Config from "../config";
 
 class NavBar extends Component {
   render() {
@@ -34,6 +35,7 @@ class NavBar extends Component {
             <input placeholder="Search for a station" />
             <i className="material-icons search-icon">search</i>
           </div>
+            { this.props.sideBarChosen === Config.SCREEN_IDENTIFIER_STATISTICS ?   <div onClick={() => {this.context.doToggleSideBarStatistics();}} className={"button statTree" + (this.context.getToggleSideBarStatistics() ? " active" : "")}><i className="material-icons">playlist_play</i></div> : null }
         </div>
       </nav>
     );

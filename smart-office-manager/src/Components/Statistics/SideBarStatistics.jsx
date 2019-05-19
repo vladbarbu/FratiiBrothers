@@ -14,21 +14,23 @@ class SideBarStatistics extends PureComponent {
 
     }
 
-  render() {
-    return (
-      <div className="SideBarStatistics" ref={this.sideBar}>
-          <div className={"toggleButton"} onClick={()=>{this.toggleSideBar()}} ><div className={"icon"}><i className={"material-icons"}>keyboard_arrow_right</i></div></div>
-          <div className={"inner"}>
-              <div className={"header"}>
-                  <span className={"sectionTitle"}><i className="material-icons">list</i> Station Item Stock</span>
-              </div>
-              <div className={"itemTree"}>
-                  <Tree minimal={true} elements={(!Config.isEmpty(this.props.chosenStatisticsStation)) ? this.props.chosenStatisticsStation.elements : []}  />
+
+
+    render() {
+        return (
+          <div className={"SideBarStatistics" + (this.props.hasOwnProperty("isSideBarStatisticsExpanded") ? (this.props.isSideBarStatisticsExpanded === true ? "" : " collapsed") : "") } ref={this.sideBar}>
+              <div className={"toggleButton"} onClick={()=>{this.toggleSideBar()}} ><div className={"icon"}><i className={"material-icons"}>keyboard_arrow_right</i></div></div>
+              <div className={"inner"}>
+                  <div className={"header"}>
+                      <span className={"sectionTitle"}><i className="material-icons">list</i> Station Item Stock</span>
+                  </div>
+                  <div className={"itemTree"}>
+                      <Tree minimal={true} elements={(!Config.isEmpty(this.props.chosenStatisticsStation)) ? this.props.chosenStatisticsStation.elements : []}  />
+                  </div>
               </div>
           </div>
-      </div>
-    );
-  }
+        );
+      }
 
 
     toggleSideBar = (force = null) => {

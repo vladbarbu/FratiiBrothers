@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import AppContext from "../../Model/AppContext";
 import Config from "../../config";
-import Tree from "./Tree";
 import StationList from "./StationList";
 
 
@@ -9,7 +8,7 @@ class Item extends PureComponent{
 
    state = {
        active : false
-   }
+   };
 
    componentWillReceiveProps(nextProps, nextContext) {
        let active =

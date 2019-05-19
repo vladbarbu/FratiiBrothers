@@ -31,6 +31,8 @@ class Config{
             doToggleMobileDrawer : Config.doToggleMobileDrawer.bind(scope),
             doToggleSideBar : Config.doToggleSideBar.bind(scope),
             doToggleSideBarStatistics : Config.doToggleSideBarStatistics.bind(scope),
+            getToggleSideBarStatistics : Config.getToggleSideBarStatistics.bind(scope),
+
         }
     }
 
@@ -162,7 +164,8 @@ class Config{
             }
             scope.setState({
                 stations : scope.state.stations,
-                chosenStatisticsElement : chosenElement
+                chosenStatisticsElement : chosenElement,
+                isSideBarStatisticsExpanded : false,
             });
         }
     }
@@ -195,8 +198,6 @@ class Config{
          */
         let scope = this;
 
-        console.log(element);
-        console.log(scope.state.chosenStatisticsElement);
         if(element === null && scope.state.chosenStatisticsElement !== null) scope.state.chosenStatisticsElement.activeInStatistics = false;
 
         if(scope.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS){
@@ -330,10 +331,19 @@ class Config{
          */
         let scope = this;
 
+        console.log("bam");
         scope.setState((prevState, prevProps) => {
             return { isSideBarStatisticsExpanded: (force !== null) ? (force === 'open') : !prevState.isSideBarStatisticsExpanded}
         })
 
+    }
+
+    static getToggleSideBarStatistics(){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+        return scope.state.isSideBarStatisticsExpanded;
     }
 }
 

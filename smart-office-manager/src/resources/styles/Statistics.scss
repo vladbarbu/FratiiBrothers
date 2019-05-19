@@ -90,8 +90,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-
-
     margin-right:  0;
     transition: margin-right 0.3s;
     will-change: margin-right;
@@ -183,3 +181,139 @@
 
 }
 
+@media #{$top-tablet-big} {
+  .ScreenStatistics {
+
+    & > .main{
+      height: calc(100% - 2 * 10px);
+      width: calc(100% - 2 * 10px);
+      padding: 10px;
+      & > .header{
+        & > .sectionTitle{}
+        &  > .stationList{
+          display: grid;
+          grid-column-gap: 7px;
+          grid-template-columns: repeat(auto-fill, $stationIndicatorWidthMobile);
+          margin-bottom:10px;
+        }
+      }
+
+      & > .content{
+        & > .tabs{
+          & > .header{
+            display: grid;
+            grid-column-gap: 10px;
+            grid-template-columns: 1fr 1fr;
+            padding-bottom: 20px;
+
+
+            .SupplyTab{
+              cursor: pointer;
+              grid-column: span 1;
+              border-radius: 4px;
+              padding: 10px 10px 10px 10px;
+              box-shadow: 0 0 5px rgba(0,0,0,0.05);
+              background: #ffffff;
+              border: 1px solid #eeeeee;
+              transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+
+              &.active{
+                background: $statistic;
+                border:1px solid $statistic;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.09);
+                transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+              }
+              &:not(.active):hover, &:not(.active):active{
+                border: 1px solid #ddd;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.09);
+                transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+              }
+
+              & > .content{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                & > .icon{
+                  min-width: 20px;
+                  & > i{
+                    line-height: 1.4;
+                  }
+
+                }
+                & > .title{
+                  flex: 1;
+                  & > p{
+                    font-size: 10pt;
+                    color: #2c2c2c;
+                    font-weight: 700;text-align: center;
+                    text-transform: capitalize;
+                    margin: 0;
+                  }
+                }
+              }
+            }
+          }
+          & > .content{
+
+          }
+        }
+      }
+    }
+
+    .SideBarStatistics {
+      margin-right: 0;
+      width: 95%;
+      right: 0;
+      position: absolute;
+      transition: right 0.3s;
+      will-change: right;
+
+      &.collapsed{
+        margin-right: 0;
+        right:  - 95%;
+        transition: right 0.3s;
+        will-change: right;
+        &:before {
+          content: ' ';
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+          left: -10%;
+          top: 0;
+          background: black;
+          opacity: 0;
+        }
+        & > .toggleButton {
+          display: none;
+        }
+        & > .inner{
+          box-shadow: none;
+        }
+      }
+
+
+      & > .toggleButton {
+        display: none;
+      }
+
+      & > .inner {
+        height: calc(100% - 2 * 15px);
+        width: calc(100% - 15px - 10px);
+        padding: 10px 15px 15px;
+        background: #ffffff;
+        box-shadow: -40px 0 80px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        & > .itemTree {
+          padding: 0;
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

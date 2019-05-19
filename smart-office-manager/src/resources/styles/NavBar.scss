@@ -101,7 +101,9 @@
       }
 
       &.menu {
-        margin-left: 20px;
+        display: none;
+      }
+      &.statTree{
         display: none;
       }
     }
@@ -255,6 +257,16 @@
           &:hover{
             transition: border 0.2s;
             border: 1px solid #ddd;
+          }
+        }
+
+        &.statTree {
+          display: flex;
+          margin-left: 5px;
+          &.active{
+            i{
+              color: $red;
+            }
           }
         }
       }

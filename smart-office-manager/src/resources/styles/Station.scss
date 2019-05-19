@@ -677,3 +677,49 @@ STATION INDICATOR
 
 
 }
+@media #{$top-tablet-big}{
+  .StationIndicator{
+    grid-column: span 1;
+
+
+    & > .icon{
+      background: $colorPrimary;
+      height: $stationIndicatorWidthMobile;
+      width: $stationIndicatorWidthMobile;
+      border-radius: 2px;
+      & > i{
+        font-size: 18pt;
+      }
+    }
+    & > .floor{
+      & > p{
+        font-size: 9pt;
+      }
+    }
+
+    & > .title{
+      & > p{
+        color: #aaa;
+        font-size: 10pt;
+      }
+    }
+
+    & > .indicator{
+      height: 20px;
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+
+      & > i{
+        font-size: 18pt;
+        color: #2c2c2c;
+      }
+    }
+
+
+  }
+}
