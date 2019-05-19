@@ -6,7 +6,7 @@ import Config from "../../config";
 class StationList extends PureComponent{
     render() {
         let chosenElement = this.context.getChosenElement(Config.SCREEN_IDENTIFIER_STOCK);
-        let chosenStation = this.context.getChosenStation(Config.SCREEN_IDENTIFIER_STATISTICS);
+        let chosenStation = this.context.getChosenStation(Config.SCREEN_IDENTIFIER_STOCK);
 
         return <div className={"StationList"}>
             {this.props.stations.map((element, index) => {

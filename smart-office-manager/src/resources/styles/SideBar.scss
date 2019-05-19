@@ -3,7 +3,7 @@
 .SideBar {
   margin: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: 5;
   height: 100%;
   width: $sideBarWidth;
@@ -14,6 +14,7 @@
 
   &.placeholder{
     & > .inner {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
       width: 100%;
       & > .image {
         width: 100%;
@@ -44,7 +45,7 @@
   }
   &.hideMeForever{
     transform: translateX(500px);
-    transition: transform 0.3s;
+    transition: transform 0s !important;
     will-change: transform;
 
   }
@@ -168,6 +169,7 @@
             border: 1px solid #eeeeee;
             transition: background 0.2s;
             cursor: pointer;
+            background: #fafafa;
             & > span{
              text-align: center;
               font-size: 10pt;
@@ -246,20 +248,40 @@
 
 @media #{$top-tablet-big} {
   .SideBar {
-    opacity: 0;
-    transform: translateX(500px);
-    transition: transform 0.3s linear 0.3s;
-    will-change: transform;
-
-    &.active{
-      opacity: 1;
-      transform: translateX(0);
-      transition: transform 0.3s linear 0.3s;
-      will-change: transform;
+    transition: transform 0.2s;
+    &.active {
+      &:before {
+        content: ' ';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        left: -10%;
+        top: 0;
+        background: black;
+        opacity: 0;
+      }
     }
+    &.placeholder {
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+      & > .inner {
+        padding-top: $navHeight;
+      }
+    }
+
     & > .inner{
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
       & > .preHeader{
         display: flex;
+      }
+      & > .main{
+        & > .actions{
+          padding-bottom: 10px;
+          &  > .button{
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+          }
+        }
       }
     }
   }

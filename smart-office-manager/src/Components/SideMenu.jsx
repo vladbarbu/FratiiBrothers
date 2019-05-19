@@ -65,6 +65,7 @@ class SideMenu extends Component {
 
   onItemClick = element => {
     this.props.onClickSideBar(element);
+    this.context.doToggleMobileDrawer("close");
   };
 }
 

@@ -98,17 +98,6 @@ class App extends Component {
 
   render() {
 
-    let shouldPrintSideBar = false;
-
-    if(this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS
-        && !Config.isEmpty(this.state.chosenStation) && !Config.isEmpty(this.state.chosenElement)
-        && this.state.chosenStation.elementsFlat.hasOwnProperty(String(this.state.chosenElement.ID))
-    ) shouldPrintSideBar = true;
-
-    if(this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK
-        && !Config.isEmpty(this.state.chosenStockStation) && !Config.isEmpty(this.state.chosenStockElement)
-        && this.state.chosenStockStation.elementsFlat.hasOwnProperty(String(this.state.chosenStockElement.ID))
-    ) shouldPrintSideBar = true;
 
     return (
         <AppContext.Provider value={Config.generateAppContextValues(this)} >
@@ -158,7 +147,6 @@ class App extends Component {
 
 
           <SideBar
-              shouldPrintSideBar = {shouldPrintSideBar}
 
               isSideBarExpanded ={this.state.isSideBarExpanded}
               chosenElement={this.state.chosenElement}

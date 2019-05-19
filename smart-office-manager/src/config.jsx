@@ -137,10 +137,11 @@ class Config{
                 !scope.state.stockHolder.elementsFlat[elementID].activeInStock;
 
             chosenStockElement =  scope.state.stockHolder.elementsFlat[elementID].activeInStock ? scope.state.stockHolder.elementsFlat[elementID] : null;
-
+            let chosenStockStation = chosenStockElement !== null && (scope.state.chosenStockElement === chosenStockElement) ? scope.state.chosenStockStation : null;
             scope.setState({
                 stations : scope.state.stations,
-                chosenStockElement : chosenStockElement
+                chosenStockElement : chosenStockElement,
+                chosenStockStation : chosenStockStation,
             });
         }
         else if(scope.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATISTICS) {
@@ -308,9 +309,19 @@ class Config{
         let scope = this;
 
         scope.setState((prevState, prevProps) => {
-            return { isSideBarExpanded: (force !== null) ? (force === 'open') : !prevState.isSideBarExpanded}
-        })
+            return {
+                isSideBarExpanded: (force !== null) ? (force === 'open') : !prevState.isSideBarExpanded
+            }
+        });
 
+        if(scope.state.isSideBarExpanded === false || force === 'close') {
+           if(scope.state.chosenElement) scope.state.chosenElement.activeInStations = false;
+           scope.setState({
+               stations : scope.state.stations,
+               chosenElement: null,
+               chosenStockStation : null,
+           })
+        }
     }
 
     static doToggleSideBarStatistics(force = null){
