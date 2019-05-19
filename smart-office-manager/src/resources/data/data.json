@@ -234,14 +234,14 @@
               "ID": 9511,
               "type": "category",
               "name": "Fruits Subcategory",
-              "parentID": 1,
+              "parentID": 951,
               "image": "images/fruits.png",
               "elements": [
                 {
                   "ID": 95111,
                   "type": "item",
                   "name": "Fruits Small",
-                  "parentID": 8,
+                  "parentID": 9511,
                   "image": "images/fruits.png",
                   "quantity": 100,
                   "notifications": [
@@ -265,7 +265,7 @@
                   "ID": 95112,
                   "type": "item",
                   "name": "Fruits Medium",
-                  "parentID": 8,
+                  "parentID": 9511,
                   "image": "images/fruits.png",
                   "quantity": 12,
                   "notifications": [

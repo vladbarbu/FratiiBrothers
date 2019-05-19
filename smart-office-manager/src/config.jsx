@@ -13,10 +13,15 @@ class Config{
 
     static generateAppContextValues(scope){
         return {
+            stations : scope.state.stations,
             screen : scope.state.sideBarChosen,
             doTreeElementToggle : Config.doTreeElementToggle.bind(scope),
             doChooseElement : Config.doChooseElement.bind(scope),
+            doChooseStation : Config.doChooseStation.bind(scope),
             doShowScreenSupplyStation : Config.doShowScreenSupplyStation.bind(scope),
+
+            getChosenStation : Config.getChosenStation.bind(scope),
+            getChosenElement : Config.getChosenElement.bind(scope),
         }
     }
 
@@ -88,8 +93,6 @@ class Config{
          * The scope will be bound to App.js
          */
         let scope = this;
-        console.log(scope);
-        console.log(elementID);
 
         let chosenElement = null;
         let chosenStockElement = null;
@@ -118,13 +121,13 @@ class Config{
         else if(scope.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK){
             Object.keys(scope.state.stockHolder.elementsFlat).forEach((key)=>{
                 if(String(key) !== String(elementID)  &&  scope.state.stockHolder.elementsFlat[key].type === Config.ELEMENT_TYPE_ITEM)
-                    scope.state.stockHolder.elementsFlat[key].activeInStations = false;
+                    scope.state.stockHolder.elementsFlat[key].activeInStock = false;
             });
 
-            scope.state.stockHolder.elementsFlat[elementID].activeInStations =
-                !scope.state.stockHolder.elementsFlat[elementID].activeInStations;
+            scope.state.stockHolder.elementsFlat[elementID].activeInStock =
+                !scope.state.stockHolder.elementsFlat[elementID].activeInStock;
 
-            chosenStockElement =  scope.state.stockHolder.elementsFlat[elementID].activeInStations ? scope.state.stockHolder.elementsFlat[elementID] : null;
+            chosenStockElement =  scope.state.stockHolder.elementsFlat[elementID].activeInStock ? scope.state.stockHolder.elementsFlat[elementID] : null;
 
             scope.setState({
                 stations : scope.state.stations,
@@ -155,19 +158,109 @@ class Config{
     }
 
 
+    static doChooseStation(station, toggle = true){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+
+        if(scope.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK) {
+            let chosenStation = toggle === true ? (this.state.chosenStockStation === station ? null : station) : station;
+
+            scope.setState({
+                chosenStockElement : ( chosenStation !== null && chosenStation.elementsFlat.hasOwnProperty(scope.state.chosenStockElement.ID)) ? chosenStation.elementsFlat[scope.state.chosenStockElement.ID] : scope.state.chosenStockElement,
+                chosenStockStation: chosenStation
+            });
+        }
+
+    }
+
+
     static doShowScreenSupplyStation (station, element){
         /**
          * The scope will be bound to App.js
          */
         let scope = this;
 
+        if(scope.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS){
+            Object.keys(station.elementsFlat).forEach((key) => {
+               station.elementsFlat[key].activeInStatistics = station.elementsFlat[key].activeInStations;
+            });
+        }
+        else if(scope.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK){
+
+            if(scope.state.chosenStockStation)
+                Object.keys(scope.state.chosenStockStation.elementsFlat).forEach(key=>{
+                    scope.state.chosenStockStation.elementsFlat[key].activeInStatistics = false;
+                });
+
+            Object.keys(scope.state.stockHolder.elementsFlat).forEach(key => {
+                if(scope.state.chosenStockStation.elementsFlat.hasOwnProperty(key))
+                {
+                    scope.state.chosenStockStation.elementsFlat[key].activeInStatistics = scope.state.stockHolder.elementsFlat[key].activeInStock;
+                    /**
+                     * In special cases, we won't have the same element-tree for each station, so the
+                     * stockHolder will have some interesting behaviors
+                     * In order to recreate the collapsed/expanded tree in those cases, we will cover it in a bottom-up manner
+                     */
+                    let current = scope.state.chosenStockStation.elementsFlat[key];
+                    if(current.activeInStatistics){
+                        let safety = 30;
+                        while(true){
+                            if(--safety < 0) break;
+                            if(Config.isEmpty(current.parentID) || !scope.state.chosenStockStation.elementsFlat.hasOwnProperty(current.parentID)) break;
+                            if(scope.state.chosenStockStation.elementsFlat.hasOwnProperty(current.parentID)){
+                                current = scope.state.chosenStockStation.elementsFlat[current.parentID];
+                                current.activeInStatistics = true;
+                            }
+                        }
+                    }
+
+                }
+
+            })
+        }
+
         scope.setState({
+            stations : scope.state.stations,
             sideBarChosen: "Supply Statistics",
             chosenStatisticsElement: element,
             chosenStatisticsStation: station
         });
 
     };
+
+
+    static getChosenElement (screen = Config.SCREEN_IDENTIFIER_STATIONS){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        switch (screen) {
+            case Config.SCREEN_IDENTIFIER_STATIONS : return  scope.state.chosenElement;
+            case Config.SCREEN_IDENTIFIER_STOCK : return  scope.state.chosenStockElement;
+            case Config.SCREEN_IDENTIFIER_STATISTICS : return  scope.state.chosenStockElement;
+            default : return null;
+        }
+    }
+
+    static getChosenStation (screen = Config.SCREEN_IDENTIFIER_STATIONS){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        switch (screen) {
+            case Config.SCREEN_IDENTIFIER_STATIONS : return  scope.state.chosenStation;
+            case Config.SCREEN_IDENTIFIER_STOCK : return  scope.state.chosenStockStation;
+            case Config.SCREEN_IDENTIFIER_STATISTICS : return  scope.state.chosenStockStation;
+            default : return null;
+        }
+    }
+
+
 }
 
 

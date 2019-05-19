@@ -14,7 +14,7 @@ class ScreenItemStock extends Component {
     return (
       <div className="ScreenItemStock">
         <div className="itemTree">
-          <span className={"sectionTitle"}><i className="material-icons">list</i> Station Item Stock</span>
+          <div className={"sectionTitle"}><i className="material-icons">list</i> Station Item Stock</div>
           <Tree elements={(!Config.isEmpty(this.props.stockHolder)) ? this.props.stockHolder.elements : []}  />
         </div>
       </div>

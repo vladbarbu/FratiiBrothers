@@ -122,20 +122,42 @@ class App extends Component {
 
 
 
-          <SideBar
-              chosenElement={this.state.chosenElement}
-              chosenStation={this.state.chosenStation}
-              chosenStockElement = {this.state.chosenStockElement}
-              chosenStockStation = {this.state.chosenStockStation}
-              chosenStatisticsElement = {this.state.chosenStatisticsElement}
-              chosenStatisticsStation = {this.state.chosenStatisticsStation}
+          { (()=> {
+
+            let shouldPrintSideBar = false;
+
+            if(this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS
+              && !Config.isEmpty(this.state.chosenStation) && !Config.isEmpty(this.state.chosenElement)
+                && this.state.chosenStation.elementsFlat.hasOwnProperty(String(this.state.chosenElement.ID))
+             ) shouldPrintSideBar = true;
+
+            if(this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK
+                && !Config.isEmpty(this.state.chosenStockStation) && !Config.isEmpty(this.state.chosenStockElement)
+                && this.state.chosenStockStation.elementsFlat.hasOwnProperty(String(this.state.chosenStockElement.ID))
+            ) shouldPrintSideBar = true;
+
+            return shouldPrintSideBar ?
+                <SideBar
+                    chosenElement={this.state.chosenElement}
+                    chosenStation={this.state.chosenStation}
+                    chosenStockElement={this.state.chosenStockElement}
+                    chosenStockStation={this.state.chosenStockStation}
+                    chosenStatisticsElement={this.state.chosenStatisticsElement}
+                    chosenStatisticsStation={this.state.chosenStatisticsStation}
+
+                    stockHolder={this.state.stockHolder}
+
+                    sideBarChosen={this.state.sideBarChosen}
 
 
-              clearItemWarnings={this.clearItemWarnings}
-              refillStock={this.refillStock}
-              toggleConfirmationPopup={this.toggleConfirmationPopup}
-              toggleInputPopup={this.toggleInputPopup}
-          />
+                    clearItemWarnings={this.clearItemWarnings}
+                    refillStock={this.refillStock}
+                    toggleConfirmationPopup={this.toggleConfirmationPopup}
+                    toggleInputPopup={this.toggleInputPopup}
+                />
+                : null
+          })()
+          }
 
 
 
@@ -296,17 +318,21 @@ class App extends Component {
       console.log(data);
       data["elements"].push({
         ID : "temporary-category-for-fresh-elements",
-        name: "Others",
         type : Config.ELEMENT_TYPE_CATEGORY,
+        name: "Others",
         image : "images/temporary_category.png",
         elements : []
       });
       let stockHolder = new Station(data);
+
       for (let i = 1; i < stations.length; i++) {
         Object.keys(stations[i].elementsFlat).forEach(key => {
           if(stations[i].elementsFlat[String(key)].type === Config.ELEMENT_TYPE_ITEM) {
             if (stockHolder.elementsFlat.hasOwnProperty(String(key)) && stockHolder.elementsFlat[String(key)].type === Config.ELEMENT_TYPE_ITEM) stockHolder.elementsFlat[String(key)].quantity += stations[i].elementsFlat[String(key)].quantity;
-            else stockHolder.elementsFlat["temporary-category-for-fresh-elements"].elements.push(stations[i].elementsFlat[String(key)]);
+            else {
+              stockHolder.elements[stockHolder.elements.length - 1].elements.push(stations[i].elementsFlat[String(key)]);
+              stockHolder.elementsFlat = Station.flattenElements(stockHolder.elements)
+            }
           }
 
           /**
@@ -320,6 +346,8 @@ class App extends Component {
            */
         });
       }
+      stockHolder.hasWarning = stockHolder.computeWarning();
+      stockHolder.uniqueItems = stockHolder.computeUniqueItems();
 
       console.log(stockHolder);
       return stockHolder;

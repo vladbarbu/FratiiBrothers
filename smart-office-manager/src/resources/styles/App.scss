@@ -20,6 +20,35 @@
     width: 100%;
     position: relative;
 
+    .breadcrumbs{
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 0.2s;
+      p{
+        font-size: 12pt;
+        margin: 0;
+        color: #2c2c2c;
+      }
+      i{
+        font-size: 18pt;
+        margin: 2px 0 0 0;
+        color: $colorPrimary;
+      }
+      & > div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      & > div:last-of-type{
+        p{
+          color: $colorPrimary;
+        }
+      }
+    }
+
     & > .SideMenu{}
     & > .Main{}
     & > .SideMenu{}

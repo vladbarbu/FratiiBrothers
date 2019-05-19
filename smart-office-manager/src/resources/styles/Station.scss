@@ -12,22 +12,6 @@ STATION LIST
   padding: 20px;
   flex: 1;
 
-  & > .breadcrumbs{
-    margin-bottom: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    p{
-      font-size: 12pt;
-      margin: 0;
-    }
-    i{
-      font-size: 18pt;
-      margin: 2px 0 0 0;
-      color: $colorPrimary;
-    }
-  }
-
   & > .stationFloor{
     width: 100%;
     margin-bottom: 20px;
@@ -81,7 +65,7 @@ STATION CARD
  */
 
 
-$stationBorderRadius: 4px;
+
 .StationCard {
   grid-column: span 1;
   display: flex;
@@ -94,8 +78,7 @@ $stationBorderRadius: 4px;
   height: 170px;
   cursor: pointer;
   transition: background 0.2s, box-shadow 0.2s, border 0.2s;
-  &:hover,
-  &:active {
+  &:hover, &:active {
     background: #f9f9f9;
     border: 1px solid $colorSecondary;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.09);
@@ -117,6 +100,9 @@ $stationBorderRadius: 4px;
       }
     }
   }
+
+
+
   p {
     margin: 0;
   }
@@ -178,16 +164,31 @@ $stationBorderRadius: 4px;
       padding: 10px 20px;
       background: $colorPrimary;
       transition: background 0.2s;
-
+      &.mini{
+        display: none;
+      }
       p {
         font-weight: 700;
         font-size: 10pt;
         color: white;
         text-align: center;
       }
+      i {
+        font-size: 12pt;
+        color: white;
+        line-height: 0;
+        height: 18px;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 }
+
+
+
 
 
 
@@ -275,6 +276,7 @@ STATION PROFILE
 
         &:last-of-type{
           & > p{
+            text-decoration: none !important;
             color: $colorPrimary;
           }
         }

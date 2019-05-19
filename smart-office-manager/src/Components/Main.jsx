@@ -30,6 +30,7 @@ class Main extends Component {
          */
 
         stations: this.props.stations,
+        stockHolder : this.props.stockHolder,
 
         /**
          * Functionality
@@ -56,6 +57,8 @@ class Main extends Component {
 
         chosenStatisticsElement : this.props.chosenStatisticsElement,
         chosenStatisticsStation : this.props.chosenStatisticsStation,
+
+        stockHolder : this.props.stockHolder,
 
         stations: this.props.stations,
         updateStations: this.updateStations,

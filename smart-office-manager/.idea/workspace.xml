@@ -2,28 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="789d589e-2a7c-4f34-86ba-687aa8836754" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/styles/Statistics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Screen/ScreenItemStock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Screen/ScreenItemStock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBarStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Station/StationCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Station/StationCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Station/StationProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Station/StationProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SupplyStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SupplyStatistics.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Tree/Category.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Tree/Category.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Statistics/SupplyTab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/SupplyTab.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Tree/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Tree/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Tree/Subcategory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Tree/Subcategory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Tree/Tree.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Tree/Tree.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/AppContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AppContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Element.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Element.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Station.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Station.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/data/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/styles/Main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/styles/SideBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/SideBar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/SideMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/SideMenu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/styles/Station.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Station.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/SupplyStatistics.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/styles/Statistics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Statistics.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/styles/Tree.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Tree.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/config.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/.idea/workspace.xml" afterDir="false" />
@@ -36,14 +33,69 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+            <state relative-caret-position="715">
+              <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#6688#6848#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="24" selection-start-line="13" selection-end-line="13" selection-end-column="24" />
+              <folding>
+                <element signature="e#1008#2171#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="48" selection-end-column="5" />
+              <folding>
+                <element signature="e#50#91#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/Tree.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="412">
+              <caret line="664" column="27" selection-start-line="664" selection-start-column="27" selection-end-line="664" selection-end-column="27" />
+              <folding>
+                <element signature="e#122#2007#0" />
+                <element signature="e#232#1919#0" />
+                <element signature="e#1938#2003#0" />
+                <element signature="e#2590#2779#0" />
+                <element signature="e#2952#3222#0" />
+                <element signature="e#3241#3573#0" />
+                <element signature="e#3591#3965#0" />
+                <element signature="e#4552#4663#0" />
+                <element signature="e#4678#4954#0" />
+                <element signature="e#4971#5110#0" />
+                <element signature="e#5127#5397#0" />
+                <element signature="e#5416#6589#0" />
+                <element signature="e#6607#7033#0" />
+                <element signature="e#7465#7839#0" />
+                <element signature="e#7236#7254#0" />
+                <element signature="e#8045#8285#0" />
+                <element signature="e#8437#8719#0" />
+                <element signature="e#8368#8687#0" />
+                <element signature="e#9213#9469#0" />
+                <element signature="e#9492#9616#0" />
+                <element signature="e#9657#9876#0" />
               </folding>
             </state>
           </provider>
@@ -52,66 +104,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="77" column="17" lean-forward="true" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-              <folding>
-                <element signature="e#2836#3875#0" />
-                <element signature="e#3935#4736#0" />
-                <element signature="e#5152#6191#0" />
-              </folding>
+            <state relative-caret-position="608">
+              <caret line="195" column="19" lean-forward="true" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
+        <entry file="file://$PROJECT_DIR$/src/Components/Tree/Subcategory.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="66" column="12" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/styles/Station.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="203" selection-start-line="203" selection-end-line="203" />
-              <folding>
-                <element signature="e#86#1099#0" />
-                <element signature="e#1198#3375#0" />
-                <element signature="e#3461#3480#0" />
-                <element signature="e#3498#7353#0" />
-                <element signature="e#7369#7588#0" />
-                <element signature="e#7599#7801#0" />
-                <element signature="e#7882#9777#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="26" lean-forward="true" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-              <folding>
-                <element signature="e#57#98#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="e#50#95#0" expanded="true" />
+                <element signature="e#0#45#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,15 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>doChooseStationsElement</find>
-      <find>getItemIndex</find>
-      <find>getName</find>
-      <find>checkItemS</find>
-      <find>createStockHolder</find>
-      <find>Main</find>
-      <find>images/</find>
-      <find>./../../resources/images/</find>
-      <find>require</find>
       <find>updateStations</find>
       <find>getNumb</find>
       <find>items</find>
@@ -156,8 +152,17 @@
       <find>StationCard</find>
       <find>doShowScreenSupplyStation</find>
       <find>map</find>
-      <find>getStationItems</find>
+      <find>itemTree</find>
+      <find>console.log</find>
       <find>Statistics</find>
+      <find>getStationItems</find>
+      <find>breadcrumbs</find>
+      <find>Book</find>
+      <find>notification</find>
+      <find>fruits</find>
+      <find>temp</find>
+      <find>station</find>
+      <find>doChooseStation</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,9 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Components/NavBar/Item.js" />
-        <option value="$PROJECT_DIR$/src/Components/NavBar/NavBarItem.js" />
-        <option value="$PROJECT_DIR$/src/Components/SideMenu.js" />
         <option value="$PROJECT_DIR$/src/Components/SideMenu/SideMenuItem.js" />
         <option value="$PROJECT_DIR$/src/Components/SideBar_Statistics.jsx" />
         <option value="$PROJECT_DIR$/src/Components/StationList.jsx" />
@@ -184,39 +186,42 @@
         <option value="$PROJECT_DIR$/src/resources/styles/Stations.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/StationInfo.scss" />
         <option value="$PROJECT_DIR$/src/Components/Stations.jsx" />
-        <option value="$PROJECT_DIR$/src/resources/styles/Main.scss" />
         <option value="$PROJECT_DIR$/src/Components/ElementTree.jsx" />
         <option value="$PROJECT_DIR$/src/resources/images/icon/ic_arrow_drop_down.svg" />
-        <option value="$PROJECT_DIR$/src/resources/styles/App.scss" />
-        <option value="$PROJECT_DIR$/src/Components/Tree/Tree.jsx" />
         <option value="$PROJECT_DIR$/src/Components/NavBar.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/Nav.scss" />
         <option value="$PROJECT_DIR$/src/resources/images/icon/ic_keyboard_arrow_down_grey.svg" />
-        <option value="$PROJECT_DIR$/src/Components/Screen/ScreenItemStock.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/SideMenu.scss" />
-        <option value="$PROJECT_DIR$/src/resources/styles/SideBar.scss" />
-        <option value="$PROJECT_DIR$/src/Components/SideBar.jsx" />
-        <option value="$PROJECT_DIR$/src/resources/styles/config.scss" />
-        <option value="$PROJECT_DIR$/src/Components/Station/StationCard.jsx" />
-        <option value="$PROJECT_DIR$/src/Model/Station.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx" />
-        <option value="$PROJECT_DIR$/src/Model/AppContext.jsx" />
-        <option value="$PROJECT_DIR$/src/resources/data/data.json" />
-        <option value="$PROJECT_DIR$/src/resources/styles/Tree.scss" />
         <option value="$PROJECT_DIR$/src/Components/Station/StationProfile.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Statistics/SupplyTab.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Station/StationIndicator.jsx" />
-        <option value="$PROJECT_DIR$/src/resources/styles/Station.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/SupplyStatistics.scss" />
         <option value="$PROJECT_DIR$/src/Model/Element.jsx" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/Components/Main.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Tree/Category.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Tree/Subcategory.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Tree/Item.jsx" />
-        <option value="$PROJECT_DIR$/src/config.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Tree/Tree.jsx" />
+        <option value="$PROJECT_DIR$/src/Model/Station.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Statistics/SupplyTab.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/Main.scss" />
+        <option value="$PROJECT_DIR$/src/resources/styles/Statistics.scss" />
+        <option value="$PROJECT_DIR$/src/resources/styles/App.scss" />
+        <option value="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Main.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Screen/ScreenItemStock.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/SideBar.scss" />
+        <option value="$PROJECT_DIR$/src/resources/data/data.json" />
+        <option value="$PROJECT_DIR$/src/Components/Tree/Item.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/config.scss" />
+        <option value="$PROJECT_DIR$/src/Components/Station/StationCard.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Tree/StationList.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/Station.scss" />
+        <option value="$PROJECT_DIR$/src/Model/AppContext.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/Tree.scss" />
+        <option value="$PROJECT_DIR$/src/Components/SideBar.jsx" />
+        <option value="$PROJECT_DIR$/src/config.jsx" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -393,12 +398,12 @@
       <workItem from="1557878416216" duration="4913000" />
       <workItem from="1557933081686" duration="469000" />
       <workItem from="1557934438225" duration="2233000" />
-      <workItem from="1558172216201" duration="30865000" />
+      <workItem from="1558172216201" duration="46522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49559000" />
+    <option name="totallyTimeSpent" value="65216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -408,19 +413,19 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.062650606" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.062650606" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -431,14 +436,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBar_Statistics.jsx" />
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenProductRequests.jsx" />
     <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenRequests.jsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -469,26 +466,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenNotifications.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" lean-forward="true" selection-start-column="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/Main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -532,20 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/SideBar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/SideMenu.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -577,95 +546,10 @@
     <entry file="file://$PROJECT_DIR$/src/resources/images/logo.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/SideMenu.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/AppContext.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/data/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="644" column="19" selection-start-line="644" selection-start-column="19" selection-end-line="644" selection-end-column="19" />
-          <folding>
-            <element signature="e#339#6398#0" />
-            <element signature="e#6648#10258#0" />
-            <element signature="e#10530#20547#0" />
-            <element signature="e#31062#41079#0" />
-            <element signature="e#41312#51329#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/Tree.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="185" column="7" selection-start-line="185" selection-start-column="7" selection-end-line="185" selection-end-column="7" />
-          <folding>
-            <element signature="e#122#1962#0" />
-            <element signature="e#1539#1868#0" />
-            <element signature="e#3546#3876#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Station.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="100" column="28" lean-forward="true" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationProfile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="40" column="99" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="99" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#renderStationList#0;n#ScreenStations#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,64 +563,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/Statistics.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="17" />
-          <folding>
-            <element signature="e#297#307#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Element.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="108" column="23" lean-forward="true" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#6688#6848#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTab.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="45" lean-forward="true" selection-start-column="45" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" column="12" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="66" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/Station.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="203" selection-start-line="203" selection-end-line="203" />
-          <folding>
-            <element signature="e#86#1099#0" />
-            <element signature="e#1198#3375#0" />
-            <element signature="e#3461#3480#0" />
-            <element signature="e#3498#7353#0" />
-            <element signature="e#7369#7588#0" />
-            <element signature="e#7599#7801#0" />
-            <element signature="e#7882#9777#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,59 +577,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTab.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="77" column="17" lean-forward="true" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="17" />
-          <folding>
-            <element signature="e#2836#3875#0" />
-            <element signature="e#3935#4736#0" />
-            <element signature="e#5152#6191#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Tree/Subcategory.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        <state relative-caret-position="195">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Tree/Item.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="24" column="100" lean-forward="true" selection-start-line="24" selection-start-column="100" selection-end-line="24" selection-end-column="100" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Tree/Tree.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenItemStock.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="180">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding>
             <element signature="e#50#95#0" expanded="true" />
           </folding>
@@ -808,10 +599,254 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="26" lean-forward="true" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+        <state relative-caret-position="536">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
           <folding>
-            <element signature="e#57#98#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Statistics.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="98" column="17" lean-forward="true" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
+          <folding>
+            <element signature="e#119#2279#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenNotifications.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/SideBar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="51" column="27" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
+          <folding>
+            <element signature="e#1571#1593#0" />
+            <element signature="e#1863#1885#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Station.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="116" column="9" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/data/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationProfile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="99" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="99" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#467#1987#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Tree/Tree.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Tree/Item.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenItemStock.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Station.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#86#842#0" />
+            <element signature="e#1277#1559#0" />
+            <element signature="e#1569#1709#0" />
+            <element signature="e#2123#2625#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Tree/StationList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="119" selection-start-line="15" selection-start-column="119" selection-end-line="15" selection-end-column="119" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/AppContext.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="24" selection-start-line="13" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="e#1008#2171#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Tree.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="664" column="27" selection-start-line="664" selection-start-column="27" selection-end-line="664" selection-end-column="27" />
+          <folding>
+            <element signature="e#122#2007#0" />
+            <element signature="e#232#1919#0" />
+            <element signature="e#1938#2003#0" />
+            <element signature="e#2590#2779#0" />
+            <element signature="e#2952#3222#0" />
+            <element signature="e#3241#3573#0" />
+            <element signature="e#3591#3965#0" />
+            <element signature="e#4552#4663#0" />
+            <element signature="e#4678#4954#0" />
+            <element signature="e#4971#5110#0" />
+            <element signature="e#5127#5397#0" />
+            <element signature="e#5416#6589#0" />
+            <element signature="e#6607#7033#0" />
+            <element signature="e#7465#7839#0" />
+            <element signature="e#7236#7254#0" />
+            <element signature="e#8045#8285#0" />
+            <element signature="e#8437#8719#0" />
+            <element signature="e#8368#8687#0" />
+            <element signature="e#9213#9469#0" />
+            <element signature="e#9492#9616#0" />
+            <element signature="e#9657#9876#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Tree/Subcategory.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="e#50#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="195" column="19" lean-forward="true" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="158" column="13" selection-start-line="158" selection-start-column="13" selection-end-line="158" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

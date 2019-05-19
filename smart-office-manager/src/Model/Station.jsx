@@ -98,24 +98,10 @@ class Station {
      * @type {Object}
      */
     this.elementsFlat = (!Config.isEmpty(this.elements) && this.elements.length > 0) ? Station.flattenElements(this.elements) : {};
-    this.hasWarning = (()=>{
-        let count = 0;
-        Object.keys(this.elementsFlat).forEach(key => {
-          if (this.elementsFlat[key].type === Config.ELEMENT_TYPE_ITEM) {
-            count += (!Config.isEmpty(this.elementsFlat[key].notifications)) ? this.elementsFlat[key].notifications.length : 0
-          }
-        });
-      return count > 0;
-    })();
+    this.hasWarning = this.computeWarning();
 
 
-    this.uniqueItems = (()=>{
-      let count = 0;
-      Object.keys(this.elementsFlat).forEach(key => {
-        if (this.elementsFlat[key].type === Config.ELEMENT_TYPE_ITEM) count++;
-      });
-      return count;
-    })();
+    this.uniqueItems = this.computeUniqueItems();
 
 
   }
@@ -139,6 +125,24 @@ class Station {
       }
     }
     return flat;
+  };
+
+  computeWarning = () => {
+    let count = 0;
+    Object.keys(this.elementsFlat).forEach(key => {
+      if (this.elementsFlat[key].type === Config.ELEMENT_TYPE_ITEM) {
+        count += (!Config.isEmpty(this.elementsFlat[key].notifications)) ? this.elementsFlat[key].notifications.length : 0
+      }
+    });
+    return count > 0;
+  }
+
+  computeUniqueItems = () => {
+    let count = 0;
+    Object.keys(this.elementsFlat).forEach(key => {
+      if (this.elementsFlat[key].type === Config.ELEMENT_TYPE_ITEM) count++;
+    });
+    return count;
   }
 }
 

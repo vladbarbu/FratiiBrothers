@@ -10,7 +10,8 @@ $sideMenuWidth : 240px;
 $sideBarWidth : 360px;
 $stationIndicatorWidth: 60px;
 
-
+$stationBorderRadius: 4px;
+$stationBorderRadiusMini: 2px;
 
 $col-lg-extended : 1100px;
 $col-lg : 992px;
@@ -150,7 +151,7 @@ $zIndex-NavBar : 2;
 
 
     & > span{
-      margin: 5px 0 0 0;
+      margin: 3px 0 0 0;
       font-size: 9pt;
       color: $textColor;
       font-weight: 400;

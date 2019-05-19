@@ -5,7 +5,7 @@ class SupplyTab extends PureComponent {
 
     render() {
         return (
-            <div className={"SupplyTab" + (this.props.active ? " active" : "")}>
+            <div onClick={() => {this.props.doChooseTab(this.props.index)}} className={"SupplyTab" + (this.props.activeTabIndex === this.props.index ? " active" : "")}>
                 <div className={"content"}>
                     <div className={"icon"}><i className={"material-icons"}>{this.props.element.icon}</i></div>
                     <div className={"title"}><p>{this.props.element.title}</p></div>
@@ -14,5 +14,6 @@ class SupplyTab extends PureComponent {
         )
     }
 }
+
 SupplyTab.contextType = AppContext;
 export default SupplyTab;

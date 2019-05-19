@@ -1,6 +1,8 @@
 import React, { PureComponent } from "react";
 import AppContext from "../../Model/AppContext";
 import Config from "../../config";
+import Tree from "./Tree";
+import StationList from "./StationList";
 
 
 class Item extends PureComponent{
@@ -22,7 +24,7 @@ class Item extends PureComponent{
 
         return (
             <div className={"Item"}>
-                <div className={"card" + active ? " active" : "" } onClick={()=>{ this.context.doChooseElement(this.props.element.ID); }}  >
+                <div className={"card" + (active ? " active" : "") } onClick={()=>{ this.context.doChooseElement(this.props.element.ID); }}  >
                     <div className={"icon"}><i className={"material-icons"}>subdirectory_arrow_right</i></div>
                     <div className={"image"}><img alt={this.props.element.name} src={require("./../../resources/" + this.props.element.image)}/></div>
                     <div className={"content"}>
@@ -38,9 +40,22 @@ class Item extends PureComponent{
                         </div>
                     </div>
                     <div className={"action"}>
-                        <div className={"icon"}><i className={"material-icons"}>arrow_forward</i></div>
+                        <div className={"icon"}>
+                            <i className={"material-icons"}>arrow_forward</i>
+                        </div>
+                        <div className={"icon minimal"}>
+                            <i className={"material-icons"}>offline_bolt</i>
+                        </div>
                     </div>
+                    {  (this.context.screen ===  Config.SCREEN_IDENTIFIER_STOCK ) ? <div className={"toggle" }><div className={"icon"}><img alt={"Toggle"} src={require("./../../resources/images/icon/ic_keyboard_arrow_down_grey.svg")}/></div></div> : null}
                 </div>
+                { (this.context.screen ===  Config.SCREEN_IDENTIFIER_STOCK ) && active ?
+                    <div className={"innerTree"}>
+                        <StationList stations={this.context.stations} />
+                    </div>
+                    : null}
+
+
             </div>);
     }
 

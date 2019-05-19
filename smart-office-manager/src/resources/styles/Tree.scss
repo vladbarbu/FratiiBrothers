@@ -1,4 +1,21 @@
 @import "config";
+
+.ScreenItemStock{
+  .Tree{
+    .Item{
+      & > .card{
+        & > .content{
+          margin-right: 0;
+        }
+        & > .action{
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+
 .Tree{
   display: flex;
   flex-direction: column;
@@ -191,8 +208,6 @@
       padding-left: 30px;
     }
   }
-
-
   .Item{
     width: 100%;
     display: flex;
@@ -228,6 +243,13 @@
           transition: background 0.2s;
         }
 
+        & > .toggle{
+          & > .icon{
+            transform: rotate(180deg);
+            transition: transform 0.15s;
+            will-change: transform;
+          }
+        }
 
       }
 
@@ -317,14 +339,369 @@
         background: #eee;
         transition: background 0.2s;
         & > .icon{
+          &.minimal{
+            display: none;
+          }
+
           & > i{
+            line-height: 0;
            color: #ffffff;
             font-size: 12pt;
+          }
+        }
+      }
+      & > .toggle{
+        padding: 4px 0 4px 10px;
+        & > .icon{
+          transform: rotate(0);
+          transition: transform 0.3s;
+          will-change: transform;
+          height: 22px;
+          width: 22px;
+          & > img{
+            height: 22px;
+            width: 22px;
+            object-fit: contain;
+            object-position: center;
+          }
+        }
+      }
+
+    }
+    & > .innerTree{
+      width: 100%;
+      padding: 0;
+
+      .StationList{
+        width: 100%;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin-bottom: 10px;
+
+        .StationCard {
+          box-shadow: none;
+          height: 100px;
+          border-radius: $stationBorderRadiusMini;
+          border: 1px solid #ddd;
+          &.warn{
+            & > .body{
+              & > .title{
+                & > .icon{
+                  & > i{
+                    background: $red;
+                  }
+                }
+              }
+            }
+          }
+
+          &:hover, &:active {
+            background: #f9f9f9;
+            border: 1px solid $colorPrimary;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.09);
+            transition: background 0.2s, box-shadow 0.2s, border 0.2s;
+            & > .body > .button {
+              background: $colorPrimary;
+              transition: background 0.2s;
+              &:before{
+                color: $colorPrimary;
+                transition: color 0.2s;
+              }
+            }
+          }
+
+          &.active{
+            background: #f9f9f9;
+            border: 1px solid $colorSecondary;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.09);
+            transition: background 0.2s, box-shadow 0.2s, border 0.2s;
+            & > .body > .button {
+              background: $colorSecondary;
+              transition: background 0.2s;
+              &:before{
+                color: $colorSecondary;
+              }
+            }
+          }
+
+          & > .image {
+            border-radius: $stationBorderRadiusMini - 1 0 0 $stationBorderRadiusMini - 1;
+          }
+          & > .body {
+            display: flex;
+            flex-direction: column;
+            flex: 0.65;
+            height: calc(100% - 8px);
+            padding: 8px 0 0 0;
+
+            & > .title {
+              display: flex;
+              align-items: center;
+              border: none;
+              padding-bottom: 5px;
+              margin-bottom: 0;
+              margin-right: 5px;
+              margin-left: 8px;
+              transition: border-bottom 0.2s;
+
+              & > .icon {
+                margin-right: 5px;
+                i {
+                  border-radius: 2px;
+                  padding: 5px;
+                  font-size: 12pt;
+                }
+              }
+              & > p {
+                font-size: 11pt;
+              }
+            }
+            & > .info {
+              p {
+                display: none;
+              }
+            }
+            & > .button {
+              margin-left: auto;
+              border-radius: $stationBorderRadiusMini  0 $stationBorderRadiusMini - 1 0;
+              padding: 8px;
+              display: flex;
+              align-items: center;
+              position: relative;
+              background: #ddd;
+              &:not(.mini){display: none}
+              &.mini{display: flex}
+              &:before{
+                content: 'View stock';
+                color: #ccc;
+                position: absolute;
+                left: -80px;
+                font-size: 10pt;
+                transition: color 0.2s;
+              }
+            }
           }
         }
       }
 
     }
 
+  }
+
+  &.minimal{
+    .Category{
+      & > .card{
+        border: none;
+        border-radius: 2px;
+        background: transparent;
+        padding: 0;
+        margin-bottom: 10px;
+        box-shadow: none;
+        transition: none;
+        min-height: 20px;
+
+        &:hover, &:active{
+          box-shadow: none;
+          transition: none;
+
+        }
+
+
+        & > .image{
+          display: none;
+        }
+        & > .content{
+          & > .label{
+            font-size: 10pt;
+            margin: 0 3px 0 0;
+
+          }
+          & > .title{
+            font-size: 10pt;
+            margin: 0;
+          }
+        }
+        & > .toggle{
+          padding: 4px 0 4px 5px;
+          & > .icon{
+            height: 16px;
+            width: 16px;
+            & > img{
+              height: 16px;
+              width: 16px;
+            }
+          }
+        }
+      }
+      & > .innerTree{
+        width: calc(100% - 4px);
+        padding-left: 4px;
+      }
+    }
+    .Subcategory{
+      & > .card{
+        border: none;
+        border-radius: 2px;
+        background: transparent;
+        padding: 0;
+        margin-bottom: 10px;
+        box-shadow: none;
+        transition: none;
+        min-height: 20px;
+
+        &:hover, &:active{
+          box-shadow: none;
+          transition: none;
+        }
+
+        & > .icon{
+          margin-right: 6px;
+          margin-left: 0;
+
+
+          & > i{
+            color: #2c2c2c;
+            font-size: 8pt;
+          }
+        }
+        & > .image{
+          display: none;
+        }
+        & > .content{
+          & > .label{
+            font-size: 10pt;
+            margin: 0 3px 0 0;
+
+          }
+          & > .title{
+            font-size: 10pt;
+            margin: 0;
+          }
+        }
+        & > .toggle{
+          padding: 4px 0 4px 5px;
+          & > .icon{
+            height: 16px;
+            width: 16px;
+            & > img{
+              height: 16px;
+              width: 16px;
+            }
+          }
+        }
+
+      }
+      & > .innerTree{
+        max-width: calc(100% - 4px - 1px);
+        padding-left: 4px;
+        border-left: 1px solid #eee;
+        margin-bottom: 10px;
+      }
+    }
+    .Item{
+      &:last-of-type{
+        & > .card{
+          margin-bottom: 0;
+        }
+      }
+      & > .card{
+        width: auto;
+        max-width: calc(100% - 2px - 2 * 3px - 48px);
+        border-radius: 2px;
+        padding: 3px;
+        margin-bottom: 5px;
+        box-shadow: none;
+        transition: none;
+        position: relative;
+
+        &:hover, &:active{
+          box-shadow: none;
+          transition: none;
+        }
+        &.active{
+          border: 1px solid $statistic;
+          border-radius: 2px 0 0 2px;
+          box-shadow: 0 2px 30px rgba(0,0,0,0.09);
+          transition: background 0.2s, box-shadow 0.2s, border 0.2s;
+
+          & > .action{
+            z-index: 1;
+            display: flex;
+            background: $statistic;
+            transition: background 0.2s;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.09);
+          }
+        }
+
+        & > .icon{
+          display: none;
+        }
+        & > .image{
+          height: 40px;
+          width: 60px;
+          margin-right: 5px;
+        }
+        & > .content{
+          margin-right: 10px;
+
+          & > .label{
+            font-size: 10pt;
+            margin: 0 3px 0 0;
+
+          }
+          & > .title{
+            font-size: 10pt;
+          }
+          & > .data{
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            & > .stock{
+              display: none;
+            }
+            & > .warn{
+              display: none;
+            }
+          }
+        }
+        & > .action{
+          border-radius: 0 2px 2px 0;
+          display: none;
+          position: absolute;
+          right: -48px;
+          height: calc(100% + 2px);
+          width: 48px;
+          padding: 0;
+          & > .icon{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.minimal{
+              display: flex;
+            }
+            &:not(.minimal){
+              display: none;
+            }
+            & > i{
+              color: #2c2c2c;
+              font-size: 15pt;
+            }
+          }
+        }
+
+      }
+
+      & > .innerTree{
+        max-width: calc(100% - 4px - 1px);
+        padding-left: 4px;
+        border-left: 1px solid #eee;
+        margin-bottom: 10px;
+      }
+
+    }
   }
 }
