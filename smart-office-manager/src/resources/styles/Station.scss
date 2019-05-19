@@ -105,6 +105,18 @@ $stationBorderRadius: 4px;
       transition: background 0.2s;
     }
   }
+
+  &.warn{
+    & > .body{
+      & > .title{
+        & > .icon{
+          & > i{
+            background: $red;
+          }
+        }
+      }
+    }
+  }
   p {
     margin: 0;
   }
@@ -189,7 +201,6 @@ STATION PROFILE
 .StationProfileContainer{
   height: 100%;
 }
-
 
 .StationProfile{
   height: 100%;
@@ -379,6 +390,12 @@ STATION PROFILE
     }
 
   }
+
+
+
+  & > .itemTree{
+    max-width: calc(100%  - 2 * 20px - #{$sideBarWidth} - 10px);
+  }
 }
 
 
@@ -399,6 +416,7 @@ STATION PROFILE
 }
 
 .itemTree{
+  max-width: calc(100%  - 2 * 20px - #{$sideBarWidth} - 10px);
   width: calc(100% - 2 * 20px);
   padding: 20px;
   flex: 1;
@@ -411,104 +429,119 @@ STATION PROFILE
 
 
 
+/**
+---------------
+STATION INDICATOR
+---------------
+ */
 
-.subdirectory {
-  position: relative;
-  margin-top: 15px;
-}
 
-.stationInfo > img {
-  max-height: 200px;
-}
-
-.stationInfo > button {
-  max-height: 20px;
-}
-
-.stationInfo {
-  display: flex;
-  overflow-y: auto;
-}
-
-.returnButtonO {
-  align-self: flex-end;
-  margin-right: 10px;
-  background-color: #efefef;
-  padding: 8px;
-  width: 200px;
-  text-align: center;
-  border-radius: 4px;
-}
-
-.viewButtonO {
-  align-self: flex-end;
-  margin-right: 10px;
-  background-color: $statistic;
-  padding: 8px;
-  width: 200px;
-  text-align: center;
-  border-radius: 4px;
-}
-
-div.itemStock {
+.StationIndicator{
+  grid-column: span 1;
   display: flex;
   flex-direction: column;
-}
 
-.categoryItem {
-  border-radius: 5px;
-  margin-bottom: 10px;
+  transform: scale(1);
+  will-change: transform;
+  transition: transform 0.15s;
+  cursor: pointer;
 
-}
-.categoryItem > small {
-  display: flex;
-  border: solid #f5f5f5 0.5px;
-  background-color: #f5f5f5;
-}
+  &.warn{
+    & > .icon{
+      background: $red;
+    }
+  }
+  &:hover, &:active{
+    & > .indicator{
+      opacity: 0.2;
+      transition: opacity 0.2s;
+    }
+  }
+  &.active{
+    will-change: transform;
+    transition: transform 0.15s;
+    cursor: pointer;
+    & > .icon{
+      box-shadow: 0 5px 10px rgba(0,0,0,0.09);
+      transition: box-shadow 0.2s;
+      & > i{
+        color: darken($colorPrimary, 30%);
+        transition: color 0.2s;
+      }
+    }
+    & > .title{
+      & > p{
+        color: #2c2c2c;
+        transition: color 0.2s;
+      }
+    }
+    & > .indicator{
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
 
-.justItem > small {
-  display: flex;
-}
+    &.warn{
+      & > .icon{
+        & > i{
+          color: darken($red, 30%);
+          transition: color 0.2s;
+        }
+      }
+    }
+  }
 
-.itemText {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-left: 10px;
-}
+  & > .icon{
+    background: $colorPrimary;
+    height: $stationIndicatorWidth;
+    width: $stationIndicatorWidth;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    transition: box-shadow 0.2s;
+    & > i{
+      font-size: 20pt;
+      color: #ffffff;
+      transition: color 0.2s;
+    }
+  }
+  & > .floor{
+    & > p{
+      color: #aaaaaa;
+      font-size: 10pt;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+    }
+  }
 
-.categoryItem > small > img {
-  width: 80px;
-  height: 60px;
-}
+  & > .title{
+    & > p{
+      color: #aaa;
+      font-size: 14pt;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+      transition: color 0.2s;
+    }
+  }
 
-.justItem {
-  position: relative;
-  padding-left: 20px;
-}
+  & > .indicator{
+    height: 20px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
 
-.justItem > small > img {
-  width: 60px;
-  height: 60px;
-}
+    & > i{
+      font-size: 20pt;
+      color: #2c2c2c;
+    }
+  }
 
-.justItem > small {
-  margin-top: 10px;
-  background-color: #f5f5f5;
-  border: solid #f5f5f5 0.5px;
-}
 
-.itemNotification {
-  position: relative;
-  bottom: 5px;
-  left: 150px;
-}
-
-.itemButton {
-  position: relative;
-  left: 200px;
-}
-
-.warningBadge {
-  background-color: #ef2233;
 }

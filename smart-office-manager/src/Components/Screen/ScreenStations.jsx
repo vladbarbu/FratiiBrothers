@@ -27,7 +27,6 @@ class ScreenStations extends Component {
                                             return (
                                                 <StationCard
                                                     key={index}
-                                                    checkForNotifications={this.props.checkForNotifications}
                                                     station={element}
                                                     onClickStation={this.props.onClickStation}
                                                 />
@@ -53,10 +52,7 @@ class ScreenStations extends Component {
                 <StationProfile
                     chosenStation={this.props.chosenStation}
                     chosenElement={this.props.chosenElement}
-                    checkForNotifications={this.props.checkForNotifications}
                     goBackToStations={this.props.goBackToStations}
-                    onClickSupplyStation={this.props.onClickSupplyStation}
-                    getStationItems={this.props.getStationItems}
                 />
             </div>
         )

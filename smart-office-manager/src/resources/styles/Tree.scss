@@ -73,11 +73,13 @@
         }
       }
       & > .toggle{
-        padding: 10px 0 10px 10px;
+        padding: 4px 0 4px 10px;
         & > .icon{
           transform: rotate(0);
           transition: transform 0.3s;
           will-change: transform;
+          height: 22px;
+          width: 22px;
           & > img{
             height: 22px;
             width: 22px;
@@ -167,11 +169,13 @@
         }
       }
       & > .toggle{
-        padding: 10px 0 10px 10px;
+        padding: 4px 0 4px 10px;
         & > .icon{
           transform: rotate(0);
-          transition: transform 0.15s;
+          transition: transform 0.3s;
           will-change: transform;
+          height: 22px;
+          width: 22px;
           & > img{
             height: 22px;
             width: 22px;
@@ -188,8 +192,8 @@
     }
   }
 
+
   .Item{
-    max-width: calc(100% - 400px);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -198,7 +202,7 @@
 
 
     & > .card{
-      width: calc(100% - 2px);
+      width: calc(100% - 2px - 2 * 6px);
       border: 1px solid #eee;
       border-radius: 2px;
       background: #fff;

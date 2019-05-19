@@ -18,7 +18,6 @@ class App extends Component {
     let location = data["location"];
     let stations = this.loadStations(data["stations"]);
     let items = this.getAllItems(stations);
-    let mappedItems = this.mapItemsToStock(stations);
 
     this.state = {
       /**
@@ -30,16 +29,21 @@ class App extends Component {
 
 
       /**
-       * To keep the tree structure separate for both the Stations Screen and the Item Stock Screen, we will se separate chosens
+       * To keep the tree structure separate for the Stations Screen, the Item Stock Screen and the statistics, we will se separate chosen element&station for each one
        */
       chosenStockElement : null,
       chosenStockStation : null,
 
-      sideBarChosen: "Stations",
+      /**
+       * To keep the tree structure separate for the Stations Screen, the Item Stock Screen and the statistics, we will se separate chosen element&station for each one
+       */
+      chosenStatisticsElement : null,
+      chosenStatisticsStation : null,
+
+      sideBarChosen: Config.SCREEN_IDENTIFIER_STATIONS,
       location: location,
       stations: stations,
       items: items,
-      mappedItems: mappedItems,
       showConfirmationPopup: false,
       showInputPopup: false,
 
@@ -81,7 +85,7 @@ class App extends Component {
         <NavBar
           onClickNotifications={this.onClickSideBar}
           goBackToStations = {this.goBackToStations}
-          isReturnToStationsAvailable={ (this.state.sideBarChosen === "Stations" && this.state.chosenStation !== null) }
+          isReturnToStationsAvailable={ (this.state.sideBarChosen === Config.SCREEN_IDENTIFIER_STATIONS && this.state.chosenStation !== null) }
         />
         <div className="App-container">
           <SideMenu
@@ -96,6 +100,9 @@ class App extends Component {
             chosenStockElement = {this.state.chosenStockElement}
             chosenStockStation = {this.state.chosenStockStation}
 
+            chosenStatisticsElement = {this.state.chosenStatisticsElement}
+            chosenStatisticsStation = {this.state.chosenStatisticsStation}
+
             stockHolder = {this.state.stockHolder}
 
             sideBarChosen={this.state.sideBarChosen}
@@ -104,18 +111,13 @@ class App extends Component {
             location={this.state.location}
             stations={this.state.stations}
             items={this.state.items}
-            itemStocks={this.state.mappedItems}
             itemChoose={this.itemChoose}
-
-            onClickSupplyStation={this.onClickSupplyStation}
             updateStations={this.updateStations}
-            checkItemStatistics={this.checkItemStatistics}
             clearItemWarnings={this.clearItemWarnings}
             refillStock={this.refillStock}
-            checkForNotifications={this.checkForNotifications}
             toggleConfirmationPopup={this.toggleConfirmationPopup}
             toggleInputPopup={this.toggleInputPopup}
-            getStationItems={this.getStationItems}
+
           />
 
 
@@ -125,7 +127,10 @@ class App extends Component {
               chosenStation={this.state.chosenStation}
               chosenStockElement = {this.state.chosenStockElement}
               chosenStockStation = {this.state.chosenStockStation}
-              checkItemStatistics={this.checkItemStatistics}
+              chosenStatisticsElement = {this.state.chosenStatisticsElement}
+              chosenStatisticsStation = {this.state.chosenStatisticsStation}
+
+
               clearItemWarnings={this.clearItemWarnings}
               refillStock={this.refillStock}
               toggleConfirmationPopup={this.toggleConfirmationPopup}
@@ -148,6 +153,8 @@ class App extends Component {
                 chosenStation={this.state.chosenStation}
                 chosenStockElement = {this.state.chosenStockElement}
                 chosenStockStation = {this.state.chosenStockStation}
+                chosenStatisticsElement = {this.state.chosenStatisticsElement}
+                chosenStatisticsStation = {this.state.chosenStatisticsStation}
 
               togglePopup={this.toggleInputPopup}
               toggleConfirmPopup={this.toggleConfirmationPopup}
@@ -178,32 +185,16 @@ class App extends Component {
     this.setState({ stations: clone });
   };
 
-  onClickSideBar = chosen => {
-    this.setState({ sideBarChosen: chosen });
-    //this.resetChosenStation(); //TODO In order to keep the state of the trees (collapsed or expanded) we won't reset this
-  };
+  onClickSideBar = chosen => {this.setState({ sideBarChosen: chosen });};
 
   onClickStation = element => {
-    this.setState({
-      sideBarChosen: "Stations",
-      chosenStation: element
-    });
+    this.setState({sideBarChosen: Config.SCREEN_IDENTIFIER_STATIONS, chosenStation: element});
   };
 
-  onClickSupplyStation = element => {
-    this.setState({
-      sideBarChosen: "Supply Statistics",
-      chosenStation: element
-    });
-  };
-
-  resetChosenStation = () => {
-    this.setState({ chosenStation: null });
-  };
 
   goBackToStations = () => {
     this.setState({
-      sideBarChosen: "Stations",
+      sideBarChosen: Config.SCREEN_IDENTIFIER_STATIONS,
       chosenStation: null
     });
 
@@ -231,13 +222,6 @@ class App extends Component {
     );
   };
 
-  checkItemStatistics = (station, item) => {
-    this.setState({
-      sideBarChosen: "Supply Statistics",
-      chosenStation: station,
-      chosenElement: item
-    });
-  };
 
   clearItemWarnings = (item, station) => {
     console.log(
@@ -255,52 +239,18 @@ class App extends Component {
   loadItems = elements => {
     let items = [];
     for (let i = 0; i < elements.length; i++)
-      if (elements[i].type === "category") {
-        let subelements = this.loadItems(elements[i].elements);
-        for (let j = 0; j < subelements.length; j++) items.push(subelements[j]);
+      if (elements[i].type === Config.ELEMENT_TYPE_CATEGORY) {
+        let sub_elements = this.loadItems(elements[i].elements);
+        for (let j = 0; j < sub_elements.length; j++) items.push(sub_elements[j]);
       } else {
         items.push(elements[i]);
       }
     return items;
   };
 
-  getStationItems = station => {
-    return this.loadItems(station.elements);
-  };
 
-  checkForNotifications = station => {
-    let items = this.getStationItems(station);
 
-    let numberofNotif = 0;
-    items.forEach(element => {
-      if (element.notifications.length > 0) numberofNotif++;
-    });
 
-    if (numberofNotif === 0) return false;
-    else return true;
-  };
-
-  getStationItemStock = (item, station) => {
-    let stock = 0;
-    let stationItems = this.getStationItems(station);
-    // console.log(item.name + " " + station._name);
-    for (let i = 0; i < stationItems.length; i++)
-      if (stationItems[i]._name === item._name)
-        stock += stationItems[i]._quantity;
-    return stock;
-  };
-  getFloorStock = (item, floor, stations) => {
-    let stock = 0;
-    // console.log(item.name + " " + floor);
-    for (let i = 0; i < stations.length; i++) {
-      if (String(stations[i]._floor) === String(floor)) {
-        // console.log(stations[i]._name + " " + floor + " " + stations[i]._floor);
-        stock += this.getStationItemStock(item, stations[i]);
-      }
-    }
-
-    return stock;
-  };
 
   getAllItems = stations => {
     let allItems = [];
@@ -328,24 +278,6 @@ class App extends Component {
     return floors;
   };
 
-  mapItemsToStock = stations => {
-    let allItems = this.getAllItems(stations);
-    let nrOfFloors = this.getNumberOfFloors(stations);
-    let mappedItems = new Array(nrOfFloors + 1);
-    for (let i = 1; i <= nrOfFloors; i++)
-      mappedItems[i] = new Array(allItems.length);
-
-    for (let i = 0; i < allItems.length; i++) {
-      for (let currentFloor = 1; currentFloor <= nrOfFloors; currentFloor++) {
-
-        mappedItems[currentFloor][i] = this.getFloorStock(
-            allItems[i],
-            currentFloor,
-            stations);
-      }
-    }
-    return mappedItems;
-  };
 
 
   /**
@@ -360,14 +292,21 @@ class App extends Component {
 
     try {
       /** As cloning a fully functional Object isn't that pretty, we will recreate the first station to us as a holder */
-      let stockHolder = new Station(data["stations"][0]);
+      data = data["stations"][0];
+      console.log(data);
+      data["elements"].push({
+        ID : "temporary-category-for-fresh-elements",
+        name: "Others",
+        type : Config.ELEMENT_TYPE_CATEGORY,
+        image : "images/temporary_category.png",
+        elements : []
+      });
+      let stockHolder = new Station(data);
       for (let i = 1; i < stations.length; i++) {
         Object.keys(stations[i].elementsFlat).forEach(key => {
-          if (stockHolder.elementsFlat.hasOwnProperty(String(key))
-              && stockHolder.elementsFlat[String(key)].type === Config.ELEMENT_TYPE_ITEM
-              && stations[i].elementsFlat[String(key)].type === Config.ELEMENT_TYPE_ITEM
-          ) {
-            stockHolder.elementsFlat[String(key)].quantity += stations[i].elementsFlat[String(key)].quantity;
+          if(stations[i].elementsFlat[String(key)].type === Config.ELEMENT_TYPE_ITEM) {
+            if (stockHolder.elementsFlat.hasOwnProperty(String(key)) && stockHolder.elementsFlat[String(key)].type === Config.ELEMENT_TYPE_ITEM) stockHolder.elementsFlat[String(key)].quantity += stations[i].elementsFlat[String(key)].quantity;
+            else stockHolder.elementsFlat["temporary-category-for-fresh-elements"].elements.push(stations[i].elementsFlat[String(key)]);
           }
 
           /**

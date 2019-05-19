@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../resources/styles/Station.scss";
 import Tree from "./../Tree/Tree";
+import AppContext from "../../Model/AppContext";
 
 class StationProfile extends Component {
 
@@ -8,14 +9,6 @@ class StationProfile extends Component {
     super(props);
     this.scrollReference = React.createRef();
   }
-
-  state = {
-    stations: this.props.chosenStation.elements,
-    chosenElement: null,
-    notifications: null,
-    numberOfItems: this.props.getStationItems(this.props.chosenStation).length
-  };
-
 
 
   render() {
@@ -35,17 +28,17 @@ class StationProfile extends Component {
             <div className={"image"}><img alt="Station profile"  src={this.props.chosenStation.image} /></div>
             <div className={"info"}>
               <div className={"title"}>
-                <div className={"icon " + (this.state.notifications === true ? "warn" : "") }><i className="material-icons">ev_station</i></div>
+                <div className={"icon " + (this.props.notifications === true ? "warn" : "") }><i className="material-icons">ev_station</i></div>
                 <p>Station #{this.props.chosenStation.name}</p>
               </div>
               <div className={"description"}><p>{this.props.chosenStation.description}</p></div>
 
               <div className={"data"}>
-                <div className={"itemCount"}><i className="material-icons">label</i>{this.state.numberOfItems} unique items</div>
+                <div className={"itemCount"}><i className="material-icons">label</i>{this.props.chosenStation.uniqueItems} unique items</div>
 
                 <div className={"actions"}>
                   <div className="returnButton" onClick={() => this.props.goBackToStations()}><div className={"content"}><p>Return to stations</p></div></div>
-                  <div className="viewButton" onClick={() => this.props.onClickSupplyStation(this.props.chosenStation)}><div className={"content"}><p>View statistics for station</p></div></div>
+                  <div className="viewButton" onClick={() => this.context.doShowScreenSupplyStation(this.props.chosenStation, null)}><div className={"content"}><p>View statistics for station</p></div></div>
                 </div>
               </div>
 
@@ -66,7 +59,6 @@ class StationProfile extends Component {
   }
 
   componentDidMount() {
-    this.setState({notifications: this.props.checkForNotifications(this.props.chosenStation)});
     this.scrollReference.current.addEventListener('scroll', this.listenToScroll);
   }
 
@@ -85,4 +77,5 @@ class StationProfile extends Component {
 
 }
 
+StationProfile.contextType = AppContext;
 export default StationProfile;

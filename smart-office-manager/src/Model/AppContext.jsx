@@ -25,7 +25,7 @@ const AppContext = React.createContext({
      * [Read the JSDoc in Station.elementsFlat]
      * @param {Element.ID} elementID
      */
-    doChooseStationsElement : (elementID) => {}
+    doChooseElement : (elementID) => {}
 
 });
 export default AppContext;

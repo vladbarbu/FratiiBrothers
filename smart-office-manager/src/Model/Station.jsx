@@ -2,6 +2,20 @@ import Element from "./Element";
 import Config from "../config";
 
 class Station {
+  get uniqueItems() {
+    return this._uniqueItems;
+  }
+
+  set uniqueItems(value) {
+    this._uniqueItems = value;
+  }
+  get hasWarning() {
+    return this._hasWarning;
+  }
+
+  set hasWarning(value) {
+    this._hasWarning = value;
+  }
   get elementsFlat() {
     return this._elementsFlat;
   }
@@ -78,7 +92,32 @@ class Station {
     })();
 
 
+    /**
+     * Important: Station.elementsFlat will be an object contain a flat mapping of the elements. (ID => element).
+     * As it is an Object, you cannot cover it with a for-loop.
+     * @type {Object}
+     */
     this.elementsFlat = (!Config.isEmpty(this.elements) && this.elements.length > 0) ? Station.flattenElements(this.elements) : {};
+    this.hasWarning = (()=>{
+        let count = 0;
+        Object.keys(this.elementsFlat).forEach(key => {
+          if (this.elementsFlat[key].type === Config.ELEMENT_TYPE_ITEM) {
+            count += (!Config.isEmpty(this.elementsFlat[key].notifications)) ? this.elementsFlat[key].notifications.length : 0
+          }
+        });
+      return count > 0;
+    })();
+
+
+    this.uniqueItems = (()=>{
+      let count = 0;
+      Object.keys(this.elementsFlat).forEach(key => {
+        if (this.elementsFlat[key].type === Config.ELEMENT_TYPE_ITEM) count++;
+      });
+      return count;
+    })();
+
+
   }
 
   /**

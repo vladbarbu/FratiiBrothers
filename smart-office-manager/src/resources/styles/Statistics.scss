@@ -1,0 +1,80 @@
+@import "config";
+.ScreenStatistics{
+  width: calc(100% - 2 * 20px);
+  padding: 20px;
+  & > .header{
+    & > .sectionTitle{}
+    &  > .stationList{
+      display: grid;
+      grid-column-gap: 20px;
+      grid-template-columns: repeat(auto-fill, $stationIndicatorWidth);
+      margin-bottom: 30px;
+    }
+  }
+
+  & > .content{
+    & > .tabs{
+      & > .header{
+        display: grid;
+        grid-column-gap: 10px;
+        grid-template-columns: repeat(auto-fill, 250px);
+
+        .SupplyTab{
+          cursor: pointer;
+          grid-column: span 1;
+          border-radius: 4px;
+          padding: 20px 40px 20px 20px;
+          box-shadow: 0 0 5px rgba(0,0,0,0.05);
+          background: #ffffff;
+          border: 1px solid #eeeeee;
+          transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+
+          &.active{
+            background: $statistic;
+            border:1px solid $statistic;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.09);
+            transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+          }
+          &:not(.active):hover, &:not(.active):active{
+            border: 1px solid #ddd;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.09);
+            transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+          }
+
+          & > .content{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            & > .icon{
+              min-width: 20px;
+              & > i{
+                font-size: 14pt;
+                color: #2c2c2c;
+              }
+
+            }
+            & > .title{
+              flex: 1;
+              & > p{
+                font-size: 10pt;
+                color: #2c2c2c;
+                font-weight: 700;text-align: center;
+                text-transform: capitalize;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+      & > .content{
+
+      }
+    }
+  }
+}
+
+.SideBarStatistics{
+  width: $sideBarWidth;
+  display: flex;
+  flex-direction: column;
+}

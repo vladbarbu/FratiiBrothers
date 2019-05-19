@@ -13,7 +13,14 @@ class Category extends PureComponent{
 
     render() {
 
-        let active = this.context.screen === "Stations" ? this.props.element.activeInStations : (this.context.screen === "Item Stock" ? this.props.element.activeInStock : false);
+        let active =
+            this.context.screen ===  Config.SCREEN_IDENTIFIER_STATIONS ?
+                this.props.element.activeInStations :
+                (this.context.screen ===  Config.SCREEN_IDENTIFIER_STOCK ?
+                    this.props.element.activeInStock :
+                    (this.context.screen ===  Config.SCREEN_IDENTIFIER_STATISTICS ?
+                        this.props.element.activeInStatistics : false)
+                );
 
         return (<div className={"Category"}>
             <div className={"card" + ( active ? " active" : "") } onClick={() => {this.context.doTreeElementToggle(this.props.element.ID);}}>

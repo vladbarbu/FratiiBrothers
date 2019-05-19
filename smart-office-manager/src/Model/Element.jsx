@@ -1,4 +1,12 @@
+import Config from "./../config";
 class Element {
+  get activeInStatistics() {
+    return this._activeInStatistics;
+  }
+
+  set activeInStatistics(value) {
+    this._activeInStatistics = value;
+  }
   get activeInStock() {
     return this._activeInStock;
   }
@@ -123,18 +131,15 @@ class Element {
     })();
     this.notifications = (() => {
       let data = [];
-      let notifications = object.hasOwnProperty("notifications")
-        ? object["notifications"]
-        : [];
-      if (notifications && notifications.length > 0)
-        for (let i = 0; i < notifications.length; i++)
-          data.push(notifications[i]);
+      let notifications = object.hasOwnProperty("notifications") ? object["notifications"] : [];
+      if (!Config.isEmpty(notifications) && notifications.length > 0) for (let i = 0; i < notifications.length; i++) data.push(notifications[i]);
       return data;
     })();
 
 
     this.activeInStations = false;
     this.activeInStock = false;
+    this.activeInStatistics = false;
   }
 }
 

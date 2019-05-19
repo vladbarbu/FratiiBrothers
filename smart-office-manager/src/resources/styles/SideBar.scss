@@ -6,7 +6,7 @@
   position: absolute;
   z-index: 5;
   height: 100%;
-  width: 360px;
+  width: $sideBarWidth;
   transform: translateX(500px);
   transition: transform 0.3s;
   will-change: transform;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../resources/styles/SupplyStatistics.scss";
+import "../resources/styles/Statistics.scss";
 import Calendar from "./Calendar";
 
 class SupplyStatistics extends Component {

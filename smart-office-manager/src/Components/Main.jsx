@@ -5,6 +5,7 @@ import ScreenNotifications from "./Screen/ScreenNotifications";
 import ScreenRequests from "./Screen/ScreenRequests";
 import ScreenStations from "./Screen/ScreenStations";
 import ScreenStatistics from "./Screen/ScreenStatistics";
+import Config from "../config";
 
 class Main extends Component {
   state = {
@@ -20,32 +21,23 @@ class Main extends Component {
          * *1* chosenStation
          * *2* chosenElement
          *
-         * TODO declare another element for the stock
          */
         chosenElement: this.props.chosenElement,
         chosenStation: this.props.chosenStation,
-
 
         /**
          * Persistent data -- TODO change later into Context API
          */
 
         stations: this.props.stations,
-        items: this.props.items,
-        itemStocks: this.props.itemStocks,
 
         /**
          * Functionality
          */
 
-        checkForNotifications: this.props.checkForNotifications,
         goBackToStations: this.goBackToStations,
 
         onClickStation: this.onClickStation,
-        onClickSupplyStation: this.onClickSupplyStation,
-
-        getStationItems: this.props.getStationItems,
-        checkItemStatistics: this.props.checkItemStatistics,
         clearItemWarnings: this.props.clearItemWarnings,
         refillStock: this.props.refillStock,
 
@@ -54,15 +46,20 @@ class Main extends Component {
         toggleInputPopup: this.props.toggleInputPopup,
     };
 
+    let stockProps = {
+        chosenStockElement : this.props.chosenStockElement,
+        chosenStockStation : this.props.chosenStockStation,
+        stockHolder : this.props.stockHolder
+    };
+
     let statisticsProps = {
-      checkForNotifications: this.props.checkForNotifications,
-      stations: this.props.stations,
-      onClickSupplyStation: this.onClickSupplyStation,
-      chosenStation: this.props.chosenStation,
-      chosenItem: this.props.chosenItem,
-      itemChoose: this.itemChoose,
-      updateStations: this.updateStations,
-      localStation: this.state.localStation
+
+        chosenStatisticsElement : this.props.chosenStatisticsElement,
+        chosenStatisticsStation : this.props.chosenStatisticsStation,
+
+        stations: this.props.stations,
+        updateStations: this.updateStations,
+        localStation: this.state.localStation
     };
 
 
@@ -72,15 +69,15 @@ class Main extends Component {
           {
             (()=>{
               switch (this.props.sideBarChosen) {
-                case "Notifications":
+                case Config.SCREEN_IDENTIFIER_NOTIFICATIONS:
                   return <ScreenNotifications />;
-                case "Stations":
+                case Config.SCREEN_IDENTIFIER_STATIONS:
                   return <ScreenStations {...stationsProps} />;
-                  case "Item Stock":
-                  return <ScreenItemStock stockHolder={this.props.stockHolder} />;
-                case "Product Requests":
+                  case  Config.SCREEN_IDENTIFIER_STOCK:
+                  return <ScreenItemStock {...stockProps}  />;
+                case  Config.SCREEN_IDENTIFIER_REQUESTS:
                   return <ScreenRequests />;
-                case "Supply Statistics":
+                case  Config.SCREEN_IDENTIFIER_STATISTICS:
                   return <ScreenStatistics {...statisticsProps} />;
                 default:
                   return <div />;
@@ -94,10 +91,6 @@ class Main extends Component {
     this.props.onClickStation(element);
   };
 
-  onClickSupplyStation = element => {
-    this.setState({ localStation: element });
-    this.props.onClickSupplyStation(element);
-  };
 
   goBackToStations = () => {
     this.props.goBackToStations();
