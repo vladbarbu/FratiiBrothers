@@ -9,6 +9,24 @@ https://sketch.cloud/s/8YoYw
 - [x] Networking link for Product Request (DO)
 - [x] Networking link for Notification (DO)
 
+# [Roadmap] Back-Office
+- [x] Tree of Elements (Category -> ... -> Subcategory -> ... -> Item -> *Stations*)
+- [x] Memorize Tree structure (for navigation integrity)
+- [x] Stations Screen
+- [x] Item Stock Screen
+- [x] Statistics Screen
+  - [x] Chart.js (React wrapper) test
+  - [ ] Calendar (with time options for dataset)
+  - [ ] Charts (mixed, with time options for dataset)
+- [ ] Action Modals
+- [ ] Networking link for Universe
+- [ ] Smart caching system for Universal Networking
+- [ ] Networking link for Refill (DO)
+- [ ] Networking link for Edit (DO)
+- [ ] Networking link for Clear Warnings (DO)
+- [ ] Networking link for Notification dismiss (DO)
+- [ ] Networking link for Statistics (RECEIVE) !!!
+
 # [Roadmap] Concept & Resources
 - [x] Create C4 diagrams
 - [x] Create wireframes (and UI) for the
