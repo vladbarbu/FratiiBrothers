@@ -3,13 +3,16 @@
 .SideBar {
   margin: 0;
   right: 0;
-  position: fixed;
+  position: absolute;
   z-index: 5;
   height: 100%;
   width: $sideBarWidth;
   transform: translateX(500px);
   transition: transform 0.3s;
   will-change: transform;
+  display: flex;
+  flex-direction: column;
+
 
 
   &.placeholder{
@@ -37,7 +40,6 @@
       }
     }
   }
-
   &.active {
     transform: translateX(0);
     transition: transform 0.3s;
@@ -55,10 +57,14 @@
     width: 100%;
     background: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
-    & > *{
+
+    & > * {
       flex-shrink: 0;
     }
+
 
     & > .preHeader{
       display: none;
@@ -96,11 +102,11 @@
         }
       }
     }
-
     & > .header{
       width: 100%;
       display: flex;
       flex-direction: column;
+      border-bottom: 1px solid #eeeeee;
       & > *{flex-shrink: 0}
       & > .image{
         width: 100%;
@@ -118,142 +124,175 @@
         padding: 15px 15px 0 15px;
       }
     }
-    & > .main{
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 15px;
-      height: calc(100% - 2 * 15px);
-      width: calc(100% - 2 * 15px);
-      padding: 15px 15px 15px 15px;
-      grid-auto-rows: minmax(min-content, max-content);
-      border-top: 1px solid #eeeeee;
-      & > .sectionTitle{
-        grid-column: span 2;
-        margin-bottom: 5px;
-        & > i{
-          font-size: 14pt;
-        }
-      }
-      & > .box{
-        grid-column: span 2;
-        height: 70px;
-        border: 1px solid #eeeeee;
+    & > .wrapper {
+      width: 100%;
+      flex: 1;
+      & > .main {
+        overflow: hidden;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
+        width: calc(100% - 2 * 15px);
+        padding: 0 15px;
 
-        & > p{
-          color: #ddd;
-          font-size: 30pt;
-          font-weight: 300;
-          margin: 0;
-        }
-        & > span{
-          font-size: 12pt;
-          margin-left: 10px;
-          font-weight: 500;
-          color: #ddd;
-        }
-      }
-      & > .data{
-        grid-column: span 2;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        &.warn{
-          & > p{
-            color: $red;
+        & > .sectionTitle {
+          grid-column: span 2;
+          margin-bottom: 15px;
+          margin-top: 15px;
+
+          & > i {
+            font-size: 14pt;
           }
         }
-        &.notifications{
-          & > span{
+
+        & > .box {
+          width: 100%;
+          height: 70px;
+          border: 1px solid #eeeeee;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 15px;
+
+          & > p {
+            color: #ddd;
+            font-size: 30pt;
+            font-weight: 300;
+            margin: 0;
+          }
+
+          & > span {
+            font-size: 12pt;
+            margin-left: 10px;
+            font-weight: 500;
+            color: #ddd;
+          }
+        }
+
+        & > .data {
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+
+          &.warn {
+            & > p {
+              color: $red;
+            }
+          }
+
+          &.notifications {
+            & > span {
+              margin-right: 6px;
+            }
+
+            & > .button {
+              padding: 2px 12px;
+              border-radius: 4px;
+              border: 1px solid #eeeeee;
+              transition: background 0.2s;
+              cursor: pointer;
+              background: #fafafa;
+
+              & > span {
+                text-align: center;
+                font-size: 10pt;
+                color: #2c2c2c;
+                font-weight: 400;
+              }
+
+              &:hover, &:active {
+                background: #f5f5f5;
+                transition: background 0.2s;
+              }
+            }
+          }
+
+          & > i {
+            font-size: 14pt;
+            color: #2c2c2c;
             margin-right: 6px;
           }
-          & > .button{
-            padding: 2px 12px;
-            border-radius: 4px;
-            border: 1px solid #eeeeee;
-            transition: background 0.2s;
-            cursor: pointer;
-            background: #fafafa;
-            & > span{
-             text-align: center;
-              font-size: 10pt;
-              color: #2c2c2c;
-              font-weight: 400;
+
+          & > span {
+            font-weight: 300;
+            font-size: 10pt;
+            color: #2c2c2c;
+            margin-right: 2px;
+
+          }
+
+          & > p {
+            margin: 0;
+            font-weight: 600;
+            font-size: 10pt;
+            color: #2c2c2c;
+          }
+        }
+
+        & > .actions {
+          margin-bottom: 15px;
+          grid-column: span 2;
+          margin-top: 10px;
+          display: grid;
+          grid-gap: 10px;
+          grid-template-columns: 1fr 1fr;
+
+          & > .button {
+
+            grid-column: span 1;
+
+            &.refill {
+              @include medium-button($colorPrimary, #ffffff);
+              grid-column: span 2;
+              width: calc(100% - 2 * 15px);
+              padding: 25px 15px;
+
+              & > .content > p {
+                font-size: 11pt
+              }
             }
-            &:hover, &:active{
-              background: #f5f5f5;
-              transition: background 0.2s;
+
+            &.edit {
+              @include medium-button(#4c4c4c, #ffffff);
+              width: calc(100% - 2 * 5px);
+              padding: 20px 5px;
+
+              & > .content > p {
+                font-size: 11pt
+              }
+            }
+
+            &.clear {
+              @include medium-button(#eeeeee, #4c4c4c);
+              width: calc(100% - 2 * 5px);
+              padding: 20px 5px;
+
+              & > .content > p {
+                font-size: 11pt
+              }
+            }
+
+            &.statistics {
+              @include medium-button($statistic, #4c4c4c);
+              grid-column: span 2;
+              width: calc(100% - 2 * 5px);
+              padding: 10px 5px;
+
+              & > .content > p {
+                font-size: 11pt
+              }
             }
           }
         }
-        & > i{
-          font-size: 14pt;
-          color: #2c2c2c;
-          margin-right: 6px;
-        }
-        & > span{
-          font-weight: 300;
-          font-size: 10pt;
-          color: #2c2c2c;
-          margin-right: 2px;
 
-        }
-        & > p{
-          margin: 0;
-          font-weight: 600;
-          font-size: 10pt;
-          color: #2c2c2c;
-        }
       }
-
-      & > .actions{
-        grid-column: span 2;
-        margin-top: 10px;
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: 1fr 1fr;
-        & > .button{
-
-          grid-column: span 1;
-          &.refill{
-            @include medium-button($colorPrimary, #ffffff);
-            grid-column: span 2;
-            width: calc(100% - 2 * 15px);
-            padding: 25px 15px;
-            & > .content > p{font-size: 11pt}
-          }
-
-          &.edit{
-            @include medium-button(#4c4c4c, #ffffff);
-            width: calc(100% - 2 * 5px);
-            padding: 20px 5px;
-            & > .content > p{font-size: 11pt}
-          }
-          &.clear{
-            @include medium-button(#eeeeee, #4c4c4c);
-            width: calc(100% - 2 * 5px);
-            padding: 20px 5px;
-            & > .content > p{font-size: 11pt}
-          }
-          &.statistics{
-            @include medium-button($statistic, #4c4c4c);
-            grid-column: span 2;
-            width: calc(100% - 2 * 5px);
-            padding: 10px 5px;
-            & > .content > p{font-size: 11pt}
-          }
-        }
-      }
-
     }
   }
 }
 
 
-@media #{$top-tablet-big} {
+@media #{$query-toggle-menu} {
   .SideBar {
     transition: transform 0.2s;
     &.active {
@@ -281,12 +320,14 @@
       & > .preHeader{
         display: flex;
       }
-      & > .main{
-        & > .actions{
-          padding-bottom: 10px;
-          &  > .button{
-            padding-top: 20px !important;
-            padding-bottom: 20px !important;
+      & > .wrapper{
+        & > .main{
+          & > .actions{
+            padding-bottom: 10px;
+            &  > .button{
+              padding-top: 20px !important;
+              padding-bottom: 20px !important;
+            }
           }
         }
       }

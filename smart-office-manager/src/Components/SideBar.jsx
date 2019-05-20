@@ -126,7 +126,8 @@ class SideBar extends Component {
                           })}
                       </div>
                   </div>
-                  <div className={"main"}>
+                  <div className={"wrapper"}>
+                    <div className={"main"}>
                       <div className={"sectionTitle"}><i className="material-icons">description</i> Description</div>
                       <div className={"box quantity"}><p>{element.quantity}</p><span>{ this.props.sideBarChosen === Config.SCREEN_IDENTIFIER_STOCK ? "in station stock" : "in station stock"  }</span></div>
                       {description.map((element,index)=>{
@@ -150,6 +151,7 @@ class SideBar extends Component {
                           <div onClick={()=>{this.context.doShowScreenSupplyStation(station,element)}} className={"button statistics"}><div className={"content"}><p>View item statistics</p></div></div>
                       </div>
 
+                  </div>
                   </div>
               </div>
           </div>

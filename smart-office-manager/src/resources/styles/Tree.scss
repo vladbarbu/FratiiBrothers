@@ -627,7 +627,7 @@
           transition: background 0.2s, box-shadow 0.2s, border 0.2s;
 
           & > .action{
-            z-index: 1;
+            z-index: 0;
             display: flex;
             background: $statistic;
             transition: background 0.2s;

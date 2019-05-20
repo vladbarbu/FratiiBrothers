@@ -6,9 +6,13 @@
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  &::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
+  }
 }
 
-@media #{$top-tablet} {
+@media #{$query-toggle-menu} {
   .Main{
     height: calc(100% - #{$navHeight});
     padding-top: $navHeight;

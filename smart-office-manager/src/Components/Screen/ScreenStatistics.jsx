@@ -6,6 +6,7 @@ import SupplyTab from "../Statistics/SupplyTab";
 import SideBarStatistics from "../Statistics/SideBarStatistics";
 import AppContext from "../../Model/AppContext";
 import SupplyTabContentCalendar from "../Statistics/SupplyTabContentCalendar";
+import SupplyTabContentGraph from "../Statistics/SupplyTabContentGraph";
 
 class ScreenStatistics extends Component {
 
@@ -51,8 +52,8 @@ class ScreenStatistics extends Component {
                             <SupplyTab index={1} doChooseTab={this.doChooseTab} activeTabIndex={ this.state.activeTabIndex} element={{icon:"graphic_eq", title : "Supply Graph"}} />
                             </div>
                             <div className={"content"}>
-                                { this.state.activeTabIndex === 0 ?    <SupplyTabContentCalendar element={this.props.chosenStatisticsElement} /> : null }
-
+                                { this.state.activeTabIndex === 0 ? <SupplyTabContentCalendar element={this.props.chosenStatisticsElement} /> : null }
+                                { this.state.activeTabIndex === 1 ? <SupplyTabContentGraph element={this.props.chosenStatisticsElement} /> : null }
                             </div>
                         </div>
 

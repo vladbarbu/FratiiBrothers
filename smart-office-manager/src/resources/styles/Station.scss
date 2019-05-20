@@ -45,7 +45,7 @@ STATION LIST
       }
     }
 
-    @media #{$top-mobile-big}{
+    @media all and (max-width: 700px){
       & > .stationFloorList {
         grid-template-columns: 1fr;
       }
@@ -56,7 +56,7 @@ STATION LIST
 
 }
 
-@media #{$top-tablet} {
+@media #{$query-toggle-menu} {
   .StationList{
     padding: 15px;
     width: calc(100% - 2 * 15px);
@@ -213,7 +213,7 @@ STATION PROFILE
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   & > *{
     flex-shrink: 0;
   }
@@ -402,9 +402,7 @@ STATION PROFILE
 
 
 
-  & > .itemTree{
-    max-width: calc(100%  - 2 * 20px - #{$sideBarWidth} - 10px);
-  }
+
 }
 
 .sectionTitle{
@@ -423,8 +421,10 @@ STATION PROFILE
   }
 }
 
+
 .itemTree{
   max-width: calc(100%  - 2 * 20px - #{$sideBarWidth} - 10px);
+  //max-width: calc(100%  - 2 * 20px - 10px);
   width: calc(100% - 2 * 20px);
   padding: 20px;
   flex: 1;
@@ -436,7 +436,7 @@ STATION PROFILE
 }
 
 
-@media #{$top-tablet-big} {
+@media #{$query-toggle-menu} {
   .StationProfile{
 
     & > .header{
@@ -462,8 +462,8 @@ STATION PROFILE
 
         & > .image{
           margin-right: 0;
-          height: 160px;
-          max-height: 160px;
+          height: 180px;
+          max-height: 180px;
           width: 100%;
           max-width: 100%;
           border-radius: 2px;
@@ -473,6 +473,7 @@ STATION PROFILE
           }
         }
         & > .info{
+          width: 100%;
           height: auto;
           flex: none;
           padding: 0;
@@ -519,6 +520,7 @@ STATION PROFILE
             }
 
             & > .actions{
+              width: 100%;
               height: 100%;
               align-items: flex-end;
               display: grid;
@@ -677,7 +679,7 @@ STATION INDICATOR
 
 
 }
-@media #{$top-tablet-big}{
+@media #{$query-toggle-menu}{
   .StationIndicator{
     grid-column: span 1;
 

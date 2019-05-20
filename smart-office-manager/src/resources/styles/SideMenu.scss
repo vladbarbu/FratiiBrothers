@@ -89,7 +89,7 @@
   }
 }
 
-@media #{$top-tablet} {
+@media #{$query-toggle-menu} {
   .SideMenu{
     position: absolute;
     left: 0;

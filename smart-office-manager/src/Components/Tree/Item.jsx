@@ -11,27 +11,30 @@ class Item extends PureComponent{
    };
 
    componentWillReceiveProps(nextProps, nextContext) {
-       let active =
-           this.context.screen ===  Config.SCREEN_IDENTIFIER_STATIONS ?
-               this.props.element.activeInStations :
-               (this.context.screen ===  Config.SCREEN_IDENTIFIER_STOCK ?
-                       this.props.element.activeInStock :
-                       (this.context.screen ===  Config.SCREEN_IDENTIFIER_STATISTICS ?
-                           this.props.element.activeInStatistics : false)
-               );
-       this.setState({
-           active : active
-       })
+
+       // this.setState({
+       //     active : active
+       // });
+       // console.log(this.props.element);
+       // console.log(this.context.screen);
+       // console.log(active);
 
    }
 
 
     render() {
-
+        let active =
+            this.context.screen ===  Config.SCREEN_IDENTIFIER_STATIONS ?
+                this.props.element.activeInStations :
+                (this.context.screen ===  Config.SCREEN_IDENTIFIER_STOCK ?
+                        this.props.element.activeInStock :
+                        (this.context.screen ===  Config.SCREEN_IDENTIFIER_STATISTICS ?
+                            this.props.element.activeInStatistics : false)
+                );
 
         return (
             <div className={"Item"}>
-                <div className={"card" + (this.state.active ? " active" : "") } onClick={()=>{ this.context.doChooseElement(this.props.element.ID); }}  >
+                <div className={"card" + (active ? " active" : "") } onClick={()=>{ this.context.doChooseElement(this.props.element.ID); }}  >
                     <div className={"icon"}><i className={"material-icons"}>subdirectory_arrow_right</i></div>
                     <div className={"image"}><img alt={this.props.element.name} src={require("./../../resources/" + this.props.element.image)}/></div>
                     <div className={"content"}>
@@ -56,7 +59,7 @@ class Item extends PureComponent{
                     </div>
                     {  (this.context.screen ===  Config.SCREEN_IDENTIFIER_STOCK ) ? <div className={"toggle" }><div className={"icon"}><img alt={"Toggle"} src={require("./../../resources/images/icon/ic_keyboard_arrow_down_grey.svg")}/></div></div> : null}
                 </div>
-                { (this.context.screen ===  Config.SCREEN_IDENTIFIER_STOCK ) && this.state.active ?
+                { (this.context.screen ===  Config.SCREEN_IDENTIFIER_STOCK ) && active ?
                     <div className={"innerTree"}>
                         <StationList stations={this.context.stations} />
                     </div>

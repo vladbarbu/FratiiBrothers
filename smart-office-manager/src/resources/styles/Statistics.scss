@@ -39,6 +39,9 @@
             background: #ffffff;
             border: 1px solid #eeeeee;
             transition: border 0.2s, box-shadow 0.2s, background 0.2s;
+            display: flex;
+            align-items: center;
+
 
             &.active{
               background: $statistic;
@@ -53,20 +56,24 @@
             }
 
             & > .content{
+              flex: 1;
               display: flex;
               flex-direction: row;
               align-items: center;
               & > .icon{
                 min-width: 20px;
+                margin-right: 5px;
                 & > i{
                   font-size: 14pt;
                   color: #2c2c2c;
+                  line-height: 1.3;
                 }
 
               }
               & > .title{
                 flex: 1;
                 & > p{
+                  line-height: 1.4;
                   font-size: 10pt;
                   color: #2c2c2c;
                   font-weight: 700;text-align: center;
@@ -78,7 +85,176 @@
           }
         }
         & > .content{
+          .SupplyTabContent{
+            .disclaimer{
+               color: #aaa;
+               font-size: 10pt;
+               font-weight: 400;
+               margin-bottom: 20px;
+             }
+            &.Graph{
+              & > .header{
+                display: flex;
+                flex-direction: column;
+                & > .Tree{
+                  user-select: none;
+                  pointer-events: none;
+                  margin-bottom: 15px;
+                  margin-top: 5px;
+                  padding: 0;
+                  .Item{
+                    & > .card{
+                      box-shadow: none;
+                      padding: 6px;
+                      border-radius: 4px 0 0 4px;
+                      & > .image{
+                        border-radius: 2px;
+                        height: 50px;
+                        width: 70px;
+                        margin-right: 10px;
+                        & > img{
+                          border-radius: 2px;
+                        }
+                      }
+                      & > .content{
+                        p{
+                          font-size: 11pt;
+                        }
+                      }
+                      & > .action{
+                        width: 60px;
+                        right: - 60px;
+                        border-radius: 0 4px 4px 0;
+                      }
+                    }
+                  }
+                }
+                .sectionTitle{
+                  margin-bottom: 10px;
+                }
+               & > .time{
+                 display: flex;
+                 flex-direction: row;
+                 flex-wrap: wrap;
 
+                 $optionH : 46px;
+                 $optionW : 280px;
+                 $labelW : 100px;
+                 $borderRadius : 4px;
+
+                 & > .option{
+                   display: flex;
+                   flex-direction: row;
+                   align-items: center;
+                   padding: 6px 3px;
+                   overflow: hidden;
+                   width: $labelW;
+                   transition: width 0.2s;
+                   position: relative;
+
+                   &:not(.active){
+                     & > .label {
+                       &:hover, &:active {
+                         box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+                         transition: box-shadow 0.2s;
+                       }
+                     }
+                   }
+
+                   & > .label{
+                     box-shadow: none;
+                     cursor: pointer;
+                     height: calc(#{$optionH}  - 2 * 10px - 2 * 1px);
+                     width: calc(#{$labelW} - 2 * 10px - 2 * 1px);
+                     padding: 10px;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     border: 1px solid #ddd;
+                     border-radius: $borderRadius;
+                     z-index: 2;
+                     background: #ffffff;
+                     transition: background 0.2s, border-radius 0.2s, box-shadow 0.2s, border 0.2s;
+
+                     & > p{
+                       font-weight: 600;
+                       font-size: 10pt;
+                       color: #2c2c2c;
+                       margin: 0;
+                       transition: color 0.2s;
+                     }
+                   }
+                   & > .value{
+                     height: calc(#{$optionH} - 2 * 10px - 2 * 1px);
+                     width: calc((#{$optionW} - #{$labelW}  ) - 2 * 10px - 2 * 1px);
+                     padding: 10px;
+                     display: flex;
+                     align-items: center;
+                     justify-content: center;
+                     position: absolute;
+                     z-index: 1;
+                     border-radius:  0 $borderRadius $borderRadius 0;
+                     border: 1px solid $statistic;
+                     background: #fff;
+                     left:  calc( #{$labelW} - #{$optionW} );
+                     transition: left 0.2s;
+                     will-change: left;
+
+                     & > input{
+                       width: 100%;
+                       text-align: center;
+                       font-weight: 600;
+                       font-size: 10pt;
+                       color: #2c2c2c;
+                       margin: 0;
+                       background: transparent;
+                       outline: none;
+                       border: none;
+                       &::-webkit-input-placeholder{
+                         font-weight: 600;
+                         font-size: 10pt;
+                         color: #2c2c2c;
+                       }
+                     }
+                   }
+
+                   &.active{
+                     width: $optionW;
+                     transition: width 0.2s;
+                      & > .label{
+                        border: 1px solid $statistic;
+                        border-radius:  $borderRadius 0 0 $borderRadius;
+                        background: $statistic;
+                        transition: background 0.2s, border-radius 0.2s, border 0.2s;
+                        & > p{
+                          color: darken($statistic,30%);
+                          transition: color 0.2s;
+                        }
+                      }
+                     & > .value{
+                       left: $labelW;
+                       transition: left 0.2s;
+                       will-change: left;
+                       border-radius: 0 $borderRadius $borderRadius 0;
+                     }
+                   }
+
+                 }
+               }
+              }
+              & > .canvas{
+
+                margin-top: 15px;
+                border-top: 1px solid #eee;
+                padding-top: 15px;
+                padding-bottom: 40px;
+
+              }
+            }
+            &.Calendar{
+
+            }
+          }
         }
       }
     }
@@ -182,6 +358,37 @@
 }
 
 @media #{$top-tablet-big} {
+  .ScreenStatistics {
+    & > .main{
+      & > .content {
+        & > .tabs {
+          & > .header {
+            grid-template-columns: repeat(auto-fill, 180px);
+            .SupplyTab {
+              cursor: pointer;
+              grid-column: span 1;
+              border-radius: 4px;
+              padding: 18px 20px 18px 15px;
+              & > .content{
+                flex: 1;
+                & > .title{
+                  flex: 1;
+                  text-align: center;
+                  & > p{
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media #{$query-toggle-menu} {
   .ScreenStatistics {
 
     & > .main{
