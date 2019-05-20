@@ -1,19 +1,18 @@
 /**
  * Created by @VanSoftware on 2019-05-05.
  */
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import "../../resources/styles/Statistics.scss";
 import Tree from "../Tree/Tree";
 import Config from "../../config";
 
-class SideBarStatistics extends PureComponent {
+class SideBarStatistics extends Component {
 
     constructor(props){
         super(props);
         this.sideBar = React.createRef();
 
     }
-
 
 
     render() {

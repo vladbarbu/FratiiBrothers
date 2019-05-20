@@ -331,7 +331,6 @@ class Config{
          */
         let scope = this;
 
-        console.log("bam");
         scope.setState((prevState, prevProps) => {
             return { isSideBarStatisticsExpanded: (force !== null) ? (force === 'open') : !prevState.isSideBarStatisticsExpanded}
         })

@@ -56,6 +56,10 @@
     background: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     overflow-y: auto;
+    & > *{
+      flex-shrink: 0;
+    }
+
     & > .preHeader{
       display: none;
       height: $navHeight;
@@ -115,11 +119,14 @@
       }
     }
     & > .main{
+      overflow: hidden;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 15px;
+      height: calc(100% - 2 * 15px);
       width: calc(100% - 2 * 15px);
       padding: 15px 15px 15px 15px;
+      grid-auto-rows: minmax(min-content, max-content);
       border-top: 1px solid #eeeeee;
       & > .sectionTitle{
         grid-column: span 2;
