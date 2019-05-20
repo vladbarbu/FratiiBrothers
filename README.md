@@ -1,6 +1,56 @@
 # Live prototype (Employee/Manager App)
 https://sketch.cloud/s/8YoYw
 
+# [Roadmap] Front-Office
+- [x] Grid of Categories, Subcategories and Elements
+- [x] Element Profile
+- [x] Action Modals (confirmation modal, quanitity request modal)
+- [x] Networking link for Universe (RECEIVE - global request)
+- [x] Networking link for Product Request (DO)
+- [x] Networking link for Notification (DO)
+- [x] Responsive layout rules
+- [ ] Fix notification.date issue with Moment.js
+
+# [Roadmap] Back-Office
+- [x] Tree of Elements (Category -> ... -> Subcategory -> ... -> Item -> *Stations*)
+- [x] Memorize Tree structure (for navigation integrity)
+- [x] Stations Screen
+ - [x] List
+ - [x] Structure & Side Bar
+- [x] Item Stock Screen
+ - [x] List
+ - [x] Structure & Side Bar
+- [x] Statistics Screen
+  - [x] List (Stations)
+  - [x] Structure & Side Bar (Special)
+  - [x] Chart.js (React wrapper) test
+  - [ ] Calendar (with time options for dataset)
+  - [ ] Charts (mixed, with time options for dataset)
+- [ ] Product Requests Screen
+- [ ] Notifications Screen
+- [ ] Action Modals
+- [ ] Networking link for Universe
+- [ ] Smart caching system for Universal Networking
+- [ ] Networking link for Refill (DO)
+- [ ] Networking link for Edit (DO)
+- [ ] Networking link for Clear Warnings (DO)
+- [ ] Networking link for Notification dismiss (DO)
+- [ ] Networking link for Statistics (RECEIVE) !!!
+- [x] Responsive layout rules
+
+# [Roadmap] Concept & Resources
+- [x] Create C4 diagrams
+- [x] Create wireframes (and UI) for the
+  - [X] Employee Web App
+  - [x] Manager Web App
+- [X] Finish React tutorials (1-2 weeks)
+
+
+# Useful links:
+Networking: [__Axios__](https://github.com/axios/axios)  
+Date & Time: [__Moment.js__](https://momentjs.com/)    
+Graphs and Charts: __Chart.js__ with the [__React Wrapper__](https://github.com/jerairrest/react-chartjs-2/)  
+
 # FratiiBrothers
 Team members: <br>-Apostu Razvan (The Big Brother)<br>
                    -Barbu Vlad<br>
@@ -12,14 +62,4 @@ Team members: <br>-Apostu Razvan (The Big Brother)<br>
 # Trello
 https://trello.com/b/Q7hPnHmI/fratii-brothers
 
-# Public Roadmap
-- [x] Create C4 diagrams
-- [ ] Create wireframes (and UI) for the
-  - [X] Employee Web App
-  - [ ] Manager Web App
-- [X] Finish React tutorials (1-2 weeks)
-- [ ] Code UI and visual components (also objectify logic)
-- [ ] Connect to API and write the networking logic
 
-
-# Testing !!!!!
