@@ -4,7 +4,6 @@
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentCalendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentCalendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentGraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentGraph.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/config.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Statistics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Statistics.scss" afterDir="false" />
     </list>

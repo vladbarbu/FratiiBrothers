@@ -254,7 +254,44 @@
             }
             &.Graph{
             }
+
             &.Calendar{
+
+              .CalendarContainer{
+                width: calc(100% - 1px);
+                border-left: 1px solid #eeeeee;
+                border-top: 1px solid #eeeeee;
+                & > .header{
+                  border-bottom: 1px solid #eeeeee;
+                  width: 100%;
+                  display: grid;
+                  grid-template-columns: repeat(7, 1fr);
+                  & > .item{
+                    border-right: 1px solid #eeeeee;
+                    grid-column: span 1;
+                    padding: 10px;
+                    min-width: 40px;
+                    & > p{
+                      text-align: center;
+                      font-size: 10pt;
+                      color: #2c2c2c;
+                      font-weight: 600;
+                      margin: 0;
+                    }
+                  }
+                }
+                & > .body{
+                  display: grid;
+                  grid-auto-rows: minmax(min-content, max-content);
+                  grid-template-columns: repeat(7, 1fr);
+                  & > .item{
+                    grid-column: span 1;
+                    min-height: 100px;
+                    border-right: 1px solid #eeeeee;
+                    border-bottom: 1px solid #eeeeee;
+                  }
+                }
+              }
 
             }
           }

@@ -47,6 +47,27 @@ class SupplyTabContentCalendar extends PureComponent {
                 <div className={"canvas"}>
                     <span className={"sectionTitle"}><i className="material-icons">calendar_today</i> Stock vs. Prediction Calendar</span>
 
+                    <div className={"CalendarContainer"}>
+                        <div className={"header"}>
+                            <div className={"item"}><p>Monday</p></div>
+                            <div className={"item"}><p>Tuesday</p></div>
+                            <div className={"item"}><p>Wednesday</p></div>
+                            <div className={"item"}><p>Thursday</p></div>
+                            <div className={"item"}><p>Friday</p></div>
+                            <div className={"item"}><p>Saturday</p></div>
+                            <div className={"item"}><p>Sunday</p></div>
+                        </div>
+                        <div className={"body"}>
+                            <div className={"item"}></div>
+                            <div className={"item"}></div>
+                            <div className={"item"}></div>
+                            <div className={"item"}></div>
+                            <div className={"item"}></div>
+                            <div className={"item"}></div>
+                            <div className={"item"}></div>
+                            <div className={"item"}></div>
+                        </div>
+                    </div>
                 </div>
 
 
