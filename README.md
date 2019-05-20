@@ -8,6 +8,7 @@ https://sketch.cloud/s/8YoYw
 - [x] Networking link for Universe (RECEIVE - global request)
 - [x] Networking link for Product Request (DO)
 - [x] Networking link for Notification (DO)
+- [x] Responsive layout rules
 
 # [Roadmap] Back-Office
 - [x] Tree of Elements (Category -> ... -> Subcategory -> ... -> Item -> *Stations*)
@@ -28,6 +29,7 @@ https://sketch.cloud/s/8YoYw
 - [ ] Networking link for Clear Warnings (DO)
 - [ ] Networking link for Notification dismiss (DO)
 - [ ] Networking link for Statistics (RECEIVE) !!!
+- [x] Responsive layout rules
 
 # [Roadmap] Concept & Resources
 - [x] Create C4 diagrams
