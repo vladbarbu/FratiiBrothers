@@ -48,7 +48,7 @@ https://sketch.cloud/s/8YoYw
 
 # Useful links:
 Networking: [__Axios__](https://github.com/axios/axios)  
-Date & Time: __Moment.js__  
+Date & Time: [__Moment.js__](https://momentjs.com/)    
 Graphs and Charts: __Chart.js__ with the [__React Wrapper__](https://github.com/jerairrest/react-chartjs-2/)  
 
 # FratiiBrothers
