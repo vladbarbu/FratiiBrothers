@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="789d589e-2a7c-4f34-86ba-687aa8836754" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Tree/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Tree/Item.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/Main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/NavBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/NavBar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/SideBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/SideBar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/SideMenu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/SideMenu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/Station.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Station.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/Statistics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Statistics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/Tree.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Tree.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/config.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SideMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,6 +42,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/SideMenu.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="60" column="3" lean-forward="true" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="79" />
+              <folding>
+                <element signature="e#50#91#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/styles/Statistics.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
@@ -149,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/resources/data/data.json" />
         <option value="$PROJECT_DIR$/src/Components/Station/StationCard.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/App.scss" />
-        <option value="$PROJECT_DIR$/src/Components/SideMenu.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Tree/StationList.jsx" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/Main.jsx" />
@@ -172,6 +169,7 @@
         <option value="$PROJECT_DIR$/src/resources/styles/NavBar.scss" />
         <option value="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/Statistics.scss" />
+        <option value="$PROJECT_DIR$/src/Components/SideMenu.jsx" />
       </list>
     </option>
   </component>
@@ -319,7 +317,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87742000" />
+    <option name="totallyTimeSpent" value="87875000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,16 +513,6 @@
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="67" column="47" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
-          <folding>
-            <element signature="e#50#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -776,6 +764,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Statistics.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="249" column="37" selection-start-line="249" selection-start-column="37" selection-end-line="249" selection-end-column="37" />
+          <folding>
+            <element signature="e#238#461#0" />
+            <element signature="e#517#2228#0" />
+            <element signature="e#2686#7785#0" />
+            <element signature="e#3867#7769#0" />
+            <element signature="e#3563#4136#0" />
+            <element signature="e#4738#4981#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -790,17 +793,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/Statistics.scss">
+    <entry file="file://$PROJECT_DIR$/src/Components/SideMenu.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="249" column="37" selection-start-line="249" selection-start-column="37" selection-end-line="249" selection-end-column="37" />
+        <state relative-caret-position="432">
+          <caret line="60" column="3" lean-forward="true" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="79" />
           <folding>
-            <element signature="e#238#461#0" />
-            <element signature="e#517#2228#0" />
-            <element signature="e#2686#7785#0" />
-            <element signature="e#3867#7769#0" />
-            <element signature="e#3563#4136#0" />
-            <element signature="e#4738#4981#0" />
+            <element signature="e#50#91#0" expanded="true" />
           </folding>
         </state>
       </provider>

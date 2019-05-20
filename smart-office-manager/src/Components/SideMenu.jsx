@@ -58,7 +58,7 @@ class SideMenu extends Component {
           onItemClick={this.onItemClick}
         />
 
-        <SideMenuItem item={{ icon: "-", name: "Log Out", logout: true }} />
+        {/*<SideMenuItem item={{ icon: "-", name: "Log Out", logout: true }} />*/}
       </menu>
     );
   }
