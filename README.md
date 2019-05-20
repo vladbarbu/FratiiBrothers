@@ -15,8 +15,14 @@ https://sketch.cloud/s/8YoYw
 - [x] Tree of Elements (Category -> ... -> Subcategory -> ... -> Item -> *Stations*)
 - [x] Memorize Tree structure (for navigation integrity)
 - [x] Stations Screen
+ - [x] List
+ - [x] Structure & Side Bar
 - [x] Item Stock Screen
+ - [x] List
+ - [x] Structure & Side Bar
 - [x] Statistics Screen
+  - [x] List (Stations)
+  - [x] Structure & Side Bar (Special)
   - [x] Chart.js (React wrapper) test
   - [ ] Calendar (with time options for dataset)
   - [ ] Charts (mixed, with time options for dataset)
@@ -39,6 +45,11 @@ https://sketch.cloud/s/8YoYw
   - [x] Manager Web App
 - [X] Finish React tutorials (1-2 weeks)
 
+
+# Useful links:
+Networking: [__Axios__](https://github.com/axios/axios)
+Date & Time: __Moment.js__
+Graphs and Charts: __Chart.js__ with the [__React Wrapper__](https://github.com/jerairrest/react-chartjs-2/)
 
 # FratiiBrothers
 Team members: <br>-Apostu Razvan (The Big Brother)<br>
