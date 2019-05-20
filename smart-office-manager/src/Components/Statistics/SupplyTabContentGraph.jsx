@@ -82,15 +82,13 @@ const options = {
     }
 };
 
-const OPTION_DAY = 1;
-const OPTION_WEEK = 2;
-const OPTION_MONTH = 3;
+
 
 
 class SupplyTabContentGraph extends PureComponent {
 
     state = {
-        option : OPTION_DAY
+        option : Config.OPTION_DAY
     };
 
     render() {
@@ -105,15 +103,15 @@ class SupplyTabContentGraph extends PureComponent {
                     <Tree minimal = {true} elements = {[element]} />
                     <span className={"sectionTitle"}>Options</span>
                     <div className={"time"}>
-                        <div className={"option" + (this.state.option === OPTION_DAY ? " active" : "")} onClick={() => this.doOptionChange(OPTION_DAY)}>
+                        <div className={"option" + (this.state.option === Config.OPTION_DAY ? " active" : "")} onClick={() => this.doOptionChange(Config.OPTION_DAY)}>
                             <div className={"label"}><p>By Day</p></div>
                             <div className={"value"}><input type={"date"} placeholder={"Today"}/></div>
                         </div>
-                        <div className={"option" + (this.state.option === OPTION_WEEK? " active" : "")} onClick={() => this.doOptionChange(OPTION_WEEK)}>
+                        <div className={"option" + (this.state.option === Config.OPTION_WEEK? " active" : "")} onClick={() => this.doOptionChange(Config.OPTION_WEEK)}>
                             <div className={"label"}><p>By Week</p></div>
                             <div className={"value"}><input type={"date"} /></div>
                         </div>
-                        <div className={"option" + (this.state.option === OPTION_MONTH ? " active" : "")} onClick={() => this.doOptionChange(OPTION_MONTH)}>
+                        <div className={"option" + (this.state.option === Config.OPTION_MONTH ? " active" : "")} onClick={() => this.doOptionChange(Config.OPTION_MONTH)}>
                             <div className={"label"}><p>By Month</p></div>
                             <div className={"value"}><input type={"date"}/></div>
                         </div>

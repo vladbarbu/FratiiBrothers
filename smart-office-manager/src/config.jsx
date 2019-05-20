@@ -10,6 +10,10 @@ class Config{
     static SCREEN_IDENTIFIER_REQUESTS = "Product Requests";
 
 
+    static OPTION_DAY = 1;
+    static OPTION_WEEK = 2;
+    static OPTION_MONTH = 3;
+
 
     static generateAppContextValues(scope){
         return {

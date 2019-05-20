@@ -1,4 +1,7 @@
 @import "config";
+.Main{
+  overflow: hidden;
+}
 .ScreenStatistics{
   width: 100%;
   height: 100%;
@@ -9,6 +12,8 @@
     height: calc(100% - 2 * 20px);
     width: calc(100% - 2 * 20px);
     padding: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     & > .header{
       & > .sectionTitle{}
@@ -92,10 +97,11 @@
                font-weight: 400;
                margin-bottom: 20px;
              }
-            &.Graph{
+            &.Graph, &.Calendar{
               & > .header{
-                display: flex;
-                flex-direction: column;
+                .sectionTitle{
+                  margin-bottom: 10px;
+                }
                 & > .Tree{
                   user-select: none;
                   pointer-events: none;
@@ -129,98 +135,95 @@
                     }
                   }
                 }
-                .sectionTitle{
-                  margin-bottom: 10px;
-                }
-               & > .time{
-                 display: flex;
-                 flex-direction: row;
-                 flex-wrap: wrap;
+                & > .time{
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: wrap;
 
-                 $optionH : 46px;
-                 $optionW : 280px;
-                 $labelW : 100px;
-                 $borderRadius : 4px;
+                  $optionH : 46px;
+                  $optionW : 280px;
+                  $labelW : 100px;
+                  $borderRadius : 4px;
 
-                 & > .option{
-                   display: flex;
-                   flex-direction: row;
-                   align-items: center;
-                   padding: 6px 3px;
-                   overflow: hidden;
-                   width: $labelW;
-                   transition: width 0.2s;
-                   position: relative;
+                  & > .option{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 6px 3px;
+                    overflow: hidden;
+                    width: $labelW;
+                    transition: width 0.2s;
+                    position: relative;
 
-                   &:not(.active){
-                     & > .label {
-                       &:hover, &:active {
-                         box-shadow: 0 1px 4px rgba(0,0,0,0.09);
-                         transition: box-shadow 0.2s;
-                       }
-                     }
-                   }
+                    &:not(.active){
+                      & > .label {
+                        &:hover, &:active {
+                          box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+                          transition: box-shadow 0.2s;
+                        }
+                      }
+                    }
 
-                   & > .label{
-                     box-shadow: none;
-                     cursor: pointer;
-                     height: calc(#{$optionH}  - 2 * 10px - 2 * 1px);
-                     width: calc(#{$labelW} - 2 * 10px - 2 * 1px);
-                     padding: 10px;
-                     display: flex;
-                     align-items: center;
-                     justify-content: center;
-                     border: 1px solid #ddd;
-                     border-radius: $borderRadius;
-                     z-index: 2;
-                     background: #ffffff;
-                     transition: background 0.2s, border-radius 0.2s, box-shadow 0.2s, border 0.2s;
+                    & > .label{
+                      box-shadow: none;
+                      cursor: pointer;
+                      height: calc(#{$optionH}  - 2 * 10px - 2 * 1px);
+                      width: calc(#{$labelW} - 2 * 10px - 2 * 1px);
+                      padding: 10px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      border: 1px solid #ddd;
+                      border-radius: $borderRadius;
+                      z-index: 2;
+                      background: #ffffff;
+                      transition: background 0.2s, border-radius 0.2s, box-shadow 0.2s, border 0.2s;
 
-                     & > p{
-                       font-weight: 600;
-                       font-size: 10pt;
-                       color: #2c2c2c;
-                       margin: 0;
-                       transition: color 0.2s;
-                     }
-                   }
-                   & > .value{
-                     height: calc(#{$optionH} - 2 * 10px - 2 * 1px);
-                     width: calc((#{$optionW} - #{$labelW}  ) - 2 * 10px - 2 * 1px);
-                     padding: 10px;
-                     display: flex;
-                     align-items: center;
-                     justify-content: center;
-                     position: absolute;
-                     z-index: 1;
-                     border-radius:  0 $borderRadius $borderRadius 0;
-                     border: 1px solid $statistic;
-                     background: #fff;
-                     left:  calc( #{$labelW} - #{$optionW} );
-                     transition: left 0.2s;
-                     will-change: left;
+                      & > p{
+                        font-weight: 600;
+                        font-size: 10pt;
+                        color: #2c2c2c;
+                        margin: 0;
+                        transition: color 0.2s;
+                      }
+                    }
+                    & > .value{
+                      height: calc(#{$optionH} - 2 * 10px - 2 * 1px);
+                      width: calc((#{$optionW} - #{$labelW}  ) - 2 * 10px - 2 * 1px);
+                      padding: 10px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      position: absolute;
+                      z-index: 1;
+                      border-radius:  0 $borderRadius $borderRadius 0;
+                      border: 1px solid $statistic;
+                      background: #fff;
+                      left:  calc( #{$labelW} - #{$optionW} );
+                      transition: left 0.2s;
+                      will-change: left;
 
-                     & > input{
-                       width: 100%;
-                       text-align: center;
-                       font-weight: 600;
-                       font-size: 10pt;
-                       color: #2c2c2c;
-                       margin: 0;
-                       background: transparent;
-                       outline: none;
-                       border: none;
-                       &::-webkit-input-placeholder{
-                         font-weight: 600;
-                         font-size: 10pt;
-                         color: #2c2c2c;
-                       }
-                     }
-                   }
+                      & > input, select{
+                        width: 100%;
+                        text-align: center;
+                        font-weight: 600;
+                        font-size: 10pt;
+                        color: #2c2c2c;
+                        margin: 0;
+                        background: transparent;
+                        outline: none;
+                        border: none;
+                        &::-webkit-input-placeholder{
+                          font-weight: 600;
+                          font-size: 10pt;
+                          color: #2c2c2c;
+                        }
+                      }
+                    }
 
-                   &.active{
-                     width: $optionW;
-                     transition: width 0.2s;
+                    &.active{
+                      width: $optionW;
+                      transition: width 0.2s;
                       & > .label{
                         border: 1px solid $statistic;
                         border-radius:  $borderRadius 0 0 $borderRadius;
@@ -231,25 +234,25 @@
                           transition: color 0.2s;
                         }
                       }
-                     & > .value{
-                       left: $labelW;
-                       transition: left 0.2s;
-                       will-change: left;
-                       border-radius: 0 $borderRadius $borderRadius 0;
-                     }
-                   }
+                      & > .value{
+                        left: $labelW;
+                        transition: left 0.2s;
+                        will-change: left;
+                        border-radius: 0 $borderRadius $borderRadius 0;
+                      }
+                    }
 
-                 }
-               }
+                  }
+                }
               }
               & > .canvas{
-
                 margin-top: 15px;
                 border-top: 1px solid #eee;
                 padding-top: 15px;
                 padding-bottom: 40px;
-
               }
+            }
+            &.Graph{
             }
             &.Calendar{
 
