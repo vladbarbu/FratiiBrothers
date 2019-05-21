@@ -165,6 +165,7 @@ class App extends Component {
 
               clearItemWarnings={this.clearItemWarnings}
               refillStock={this.refillStock}
+              editStock={this.editStock}
               toggleConfirmationPopup={this.toggleConfirmationPopup}
               toggleInputPopup={this.toggleInputPopup}
               />
@@ -192,7 +193,7 @@ class App extends Component {
               togglePopup={this.toggleInputPopup}
               toggleConfirmPopup={this.toggleConfirmationPopup}
               onReturnToDashboard={this.goBackToStations}
-              onConfirm={this.confirmStock}
+              onConfirm={this.editStock}
             />
           ) : null}
         </div>
@@ -244,7 +245,7 @@ class App extends Component {
     this.setState({ chosenElement: null });
   };
 
-  confirmStock = (item, station, stock) => {
+  editStock = (item, station, stock) => {
     console.log(
       "update stock item " +
         item.ID +

@@ -124,7 +124,7 @@ class InputPopup extends Component {
                   onClick={() => {
                     this.props.togglePopup();
                     this.props.onConfirm(
-                      this.props.chosenItem,
+                      this.props.chosenElement,
                       this.props.chosenStation,
                       this.state.input
                     );
