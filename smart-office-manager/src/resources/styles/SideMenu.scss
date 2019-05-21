@@ -95,7 +95,8 @@
     left: 0;
     width: 100%;
     max-width: 90%;
-    z-index: $zIndex-SideBar-mobile;
+    z-index: $zIndex-SideMenu-mobile;
+
     box-shadow: 10px 0 40px rgba(0, 0, 0, 0.2);
     & > header {
       display: flex;

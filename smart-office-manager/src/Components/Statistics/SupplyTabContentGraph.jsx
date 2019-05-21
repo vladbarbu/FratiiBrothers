@@ -97,7 +97,7 @@ class SupplyTabContentGraph extends PureComponent {
     };
 
     render() {
-        
+
 
         let element = this.props.hasOwnProperty("element") && !Config.isEmpty(this.props.element) ? this.props.element : null;
 

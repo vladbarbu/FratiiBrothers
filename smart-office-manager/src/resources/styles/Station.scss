@@ -6,11 +6,17 @@ STATION LIST
 ---------------
  */
 
+.ScreenStations{
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+}
 
 .StationList{
   max-width: 1200px;
   padding: 20px;
   flex: 1;
+  overflow-y: scroll;
 
   & > .stationFloor{
     width: 100%;

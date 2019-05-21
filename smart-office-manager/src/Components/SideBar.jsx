@@ -114,7 +114,7 @@ class SideBar extends Component {
           <div className={classes} ref = {this.sideBarReference}  >
               <div className={"inner"}>
                   <div className={"preHeader"}>
-                      <div onClick={() => {this.context.doToggleSideBar("close");}} className="button menu"><i className="material-icons">close</i></div>
+                      <div onClick={() => {this.context.doToggleSideBar("close");}} className="button menu"><p>Close</p><i className="material-icons">close</i></div>
                   </div>
                   <div className={"header"}>
                       <div className={"image"}>

@@ -4,7 +4,7 @@
   margin: 0;
   right: 0;
   position: absolute;
-  z-index: 5;
+  z-index: $zIndex-SideBar;
   height: 100%;
   width: $sideBarWidth;
   transform: translateX(500px);
@@ -67,8 +67,12 @@
 
 
     & > .preHeader{
+      position: absolute;
       display: none;
+      top: 0;
+      right: 0;
       height: $navHeight;
+      margin-top: $navHeight;
       width: calc(100% - 2 * 10px);
       padding:  0 10px;
       flex-direction: row;
@@ -76,11 +80,17 @@
       justify-content: flex-start;
       & > .button {
         display: flex !important;
-        margin-right: auto;
+        align-items: center;
+        flex-direction: row;
+        & > p{
+          color: $red;
+          margin: 0 8px 0 0;
+        }
         &.menu{
           background: #fff;
           height: 50px;
-          width: 50px;
+          min-width: 50px;
+          padding: 0 15px;
           border: 1px solid #eeeeee;
           box-sizing: border-box;
           border-radius: 4px;
@@ -103,6 +113,7 @@
       }
     }
     & > .header{
+
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -296,6 +307,8 @@
 @media #{$query-toggle-menu} {
   .SideBar {
     transition: transform 0.2s;
+    width: 95%;
+    z-index: $zIndex-SideBar-mobile;
     &.active {
       &:before {
         content: ' ';
@@ -321,6 +334,9 @@
       & > .preHeader{
         display: flex;
       }
+      & > .header{
+        margin-top: $navHeight;
+      }
       & > .wrapper{
         & > .main{
           & > .actions{
@@ -335,4 +351,3 @@
     }
   }
 }
-
