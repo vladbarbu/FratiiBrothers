@@ -90,212 +90,312 @@
           }
         }
         & > .content{
-          .SupplyTabContent{
-            .disclaimer{
-               color: #aaa;
-               font-size: 10pt;
-               font-weight: 400;
-               margin-bottom: 20px;
-             }
-            &.Graph, &.Calendar{
-              & > .header{
-                .sectionTitle{
-                  margin-bottom: 10px;
-                }
-                & > .Tree{
-                  user-select: none;
-                  pointer-events: none;
-                  margin-bottom: 15px;
-                  margin-top: 5px;
-                  padding: 0;
-                  .Item{
-                    & > .card{
-                      box-shadow: none;
-                      padding: 6px;
-                      border-radius: 4px 0 0 4px;
-                      & > .image{
-                        border-radius: 2px;
-                        height: 50px;
-                        width: 70px;
-                        margin-right: 10px;
-                        & > img{
+            .SupplyTabContent{
+              .disclaimer{
+                color: #aaa;
+                font-size: 10pt;
+                font-weight: 400;
+                margin-bottom: 20px;
+              }
+              &.Graph, &.Calendar{
+                & > .header{
+                  .sectionTitle{
+                    margin-bottom: 10px;
+                  }
+                  & > .Tree{
+                    user-select: none;
+                    pointer-events: none;
+                    margin-bottom: 15px;
+                    margin-top: 5px;
+                    padding: 0;
+                    .Item{
+                      & > .card{
+                        box-shadow: none;
+                        padding: 6px;
+                        border-radius: 4px 0 0 4px;
+                        & > .image{
                           border-radius: 2px;
+                          height: 50px;
+                          width: 70px;
+                          margin-right: 10px;
+                          & > img{
+                            border-radius: 2px;
+                          }
                         }
-                      }
-                      & > .content{
-                        p{
-                          font-size: 11pt;
+                        & > .content{
+                          p{
+                            font-size: 11pt;
+                          }
                         }
-                      }
-                      & > .action{
-                        width: 60px;
-                        right: - 60px;
-                        border-radius: 0 4px 4px 0;
+                        & > .action{
+                          width: 60px;
+                          right: - 60px;
+                          border-radius: 0 4px 4px 0;
+                        }
                       }
                     }
                   }
-                }
-                & > .time{
-                  display: flex;
-                  flex-direction: row;
-                  flex-wrap: wrap;
-
-                  $optionH : 46px;
-                  $optionW : 280px;
-                  $labelW : 100px;
-                  $borderRadius : 4px;
-
-                  & > .option{
+                  & > .time{
                     display: flex;
                     flex-direction: row;
-                    align-items: center;
-                    padding: 6px 3px;
-                    overflow: hidden;
-                    width: $labelW;
-                    transition: width 0.2s;
-                    position: relative;
+                    flex-wrap: wrap;
 
-                    &:not(.active){
-                      & > .label {
-                        &:hover, &:active {
-                          box-shadow: 0 1px 4px rgba(0,0,0,0.09);
-                          transition: box-shadow 0.2s;
+                    $optionH : 46px;
+                    $optionW : 280px;
+                    $labelW : 100px;
+                    $borderRadius : 4px;
+
+                    & > .option{
+                      display: flex;
+                      flex-direction: row;
+                      align-items: center;
+                      padding: 6px 3px;
+                      overflow: hidden;
+                      width: $labelW;
+                      transition: width 0.2s;
+                      position: relative;
+
+                      &:not(.active){
+                        & > .label {
+                          &:hover, &:active {
+                            box-shadow: 0 1px 4px rgba(0,0,0,0.09);
+                            transition: box-shadow 0.2s;
+                          }
                         }
                       }
-                    }
 
-                    & > .label{
-                      box-shadow: none;
-                      cursor: pointer;
-                      height: calc(#{$optionH}  - 2 * 10px - 2 * 1px);
-                      width: calc(#{$labelW} - 2 * 10px - 2 * 1px);
-                      padding: 10px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      border: 1px solid #ddd;
-                      border-radius: $borderRadius;
-                      z-index: 2;
-                      background: #ffffff;
-                      transition: background 0.2s, border-radius 0.2s, box-shadow 0.2s, border 0.2s;
+                      & > .label{
+                        box-shadow: none;
+                        cursor: pointer;
+                        height: calc(#{$optionH}  - 2 * 10px - 2 * 1px);
+                        width: calc(#{$labelW} - 2 * 10px - 2 * 1px);
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #ddd;
+                        border-radius: $borderRadius;
+                        z-index: 2;
+                        background: #ffffff;
+                        transition: background 0.2s, border-radius 0.2s, box-shadow 0.2s, border 0.2s;
 
-                      & > p{
-                        font-weight: 600;
-                        font-size: 10pt;
-                        color: #2c2c2c;
-                        margin: 0;
-                        transition: color 0.2s;
-                      }
-                    }
-                    & > .value{
-                      height: calc(#{$optionH} - 2 * 10px - 2 * 1px);
-                      width: calc((#{$optionW} - #{$labelW}  ) - 2 * 10px - 2 * 1px);
-                      padding: 10px;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      position: absolute;
-                      z-index: 1;
-                      border-radius:  0 $borderRadius $borderRadius 0;
-                      border: 1px solid $statistic;
-                      background: #fff;
-                      left:  calc( #{$labelW} - #{$optionW} );
-                      transition: left 0.2s;
-                      will-change: left;
-
-                      & > input, select{
-                        width: 100%;
-                        text-align: center;
-                        font-weight: 600;
-                        font-size: 10pt;
-                        color: #2c2c2c;
-                        margin: 0;
-                        background: transparent;
-                        outline: none;
-                        border: none;
-                        &::-webkit-input-placeholder{
+                        & > p{
                           font-weight: 600;
                           font-size: 10pt;
                           color: #2c2c2c;
-                        }
-                      }
-                    }
-
-                    &.active{
-                      width: $optionW;
-                      transition: width 0.2s;
-                      & > .label{
-                        border: 1px solid $statistic;
-                        border-radius:  $borderRadius 0 0 $borderRadius;
-                        background: $statistic;
-                        transition: background 0.2s, border-radius 0.2s, border 0.2s;
-                        & > p{
-                          color: darken($statistic,30%);
+                          margin: 0;
                           transition: color 0.2s;
                         }
                       }
                       & > .value{
-                        left: $labelW;
+                        height: calc(#{$optionH} - 2 * 10px - 2 * 1px);
+                        width: calc((#{$optionW} - #{$labelW}  ) - 2 * 10px - 2 * 1px);
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        z-index: 1;
+                        border-radius:  0 $borderRadius $borderRadius 0;
+                        border: 1px solid $statistic;
+                        background: #fff;
+                        left:  calc( #{$labelW} - #{$optionW} );
                         transition: left 0.2s;
                         will-change: left;
-                        border-radius: 0 $borderRadius $borderRadius 0;
+
+                        & > input, select{
+                          width: 100%;
+                          text-align: center;
+                          font-weight: 600;
+                          font-size: 10pt;
+                          color: #2c2c2c;
+                          margin: 0;
+                          background: transparent;
+                          outline: none;
+                          border: none;
+                          &::-webkit-input-placeholder{
+                            font-weight: 600;
+                            font-size: 10pt;
+                            color: #2c2c2c;
+                          }
+                        }
+                      }
+
+                      &.active{
+                        width: $optionW;
+                        transition: width 0.2s;
+                        & > .label{
+                          border: 1px solid $statistic;
+                          border-radius:  $borderRadius 0 0 $borderRadius;
+                          background: $statistic;
+                          transition: background 0.2s, border-radius 0.2s, border 0.2s;
+                          & > p{
+                            color: darken($statistic,30%);
+                            transition: color 0.2s;
+                          }
+                        }
+                        & > .value{
+                          left: $labelW;
+                          transition: left 0.2s;
+                          will-change: left;
+                          border-radius: 0 $borderRadius $borderRadius 0;
+                        }
+                      }
+
+                    }
+                  }
+                }
+                & > .canvas{
+                  margin-top: 15px;
+                  border-top: 1px solid #eee;
+                  padding-top: 15px;
+                  padding-bottom: 40px;
+                }
+              }
+              &.Graph{
+              }
+
+              &.Calendar{
+
+                .CalendarContainer{
+                  width: calc(100% - 1px);
+                  border-left: 1px solid #eeeeee;
+                  border-top: 1px solid #eeeeee;
+                  & > .header{
+                    border-bottom: 1px solid #eeeeee;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                    & > .item{
+                      border-right: 1px solid #eeeeee;
+                      grid-column: span 1;
+                      padding: 10px;
+                      min-width: 40px;
+                      & > p{
+                        text-align: center;
+                        font-size: 10pt;
+                        color: #2c2c2c;
+                        font-weight: 600;
+                        margin: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                       }
                     }
-
                   }
-                }
-              }
-              & > .canvas{
-                margin-top: 15px;
-                border-top: 1px solid #eee;
-                padding-top: 15px;
-                padding-bottom: 40px;
-              }
-            }
-            &.Graph{
-            }
+                  & > .body{
+                    display: grid;
+                    grid-auto-rows: minmax(min-content, max-content);
+                    grid-template-columns: repeat(7, 1fr);
+                    & > .item{
+                      grid-column: span 1;
+                      min-height: 100px;
+                      border-right: 1px solid #eeeeee;
+                      border-bottom: 1px solid #eeeeee;
+                      padding: 10px;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: flex-start;
+                      justify-content: flex-start;
 
-            &.Calendar{
+                      &.empty{
+                        background: #f5f5f5;
+                      }
 
-              .CalendarContainer{
-                width: calc(100% - 1px);
-                border-left: 1px solid #eeeeee;
-                border-top: 1px solid #eeeeee;
-                & > .header{
-                  border-bottom: 1px solid #eeeeee;
-                  width: 100%;
-                  display: grid;
-                  grid-template-columns: repeat(7, 1fr);
-                  & > .item{
-                    border-right: 1px solid #eeeeee;
-                    grid-column: span 1;
-                    padding: 10px;
-                    min-width: 40px;
-                    & > p{
-                      text-align: center;
-                      font-size: 10pt;
-                      color: #2c2c2c;
-                      font-weight: 600;
-                      margin: 0;
+                      & > .day{
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-start;
+                        flex: 1;
+                        & > p{
+                          color: #2c2c2c;
+                          font-size: 12pt;
+                          font-weight: 500;
+                          margin: 0;
+                          width: 36px;
+                          height: 36px;
+                          border-radius: 50%;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                        }
+                        &.now > p{
+                          background: $statistic;
+                        }
+
+
+                      }
+                      & > .info{
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+
+
+                        & > .row{
+                          display: flex;
+                          align-items: center;
+                          margin-bottom: 5px;
+                          &:last-of-type{
+                            margin-bottom: 0;
+                          }
+
+                          &.stock{
+                            & > .label{
+                              & > div{ background: #ddd; }
+                              & > p, & > i{ color: #aaa; }
+                            }
+                          }
+                          &.prediction{
+                            & > .label{
+                              & > div{ background: #FFAB00; }
+                              & > p, & > i{ color: #FFAB00; }
+                            }
+                          }
+
+
+                          & > .label{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            margin-right: 3px;
+                            & > div{
+                              height: 12px;
+                              width: 12px;
+                              border-radius: 50%;
+                              margin-right: 4px;
+                              display: none;
+                            }
+                            & > p{
+                              font-size: 10pt;
+                              margin: 0;
+                              white-space: nowrap;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                            }
+                            & > i{
+                              font-size: 12pt;
+                            }
+                          }
+                          & > .value{
+                            flex: 1;
+                            & > p{
+                              color: #2c2c2c;
+                              font-size: 10pt;
+                              font-weight: 300;
+                              margin: 0;
+                            }
+                          }
+                        }
+                      }
                     }
                   }
                 }
-                & > .body{
-                  display: grid;
-                  grid-auto-rows: minmax(min-content, max-content);
-                  grid-template-columns: repeat(7, 1fr);
-                  & > .item{
-                    grid-column: span 1;
-                    min-height: 100px;
-                    border-right: 1px solid #eeeeee;
-                    border-bottom: 1px solid #eeeeee;
-                  }
-                }
-              }
 
+              }
             }
           }
-        }
       }
     }
   }
@@ -309,6 +409,7 @@
     margin-right:  0;
     transition: margin-right 0.3s;
     will-change: margin-right;
+    z-index: 3;
 
     &.collapsed {
       margin-right:  - $sideBarWidth;
@@ -397,6 +498,132 @@
 
 }
 
+@media all and (max-width: 1600px){
+  .ScreenStatistics {
+    & > .main{
+      & > .content {
+        & > .tabs {
+          & > .content{
+            .SupplyTabContent{
+              &.Calendar{
+                .CalendarContainer{
+                  & > .body{
+                    & > .item{
+                      padding: 6px;
+                      & > .info{
+                        & > .row{
+                          & > .label{
+                            & > p{
+                              display: none;
+                            }
+                          }
+                          & > .value{
+                            & > p{
+                              font-size: 9pt;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media #{$top-tablet-big}{
+  .ScreenStatistics {
+    & > .main{
+      & > .content {
+        & > .tabs {
+          & > .content{
+            .SupplyTabContent{
+
+              &.Calendar{
+
+                .CalendarContainer{
+
+                  & > .header{
+                    & > .item{
+                      min-width: 0;
+                      & > p{
+                        text-align: center;
+                        font-size: 9pt;
+                        text-transform: uppercase;
+                      }
+                    }
+                  }
+                  & > .body{
+                    & > .item{
+                      min-height: 40px;
+                      padding: 4px;
+                      & > .day{
+                        margin-bottom: 5px;
+                        & > p{
+                          font-size: 10pt;
+                          width: 30px;
+                          height: 30px;
+
+                        }
+
+
+                      }
+                      & > .info{
+
+
+                        & > .row{
+
+                          margin-bottom: 5px;
+
+                          &.stock{
+                            & > .value{
+                              & > p{
+                                font-weight: 500;
+                                color: #888;
+                              }
+                            }
+                          }
+                          &.prediction{
+                            & > .value{
+                              & > p{
+                                color: #FFAB00;
+                                font-weight: 500;
+                              }
+                            }
+                          }
+                          & > .label{
+                            & > p{
+                              display: none;
+                            }
+                          }
+                          & > .value{
+                            & > p{
+                              font-size: 9pt;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
 @media #{$top-tablet-big} {
   .ScreenStatistics {
     & > .main{
@@ -421,6 +648,10 @@
               }
             }
           }
+          & > .content{
+
+          }
+
         }
       }
     }
@@ -499,9 +730,6 @@
                 }
               }
             }
-          }
-          & > .content{
-
           }
         }
       }

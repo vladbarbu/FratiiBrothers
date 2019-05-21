@@ -1,6 +1,13 @@
 import Moment from "moment"
 
-class Notification {
+class SNotification {
+  get dismissing() {
+    return this._dismissing;
+  }
+
+  set dismissing(value) {
+    this._dismissing = value;
+  }
   get createdAtParsed() {
     return this._createdAtParsed;
   }
@@ -59,10 +66,12 @@ class Notification {
     this.ID = object.hasOwnProperty("id") ? object["id"] : null;
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.createdAt = object.hasOwnProperty("createdAt") ? object["createdAt"] : null;
-    this.createdAtParsed = Notification.parseDate(this.createdAt);
+    this.createdAtParsed = SNotification.parseDate(this.createdAt);
     this.content = object.hasOwnProperty("content") ? object["content"] : null;
     this.itemID = object.hasOwnProperty("itemId") ? object["itemId"] : null;
     this.stationID = stationID;
+
+    this.dismissing = false;
   }
 
 
@@ -77,4 +86,4 @@ class Notification {
 
 }
 
-export default Notification;
+export default SNotification;

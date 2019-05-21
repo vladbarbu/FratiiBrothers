@@ -3,32 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Calendar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenItemStock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenItemStock.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenNotifications.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenNotifications.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenStatistics.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentCalendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentCalendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentGraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentGraph.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Tree/Tree.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Tree/Tree.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/AppContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/AppContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Calendar.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Element.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/Element.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/Notification.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Networking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/Networking.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Notification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/SNotification.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Station.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/Station.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/StationNotification.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/config.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/data/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Station.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Station.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/config.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Calendar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Notification.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Notification.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Statistics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/Statistics.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/precache-manifest.13be6772f67c3f0ad2335a95dd8690ad.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.260c9d21.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.260c9d21.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.130aa671.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.130aa671.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.a678154d.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.a678154d.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/AllNotificationsPopup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/AllNotificationsPopup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SideBarInitial.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBarInitial.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/AllNotificationsPopup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/AllNotificationsPopup.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="116" column="23" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="23" />
+            <state relative-caret-position="3366">
+              <caret line="359" column="8" selection-start-line="359" selection-start-column="8" selection-end-line="359" selection-end-column="30" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -62,7 +59,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/App.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+              <folding>
+                <element signature="e#636#1844#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resources/styles/AllNotificationsPopup.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="554">
@@ -70,6 +79,15 @@
               <folding>
                 <element signature="e#1400#3802#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/AppContext.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -111,8 +129,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="913">
-              <caret line="161" column="35" selection-start-line="161" selection-start-column="27" selection-end-line="161" selection-end-column="35" />
+            <state relative-caret-position="253">
+              <caret line="72" column="6" lean-forward="true" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -133,9 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>loadElements</find>
-      <find>loadFrom</find>
-      <find>AppContext</find>
       <find>loadItems</find>
       <find>date</find>
       <find>Config</find>
@@ -163,6 +178,9 @@
       <find>SideBarI</find>
       <find>console</find>
       <find>sort</find>
+      <find>start</find>
+      <find>AppLoader</find>
+      <find>loading</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -352,12 +370,12 @@
       <workItem from="1557289716619" duration="268000" />
       <workItem from="1557845732749" duration="16722000" />
       <workItem from="1557929803897" duration="5064000" />
-      <workItem from="1558172228841" duration="10988000" />
+      <workItem from="1558172228841" duration="12387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77722000" />
+    <option name="totallyTimeSpent" value="79121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -543,13 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/App.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1230">
@@ -589,13 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="18735" selection-start-column="18735" selection-end-column="18735" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/AppContext.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -659,31 +663,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="913">
-          <caret line="161" column="35" selection-start-line="161" selection-start-column="27" selection-end-line="161" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="116" column="23" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -739,6 +723,43 @@
           <caret line="153" column="27" selection-start-line="153" selection-start-column="27" selection-end-line="153" selection-end-column="27" />
           <folding>
             <element signature="e#1400#3802#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/AppContext.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="72" column="6" lean-forward="true" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/App.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
+          <folding>
+            <element signature="e#636#1844#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3366">
+          <caret line="359" column="8" selection-start-line="359" selection-start-column="8" selection-end-line="359" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

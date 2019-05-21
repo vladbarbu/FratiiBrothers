@@ -1,12 +1,11 @@
 class Networking {
+
     /**
      *
      * @param stationID
      * @param itemID
      * @param quantity
      * @param expirationDate
-     *
-     * @return {Promise}
      */
     static doRefillStock(stationID, itemID, quantity, expirationDate){
         let scope = this;
@@ -39,9 +38,17 @@ class Networking {
      * @param stationID
      * @param itemID
      * @param warningID
+     * @return {Promise<*>}
      */
     static doClearWarning(stationID,itemID,warningID){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
 
+        return new Promise((resolve, reject) => {
+            resolve(scope);
+        });
     }
 
 

@@ -17,6 +17,10 @@ class Config{
     static OPTION_MONTH = 3;
 
 
+    static ALERT_TYPE_SUCCESS = "success";
+    static ALERT_TYPE_ERROR = "error";
+
+
     static generateAppContextValues(scope){
         return {
             stations : scope.state.stations,
@@ -32,7 +36,9 @@ class Config{
 
             /**
              * ------------------------------------
+             *
              * ACTIONS that trigger NETWORKING
+             *
              * ------------------------------------
              */
 
@@ -42,15 +48,36 @@ class Config{
             doActionElementClearWarnings : Config.doActionElementClearWarnings.bind(scope),
             doActionElementClearWarning : Config.doActionElementClearWarning.bind(scope),
 
+
             /**
-             * ------------------
+             * ------------------------------------
+             *
+             * PURE NETWORKING FUNCTIONS
+             *
+             * ------------------------------------
+             */
+
+            doNetworkingRefillStock : Networking.doRefillStock.bind(scope),
+            doNetworkingEditStock : Networking.doEditStock.bind(scope),
+            doNetworkingClearWarning: Networking.doClearWarning.bind(scope),
+            doNetworkingClearWarnings: Networking.doClearWarnings.bind(scope),
+
+            /**
+             * ------------------------------------
+             *
              * DESIGN UTILITIES
-             * ------------------
+             *
+             * ------------------------------------
              */
             doToggleMobileDrawer : Config.doToggleMobileDrawer.bind(scope),
             doToggleSideBar : Config.doToggleSideBar.bind(scope),
             doToggleSideBarStatistics : Config.doToggleSideBarStatistics.bind(scope),
             getToggleSideBarStatistics : Config.getToggleSideBarStatistics.bind(scope),
+
+            startLoading : Config.startLoading.bind(scope),
+            stopLoading : Config.stopLoading.bind(scope),
+            showAlert : Config.showAlert.bind(scope),
+            hideAlert : Config.hideAlert.bind(scope),
 
         }
     }
@@ -304,7 +331,7 @@ class Config{
         let scope = this;
 
 
-        let requestEditStock = Networking.doEditStock.bind(scope);
+        //let requestEditStock = Networking.doEditStock.bind(scope);
     }
 
 
@@ -315,7 +342,7 @@ class Config{
         let scope = this;
 
 
-        let requestClearWarnings = Networking.doClearWarnings.bind(scope);
+        //let requestClearWarnings = Networking.doClearWarnings.bind(scope);
     }
 
 
@@ -326,7 +353,7 @@ class Config{
         let scope = this;
 
 
-        let requestClearWarning = Networking.doClearWarning.bind(scope);
+       // let requestClearWarning = Config.doClearWarning.bind(scope);
     }
 
 
@@ -399,6 +426,62 @@ class Config{
          */
         let scope = this;
         return scope.state.isSideBarStatisticsExpanded;
+    }
+
+    static startLoading(){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        scope.setState({loading : true});
+    }
+
+    static stopLoading(){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        scope.setState({loading : true});
+    }
+
+
+    static showAlert(text, type = Config.ALERT_TYPE_SUCCESS, time = 2000, callback = ()=>{}){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+        if(scope.state.alert !== null) scope.setState({alert : null});
+
+        scope.setState({
+            alert : {
+                text : text,
+                type : type,
+                time : time,
+                callback : callback
+            }
+        });
+        if(time) {
+            setTimeout(() => {
+                let hide = Config.hideAlert.bind(scope);
+                hide();
+                if (!Config.isEmpty(callback) && typeof callback === "function") {
+                    callback();
+                }
+            }, time);
+        }
+        else if (!Config.isEmpty(callback) && typeof callback === "function")callback();
+    }
+
+    static hideAlert(){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+        if(scope.state.alert !== null) scope.setState({
+            alert : null
+        });
     }
 
 

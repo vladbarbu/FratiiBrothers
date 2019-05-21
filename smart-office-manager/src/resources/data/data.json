@@ -38,23 +38,7 @@
                   "name": "Paper Cups Medium",
                   "parentId": "5ce2ffe428b5b519541f8be5",
                   "image": "images/item_2.png",
-                  "quantity": 0,
-                  "notifications": [
-                    {
-                      "ID": "123ABC",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 70
-                    },
-                    {
-                      "ID": "CBA123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 70
-                    }
-                  ]
+                  "quantity": 0
                 },
                 {
                   "id": "5ce2ffe428b5b519541f8bea",
@@ -62,23 +46,7 @@
                   "name": "Paper Cups Large",
                   "parentId": "5ce2ffe428b5b519541f8be5",
                   "image": "images/item_3.png",
-                  "quantity": 3,
-                  "notifications": [
-                    {
-                      "ID": "123ABC",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 70
-                    },
-                    {
-                      "ID": "CBA123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 70
-                    }
-                  ]
+                  "quantity": 3
                 }
               ]
             },
@@ -95,23 +63,7 @@
                   "name": "Glass Cups Large",
                   "parentId": "5ce2ffe428b5b519541f8bec",
                   "image": "images/item_3.png",
-                  "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "123ABC",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 70
-                    },
-                    {
-                      "ID": "CBA123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 70
-                    }
-                  ]
+                  "quantity": 12
                 },
                 {
                   "id": "5ce2ffe428b5b519541f8bef",
@@ -127,23 +79,7 @@
                   "name": "Glass Cups Small",
                   "parentId": "5ce2ffe428b5b519541f8bec",
                   "image": "images/item_1.png",
-                  "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "123ABC",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 70
-                    },
-                    {
-                      "ID": "CBA123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 70
-                    }
-                  ]
+                  "quantity": 12
                 }
               ]
             },
@@ -193,23 +129,7 @@
                   "name": "Paper Coffee Large",
                   "parentId": "5ce2ffe428b5b519541f8bf6",
                   "image": "images/item_3.png",
-                  "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "123ABC",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 70
-                    },
-                    {
-                      "ID": "CBA123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "3 other notifications have been sent about this item.",
-                      "itemID": 70
-                    }
-                  ]
+                  "quantity": 12
                 },
                 {
                   "id": "5ce2ffe428b5b519541f8bf7",
@@ -385,23 +305,7 @@
                   "name": "Books",
                   "parentId": "5ce2ffe428b5b519541f8c1a",
                   "image": "images/books.png",
-                  "quantity": 12,
-                  "notifications": [
-                    {
-                      "ID": "123ABC",
-                      "type": "from_management",
-                      "createdAt": "24-04-2019 19:25:00",
-                      "content": "We have notified the supplier and are waiting for their response.",
-                      "itemID": 70
-                    },
-                    {
-                      "ID": "CBA123",
-                      "type": "from_platform",
-                      "createdAt": "24-04-2019 19:20:00",
-                      "content": "12 other notifications have been sent about this item.",
-                      "itemID": 70
-                    }
-                  ]
+                  "quantity": 12
                 }
               ]
             }

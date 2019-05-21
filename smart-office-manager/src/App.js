@@ -8,7 +8,7 @@ import ConfirmationPopup from "./Components/ConfirmationPopup";
 import AppContext from './Model/AppContext'
 import Config from "./config";
 import SideBar from "./Components/SideBar";
-import Notification from "./Model/Notification";
+import SNotification from "./Model/SNotification";
 
 class App extends Component {
   constructor(props) {
@@ -72,7 +72,9 @@ class App extends Component {
 
       isMobileDrawerExpanded : false,
       isSideBarExpanded : false,
-      isSideBarStatisticsExpanded: false
+      isSideBarStatisticsExpanded: false,
+      loading : false,
+      alert : null,
     };
 
   }
@@ -106,7 +108,7 @@ class App extends Component {
         Object.keys(elements).forEach(key => {
             if(!Config.isEmpty(elements[key].notifications)){
               for(let j = 0; j < elements[key].notifications.length; j++)
-                notifications.push(new Notification(elements[key].notifications[j], stations[i].ID));
+                notifications.push(new SNotification(elements[key].notifications[j], stations[i].ID));
             }
         });
     }
@@ -198,6 +200,11 @@ class App extends Component {
           ) : null}
 
         </div>
+        <div className={"AppLoader " + (this.state.loading ? "active" : "") }><div><p>Loading...</p></div></div>
+        {
+          this.state.alert !== null && !Config.isEmpty(this.state.alert.text) ?
+               (<div className={"AppAlert  " + (this.state.alert.type) }><div><p>{this.state.alert.text}</p></div></div>) : null
+        }
       </div>
         </AppContext.Provider>
     );

@@ -80,6 +80,58 @@ const AppContext = React.createContext({
 
 
     /**
+     * Will clear a specific notification/warning
+     * @param stationID
+     * @param itemID
+     * @param warningID
+     */
+    doActionElementClearWarning : (stationID, itemID, warningID) => {},
+
+
+    /**
+     * -------
+     *
+     * PURE NETWORKING FUNCTIONS
+     *
+     * ------
+     */
+
+    /**
+     *
+     * @param stationID
+     * @param itemID
+     * @param quantity
+     * @param expirationDate
+     */
+    doNetworkingRefillStock : (stationID, itemID, quantity, expirationDate) => {},
+
+    /**
+     *
+     * @param stationID
+     * @param itemID
+     * @param stockCollection
+     */
+    doNetworkingEditStock : (stationID, itemID, stockCollection) => {},
+
+
+
+    /**
+     *
+     * @param stationID
+     * @param itemID
+     * @param warningID
+     */
+    doNetworkingClearWarning : (stationID,itemID,warningID) => {},
+
+    /**
+     * Clears warnings
+     * @param stationID
+     * @param itemID
+     */
+    doNetworkingClearWarnings : (stationID, itemID) => {},
+
+
+    /**
      *
      *
      * -------------
@@ -93,8 +145,14 @@ const AppContext = React.createContext({
     doToggleMobileDrawer : (force = null) => {},
     doToggleSideBar : (force = null) => {},
     doToggleSideBarStatistics : (force = null) => {},
+    getToggleSideBarStatistics : (force = null) => {},
 
-    getToggleSideBarStatistics : () => {},
+
+    startLoading : (scope) => {},
+    stopLoading : (scope) => {},
+
+    showAlert : (scope) => {},
+    hideAlert : (scope) => {},
 
 
 

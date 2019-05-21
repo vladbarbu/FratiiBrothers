@@ -13,6 +13,7 @@ class Tree extends PureComponent{
     render() {
         return (
             <div className={"Tree" + (this.props.hasOwnProperty("minimal") && this.props.minimal ? " minimal" : "")}>
+
                 {this.props.elements.map((element,index) => {
                    if(element.type !== Config.ELEMENT_TYPE_ITEM && (!Config.isEmpty(element.parentID))) element.type=Config.ELEMENT_TYPE_SUBCATEGORY;
                    switch (element.type) {
