@@ -233,7 +233,7 @@ class App extends Component {
 
 
   goBackToStations = () => {
-    this.state.chosenElement.activeInStations = false;
+    if(this.state.chosenElement) this.state.chosenElement.activeInStations = false;
     this.setState({
       stations : this.state.stations,
       sideBarChosen: Config.SCREEN_IDENTIFIER_STATIONS,
