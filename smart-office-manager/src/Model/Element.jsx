@@ -113,13 +113,17 @@ class Element {
     if (object === null) return;
     this.chosen = false;
     this.childActive = false;
-    this.ID = object.hasOwnProperty("ID") ? object["ID"] : null;
+    this.ID = object.hasOwnProperty("id") ? object["id"] : null;
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
-    this.parentID = object.hasOwnProperty("parentID") ? object["parentID"] : null;
+    this.parentID = object.hasOwnProperty("parentId") ? object["parentId"] : null;
     this.quantity = object.hasOwnProperty("quantity") ? object["quantity"] : null;
     this.elements = (() => {
+      /**
+       *
+       * @type {Array<Element>}
+       */
       let data = [];
       let elements = object.hasOwnProperty("elements")
         ? object["elements"]

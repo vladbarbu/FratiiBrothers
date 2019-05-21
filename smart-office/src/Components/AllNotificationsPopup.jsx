@@ -45,16 +45,16 @@ class AllNotificationsPopup extends Component {
   };
 
 
+
   printDate = notification => {
     try{
-     let date =  Moment(notification["createdAt"]).format('MMMM Do YYYY, h:mm:ss a');
-     return date;
+      return  Moment(notification["createdAt"],"MM/DD/YYYY hh:mm:ss").format('MMMM Do YYYY, h:mm:ss a');
+
     }catch (e) {
       console.error(e);
     }
     return "-";
   };
-
 
 
   sortNotifications = notifications => {

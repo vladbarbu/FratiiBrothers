@@ -52,39 +52,20 @@ class SideBarInitial extends Component {
 
   printDate = notification => {
     try{
-      let date =  Moment(notification["createdAt"]).format('MMMM Do YYYY, h:mm:ss a');
-      return date;
+      return  Moment(notification["createdAt"],"MM/DD/YYYY hh:mm:ss").format('MMMM Do YYYY, h:mm:ss a');
     }catch (e) {
       console.error(e);
     }
     return "-";
   };
 
-  sortNotifications = notifications => {
-    let ok = true;
-    do {
-      ok = true;
-      for (let i = 0; i < notifications.length - 1; i++) {
-        if (
-          this.printDate(notifications[i]) <
-          this.printDate(notifications[i + 1])
-        ) {
-          ok = false;
-          let aux = notifications[i];
-          notifications[i] = notifications[i + 1];
-          notifications[i + 1] = aux;
-        }
-      }
-    } while (!ok);
-    return notifications;
-  };
+
 
   getFirstNotifications = (number, notifications) => {
     let data = [];
-    let sortedNotifications = this.sortNotifications(notifications);
     if (number > notifications.length) number = notifications.length;
     if (number < 0) number = 2;
-    for (let i = 0; i < number; i++) data.push(sortedNotifications[i]);
+    for (let i = 0; i < number; i++) data.push(notifications[i]);
     return data;
   };
   render() {
@@ -131,13 +112,10 @@ class SideBarInitial extends Component {
             </button>
           </div>
 
-          {this.getFirstNotifications(
-            this.state.numberOfShownNotifications,
-            this.getNotificationsFromManagement()
-          ).map(notification => (
+          {this.props.notifications.slice(0,3).map(notification => (
             <div key={++i} className="notification-item">
               <div className="header">
-                <p>{this.getItemNameById(notification.itemID)}</p>
+                <p>{this.getItemNameById(notification.itemId)}</p>
                 <p className="time">
                   {this.printDate(notification).toString()}
                 </p>

@@ -83,6 +83,22 @@
     & > .SideMenu{}
   }
 
+  .sectionTitle{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    & > i{
+      color: #2c2c2c;
+      font-size: 18pt;
+      margin-right: 6px;
+    }
+    & > p{
+      color: #2c2c2c;
+      font-size: 14pt;
+      font-weight: 700;
+    }
+  }
+
 
 }
 

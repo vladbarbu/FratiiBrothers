@@ -17,8 +17,10 @@ class Main extends Component {
     let notificationsProps = {
       notifications: this.props.notifications,
       items: this.props.items,
-      stations: this.props.stations
-    }
+      stations: this.props.stations,
+      stockHolder : this.props.stockHolder
+    };
+
     let stationsProps = {
 
         /**

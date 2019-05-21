@@ -78,7 +78,7 @@ class Station {
 
   constructor(object) {
     if (object === null) return;
-    this.ID = object.hasOwnProperty("ID") ? object["ID"] : null;
+    this.ID = object.hasOwnProperty("id") ? object["id"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
     this.description = object.hasOwnProperty("description") ? object["description"] : null;
     this.floor = object.hasOwnProperty("floor") ? object["floor"] : null;

@@ -1,0 +1,79 @@
+@import "config";
+
+.ScreenNotifications{
+  width: calc(100% - 2 * 20px);
+  height: calc(100% - 2 * 20px);
+  padding: 20px;
+  overflow-y: scroll;
+
+  .notificationsList{
+    max-width: 800px;
+  }
+}
+
+.notificationsList {
+  width: 100%;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  & > .notification-item {
+    width: calc(100% - 2 * 10px);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    background: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    border: 1px solid #eee;
+    & > .header {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      & > .title{
+        display: flex;
+        flex-direction: column;
+      }
+      p {
+        margin: 0;
+        font-size: 11pt;
+        color: #2c2c2c;
+        font-weight: 600;
+        span{
+          color: $colorPrimary;
+          font-weight: 300;
+        }
+      }
+
+      & > .action {
+        margin-left: auto;
+        & > .button{
+          @include medium-button(#ccc,#fff);
+          &:hover, &:active{
+            background: $red;
+          }
+        }
+      }
+
+    }
+    & > .divider {
+      height: 1px;
+      width: 100%;
+      background: #eeeeee;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    & > .notification-item-message {
+      background: #ffffff;
+      border: 1px solid #eeeeee;
+      padding: 10px;
+      border-radius: 2px;
+
+      & > p {
+        font-weight: 300;
+        font-size: 10pt;
+        color: #2c2c2c;
+        margin: 0;
+      }
+    }
+  }
+}

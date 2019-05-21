@@ -5,11 +5,10 @@ import NavBar from "./Components/NavBar";
 import SideMenu from "./Components/SideMenu";
 import Main from "./Components/Main";
 import ConfirmationPopup from "./Components/ConfirmationPopup";
-import InputPopup from "./Components/InputPopup";
 import AppContext from './Model/AppContext'
 import Config from "./config";
 import SideBar from "./Components/SideBar";
-import StationNotification from "./Model/StationNotification";
+import Notification from "./Model/Notification";
 
 class App extends Component {
   constructor(props) {
@@ -21,9 +20,6 @@ class App extends Component {
     let items = this.getAllItems(stations);
     let notifications = this.loadNotifications(stations);
 
-
-
-    this.refillStockModalReference = React.createRef();
 
 
     this.state = {
@@ -105,17 +101,17 @@ class App extends Component {
   loadNotifications = (stations) => {
     let notifications = [];
     for(let i = 0; i < stations.length; i++){
-      let items = this.loadItems(stations[i].elements);
-      for(let j = 0; j < items.length; j++){
-        for(let k = 0; k < items[j].notifications.length; j++){
-          // console.log(items[j].notifications[k]);
-          // console.log(stations[i]._ID);
-          notifications.push(new StationNotification(items[j].notifications[k], stations[i]._ID));
-        }
-      }
+      let elements = stations[i].elementsFlat;
+      if(!Config.isEmpty(elements))
+        Object.keys(elements).forEach(key => {
+            if(!Config.isEmpty(elements[key].notifications)){
+              for(let j = 0; j < elements[key].notifications.length; j++)
+                notifications.push(new Notification(elements[key].notifications[j], stations[i].ID));
+            }
+        });
     }
     return notifications;
-  }
+  };
 
   render() {
 
