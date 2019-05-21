@@ -4,7 +4,7 @@ import AppContext from "../../Model/AppContext";
 import Config from "../../config";
 import Tree from "../Tree/Tree";
 import Moment from "moment"
-import {Bar, Line, Doughnut} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
 
 const data = {
@@ -97,9 +97,7 @@ class SupplyTabContentGraph extends PureComponent {
     };
 
     render() {
-
-        console.log(this.state.today);
-        console.log(this.state.startOfTheWeek);
+        
 
         let element = this.props.hasOwnProperty("element") && !Config.isEmpty(this.props.element) ? this.props.element : null;
 

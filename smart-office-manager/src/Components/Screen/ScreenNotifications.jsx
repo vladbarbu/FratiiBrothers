@@ -32,6 +32,7 @@ class ScreenNotifications extends Component {
           <div className={"notificationsList"}>
         <ReactCSSTransitionGroup
             transitionName="notification-item-animation"
+            transitionEnterTimeout={300}
             transitionLeaveTimeout={300}>
 
             {this.props.notifications.map(
@@ -39,7 +40,7 @@ class ScreenNotifications extends Component {
                   return <div key={notification.ID} className="notification-item">
                     <div className="header">
                       <div className={"title"}>
-                        <p>{notification.ID} Item: <span>{this.getItemNameById(notification.itemID)}</span></p>
+                        <p>Item: <span>{this.getItemNameById(notification.itemID)}</span></p>
                         <p>Station: <span>{this.getStationNameById(notification.stationID)}</span></p>
                         <p>Date: <span>{notification.createdAtParsed}</span></p>
                       </div>

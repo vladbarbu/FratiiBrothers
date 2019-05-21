@@ -328,7 +328,7 @@ class Config{
         /**
          * The scope will be bound to App.js
          */
-        let scope = this;
+       // let scope = this;
 
 
         //let requestEditStock = Networking.doEditStock.bind(scope);
@@ -339,7 +339,7 @@ class Config{
         /**
          * The scope will be bound to App.js
          */
-        let scope = this;
+       // let scope = this;
 
 
         //let requestClearWarnings = Networking.doClearWarnings.bind(scope);
@@ -350,7 +350,7 @@ class Config{
         /**
          * The scope will be bound to App.js
          */
-        let scope = this;
+        //let scope = this;
 
 
        // let requestClearWarning = Config.doClearWarning.bind(scope);
