@@ -21,6 +21,11 @@ class App extends Component {
     let items = this.getAllItems(stations);
     let notifications = this.loadNotifications(stations);
 
+
+
+    this.refillStockModalReference = React.createRef();
+
+
     this.state = {
       /**
        * Store the initial dataset
@@ -71,9 +76,7 @@ class App extends Component {
 
       isMobileDrawerExpanded : false,
       isSideBarExpanded : false,
-      isSideBarStatisticsExpanded: false,
-
-
+      isSideBarStatisticsExpanded: false
     };
 
   }
@@ -156,10 +159,8 @@ class App extends Component {
             notifications={this.state.notifications}
             itemChoose={this.itemChoose}
             updateStations={this.updateStations}
-            clearItemWarnings={this.clearItemWarnings}
-            refillStock={this.refillStock}
-            toggleConfirmationPopup={this.toggleConfirmationPopup}
-            toggleInputPopup={this.toggleInputPopup}
+
+
 
           />
 
@@ -185,8 +186,9 @@ class App extends Component {
               refillStock={this.refillStock}
               editStock={this.editStock}
               toggleConfirmationPopup={this.toggleConfirmationPopup}
-              toggleInputPopup={this.toggleInputPopup}
+
               />
+
 
 
 
@@ -198,22 +200,7 @@ class App extends Component {
               onReturnToDashboard={this.goBackToStations}
             />
           ) : null}
-          {this.state.showInputPopup === true ? (
-            <InputPopup
 
-                chosenElement={this.state.chosenElement}
-                chosenStation={this.state.chosenStation}
-                chosenStockElement = {this.state.chosenStockElement}
-                chosenStockStation = {this.state.chosenStockStation}
-                chosenStatisticsElement = {this.state.chosenStatisticsElement}
-                chosenStatisticsStation = {this.state.chosenStatisticsStation}
-
-              togglePopup={this.toggleInputPopup}
-              toggleConfirmPopup={this.toggleConfirmationPopup}
-              onReturnToDashboard={this.goBackToStations}
-              onConfirm={this.editStock}
-            />
-          ) : null}
         </div>
       </div>
         </AppContext.Provider>
@@ -223,9 +210,7 @@ class App extends Component {
   toggleConfirmationPopup = () => {
     this.setState({ showConfirmationPopup: !this.state.showConfirmationPopup });
   };
-  toggleInputPopup = () => {
-    this.setState({ showInputPopup: !this.state.showInputPopup });
-  };
+
 
   updateStations = elements => {
     let clone = this.state.stations;

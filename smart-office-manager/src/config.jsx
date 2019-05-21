@@ -1,3 +1,5 @@
+import Networking from './Model/Networking'
+
 class Config{
     static  ELEMENT_TYPE_CATEGORY = "category";
     static  ELEMENT_TYPE_ITEM = "item";
@@ -27,10 +29,23 @@ class Config{
             getChosenStation : Config.getChosenStation.bind(scope),
             getChosenElement : Config.getChosenElement.bind(scope),
 
+
             /**
-             * ----
+             * ------------------------------------
+             * ACTIONS that trigger NETWORKING
+             * ------------------------------------
+             */
+
+
+            doActionElementRefillStock : Config.doActionElementRefillStock.bind(scope),
+            doActionElementEditStock : Config.doActionElementEditStock.bind(scope),
+            doActionElementClearWarnings : Config.doActionElementClearWarnings.bind(scope),
+            doActionElementClearWarning : Config.doActionElementClearWarning.bind(scope),
+
+            /**
+             * ------------------
              * DESIGN UTILITIES
-             * ----
+             * ------------------
              */
             doToggleMobileDrawer : Config.doToggleMobileDrawer.bind(scope),
             doToggleSideBar : Config.doToggleSideBar.bind(scope),
@@ -259,6 +274,65 @@ class Config{
             default : return null;
         }
     }
+
+
+    /**
+     * ------------------
+     *
+     * ACTIONS that trigger NETWORKING
+     *
+     * ------------------
+     */
+
+
+    static doActionElementRefillStock(stationID, itemID){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+
+        let requestRefillStock = Networking.doRefillStock.bind(scope);
+        requestRefillStock(stationID, itemID, 0 , 0);
+    }
+
+
+    static doActionElementEditStock(stationID, itemID){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+
+        let requestEditStock = Networking.doEditStock.bind(scope);
+    }
+
+
+    static doActionElementClearWarnings(stationID, itemID){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+
+        let requestClearWarnings = Networking.doClearWarnings.bind(scope);
+    }
+
+
+    static doActionElementClearWarning(stationID, itemID, warningID){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+
+        let requestClearWarning = Networking.doClearWarning.bind(scope);
+    }
+
+
+
+
+
 
 
 

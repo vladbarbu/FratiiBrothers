@@ -18,7 +18,7 @@ class ScreenStatistics extends Component {
 
    componentDidMount() {
        if(this.props.chosenStatisticsStation === null) {
-           this.context.doShowScreenSupplyStation(this.props.stations[0], null);
+           this.context.doShowScreenSupplyStation(this.context.stations[0], null);
            return null;
        }
    }
@@ -33,7 +33,7 @@ class ScreenStatistics extends Component {
                     <div className={"header"}>
                         <span className={"sectionTitle"}><i className="material-icons">list</i> Stations</span>
                         <div className={"stationList"}>
-                            {this.props.stations.map((element,index) => {
+                            {this.context.stations.map((element,index) => {
                                 return <StationIndicator
                                     active={
                                         !Config.isEmpty(this.props.chosenStatisticsStation) ?

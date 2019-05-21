@@ -52,6 +52,34 @@ const AppContext = React.createContext({
 
 
     /**
+     * Will show the Refill Stock modal. If the input data will be valid, it will
+     * bind the scope and trigger the Networking.doRefillStock action (Promise)
+     * Input Data: Quantity, Expiration Date
+     * @param stationID
+     * @param itemID
+     */
+    doActionElementRefillStock : (stationID, itemID) => {},
+
+
+    /**
+     * Will show the Edit Stock modal. There will be a global "update" button.
+     * If data is valid, trigger the Networking.doEditStock action (Promise)
+     * Input Data: Array<Quantity, Expiration Date>
+     * @param stationID
+     * @param itemID
+     */
+    doActionElementEditStock : (stationID, itemID) => {},
+
+
+    /**
+     * Will clear warnings for a specific item. Triggers the Networking.clearWarnings action (Promise)
+     * @param stationID
+     * @param itemID
+     */
+    doActionElementClearWarnings : (stationID, itemID) => {},
+
+
+    /**
      *
      *
      * -------------

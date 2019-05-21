@@ -15,6 +15,7 @@ class SideBar extends Component {
   getTypeOfSidebar() {
     return this.props.element === null ? (
       <SideBarInitial
+        itemsFlat = {this.props.itemsFlat}
         onClickSearch={this.props.onClickSearch}
         onClickRequest={this.props.onClickRequest}
         notifications={this.props.notifications}
@@ -23,6 +24,7 @@ class SideBar extends Component {
       />
     ) : this.props.element.type === "item" ? (
       <SideBarItem
+        itemsFlat = {this.props.itemsFlat}
         element={this.props.element}
         onClickDiscardSearch={() => {
           this.props.onClickDiscardSearch();
@@ -33,6 +35,7 @@ class SideBar extends Component {
       />
     ) : (
       <SideBarCategory
+        itemsFlat = {this.props.itemsFlat}
         element={this.props.element}
         onClickDiscardSearch={() => {
           this.props.onClickDiscardSearch();

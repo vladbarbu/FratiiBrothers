@@ -15,11 +15,11 @@ class Config{
     static  ELEMENT_TYPE_ITEM = "item";
 
 
-    static STATION_ID = "5cd986206f8e6204ec99786e";
-    static API_GLOBAL_RETRIEVE = "https://smart-office-backend.herokuapp.com/api/user/station/";
-    static API_REQUEST_SEND = "https://smart-office-backend.herokuapp.com/api/user/requests/";
-    static API_NOTIFICATION_SEND = "https://smart-office-backend.herokuapp.com/api/user/notifications/";
-
+    static STATION_ID = "5ce2ffe428b5b519541f8c25"; // "5ce2ffe428b5b519541f8c09";
+    static API_ROOT = "https://smart-office-backend.herokuapp.com/api/";
+    static API_GLOBAL_RETRIEVE = Config.API_ROOT + "user/station/";
+    static API_REQUEST_SEND = Config.API_ROOT + + "user/requests/";
+    static API_NOTIFICATION_SEND = Config.API_ROOT + "user/notifications/";
 
 
 
@@ -145,6 +145,28 @@ class Config{
             console.error(e);
         }
         return [];
+    };
+
+
+    /**
+     * JS plays with references rather than copies of objects. By storing the items/elements
+     * in both a TREE and a FLAT array, we can easily
+     *  ---> update values in the FLAT array (so as not to always recursively cover the entire tree over and over again)
+     *  ---> see changes in both the FLAT array and the TREE
+     * @param initial
+     * @return {Object} a map of elements  ID => element
+     */
+    static flattenElements = initial => {
+        let flat = {};
+        for(let i = 0; i < initial.length; i++){
+            flat[String(initial[i].ID)] = initial[i];
+            if(!Config.isEmpty(initial[i].elements) && initial[i].elements.length > 0) {
+
+                let flat_children =  this.flattenElements(initial[i].elements);
+                Object.keys(flat_children).forEach(function(key) { flat[String(key)] = flat_children[key]; });
+            }
+        }
+        return flat;
     };
 
 

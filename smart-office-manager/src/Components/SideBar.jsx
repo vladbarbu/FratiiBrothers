@@ -145,9 +145,9 @@ class SideBar extends Component {
                       </div>
 
                       <div className={"actions"}>
-                          <div className={"button refill"} onClick={() => {this.props.refillStock(element, station); this.props.toggleConfirmationPopup();}}><div className={"content"}><p>Refill Stock</p><span>and clear warnings</span></div></div>
-                          <div className={"button edit"} onClick={() => {this.props.toggleInputPopup();}}><div className={"content"}><p>Edit Stock</p></div></div>
-                          <div className={"button clear"} onClick={() => {this.props.clearItemWarnings(element,station); this.props.toggleConfirmationPopup();}}><div className={"content"}><p>Clear Warnings</p></div></div>
+                          <div className={"button refill"} ><div className={"content"}><p>Refill Stock</p><span>and clear warnings</span></div></div>
+                          <div className={"button edit"}><div className={"content"}><p>Edit Stock</p></div></div>
+                          <div className={"button clear"}><div className={"content"}><p>Clear Warnings</p></div></div>
                           <div onClick={()=>{this.context.doShowScreenSupplyStation(station,element)}} className={"button statistics"}><div className={"content"}><p>View item statistics</p></div></div>
                       </div>
 

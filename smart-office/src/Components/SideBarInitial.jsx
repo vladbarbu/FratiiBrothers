@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-// import SideBarNotifications from "./SideBarNotifications";
+import Moment from "moment";
 
 import "../resources/styles/SideBar.scss";
+import Config from "../config";
+
 
 class SideBarInitial extends Component {
   state = {
@@ -33,12 +35,12 @@ class SideBarInitial extends Component {
 
 
 
+
   getItemNameById = ID => {
-    let items = this.props.items;
-    for (let i = 0; i < items.length; i++)
-      if (items[i].ID === ID) return items[i].name;
-    return null;
+    return !Config.isEmpty(this.props.itemsFlat)
+    && this.props.itemsFlat.hasOwnProperty(ID) ? this.props.itemsFlat[ID].name : null;
   };
+
 
   getNotificationsFromManagement = () => {
     let notifications = [];
@@ -48,24 +50,14 @@ class SideBarInitial extends Component {
     return notifications;
   };
 
-  getNotificationTime = notification => {
-    const [date, time] = notification.createdAt.split(" ");
-    const [day, month, year] = date.split("-");
-    let newdate = year + "-" + month + "-" + day + "T" + time;
-    let data = new Date(newdate);
-    return data;
-  };
-
-  printDate = date => {
-    return date;
-    // let parts = date.toString().split(" ");
-    // let hour = parts[4].toString().split(":");
-    // return parts[1] + " " + parts[2] + " " + hour[0] + ":" + hour[1];
-  };
-
-  printNotificationDate = notification => {
-    let date = this.getNotificationTime(notification);
-    return this.printDate(date);
+  printDate = notification => {
+    try{
+      let date =  Moment(notification["createdAt"]).format('MMMM Do YYYY, h:mm:ss a');
+      return date;
+    }catch (e) {
+      console.error(e);
+    }
+    return "-";
   };
 
   sortNotifications = notifications => {
@@ -74,8 +66,8 @@ class SideBarInitial extends Component {
       ok = true;
       for (let i = 0; i < notifications.length - 1; i++) {
         if (
-          this.getNotificationTime(notifications[i]) <
-          this.getNotificationTime(notifications[i + 1])
+          this.printDate(notifications[i]) <
+          this.printDate(notifications[i + 1])
         ) {
           ok = false;
           let aux = notifications[i];
@@ -147,7 +139,7 @@ class SideBarInitial extends Component {
               <div className="header">
                 <p>{this.getItemNameById(notification.itemID)}</p>
                 <p className="time">
-                  {this.printNotificationDate(notification).toString()}
+                  {this.printDate(notification).toString()}
                 </p>
               </div>
               <div className="notification-item-message">

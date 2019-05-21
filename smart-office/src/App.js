@@ -23,6 +23,7 @@ class App extends Component {
       drawer_visible: false,
       elements: [],
       items: [],
+      itemsFlat : {},
       notifications: [],
       chosen: null,
       navBarClick: false,
@@ -114,6 +115,7 @@ class App extends Component {
                 </div>
                 <div className="App-right" data-visible={this.state.drawer_visible}>
                   <SideBar
+                    itemsFlat = {this.state.itemsFlat}
                     element={this.state.chosen}
                     items={this.state.items}
                     notifications={this.state.notifications}
@@ -155,6 +157,7 @@ class App extends Component {
                     togglePopup={this.toggleNotificationsPopup}
                     notifications={this.state.notifications}
                     items={this.state.items}
+                    itemsFlat={this.state.itemsFlat}
                   />
                 ) : null}
 
@@ -331,9 +334,18 @@ class App extends Component {
             let items = Config.loadItems(elements);
             let notifications = Config.loadNotifications(items);
 
+            let station = {
+              id : !Config.isEmpty(data["id"]) ? data["id"] : null,
+              name : !Config.isEmpty(data["name"]) ? data["name"] : null,
+              description : !Config.isEmpty(data["description"]) ? data["description"] : null,
+              image : !Config.isEmpty(data["image"]) ? data["image"] : null,
+              floor : !Config.isEmpty(data["floor"]) ? data["floor"] : null,
+            };
+
             self.setState({
               initial : data,
-              station : data["station"],
+              itemsFlat : Config.flattenElements(items),
+              station : station,
               drawer_visible: false,
               elements: elements,
               items: items,
