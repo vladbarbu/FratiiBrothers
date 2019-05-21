@@ -13,6 +13,12 @@ class Main extends Component {
   };
 
   render() {
+
+    let notificationsProps = {
+      notifications: this.props.notifications,
+      items: this.props.items,
+      stations: this.props.stations
+    }
     let stationsProps = {
 
         /**
@@ -75,7 +81,7 @@ class Main extends Component {
             (()=>{
               switch (this.props.sideBarChosen) {
                 case Config.SCREEN_IDENTIFIER_NOTIFICATIONS:
-                  return <ScreenNotifications />;
+                  return <ScreenNotifications {...notificationsProps}/>;
                 case Config.SCREEN_IDENTIFIER_STATIONS:
                   return <ScreenStations {...stationsProps} />;
                   case  Config.SCREEN_IDENTIFIER_STOCK:

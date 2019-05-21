@@ -9,6 +9,7 @@ import InputPopup from "./Components/InputPopup";
 import AppContext from './Model/AppContext'
 import Config from "./config";
 import SideBar from "./Components/SideBar";
+import StationNotification from "./Model/StationNotification";
 
 class App extends Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class App extends Component {
     let location = data["location"];
     let stations = this.loadStations(data["stations"]);
     let items = this.getAllItems(stations);
+    let notifications = this.loadNotifications(stations);
 
     this.state = {
       /**
@@ -44,6 +46,7 @@ class App extends Component {
       location: location,
       stations: stations,
       items: items,
+      notifications: notifications,
       showConfirmationPopup: false,
       showInputPopup: false,
 
@@ -96,6 +99,20 @@ class App extends Component {
     return [];
   };
 
+  loadNotifications = (stations) => {
+    let notifications = [];
+    for(let i = 0; i < stations.length; i++){
+      let items = this.loadItems(stations[i].elements);
+      for(let j = 0; j < items.length; j++){
+        for(let k = 0; k < items[j].notifications.length; j++){
+          // console.log(items[j].notifications[k]);
+          // console.log(stations[i]._ID);
+          notifications.push(new StationNotification(items[j].notifications[k], stations[i]._ID));
+        }
+      }
+    }
+    return notifications;
+  }
 
   render() {
 
@@ -136,6 +153,7 @@ class App extends Component {
             location={this.state.location}
             stations={this.state.stations}
             items={this.state.items}
+            notifications={this.state.notifications}
             itemChoose={this.itemChoose}
             updateStations={this.updateStations}
             clearItemWarnings={this.clearItemWarnings}
