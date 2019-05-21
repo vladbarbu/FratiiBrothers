@@ -9,7 +9,7 @@ https://sketch.cloud/s/8YoYw
 - [x] Networking link for Product Request (DO)
 - [x] Networking link for Notification (DO)
 - [x] Responsive layout rules
-- [x] Fix notification.date issue with Moment.js (21/05/2019 16:06)
+- [x] Fix notification.date issue with Moment.js
 
 # [Roadmap] Back-Office
 - [x] Tree of Elements (Category -> ... -> Subcategory -> ... -> Item -> *Stations*)
