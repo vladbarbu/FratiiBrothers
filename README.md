@@ -17,11 +17,11 @@ __Back Office:__ https://cocky-mahavira-d62945.netlify.com/
 - [x] Tree of Elements (Category -> ... -> Subcategory -> ... -> Item -> *Stations*)
 - [x] Memorize Tree structure (for navigation integrity)
 - [x] Stations Screen
- - [x] List
- - [x] Structure & Side Bar
+  - [x] List
+  - [x] Structure & Side Bar
 - [x] Item Stock Screen
- - [x] List
- - [x] Structure & Side Bar
+  - [x] List
+  - [x] Structure & Side Bar
 - [x] Statistics Screen
   - [x] List (Stations)
   - [x] Structure & Side Bar (Special)
