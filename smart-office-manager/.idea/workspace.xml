@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="789d589e-2a7c-4f34-86ba-687aa8836754" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office/src/config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/src/config.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="126" column="32" selection-start-line="126" selection-start-column="32" selection-end-line="126" selection-end-column="32" />
+            <state relative-caret-position="326">
+              <caret line="125" column="41" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -426,7 +426,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120516000" />
+    <option name="totallyTimeSpent" value="120906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -954,8 +954,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="126" column="32" selection-start-line="126" selection-start-column="32" selection-end-line="126" selection-end-column="32" />
+        <state relative-caret-position="326">
+          <caret line="125" column="41" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
