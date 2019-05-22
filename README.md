@@ -1,7 +1,7 @@
 # Live prototype (Employee/Manager App) and working platforms
 https://sketch.cloud/s/8YoYw  
-__Front Office:__ https://cocky-mahavira-d62945.netlify.com/   
-__Back Office:__ https://priceless-dijkstra-ab3aef.netlify.com/  
+__Front Office:__ https://priceless-dijkstra-ab3aef.netlify.com/   
+__Back Office:__ https://cocky-mahavira-d62945.netlify.com/   
 
 # [Roadmap] Front-Office
 - [x] Grid of Categories, Subcategories and Elements
