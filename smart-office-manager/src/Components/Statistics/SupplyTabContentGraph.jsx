@@ -121,7 +121,7 @@ class SupplyTabContentGraph extends PureComponent {
                         <div className={"option" + (this.state.option === Config.OPTION_MONTH ? " active" : "")} onClick={() => this.doOptionChange(Config.OPTION_MONTH)}>
                             <div className={"label"}><p>By Month</p></div>
                             <div className={"value"}>
-                                <select defaultValue={this.state.year} onChange={(e)=>{this.doPickTime(this.state.month, e.target.options[e.target.selectedIndex].value)}}>
+                                <select defaultValue={this.state.year} onChange={(e)=>{}}>
                                     {this.printYearOptions()}
                                 </select>
                             </div>
