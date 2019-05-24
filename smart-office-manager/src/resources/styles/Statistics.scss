@@ -90,6 +90,7 @@
           }
         }
         & > .content{
+
             .SupplyTabContent{
               .disclaimer{
                 color: #aaa;
@@ -253,10 +254,20 @@
                 }
               }
               &.Graph{
+
+                .GraphContainer{
+                  max-width: 1500px;
+
+                  .GraphDoughnut{
+                    max-width: 500px;
+                  }
+
+                }
+
               }
 
               &.Calendar{
-
+                max-width: 1500px;
                 .CalendarContainer{
                   width: calc(100% - 1px);
                   border-left: 1px solid #eeeeee;
@@ -349,8 +360,8 @@
                           }
                           &.prediction{
                             & > .label{
-                              & > div{ background: #FFAB00; }
-                              & > p, & > i{ color: #FFAB00; }
+                              & > div{ background: $prediction; }
+                              & > p, & > i{ color: $prediction; }
                             }
                           }
 
@@ -593,7 +604,7 @@
                           &.prediction{
                             & > .value{
                               & > p{
-                                color: #FFAB00;
+                                color: $prediction;
                                 font-weight: 500;
                               }
                             }

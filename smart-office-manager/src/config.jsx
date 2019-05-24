@@ -61,6 +61,7 @@ class Config{
             doNetworkingEditStock : Networking.doEditStock.bind(scope),
             doNetworkingClearWarning: Networking.doClearWarning.bind(scope),
             doNetworkingClearWarnings: Networking.doClearWarnings.bind(scope),
+            doGetStatistics : Networking.doGetStatistics.bind(scope),
 
             /**
              * ------------------------------------
@@ -443,7 +444,7 @@ class Config{
          */
         let scope = this;
 
-        scope.setState({loading : true});
+        scope.setState({loading : false});
     }
 
 

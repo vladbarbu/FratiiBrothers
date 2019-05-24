@@ -39,6 +39,7 @@ class SideBarStatistics extends Component {
             if (this.sideBar.current.classList.contains("collapsed")) this.sideBar.current.classList.remove("collapsed");
             else this.sideBar.current.classList.add("collapsed");
         }
+        this.props.resizeGraphComponents();
     }
 
 }

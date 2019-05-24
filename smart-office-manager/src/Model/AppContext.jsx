@@ -133,6 +133,15 @@ const AppContext = React.createContext({
 
     /**
      *
+     * @param {Config.OPTION_DAY | Config.OPTION_WEEK | Config.OPTION_MONTH } option
+     * @param {String} data => in HTML data input format YYYY-MM-DD
+     * @param {int} itemID => Item.ID
+     * @param {int} stationID  => Station.ID
+     */
+    doGetStatistics : (option, data, itemID, stationID) => {},
+
+    /**
+     *
      *
      * -------------
      *
@@ -148,11 +157,11 @@ const AppContext = React.createContext({
     getToggleSideBarStatistics : (force = null) => {},
 
 
-    startLoading : (scope) => {},
-    stopLoading : (scope) => {},
+    startLoading : () => {},
+    stopLoading : () => {},
 
-    showAlert : (scope) => {},
-    hideAlert : (scope) => {},
+    showAlert : () => {},
+    hideAlert : () => {},
 
 
 

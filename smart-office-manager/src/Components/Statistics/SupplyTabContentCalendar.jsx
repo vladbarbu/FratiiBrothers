@@ -15,9 +15,15 @@ class SupplyTabContentCalendar extends PureComponent {
 
 
         this.state = {
-            month : parseInt(Moment().format("M")),
-            year : parseInt(Moment().format("YYYY"))
-        }
+            statistic : null,
+            month : null,
+            year : null,
+        };
+
+    }
+
+    componentDidMount() {
+        this.doPickTime(Moment().format("M"),Moment().format("YYYY"));
     }
 
     render() {
@@ -59,7 +65,7 @@ class SupplyTabContentCalendar extends PureComponent {
                 </div>
                 <div className={"canvas"}>
                     <span className={"sectionTitle"}><i className="material-icons">calendar_today</i> Stock vs. Prediction Calendar</span>
-                    <Calendar statistic={this.props.statistic} month={this.state.month} year={this.state.year}/>
+                    <Calendar statistic={this.state.statistic} month={this.state.month} year={this.state.year}/>
                 </div>
 
 
@@ -70,11 +76,30 @@ class SupplyTabContentCalendar extends PureComponent {
 
 
     doPickTime(month,year){
-        this.setState({
-            month : parseInt(month),
-            year : parseInt(year)
-        })
+
+        this.context.startLoading();
+        this.context.doGetStatistics(
+            Config.OPTION_MONTH,
+            year+ "-" + month + "-01",
+            null,
+            null,
+        ).then((statistic)=>{
+            console.log(statistic);
+            this.setState({
+                statistic : statistic,
+                month : month,
+                year : year
+            })
+        }).catch((error) => {
+            console.log(error);
+            this.context.showAlert("Server error",Config.ALERT_TYPE_ERROR);
+        }).finally(()=>{ this.context.stopLoading();})
+
+
+
     }
 }
+
+
 SupplyTabContentCalendar.contextType = AppContext;
 export default SupplyTabContentCalendar;

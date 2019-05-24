@@ -1,25 +1,26 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import "../../resources/styles/Statistics.scss";
 import Moment from "moment"
+import AppContext from "../../Model/AppContext";
+import Config from "../../config";
 
-class Calendar extends Component{
+class Calendar extends PureComponent{
 
 
 
     render() {
 
 
+        if(!this.props.hasOwnProperty("statistic") || Config.isEmpty(this.props.statistic)) return null;
+
+
         let statistic = this.parseStatistic();
-
         let weekdays =  Moment.weekdays();
-        let moment = Moment();
+        let moment = Moment(this.props.month +"/" + this.props.year, "MM/YYYY");
 
-        moment.set("year",  this.props.year);
-        moment.set("month", this.props.month);
 
         let firstDayOfMonth = Moment(moment.clone()).startOf("month").format("d");
-        let daysInMonth = moment.daysInMonth();
-
+        let daysInMonth = moment.clone().daysInMonth();
 
         let days = Array.from(Array(43).keys()); days.shift();
 
@@ -91,4 +92,5 @@ class Calendar extends Component{
     }
 }
 
+Calendar.contextType = AppContext;
 export default Calendar;
