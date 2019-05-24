@@ -27,7 +27,7 @@ __Back Office:__ https://cocky-mahavira-d62945.netlify.com/
   - [x] Structure & Side Bar (Special)
   - [x] Chart.js (React wrapper) test
   - [x] Calendar (with time options for dataset)
-  - [ ] Charts (mixed, with time options for dataset)
+  - [x] Charts (mixed, with time options for dataset)
 - [ ] Product Requests Screen
 - [x] Notifications Screen
 - [ ] Action Modals
@@ -38,7 +38,7 @@ __Back Office:__ https://cocky-mahavira-d62945.netlify.com/
 - [ ] Networking link for Edit (DO)
 - [ ] Networking link for Clear Warnings (DO)
 - [ ] Networking link for Notification dismiss (DO)
-- [ ] Networking link for Statistics (RECEIVE) !!!
+- [ ] Networking link for Statistics (RECEIVE)
 - [x] Responsive layout rules
 
 # [Roadmap] Concept & Resources
