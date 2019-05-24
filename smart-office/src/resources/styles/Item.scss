@@ -12,7 +12,31 @@
   transition: box-shadow 0.2s, border 0.2s;
   cursor: pointer;
 
-  &:hover, &:active{
+  &.empty{
+    min-height: 190px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    & > p{
+      color: #ccc;
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 22pt;
+    }
+    & > span{
+      color: #ccc;
+      text-align: center;
+      font-weight: 600;
+      font-size: 12pt;
+    }
+  }
+
+  &:not(.empty):hover, &:not(.empty):active{
     border-color: $colorPrimary;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.12);
     transition: box-shadow 0.2s, border 0.2s;

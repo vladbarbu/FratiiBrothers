@@ -13,10 +13,12 @@ class AllNotificationsPopup extends Component {
 
   componentDidMount() {
     document.addEventListener("mousedown", this.handleClickOutside);
+    document.addEventListener("touchstart", this.handleClickOutside);
   }
 
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener("touchstart", this.handleClickOutside);
   }
 
   setWrapperRef(node) {

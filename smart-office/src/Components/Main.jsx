@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Item from "./Item";
 import "../resources/styles/Main.scss";
+import Config from "../config";
 
 class Main extends Component {
   render() {
@@ -55,7 +56,7 @@ class Main extends Component {
         </div>
 
         <div className="Main">
-          {localElementsContainer !== undefined
+          { !Config.isEmpty(localElementsContainer)
             ? localElementsContainer.map(element => {
                 return (
                   <Item
@@ -65,7 +66,7 @@ class Main extends Component {
                   />
                 );
               })
-            : null}
+              : <div className={"Item empty"}><p>0</p><span>Items</span></div>}
         </div>
       </div>
     );
