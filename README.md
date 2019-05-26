@@ -30,7 +30,7 @@ __Back Office:__ https://cocky-mahavira-d62945.netlify.com/
   - [x] Charts (mixed, with time options for dataset)
 - [ ] Product Requests Screen
 - [x] Notifications Screen
-- [ ] Action Modals
+- [x] Action Modals
 - [x] Networking system
 - [ ] Networking link for Universe
 - [ ] Smart caching system for Universal Networking
