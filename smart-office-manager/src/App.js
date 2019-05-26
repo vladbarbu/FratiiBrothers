@@ -9,6 +9,9 @@ import AppContext from './Model/AppContext'
 import Config from "./config";
 import SideBar from "./Components/SideBar";
 import SNotification from "./Model/SNotification";
+import Modal from "./Components/Common/Modal";
+import "./resources/styles/Modal.scss"
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 class App extends Component {
   constructor(props) {
@@ -75,6 +78,8 @@ class App extends Component {
       isSideBarStatisticsExpanded: false,
       loading : false,
       alert : null,
+
+      globalModals : [],
     };
 
   }
@@ -115,9 +120,11 @@ class App extends Component {
     return notifications;
   };
 
+  componentDidMount() {
+    this.context  = Config.generateAppContextValues(this);
+  }
+
   render() {
-
-
     return (
         <AppContext.Provider value={Config.generateAppContextValues(this)} >
       <div className="App">
@@ -199,6 +206,18 @@ class App extends Component {
             />
           ) : null}
 
+
+          <ReactCSSTransitionGroup
+              transitionName="modal-animation"
+              transitionEnterTimeout={300}
+              transitionLeaveTimeout={300}>
+          {this.state.globalModals.map((data,index)=>{
+            return data.isShowing ? <Modal key={index}  {...data} /> : null
+          })}
+          </ReactCSSTransitionGroup>
+
+
+
         </div>
         <div className={"AppLoader " + (this.state.loading ? "active" : "") }><div><p>Loading...</p></div></div>
         {
@@ -255,7 +274,7 @@ class App extends Component {
   };
 
   resetItemChoose = () => {
-    console.log("Reset");
+
     this.setState({ chosenElement: null });
   };
 
@@ -341,7 +360,6 @@ class App extends Component {
     try {
       /** As cloning a fully functional Object isn't that pretty, we will recreate the first station to us as a holder */
       data = data["stations"][0];
-      console.log(data);
       data["elements"].push({
         ID : "temporary-category-for-fresh-elements",
         type : Config.ELEMENT_TYPE_CATEGORY,
@@ -375,7 +393,6 @@ class App extends Component {
       stockHolder.hasWarning = stockHolder.computeWarning();
       stockHolder.uniqueItems = stockHolder.computeUniqueItems();
 
-      console.log(stockHolder);
       return stockHolder;
     }catch (e) {
       console.error(e);

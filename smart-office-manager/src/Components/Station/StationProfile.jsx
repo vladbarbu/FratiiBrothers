@@ -12,7 +12,6 @@ class StationProfile extends Component {
 
 
   render() {
-    console.log(this.props.chosenStation);
     return (
       <div className="StationProfile" ref={this.scrollReference}>
         <div className={"header"}>

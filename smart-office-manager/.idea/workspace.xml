@@ -2,30 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="789d589e-2a7c-4f34-86ba-687aa8836754" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/razvan.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/razvan.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Statistics/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/Calendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Station/StationProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Station/StationProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/AppContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AppContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Networking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Networking.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/Notification.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Notification.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/Station.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Station.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/Statistics.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Statistics.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/Tree.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/Tree.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/styles/config.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/styles/config.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office/build/precache-manifest.2b21ae9c4c4f2d28f3f86d35d7c9921a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office/build/static/css/main.971429c9.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office/build/static/css/main.971429c9.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office/build/static/js/main.ee7d4fab.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office/build/static/js/main.ee7d4fab.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office/src/resources/styles/AllNotificationsPopup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office/src/resources/styles/AllNotificationsPopup.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,73 +23,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2860">
+              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="411" lean-forward="true" selection-start-line="411" selection-end-line="411" />
+              <folding>
+                <element signature="e#45#88#0" expanded="true" />
+                <element signature="n#!!block;n#doTreeElementToggle#0;n#Config#0" />
+                <element signature="n#!!block;n#doChooseElement#0;n#Config#0" />
+                <element signature="n#!!block;n#doChooseStation#0;n#Config#0" />
+                <element signature="n#!!block;n#doShowScreenSupplyStation#0;n#Config#0" />
+                <element signature="n#!!block;n#getChosenElement#0;n#Config#0" />
+                <element signature="n#!!block;n#getChosenStation#0;n#Config#0" />
+                <element signature="e#16654#20668#0" />
+                <element signature="n#!!block;n#doToggleMobileDrawer#0;n#Config#0" />
+                <element signature="n#!!block;n#doToggleSideBarStatistics#0;n#Config#0" />
+                <element signature="n#!!block;n#startLoading#0;n#Config#0" />
+                <element signature="n#!!block;n#getValue#0;n#Config#0" />
+                <element signature="n#!!block;n#getObject#0;n#Config#0" />
+                <element signature="n#!!block;n#getArray#0;n#Config#0" />
+                <element signature="n#!!block;n#isDataSetInObject#0;n#Config#0" />
+                <element signature="n#!!block;n#isObjectSetInObject#0;n#Config#0" />
+                <element signature="n#!!block;n#isArraySetInObject#0;n#Config#0" />
+                <element signature="n#!!block;n#sanitize#0;n#Config#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="411">
+              <caret line="187" column="44" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
+              <folding>
+                <element signature="e#50#91#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="23" selection-start-column="17" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Common/Modal.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="77" column="35" lean-forward="true" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx">
+        <entry file="file://$PROJECT_DIR$/src/resources/styles/Modal.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="86" column="35" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
+            <state relative-caret-position="740">
+              <caret line="368" column="22" selection-start-line="368" selection-start-column="22" selection-end-line="368" selection-end-column="22" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#600#3925#0" />
+                <element signature="e#886#1254#0" />
+                <element signature="e#1269#1510#0" />
+                <element signature="e#1528#2704#0" />
+                <element signature="e#1776#2833#0" />
+                <element signature="e#1920#2031#0" />
+                <element signature="e#3322#3356#0" />
+                <element signature="e#2963#3074#0" />
+                <element signature="e#3093#3906#0" />
+                <element signature="e#4371#4505#0" />
+                <element signature="e#4559#4687#0" />
+                <element signature="e#4713#4730#0" />
+                <element signature="e#4784#4834#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/styles/Statistics.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="99" column="15" selection-start-line="99" selection-start-column="15" selection-end-line="99" selection-end-column="15" />
-              <folding>
-                <element signature="e#594#2496#0" />
-                <element signature="e#2760#8739#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Statistics/Graph.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="267" selection-start-line="267" selection-end-line="267" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <element signature="e#403#1182#0" />
-                <element signature="e#913#4058#0" />
-                <element signature="e#976#2138#0" />
-                <element signature="e#1561#2120#0" />
-                <element signature="e#2153#3110#0" />
-                <element signature="e#2485#3046#0" />
-                <element signature="e#3585#4146#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Networking.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-945">
-              <caret line="82" column="66" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -117,36 +129,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>StationNoti</find>
-      <find>doActionElementRefillStock</find>
-      <find>doNetworkingClearWarnings</find>
-      <find>doClearW</find>
-      <find>dismissing</find>
-      <find>123A</find>
-      <find>notifications</find>
-      <find>Pure</find>
-      <find>dismiss</find>
-      <find>CalendarContainer</find>
-      <find>month</find>
-      <find>console.lo</find>
-      <find>preHeader</find>
-      <find>doToggleSideBar</find>
-      <find>goBackToStations</find>
-      <find>data</find>
-      <find>today</find>
-      <find>year</find>
-      <find>statistics</find>
-      <find>now</find>
-      <find>chosen</find>
-      <find>startLoading</find>
-      <find>doGetStatistics</find>
-      <find>stopLo</find>
-      <find>StationCard</find>
-      <find>action</find>
-      <find>props</find>
       <find>#F</find>
       <find>toggle</find>
       <find>statistic</find>
+      <find>force</find>
+      <find>this.props</find>
+      <find>modal-animation</find>
+      <find>button</find>
+      <find>toggleModal</find>
+      <find>doActionElementRefillStock</find>
+      <find>isGlobalModalShown</find>
+      <find>element</find>
+      <find>generate</find>
+      <find>Moment</find>
+      <find>Model</find>
+      <find>isRequired</find>
+      <find>isEmpty</find>
+      <find>bind</find>
+      <find>Modal/Modal</find>
+      <find>updateG</find>
+      <find>update</find>
+      <find>updateGlobal</find>
+      <find>updateGlobalModal</find>
+      <find>console.log</find>
+      <find>Config</find>
+      <find>dataset</find>
+      <find>doRefillStock</find>
+      <find>warn</find>
+      <find>fields</find>
+      <find>data</find>
+      <find>Modal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,23 +167,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Components/ElementTree.jsx" />
-        <option value="$PROJECT_DIR$/src/resources/images/icon/ic_arrow_drop_down.svg" />
-        <option value="$PROJECT_DIR$/src/resources/styles/Nav.scss" />
-        <option value="$PROJECT_DIR$/src/resources/images/icon/ic_keyboard_arrow_down_grey.svg" />
-        <option value="$PROJECT_DIR$/src/Components/Station/StationProfile.jsx" />
-        <option value="$PROJECT_DIR$/src/resources/styles/SupplyStatistics.scss" />
-        <option value="$PROJECT_DIR$/src/Components/Tree/Category.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Tree/Subcategory.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Statistics/SupplyTab.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Tree/StationList.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/NavBar.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Tree/Item.jsx" />
-        <option value="$PROJECT_DIR$/src/resources/styles/Main.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/NavBar.scss" />
         <option value="$PROJECT_DIR$/src/Components/SideMenu.jsx" />
         <option value="$PROJECT_DIR$/src/Model/ClassHelper.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Main.jsx" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Model/StationNotification.jsx" />
         <option value="$PROJECT_DIR$/src/Model/Notification.jsx" />
@@ -186,26 +184,40 @@
         <option value="$PROJECT_DIR$/src/Model/SOStation.jsx" />
         <option value="$PROJECT_DIR$/src/Model/Station.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Screen/ScreenNotifications.jsx" />
-        <option value="$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/SideMenu.scss" />
-        <option value="$PROJECT_DIR$/src/Components/SideBar.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/SideBar.scss" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/Station/StationIndicator.jsx" />
-        <option value="$PROJECT_DIR$/src/Model/AppContext.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Statistics/Calendar.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/Tree.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/Station.scss" />
-        <option value="$PROJECT_DIR$/src/resources/styles/Notification.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/config.scss" />
-        <option value="$PROJECT_DIR$/src/Model/Networking.jsx" />
-        <option value="$PROJECT_DIR$/src/config.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx" />
         <option value="$PROJECT_DIR$/src/resources/styles/Statistics.scss" />
         <option value="$PROJECT_DIR$/src/Components/Statistics/Graph.jsx" />
         <option value="$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Main.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/Notification.scss" />
+        <option value="$PROJECT_DIR$/src/Components/Modal/ModalButtonData.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Modal.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Modal/ModalFieldData.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Station/StationProfile.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Modal/ModalField.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Modal/ModalButton.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/ModalOld/ModalField.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Modal/ModalData.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/ModalOld/ModalData.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/ModalOld/Modal.jsx" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Modal/Modal.jsx" />
+        <option value="$PROJECT_DIR$/src/Model/AppContext.jsx" />
+        <option value="$PROJECT_DIR$/src/Model/Networking.jsx" />
+        <option value="$PROJECT_DIR$/src/config.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/Common/Modal.jsx" />
+        <option value="$PROJECT_DIR$/src/Components/SideBar.jsx" />
+        <option value="$PROJECT_DIR$/src/resources/styles/Modal.scss" />
       </list>
     </option>
   </component>
@@ -229,7 +241,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -268,34 +280,6 @@
               <item name="smart-office-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="smart-office-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Screen" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-office-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-office-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Station" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-office-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-office-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Statistics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-office-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-office-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Tree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="smart-office-manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="smart-office-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -322,7 +306,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Statistics" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Components/Modal" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -333,19 +317,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Modal" />
+      <recent name="$PROJECT_DIR$/src/Components/Statistics" />
+      <recent name="$PROJECT_DIR$/src/resources/images" />
+      <recent name="$PROJECT_DIR$/src/Model" />
+      <recent name="$PROJECT_DIR$/src/resources/images/icon" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Components/Statistics" />
       <recent name="$PROJECT_DIR$/src/resources/images/icon" />
       <recent name="$PROJECT_DIR$/src/Components/Tree" />
       <recent name="$PROJECT_DIR$/src/Components/Station" />
       <recent name="$PROJECT_DIR$/src/Components/Screen" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Components/Statistics" />
-      <recent name="$PROJECT_DIR$/src/resources/images" />
-      <recent name="$PROJECT_DIR$/src/Model" />
-      <recent name="$PROJECT_DIR$/src/resources/images/icon" />
-      <recent name="$PROJECT_DIR$/src/Components/Tree" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -376,12 +360,13 @@
       <workItem from="1557933081686" duration="469000" />
       <workItem from="1557934438225" duration="2233000" />
       <workItem from="1558172216201" duration="58823000" />
-      <workItem from="1558682063817" duration="16124000" />
+      <workItem from="1558682063817" duration="20000000" />
+      <workItem from="1558789252190" duration="33849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137030000" />
+    <option name="totallyTimeSpent" value="174755000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -393,10 +378,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17739628" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -407,7 +392,7 @@
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="7" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
@@ -423,89 +408,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/resources/images/logo.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Tree/Category.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationProfile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="99" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="99" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SupplyStatistics.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/Components/Tree/StationList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTab.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="73" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-chartjs-2/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-394">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/NavBar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="276" column="24" selection-start-line="276" selection-start-column="24" selection-end-line="276" selection-end-column="24" />
-          <folding>
-            <element signature="e#27#4680#0" />
-            <element signature="e#1369#1696#0" />
-            <element signature="e#1721#2112#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/ClassHelper.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/Components/InputPopup.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/StationNotification.jsx" />
     <entry file="file://$PROJECT_DIR$/src/Model/Element.jsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -518,16 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="299" column="19" lean-forward="true" selection-start-line="299" selection-start-column="19" selection-end-line="299" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationCard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -591,40 +483,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="103" column="18" selection-start-line="103" selection-start-column="2" selection-end-line="103" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/SideBar.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1185">
           <caret line="79" column="34" selection-start-line="79" selection-start-column="34" selection-end-line="79" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="116" column="71" selection-start-line="116" selection-start-column="56" selection-end-line="116" selection-end-column="71" />
-          <folding>
-            <element signature="e#50#91#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -655,36 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationIndicator.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1161">
-          <caret line="240" lean-forward="true" selection-start-line="240" selection-end-line="240" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/AppContext.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="140" column="19" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/Station.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
@@ -710,20 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/Notification.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Statistics/Calendar.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -744,60 +562,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenNotifications.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationCard.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        <state relative-caret-position="120">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
+    <entry file="file://$PROJECT_DIR$/src/Components/Main.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2726">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="21" />
+        <state relative-caret-position="15">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/Graph.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="427" column="25" selection-start-line="427" selection-start-column="25" selection-end-line="427" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!block;n#doTreeElementToggle#0;n#Config#0" />
-            <element signature="n#!!block;n#doChooseElement#0;n#Config#0" />
-            <element signature="n#!!block;n#doChooseStation#0;n#Config#0" />
-            <element signature="n#!!block;n#doShowScreenSupplyStation#0;n#Config#0" />
-            <element signature="n#!!block;n#getChosenElement#0;n#Config#0" />
-            <element signature="n#!!block;n#getChosenStation#0;n#Config#0" />
-            <element signature="n#!!block;n#doToggleMobileDrawer#0;n#Config#0" />
-            <element signature="n#!!block;n#doToggleSideBarStatistics#0;n#Config#0" />
-            <element signature="n#!!block;n#startLoading#0;n#Config#0" />
-            <element signature="n#!!block;n#getValue#0;n#Config#0" />
-            <element signature="n#!!block;n#getObject#0;n#Config#0" />
-            <element signature="n#!!block;n#getArray#0;n#Config#0" />
-            <element signature="n#!!block;n#parseArrayElementWithClass#0;n#Config#0" />
-            <element signature="n#!!block;n#isDataSetInObject#0;n#Config#0" />
-            <element signature="n#!!block;n#isObjectSetInObject#0;n#Config#0" />
-            <element signature="n#!!block;n#isArraySetInObject#0;n#Config#0" />
-            <element signature="n#!!block;n#sanitize#0;n#Config#0" />
-          </folding>
+        <state relative-caret-position="508">
+          <caret line="267" lean-forward="true" selection-start-line="267" selection-end-line="267" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentGraph.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="520">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx">
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Notification.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        <state relative-caret-position="175">
+          <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+          <folding>
+            <element signature="e#867#1434#0" />
+            <element signature="e#1452#1575#0" />
+            <element signature="e#1611#1842#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -812,36 +619,252 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Networking.jsx">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-945">
-          <caret line="82" column="66" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
+        <state relative-caret-position="268">
+          <caret line="6124" column="4" selection-start-line="6124" selection-start-column="4" selection-end-line="6124" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/Graph.jsx">
+    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SideBarStatistics.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="267" selection-start-line="267" selection-end-line="267" />
+        <state relative-caret-position="45">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#403#1182#0" />
-            <element signature="e#913#4058#0" />
-            <element signature="e#976#2138#0" />
-            <element signature="e#1561#2120#0" />
-            <element signature="e#2153#3110#0" />
-            <element signature="e#2485#3046#0" />
-            <element signature="e#3585#4146#0" />
+            <element signature="e#50#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenStatistics.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="86" column="35" selection-start-line="86" selection-start-column="35" selection-end-line="86" selection-end-column="35" />
+        <state relative-caret-position="220">
+          <caret line="56" column="77" selection-start-line="56" selection-start-column="77" selection-end-line="56" selection-end-column="77" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Statistics/SupplyTabContentCalendar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Modal.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
+          <folding>
+            <element signature="n#Modal#0" />
+            <element signature="n#!!doc;n#data#0;n#Modal#0" />
+            <element signature="n#!!block;n#data#0;n#Modal#0" />
+            <element signature="n#!!doc;n#data#1;n#Modal#0" />
+            <element signature="n#!!block;n#data#1;n#Modal#0" />
+            <element signature="n#!!block;n#buttonsRendered#0;n#Modal#0" />
+            <element signature="n#!!block;n#buttonsRendered#1;n#Modal#0" />
+            <element signature="n#!!block;n#fieldsRendered#0;n#Modal#0" />
+            <element signature="n#!!block;n#fieldsRendered#1;n#Modal#0" />
+            <element signature="n#!!block;n#element#0;n#Modal#0" />
+            <element signature="n#!!block;n#element#1;n#Modal#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationIndicator.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ModalOld/ModalButtonData.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ModalOld/ModalFieldData.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ModalOld/ModalField.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="43" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ModalOld/ModalButton.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="55" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ModalOld/ModalData.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="72" column="35" lean-forward="true" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/ModalOld/Modal.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Modal/ModalData.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Station/StationProfile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenStations.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Screen/ScreenNotifications.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#ScreenNotifications#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/AppContext.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Networking.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2860">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="411" lean-forward="true" selection-start-line="411" selection-end-line="411" />
+          <folding>
+            <element signature="e#45#88#0" expanded="true" />
+            <element signature="n#!!block;n#doTreeElementToggle#0;n#Config#0" />
+            <element signature="n#!!block;n#doChooseElement#0;n#Config#0" />
+            <element signature="n#!!block;n#doChooseStation#0;n#Config#0" />
+            <element signature="n#!!block;n#doShowScreenSupplyStation#0;n#Config#0" />
+            <element signature="n#!!block;n#getChosenElement#0;n#Config#0" />
+            <element signature="n#!!block;n#getChosenStation#0;n#Config#0" />
+            <element signature="e#16654#20668#0" />
+            <element signature="n#!!block;n#doToggleMobileDrawer#0;n#Config#0" />
+            <element signature="n#!!block;n#doToggleSideBarStatistics#0;n#Config#0" />
+            <element signature="n#!!block;n#startLoading#0;n#Config#0" />
+            <element signature="n#!!block;n#getValue#0;n#Config#0" />
+            <element signature="n#!!block;n#getObject#0;n#Config#0" />
+            <element signature="n#!!block;n#getArray#0;n#Config#0" />
+            <element signature="n#!!block;n#isDataSetInObject#0;n#Config#0" />
+            <element signature="n#!!block;n#isObjectSetInObject#0;n#Config#0" />
+            <element signature="n#!!block;n#isArraySetInObject#0;n#Config#0" />
+            <element signature="n#!!block;n#sanitize#0;n#Config#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SideBar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="187" column="44" selection-start-line="187" selection-start-column="44" selection-end-line="187" selection-end-column="44" />
+          <folding>
+            <element signature="e#50#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/config.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Common/Modal.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="77" column="35" lean-forward="true" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/styles/Modal.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="368" column="22" selection-start-line="368" selection-start-column="22" selection-end-line="368" selection-end-column="22" />
+          <folding>
+            <element signature="e#600#3925#0" />
+            <element signature="e#886#1254#0" />
+            <element signature="e#1269#1510#0" />
+            <element signature="e#1528#2704#0" />
+            <element signature="e#1776#2833#0" />
+            <element signature="e#1920#2031#0" />
+            <element signature="e#3322#3356#0" />
+            <element signature="e#2963#3074#0" />
+            <element signature="e#3093#3906#0" />
+            <element signature="e#4371#4505#0" />
+            <element signature="e#4559#4687#0" />
+            <element signature="e#4713#4730#0" />
+            <element signature="e#4784#4834#0" />
           </folding>
         </state>
       </provider>

@@ -34,7 +34,7 @@ class Main extends Component {
         chosenStation: this.props.chosenStation,
 
         /**
-         * Persistent data -- TODO change later into Context API
+         * Persistent data
          */
 
         stations: this.props.stations,

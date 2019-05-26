@@ -55,28 +55,28 @@ const AppContext = React.createContext({
      * Will show the Refill Stock modal. If the input data will be valid, it will
      * bind the scope and trigger the Networking.doRefillStock action (Promise)
      * Input Data: Quantity, Expiration Date
-     * @param stationID
-     * @param itemID
+     * @param staition
+     * @param item
      */
-    doActionElementRefillStock : (stationID, itemID) => {},
+    doActionElementRefillStock : (staition, item) => {},
 
 
     /**
      * Will show the Edit Stock modal. There will be a global "update" button.
      * If data is valid, trigger the Networking.doEditStock action (Promise)
      * Input Data: Array<Quantity, Expiration Date>
-     * @param stationID
-     * @param itemID
+     * @param station
+     * @param item
      */
-    doActionElementEditStock : (stationID, itemID) => {},
+    doActionElementEditStock : (station, item) => {},
 
 
     /**
      * Will clear warnings for a specific item. Triggers the Networking.clearWarnings action (Promise)
-     * @param stationID
-     * @param itemID
+     * @param station
+     * @param item
      */
-    doActionElementClearWarnings : (stationID, itemID) => {},
+    doActionElementClearWarnings : (station, item) => {},
 
 
     /**
@@ -162,6 +162,43 @@ const AppContext = React.createContext({
 
     showAlert : () => {},
     hideAlert : () => {},
+
+
+    /**
+     * --- MODALS ---
+     */
+
+    globalModals : [],
+
+    /**
+     * Updates a certain modal
+     * @param {String} ID
+     * @param {Object} newData
+     */
+    updateGlobalModal : (ID, newData) => {},
+
+    /**
+     * Updates the state.globalModals collection for the entire App
+     * @param {Array<Object>} updatedCollection
+     */
+    updateGlobalModals : (updatedCollection) => {},
+
+    /**
+     *
+     * @param {Object} modal
+     */
+    registerGlobalModal : (modal) => {},
+    /**
+     * Show a certain ModalOld
+     * @param ID
+     */
+    showGlobalModal : (ID) => {},
+
+    /**
+     * Hide a certain ModalOld
+     * @param ID
+     */
+    hideGlobalModal : (ID) => {}
 
 
 

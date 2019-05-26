@@ -1,4 +1,11 @@
+/*eslint-disable react/react-in-jsx-scope*/
+
 import Networking from './Model/Networking'
+import Moment from "moment";
+import React from "react";
+
+
+
 
 class Config{
     static  ELEMENT_TYPE_CATEGORY = "category";
@@ -79,6 +86,15 @@ class Config{
             stopLoading : Config.stopLoading.bind(scope),
             showAlert : Config.showAlert.bind(scope),
             hideAlert : Config.hideAlert.bind(scope),
+
+
+
+            globalModals : scope.state.globalModals,
+            updateGlobalModal : Config.updateGlobalModal.bind(scope),
+            updateGlobalModals  :Config.updateGlobalModals.bind(scope),
+            registerGlobalModal : Config.registerGlobalModal.bind(scope),
+            showGlobalModal : Config.showGlobalModal.bind(scope),
+            hideGlobalModal : Config.hideGlobalModal.bind(scope),
 
         }
     }
@@ -313,30 +329,211 @@ class Config{
      */
 
 
-    static doActionElementRefillStock(stationID, itemID){
+    /**
+     * ASYNC because we have to wait for the setState({}) to fully take place before showing the modal
+     *
+     * @param {Station} station
+     * @param {Element} item
+     */
+    static async doActionElementRefillStock(station, item){
         /**
          * The scope will be bound to App.js
          */
         let scope = this;
+        let modalID = "MODAL-actionElementRefillStock";
 
 
-        let requestRefillStock = Networking.doRefillStock.bind(scope);
-        requestRefillStock(stationID, itemID, 0 , 0);
+        let modal = Config.createModalObject({
+            ID : modalID,
+            title : "Refill Stock",
+            mini : true,
+            description : "Add a new quantity of \""+item.name+"\" to this station (#"+station.name+"). Don't forget to add an expiration date if needed.",
+            fields : [
+                {
+                    ID : "quantity",
+                    label : "Item Quantity",
+                    placeholder : "Fill in the expected quantity",
+                    type : "number"
+                },
+                {
+                    ID : "expiration",
+                    label : "Item Expiration Date",
+                    placeholder : "Fill in the expected expiration date",
+                    value : Moment().add(1,"days").format("YYYY-MM-DD"),
+                    type : "date"
+                },
+            ],
+            buttons : [
+                {
+                    ID : "confirm",
+                    title : "Confirm Refill",
+                    callback_click : function(){
+                        let flag = false;
+                        let quantity = this.getValueFromField("quantity");
+                        let expiration = this.getValueFromField("expiration");
+
+                        if(Config.isEmpty(quantity)) {this.toggleWarnForField("quantity",true); flag = true;} else this.toggleWarnForField("quantity",false);
+                        if(Config.isEmpty(expiration) || Moment(expiration,"YYYY-MM-DD").isBefore(Moment(),'day')) {this.toggleWarnForField("expiration",true);  flag = true;} else this.toggleWarnForField("expiration",false);
+
+
+                        if(Moment(expiration,"YYYY-MM-DD").isBefore(Moment(),'day')) {this.toggleWarnForField("expiration",true);return;}
+                        if(flag){ this.context.showAlert("Please provide data for all the available inputs.", Config.ALERT_TYPE_ERROR); return; }
+
+
+                        Networking.doRefillStock.bind(scope)(station.ID, item.ID, quantity , expiration);
+                    }
+                },
+                {
+                    ID: "close",
+                    title: "Cancel",
+                    callback_click: function(){this.hide();},
+                }
+            ]
+        });
+
+        await Config.registerGlobalModal.bind(scope)(modal);
+
+        Config.showGlobalModal.bind(scope)(modal.ID);
+
     }
 
 
-    static doActionElementEditStock(stationID, itemID){
+    /**
+     *
+     * @param {Station} station
+     * @param {Element} item
+     */
+    static async doActionElementEditStock(station, item){
         /**
          * The scope will be bound to App.js
          */
-       // let scope = this;
+        let scope = this;
+        let modalID = "MODAL-actionElementEditStock";
 
 
-        //let requestEditStock = Networking.doEditStock.bind(scope);
+        let modal = Config.createModalObject({
+            ID : modalID,
+            title : "Refill Stock",
+            description : "Add a new quantity of \""+item.name+"\" to this station (#"+station.name+"). Don't forget to add an expiration date if needed.",
+            customContent : function(){
+                let data = [
+                    {stockID : "1sadasd", quantity : 8, expiration : "2019-09-01"},
+                    {stockID : "221s3", quantity : 3, expiration : "2019-10-01"},
+                    {stockID : "3xzcxz", quantity : 4, expiration : "2019-11-01"},
+                    {stockID : "4sadsa", quantity : 19, expiration : "2019-11-02"},
+                ];
+                let rows = []; for(let item of data) rows.push({
+                        "quantity" : {
+                            ID : "quantity-"+item.stockID,
+                            label : "Item Quantity",
+                            placeholder : "Fill in the expected quantity",
+                            value : item.quantity,
+                            type : "number"
+                        },
+                        "expiration" : {
+                            ID : "expiration-"+item.stockID,
+                            label : "Item Expiration Date",
+                            value : item.expiration,
+                            type : "date"
+                        }
+                    });
+                console.log(this);
+
+
+                return (
+                    <div className={"customContent"}>
+                        {rows.map((row, index) => {
+                            return (
+                                <div key={index} className={"fieldRow"} ref={(element)=>{ this.fields["stock-"+data[index].stockID] = element; }} data-stock={data[index].stockID}>
+                                    <div data-id={row.quantity.ID} className="field quantity" ref={(element)=>{ this.fields[row.quantity.ID] = element; }} data-stock={data[index].stockID} >
+                                        <label htmlFor={row.quantity.ID}>{row.quantity.label}</label>
+                                        <input id={row.quantity.ID} type={Config.sanitize(row.quantity.type,"text")} placeholder={Config.sanitize(row.quantity.placeholder,null)} defaultValue={Config.sanitize(row.quantity.value,null)} />
+                                    </div>
+                                    <div data-id={row.expiration.ID} className="field expiration" ref={(element)=>{ this.fields[row.expiration.ID] = element; }}  data-stock={data[index].stockID} >
+                                        <label htmlFor={row.expiration.ID}>{row.expiration.label}</label>
+                                        <input id={row.expiration.ID} type={Config.sanitize(row.expiration.type,"text")} placeholder={Config.sanitize(row.expiration.placeholder,null)} defaultValue={Config.sanitize(row.expiration.value,null)} />
+                                    </div>
+                                    <div data-id={row.expiration.ID} className="field action">
+                                        <label className={"remove"}>{"Remove"}</label>
+                                        <label className={"restore"}>{"Restore"}</label>
+                                        <div data-id={row.expiration.ID} className="button" onClick={()=>{this.fields["stock-"+data[index].stockID].classList.toggle("removed");}}>
+                                            <div className={"icon remove"}><i className={"material-icons"}>remove_shopping_cart</i></div>
+                                            <div className={"icon restore"}><i className={"material-icons"}>settings_backup_restore</i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>)
+
+            },
+            buttons : [
+                {
+                    ID : "confirm",
+                    title : "Update Stock",
+                    callback_click : function(){
+                        let result = {};
+                        let flag = false;
+                        let flagTime = false;
+
+                        Object.keys(this.fields).forEach(key=>{
+                            let field = this.fields[key];
+                            let stock = field.dataset.stock;
+                            if(!result.hasOwnProperty(stock)) result[stock] = {};
+                            if(field.classList.contains("fieldRow") && field.classList.contains("removed")){ result[stock].removed = true;}
+                            else if(field.classList.contains("field")){
+                                if(field.classList.contains("quantity")){
+                                    let quantity = this.getValueFromField("quantity-"+stock);
+                                    result[stock].quantity = quantity;
+                                    if(Config.isEmpty(quantity)) {this.toggleWarnForField("quantity-"+stock,true); flag = true;} else this.toggleWarnForField("quantity-"+stock,false);
+                                }
+                                else if(field.classList.contains("expiration")){
+                                    let expiration = this.getValueFromField("expiration-"+stock);
+                                    result[stock].expiration = expiration;
+                                    if(Config.isEmpty(expiration)) {this.toggleWarnForField("expiration-"+stock,true); flag = true;}
+                                    else {
+                                        if(Moment(expiration,"YYYY-MM-DD").isBefore(Moment(),'day')) { this.toggleWarnForField("expiration-"+stock,true); flagTime = true;}
+                                        else {
+
+                                            this.toggleWarnForField("expiration-"+stock, false);
+                                        }
+
+                                    }
+                                }
+
+                            }
+                        });
+
+
+                        console.log(result);
+
+                        if(flagTime) {this.toggleWarnForField("expiration",true);return;}
+                        if(flag){ this.context.showAlert("Please provide data for all the available inputs.", Config.ALERT_TYPE_ERROR); return; }
+
+                        Networking.doEditStock.bind(scope)(station.ID, item.ID, []);
+                    }
+                },
+                {
+                    ID: "close",
+                    title: "Cancel",
+                    callback_click: function(){this.hide();},
+                }
+            ]
+        });
+
+        await Config.registerGlobalModal.bind(scope)(modal);
+
+        Config.showGlobalModal.bind(scope)(modal.ID);
+
+
     }
 
-
-    static doActionElementClearWarnings(stationID, itemID){
+    /**
+     *
+     * @param {Station} station
+     * @param {Element} item
+     */
+    static async doActionElementClearWarnings(station, item){
         /**
          * The scope will be bound to App.js
          */
@@ -344,6 +541,38 @@ class Config{
 
 
         //let requestClearWarnings = Networking.doClearWarnings.bind(scope);
+
+
+        let scope = this;
+        let modalID = "MODAL-actionElementClearWarnings";
+
+
+        let modal = Config.createModalObject({
+            ID : modalID,
+            title : "Refill Stock",
+            mini : true,
+            description : "Clear all existing warnings/notifications sent for \""+item.name+"\" from this station (#"+station.name+")?",
+            buttons : [
+                {
+                    ID : "remove",
+                    title : "Clear All",
+                    callback_click : function(){
+                        Networking.doClearWarnings.bind(scope)(station.ID, item.ID);
+                    }
+                },
+                {
+                    ID: "close",
+                    title: "Cancel",
+                    callback_click: function(){this.hide();},
+                }
+            ]
+        });
+
+        await Config.registerGlobalModal.bind(scope)(modal);
+        Config.showGlobalModal.bind(scope)(modal.ID);
+
+
+
     }
 
 
@@ -485,6 +714,85 @@ class Config{
         });
     }
 
+    /**
+     *
+     * @param {String} ID
+     * @param {*} newData
+     */
+    static async updateGlobalModal(ID, newData){
+
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        let globalModals = [...scope.state.globalModals];
+        for(let i = 0; i < globalModals.length; i++) if( globalModals[i].ID === ID ){ globalModals[i] = newData}
+
+        await scope.setState({ globalModals : globalModals});
+
+    }
+
+    static async updateGlobalModals(updatedCollection){
+
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+
+        await scope.setState({ globalModals : updatedCollection});
+
+    }
+
+    static async registerGlobalModal(newModal){
+
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        for(let globalModal of scope.state.globalModals) if(globalModal.ID === newModal.ID ) {
+            await Config.updateGlobalModal.bind(scope)(newModal.ID, newModal);
+            return;
+        }
+
+        await Config.updateGlobalModals.bind(scope)([...scope.state.globalModals, newModal]);
+
+
+    }
+
+
+
+
+    static showGlobalModal(ID){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+        /**
+         *
+         * @type {Array<Object>}
+         */
+        let modals = [...scope.state.globalModals];
+        for(let modal of modals) if(modal.ID === ID) {modal.isShowing = true;}
+        scope.setState({ globalModals : modals});
+    }
+
+    static hideGlobalModal(ID){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+        /**
+         *
+         * @type {Array<Modal>}
+         */
+        let modals = scope.state.globalModals;
+        modals.forEach(element => {if(element.ID === ID) {element.isShowing = false;}});
+        scope.setState({ globalModals : modals});
+    }
+
 
     /**
      * ------------------------------------------
@@ -516,6 +824,11 @@ class Config{
         catch (err){console.error(err);}
 
         return true;
+    };
+
+    static isFunction = (value) => {
+        if(Config.isEmpty(value)) return false;
+        return typeof value === "function";
     };
 
     /**
@@ -600,24 +913,49 @@ class Config{
     static sanitize(value, fallback = ""){
         return Config.isEmpty(value) ? fallback : value;
     }
+
+
+
+    /**
+     *
+     * @param {Object} object
+     * @param {String} object.ID
+     * @param {String} object.title
+     * @param {String=} object.description
+     * @param {Function=} object.customContent
+     * @param {Function=} object.callback_init
+     * @param {Function=} object.callback_show
+     * @param {Function=} object.callback_hide
+     * @param {Boolean=} object.mini
+     *
+     *
+     * @typedef Field
+     * @type {Object}
+     * @property {String} ID
+     * @property {String} label
+     * @property {String} [placeholder]
+     * @property {*} [value]
+     * @property {String} [type]
+     *
+     * @param {Array.<Field>} object.fields
+     *
+     *
+     * @typedef Button
+     * @type {Object}
+     * @property {String} ID
+     * @property {String} title
+     * @property {String} [subtitle]
+     * @property {String} [icon]
+     * @property {Function} [callback_init]
+     * @property {Function} [callback_click]
+     *
+     * @param {Array.<Button>} object.buttons
+     */
+
+    static createModalObject (object){
+        return object;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default Config;

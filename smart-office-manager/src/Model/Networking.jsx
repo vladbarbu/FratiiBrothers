@@ -12,6 +12,8 @@ class Networking {
     static doRefillStock(stationID, itemID, quantity, expirationDate){
         let scope = this;
         console.log(scope);
+
+        console.log("Refill on Station" + stationID + ", Item " + itemID + " with Q "+quantity +" and EXP "+expirationDate);
     }
 
 

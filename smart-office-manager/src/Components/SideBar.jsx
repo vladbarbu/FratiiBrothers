@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import "../resources/styles/SideBar.scss";
 import Config from "../config";
 import AppContext from "../Model/AppContext";
+import Moment from 'moment';
 
 class SideBar extends Component {
 
@@ -141,13 +142,13 @@ class SideBar extends Component {
                       <div className={"data notifications"}>
                           <i className={"material-icons"}>notifications_none</i>
                           <span>Notifications/Warnings:</span>
-                          <div className={"button"}><span>See all</span></div>
+                          <div className={"button"} onClick={()=>{this.showNotifications(element, station)}}><span>See all</span></div>
                       </div>
 
                       <div className={"actions"}>
-                          <div className={"button refill"} ><div className={"content"}><p>Refill Stock</p><span>and clear warnings</span></div></div>
-                          <div className={"button edit"}><div className={"content"}><p>Edit Stock</p></div></div>
-                          <div className={"button clear"}><div className={"content"}><p>Clear Warnings</p></div></div>
+                          <div onClick={()=>{this.context.doActionElementRefillStock(station,element)}} className={"button refill"} ><div className={"content"}><p>Refill Stock</p><span>and clear warnings</span></div></div>
+                          <div onClick={()=>{this.context.doActionElementEditStock(station,element)}} className={"button edit"}><div className={"content"}><p>Edit Stock</p></div></div>
+                          <div onClick={()=>{this.context.doActionElementClearWarnings(station,element)}} className={"button clear"}><div className={"content"}><p>Clear Warnings</p></div></div>
                           <div onClick={()=>{this.context.doShowScreenSupplyStation(station,element)}} className={"button statistics"}><div className={"content"}><p>View item statistics</p></div></div>
                       </div>
 
@@ -156,6 +157,54 @@ class SideBar extends Component {
               </div>
           </div>
         );
+      }
+
+      async showNotifications(element, station){
+
+          let modalID = "MODAL-actionElementShowNotifications";
+
+
+          let modal = Config.createModalObject({
+              ID : modalID,
+              title : "Notifications/Warnings",
+              description : !Config.isEmpty(element.notifications) && element.notifications.length > 0? "Notifications/Warnings for " + element.name +" from station #" + station.name : "There are 0 notifications/warnings for this item at the moment.",
+              customContent : function(){
+                  return (
+                      <div className={"customContent"}>
+                          {element.notifications.map( (notification,key) => {
+                              return (
+                                  <div key={key} className="notification-item">
+                                      <div className="header">
+                                          <p>{element.name}</p>
+                                          <p className="time">
+                                              { Moment(notification["createdAt"],"MM/DD/YYYY hh:mm:ss").format('MMMM Do YYYY, h:mm:ss a')}
+                                          </p>
+                                      </div>
+                                      <div className="notification-item-message">
+                                          <h6>
+                                              {notification.type === "from_management" ? "From management: " : null}{" "}
+                                              {notification.content}
+                                          </h6>
+                                      </div>
+                                  </div>
+                              )
+                          })}
+                      </div>)
+
+              },
+              buttons : [
+                  {
+                      ID: "close",
+                      title: "Cancel",
+                      callback_click: function(){this.hide();},
+                  }
+              ]
+          });
+
+          await this.context.registerGlobalModal(modal);
+
+          this.context.showGlobalModal(modal.ID);
+
       }
 }
 

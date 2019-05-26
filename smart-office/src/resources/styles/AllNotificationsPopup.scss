@@ -31,7 +31,7 @@
 
          & > .container {
            width: calc(100% - 2 * 30px);
-           max-height: calc(100vh - 2 * 30px);
+           max-height: calc(100% - 2 * 30px);
            padding: 30px;
            overflow-y: scroll;
            display: flex;

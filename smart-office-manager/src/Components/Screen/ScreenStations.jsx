@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import StationProfile from "../Station/StationProfile";
-
-
 import StationCard from "../Station/StationCard";
+import AppContext from "../../Model/AppContext";
 
 class ScreenStations extends Component {
 
@@ -87,7 +86,7 @@ class ScreenStations extends Component {
     }
 
 
-
 }
 
+ScreenStations.contextType = AppContext;
 export default ScreenStations;
