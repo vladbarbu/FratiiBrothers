@@ -76,14 +76,10 @@ class Element {
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
-    this.parentID = object.hasOwnProperty("parentId")
-      ? object["parentID"]
-      : null;
+    this.parentID = object.hasOwnProperty("parentId") ? object["parentID"] : null;
     this.elements = (() => {
       let data = [];
-      let elements = object.hasOwnProperty("elements")
-        ? object["elements"]
-        : [];
+      let elements = object.hasOwnProperty("elements") ? object["elements"] : [];
       if (elements && elements.length > 0)
         for (let i = 0; i < elements.length; i++)
           data.push(new Element(elements[i]));
@@ -94,12 +90,8 @@ class Element {
 
     this.notifications = (() => {
       let data = [];
-      let notifications = object.hasOwnProperty("notifications")
-        ? object["notifications"]
-        : [];
-      if (notifications && notifications.length > 0)
-        for (let i = 0; i < notifications.length; i++)
-          data.push(notifications[i]);
+      let notifications = object.hasOwnProperty("messages") ? object["messages"] : [];
+      if (notifications && notifications.length > 0) for (let i = 0; i < notifications.length; i++) data.push(notifications[i]);
       return data;
     })();
   }

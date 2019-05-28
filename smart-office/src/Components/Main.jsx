@@ -11,23 +11,22 @@ class Main extends Component {
     let localElementsContainer = [];
 
     if (localChosen !== null && localChosen !== undefined) {
-      if (localChosen.type !== "item")
-        localElementsContainer = localChosen.elements;
-      else
-        localElementsContainer = this.getParent(
-          localChosen.ID,
-          this.props.elements
-        ).elements;
+
+      if (localChosen.type !== "item") localElementsContainer = localChosen.elements;
+      else localElementsContainer = this.getParent(localChosen.ID, this.props.elements).elements;
 
       while (localChosen.parentID !== null) {
         breadcrumbs.push(localChosen);
         localChosen = this.getParent(localChosen.ID, this.props.elements);
         if (localChosen === null) break;
       }
-      breadcrumbs.push(localChosen);
+
+      if(localChosen) breadcrumbs.push(localChosen);
+
     } else if (localChosen == null) {
       localElementsContainer = this.props.elements;
     }
+
 
     return (
       <div className="MainContainer">

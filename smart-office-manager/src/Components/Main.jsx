@@ -105,13 +105,6 @@ class Main extends Component {
     this.props.goBackToStations();
   };
 
-  itemChoose = element => {
-    this.props.itemChoose(element);
-  };
-
-  updateStations = element => {
-    this.props.updateStations(element);
-  };
 }
 
 export default Main;

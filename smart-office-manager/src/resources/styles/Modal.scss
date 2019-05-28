@@ -23,11 +23,11 @@
 
   & > .inner {
     width: calc(100% - 2 * 10px);
-    height: calc(100% - 10px);
+    height: calc(100% - 2 * 50px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 10px 0 10px;
+    padding: 50px 10px;
     overflow-y: scroll;
 
 
@@ -307,7 +307,7 @@
   opacity: 0.01;
   transition: opacity 300ms;
    .inner  > .card{
-    transform: scale(0.5);
+    transform: translateY(50px);
     transition: transform 300ms;
   }
 
@@ -316,7 +316,7 @@
   opacity: 1;
   transition: opacity 300ms;
    .inner  > .card{
-    transform: scale(1);
+     transform: translateY(0);
     transition: transform 300ms;
   }
 }

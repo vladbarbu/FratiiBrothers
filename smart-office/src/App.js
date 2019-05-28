@@ -264,11 +264,10 @@ class App extends Component {
     });
   };
 
-  onRequestSubmit = (name, description, employee) => {
+  onRequestSubmit = () => {
     /**
      * gets the input from the fields in the request item form
      */
-    console.log(name + description + employee);
     this.toggleRequestPopup();
     this.toggleActionConfirmationPopup();
   };
@@ -314,7 +313,6 @@ class App extends Component {
                 return;
               }
             }
-
 
             let elements = (()=>{
               try {
@@ -362,6 +360,7 @@ class App extends Component {
             resolve();
           })
           .catch( () => {
+            self.setState({loading : false});
             reject();
           })
     });
@@ -384,7 +383,7 @@ class App extends Component {
     return new Promise((resolve, reject) => {
       axios.post(Config.API_NOTIFICATION_SEND,{
         stationId: self.state.station.id,
-        itemId : data.itemId,
+        elementId : data.itemId,
         quantity : Config.isEmpty(data.quantity) ? 0 : data.quantity,
       })
           .then((response) => {

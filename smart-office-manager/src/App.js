@@ -54,6 +54,9 @@ class App extends Component {
       showConfirmationPopup: false,
       showInputPopup: false,
 
+
+      isSafeToUpdateUniverse : true,
+
       /**
        * The stockHolder will represent an imaginary Station, that will hold every unique item in the platform.
        * Also, when declaring this, we will compute other "global" data items that we need (e.g. entire stock for each item)
@@ -104,7 +107,6 @@ class App extends Component {
     }
     return [];
   };
-
   loadNotifications = (stations) => {
     let notifications = [];
     for(let i = 0; i < stations.length; i++){
@@ -119,11 +121,27 @@ class App extends Component {
     }
     return notifications;
   };
-
   componentDidMount() {
-    this.context  = Config.generateAppContextValues(this);
-  }
+    console.log("App Mounted.");
 
+    this.setState({
+      context : Config.generateAppContextValues(this),
+      loading : true
+    },
+        ()=>{
+          this.state.context.doGetUniverse().then(()=> {
+            this.setState({loading : false});
+          });
+        });
+
+
+
+    setInterval(()=>{this.state.context.doGetUniverse()}, 30000);
+
+
+
+
+  }
   render() {
     return (
         <AppContext.Provider value={Config.generateAppContextValues(this)} >
@@ -162,8 +180,6 @@ class App extends Component {
             stations={this.state.stations}
             items={this.state.items}
             notifications={this.state.notifications}
-            itemChoose={this.itemChoose}
-            updateStations={this.updateStations}
 
 
 
@@ -186,10 +202,6 @@ class App extends Component {
 
               sideBarChosen={this.state.sideBarChosen}
 
-
-              clearItemWarnings={this.clearItemWarnings}
-              refillStock={this.refillStock}
-              editStock={this.editStock}
               toggleConfirmationPopup={this.toggleConfirmationPopup}
 
               />
@@ -234,15 +246,6 @@ class App extends Component {
   };
 
 
-  updateStations = elements => {
-    let clone = this.state.stations;
-    clone.forEach(element => {
-      element.elements.forEach(element => {
-        if (element === elements) element = elements;
-      });
-    });
-    this.setState({ stations: clone });
-  };
 
   onClickSideBar = chosen => {this.setState({ sideBarChosen: chosen });};
 
@@ -265,43 +268,12 @@ class App extends Component {
       chosenElement: null,
     });
 
-    this.resetItemChoose();
+
   };
 
 
-  itemChoose = element => {
-    this.setState({ chosenElement: element });
-  };
-
-  resetItemChoose = () => {
-
-    this.setState({ chosenElement: null });
-  };
-
-  editStock = (item, station, stock) => {
-    console.log(
-      "update stock item " +
-        item.ID +
-        " from station " +
-        station._ID +
-        " amount " +
-        stock
-    );
-  };
 
 
-  clearItemWarnings = (item, station) => {
-    console.log(
-      "No more warnings for itemid =" + item.ID + " from station " + station._ID
-    );
-  };
-
-  refillStock = (item, station) => {
-    console.log(
-      "Refill the stock for itemid=" + item.ID + " from station " + station._ID
-    );
-  };
-  /* functii pentru stock-ul si indexarea itemelor pe statii si pe etaje */
 
   loadItems = elements => {
     let items = [];

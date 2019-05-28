@@ -11,11 +11,11 @@ class Config {
   static ELEMENT_TYPE_CATEGORY = "category";
   static ELEMENT_TYPE_ITEM = "item";
 
-  static STATION_ID = "5ce2ffe428b5b519541f8c25"; // "5ce2ffe428b5b519541f8c09";
+  static STATION_ID = "5cec1a164bda4429340dfdbe";
   static API_ROOT = "https://smart-office-backend.herokuapp.com/api/";
-  static API_GLOBAL_RETRIEVE = Config.API_ROOT + "user/station/";
-  static API_REQUEST_SEND = Config.API_ROOT + "user/requests/";
-  static API_NOTIFICATION_SEND = Config.API_ROOT + "user/notifications/";
+  static API_GLOBAL_RETRIEVE = Config.API_ROOT + "user/stations/";
+  static API_REQUEST_SEND = Config.API_ROOT + "user/requests/add";
+  static API_NOTIFICATION_SEND = Config.API_ROOT + "user/notifications/add";
 
   static loadElementsFromAPI = () => {
     return new Promise((resolve, reject) => {

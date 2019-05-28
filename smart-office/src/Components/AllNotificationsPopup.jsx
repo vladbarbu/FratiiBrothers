@@ -38,14 +38,6 @@ class AllNotificationsPopup extends Component {
         && this.props.itemsFlat.hasOwnProperty(ID) ? this.props.itemsFlat[ID].name : null;
   };
 
-  getNotificationsFromManagement = () => {
-    let notifications = [];
-    for (let i = 0; i < this.props.notifications.length; i++)
-      if (this.props.notifications[i].type === "from_management")
-        notifications.push(this.props.notifications[i]);
-    return notifications;
-  };
-
 
 
   printDate = notification => {
@@ -101,7 +93,7 @@ class AllNotificationsPopup extends Component {
                   notification => (
                     <div key={++i} className="notification-item">
                       <div className="header">
-                        <p>{this.getItemNameById(notification.itemId)}</p>
+                        <p>{this.getItemNameById(notification.elementId)}</p>
                         <p className="time">
                           {this.printDate(notification).toString()}
                         </p>

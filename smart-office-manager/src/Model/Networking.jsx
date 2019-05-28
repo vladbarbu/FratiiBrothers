@@ -1,4 +1,6 @@
 import Moment from "moment"
+import axios from "axios";
+import Config from "./../config"
 
 class Networking {
 
@@ -205,6 +207,93 @@ class Networking {
 
 
         } )
+
+
+    }
+
+
+    static doGetNotifications(){
+
+    }
+
+    static doGetProductRequests(){
+
+
+        return new Promise((resolve, reject) => {
+            resolve([
+                {
+                    id : "5ced4c28a24a36001778403c",
+                    stationId : "5cec1a164bda4429340dfdbe",
+                    name : "Request for some product",
+                    badge : "Razvan98",
+                    description : "We want Snacks and Whisky"
+                },
+                {
+                    id : "5ced52aaa24a36001778403d",
+                    stationId : "5cec1a164bda4429340dfdbe",
+                    name : "Give me",
+                    badge : "Razvan98",
+                    description : "We want Snacks and Whisky"
+                }
+            ])
+        })
+
+
+
+
+    }
+
+    static doGetUniverse(){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+
+        console.log("Updating universe...");
+        if(!scope.state.isSafeToUpdateUniverse){
+            console.log("Universe not safe to update.");
+            return new Promise((resolve)=>{resolve();});
+        }
+
+        return new Promise( (resolve, reject) => {
+
+            axios
+                .get(Config.API_GLOBAL_RETRIEVE + Config.LOCATION_ID)
+                .then(response => {
+                    console.log(response);
+                    try {
+                        let status = response["status"];
+                        if (parseInt(status) === Config.HTTP_REQUEST_STATUS_OK) {
+                            let data = response["data"];
+
+                            if(scope.state.initial !== undefined && scope.state.initial !== null){
+                                if(JSON.stringify(scope.state.initial) ===  JSON.stringify(data)){
+                                    console.log("Universe was already up to date.");
+                                    resolve();
+                                    return;
+                                }
+                            }
+
+
+                            resolve();
+
+
+                        }
+                    } catch (e) {
+                        console.error("Parsing error at load.");
+                        console.error(e);
+                        reject();
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    reject();
+                })
+                .finally(() => {
+                    // always executed
+                });
+        });
 
 
     }

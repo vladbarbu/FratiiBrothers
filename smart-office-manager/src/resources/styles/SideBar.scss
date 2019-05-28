@@ -46,10 +46,9 @@
     will-change: transform;
   }
   &.hideMeForever{
-    transform: translateX(500px);
+    transform: translateX(200vw);
     transition: transform 0s !important;
     will-change: transform;
-
   }
 
   & > .inner {
@@ -309,6 +308,8 @@
     transition: transform 0.2s;
     width: 95%;
     z-index: $zIndex-SideBar-mobile;
+    transform: translateX(200vw);
+    will-change: transform;
     &.active {
       &:before {
         content: ' ';

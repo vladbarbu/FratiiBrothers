@@ -1,19 +1,4 @@
 class Notification {
-  //     /**
-  //      *
-  //      * @returns {Array<Notification>} value
-  //      */
-  //     get notifications(){
-  //         return this._notifications;
-  //     }
-  //     /**
-  //    *
-  //    * @param {Array<Notification>} value
-  //    */
-
-  //     set notifications(value){
-  //         this._notifications = value;
-  //     }
 
   get type() {
     return this._type;
@@ -62,7 +47,7 @@ class Notification {
       ? object["createdAt"]
       : null;
     this.content = object.hasOwnProperty("content") ? object["content"] : null;
-    this.itemID = object.hasOwnProperty("itemID") ? object["itemID"] : null;
+    this.itemID = object.hasOwnProperty("elementId") ? object["elementId"] : null;
   }
 }
 

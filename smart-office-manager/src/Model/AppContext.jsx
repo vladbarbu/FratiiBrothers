@@ -140,6 +140,23 @@ const AppContext = React.createContext({
      */
     doGetStatistics : (option, data, itemID, stationID) => {},
 
+
+    /**
+     * Retrieve the entire list of notifications from the server
+     */
+    doGetNotifications : ()=>{},
+
+    /**
+     * Retrieve the entire list of product requests from the server
+     */
+    doGetProductRequests: ()=>{},
+
+    /**
+     * Retrieve the ...Universe
+     */
+    doGetUniverse: ()=>{},
+
+
     /**
      *
      *
@@ -159,6 +176,7 @@ const AppContext = React.createContext({
 
     startLoading : () => {},
     stopLoading : () => {},
+    isLoading : () => {},
 
     showAlert : () => {},
     hideAlert : () => {},

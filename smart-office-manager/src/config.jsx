@@ -8,9 +8,25 @@ import React from "react";
 
 
 class Config{
-    static  ELEMENT_TYPE_CATEGORY = "category";
-    static  ELEMENT_TYPE_ITEM = "item";
-    static  ELEMENT_TYPE_SUBCATEGORY = "subcategory";
+
+
+    static HTTP_REQUEST_STATUS_OK = 200;
+    static HTTP_REQUEST_STATUS_CREATED = 201;
+    static HTTP_REQUEST_STATUS_BAD_REQUEST = 400;
+    static HTTP_REQUEST_STATUS_NO_CONTENT = 204;
+    static HTTP_REQUEST_STATUS_NOT_FOUND = 404;
+
+
+    static LOCATION_ID = "5cec1a164bda4429340dfdbb";
+    static API_ROOT = "https://smart-office-backend.herokuapp.com/api/";
+    static API_GLOBAL_RETRIEVE = Config.API_ROOT + "admin/locations/";
+
+
+
+
+    static ELEMENT_TYPE_CATEGORY = "category";
+    static ELEMENT_TYPE_ITEM = "item";
+    static ELEMENT_TYPE_SUBCATEGORY = "subcategory";
 
     static SCREEN_IDENTIFIER_STATIONS = "Stations";
     static SCREEN_IDENTIFIER_STOCK = "Item Stock";
@@ -69,6 +85,9 @@ class Config{
             doNetworkingClearWarning: Networking.doClearWarning.bind(scope),
             doNetworkingClearWarnings: Networking.doClearWarnings.bind(scope),
             doGetStatistics : Networking.doGetStatistics.bind(scope),
+            doGetNotifications : Networking.doGetNotifications.bind(scope),
+            doGetProductRequests: Networking.doGetProductRequests.bind(scope),
+            doGetUniverse: Networking.doGetUniverse.bind(scope),
 
             /**
              * ------------------------------------
@@ -84,6 +103,7 @@ class Config{
 
             startLoading : Config.startLoading.bind(scope),
             stopLoading : Config.stopLoading.bind(scope),
+            isLoading : Config.isLoading.bind(scope),
             showAlert : Config.showAlert.bind(scope),
             hideAlert : Config.hideAlert.bind(scope),
 
@@ -676,6 +696,14 @@ class Config{
         scope.setState({loading : false});
     }
 
+    static isLoading(){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        return scope.state.loading;
+    }
 
     static showAlert(text, type = Config.ALERT_TYPE_SUCCESS, time = 2000, callback = ()=>{}){
         /**
