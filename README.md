@@ -28,7 +28,7 @@ __Back Office:__ https://cocky-mahavira-d62945.netlify.com/
   - [x] Chart.js (React wrapper) test
   - [x] Calendar (with time options for dataset)
   - [x] Charts (mixed, with time options for dataset)
-- [ ] Product Requests Screen
+- [x] Product Requests Screen
 - [x] Notifications Screen
 - [x] Action Modals
 - [x] Networking system
