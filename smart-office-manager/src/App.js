@@ -12,6 +12,7 @@ import SNotification from "./Model/SNotification";
 import Modal from "./Components/Common/Modal";
 import "./resources/styles/Modal.scss"
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import Networking from "./Model/Networking";
 
 class App extends Component {
   constructor(props) {
@@ -118,6 +119,9 @@ class App extends Component {
   };
   componentDidMount() {
     console.log("App Mounted.");
+
+
+    //Networking.doGetStatisticsML.bind(this)({ID:"5cec1a154bda4429340dfda4"},"2018-07-10",31);
 
     this.setState({
       context : Config.generateAppContextValues(this),

@@ -14,6 +14,7 @@
   }
 
   & > .App-container{
+    min-height:0; /** IMPORTANT FOR OVERFLOW OF MAIN ON FIREFOX */
     display: flex;
     flex: 1;
     flex-direction: row;

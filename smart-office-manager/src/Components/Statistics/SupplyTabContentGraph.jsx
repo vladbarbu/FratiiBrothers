@@ -13,7 +13,7 @@ class SupplyTabContentGraph extends Component {
 
     state = {
         statistic : null,
-        option : Config.OPTION_DAY,
+        option : Config.OPTION_MONTH,
         now : {
             day :  Moment().format("YYYY-MM-DD"),
             week : Moment().format("YYYY-[W]WW"),
@@ -66,10 +66,10 @@ class SupplyTabContentGraph extends Component {
                     <Tree minimal = {true} elements = {[element]} />
                     <span className={"sectionTitle"}>Options</span>
                     <div className={"time"}>
-                        <div className={"option" + (this.state.option === Config.OPTION_DAY ? " active" : "")} onClick={() => this.doOptionChange(Config.OPTION_DAY)}>
-                            <div className={"label"}><p>By Day</p></div>
-                            <div className={"value"}><input onChange={(e)=>{this.setState({byDay : e.target.value}); this.updateStatistic();}} defaultValue={this.state.now.day} type={"date"} placeholder={"Today"}/></div>
-                        </div>
+                        {/*<div className={"option" + (this.state.option === Config.OPTION_DAY ? " active" : "")} onClick={() => this.doOptionChange(Config.OPTION_DAY)}>*/}
+                        {/*    <div className={"label"}><p>By Day</p></div>*/}
+                        {/*    <div className={"value"}><input onChange={(e)=>{this.setState({byDay : e.target.value}); this.updateStatistic();}} defaultValue={this.state.now.day} type={"date"} placeholder={"Today"}/></div>*/}
+                        {/*</div>*/}
                         <div className={"option" + (this.state.option === Config.OPTION_WEEK? " active" : "")} onClick={() => this.doOptionChange(Config.OPTION_WEEK)}>
                             <div className={"label"}><p>By Week</p></div>
                             <div className={"value"}><input onChange={(e)=>{this.setState({byWeek : e.target.value}); this.updateStatistic();}}  defaultValue={this.state.now.week} type={"week"} /></div>

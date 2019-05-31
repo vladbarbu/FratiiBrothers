@@ -510,7 +510,17 @@ class Config{
                                     quantity : quantity,
                                     expirationDate : expiration
                                 }));
+
+                                let stockHolder =  scope.state.stockHolder;
+
                                 element.quantity += parseInt(quantity);
+                                stockHolder.elementsFlat[element.ID].quantity += parseInt(quantity);
+                                let stations = scope.state.stations;
+
+                                scope.setState({
+                                    stations : stations,
+                                    stockHolder : stockHolder
+                                });
                                 this.hide();
 
                             })
@@ -703,11 +713,11 @@ class Config{
 
                                 let list = scope.state.notifications.filter(item =>  item.itemID !== element.ID);
                                 element.notifications = element.notifications.filter(item =>  item.itemID !== element.ID);
-                                let elementsFlat =  scope.state.elementsFlat;
+                                let stockHolder =  scope.state.stockHolder;
 
                                 scope.setState({
                                     notifications : list,
-                                    elementsFlat : elementsFlat
+                                    stockHolder : stockHolder
                                 });
 
                                 this.hide();

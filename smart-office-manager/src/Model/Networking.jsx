@@ -82,6 +82,10 @@ class Networking {
         let scope = this;
         console.log(scope);
 
+        return new Promise((resolve, reject) => {
+            resolve(scope);
+        });
+
         return new Promise( (resolve, reject) => {
 
             axios
@@ -202,70 +206,70 @@ class Networking {
                             {date: startOfWeek, stock: 100 * (salt), prediction: 200 * (salt)},
                             {
                                 date: (dayStartOfWeekOnly + 1) + "/" + monthOnly,
-                                stock: 70 * (salt),
-                                prediction: 300 * (salt)
+                                stock: 50,
+                                prediction: 49
                             },
                             {
                                 date: (dayStartOfWeekOnly + 2) + "/" + monthOnly,
-                                stock: 102 * (salt),
-                                prediction: 300 * (salt)
+                                stock: 100,
+                                prediction: 52
                             },
                             {
                                 date: (dayStartOfWeekOnly + 3) + "/" + monthOnly,
-                                stock: 105 * (salt),
-                                prediction: 300 * (salt)
+                                stock: 100,
+                                prediction: 52
                             },
                             {
                                 date: (dayStartOfWeekOnly + 4) + "/" + monthOnly,
-                                stock: 200 * (salt),
-                                prediction: 300 * (salt)
+                                stock: 100,
+                                prediction: 52
                             },
                             {
                                 date: (dayStartOfWeekOnly + 5) + "/" + monthOnly,
-                                stock: 200 * (salt),
-                                prediction: 300 * (salt)
+                                stock: 50,
+                                prediction: 46
                             },
                             {
                                 date: (dayStartOfWeekOnly + 6) + "/" + monthOnly,
-                                stock: 200 * (salt),
-                                prediction: 300 * (salt)
+                                stock: 100,
+                                prediction: 50
                             }
                         ]
                     },
                     byMonth: {
                         date: startOfMonth,
                         data: [
-                            {date: "01/" + monthOnly, stock: 100 * (salt), prediction: 200 * (salt)},
-                            {date: "02/" + monthOnly, stock: 70 * (salt), prediction: 300 * (salt)},
-                            {date: "03/" + monthOnly, stock: 102 * (salt), prediction: 300 * (salt)},
-                            {date: "04/" + monthOnly, stock: 105 * (salt), prediction: 300 * (salt)},
-                            {date: "05/" + monthOnly, stock: 200 * (salt), prediction: 300 * (salt)},
-                            {date: "06/" + monthOnly, stock: 200 * (salt), prediction: 300 * (salt)},
-                            {date: "07/" + monthOnly, stock: 200 * (salt), prediction: 300 * (salt)},
-                            {date: "08/" + monthOnly, stock: 200, prediction: 300},
-                            {date: "09/" + monthOnly, stock: 200, prediction: 300},
-                            {date: "10/" + monthOnly, stock: 200, prediction: 220},
-                            {date: "11/" + monthOnly, stock: 200 * (salt), prediction: 220 * (salt)},
-                            {date: "12/" + monthOnly, stock: 200, prediction: 220},
-                            {date: "13/" + monthOnly, stock: 100, prediction: 220},
-                            {date: "14/" + monthOnly, stock: 70, prediction: 210},
-                            {date: "15/" + monthOnly, stock: 100, prediction: 210},
-                            {date: "16/" + monthOnly, stock: 70, prediction: 210},
-                            {date: "17/" + monthOnly, stock: 100, prediction: 210},
-                            {date: "18/" + monthOnly, stock: 70, prediction: 210},
-                            {date: "19/" + monthOnly, stock: 100, prediction: 200},
-                            {date: "20/" + monthOnly, stock: 70, prediction: 200},
-                            {date: "21/" + monthOnly, stock: 100, prediction: 200},
-                            {date: "22/" + monthOnly, stock: 70, prediction: 200},
-                            {date: "23/" + monthOnly, stock: 100, prediction: 200},
-                            {date: "24/" + monthOnly, stock: 70, prediction: 200},
-                            {date: "25/" + monthOnly, stock: 100, prediction: 210},
-                            {date: "26/" + monthOnly, stock: 70, prediction: 210},
-                            {date: "27/" + monthOnly, stock: 100, prediction: 200},
-                            {date: "28/" + monthOnly, stock: 70, prediction: 200},
-                            {date: "29/" + monthOnly, stock: 100, prediction: 200},
-                            {date: "30/" + monthOnly, stock: 70, prediction: 200},
-                            {date: "31/" + monthOnly, stock: 140, prediction: 140},
+                            {date: "01/" + monthOnly, stock: 100, prediction: 50},
+                            {date: "02/" + monthOnly, stock: 100, prediction: 51},
+                            {date: "03/" + monthOnly, stock: 100, prediction: 49},
+                            {date: "04/" + monthOnly, stock: 100, prediction: 49},
+                            {date: "05/" + monthOnly, stock: 100, prediction: 49},
+                            {date: "06/" + monthOnly, stock: 100, prediction: 50},
+                            {date: "07/" + monthOnly, stock: 100, prediction: 51},
+                            {date: "08/" + monthOnly, stock: 50, prediction: 48},
+                            {date: "09/" + monthOnly, stock: 50, prediction: 48},
+                            {date: "10/" + monthOnly, stock: 50, prediction: 50},
+                            {date: "11/" + monthOnly, stock: 50, prediction: 50},
+                            {date: "12/" + monthOnly, stock: 50, prediction: 49},
+                            {date: "13/" + monthOnly, stock: 50, prediction: 48},
+                            {date: "14/" + monthOnly, stock: 50, prediction: 48},
+                            {date: "15/" + monthOnly, stock: 50, prediction: 52},
+                            {date: "16/" + monthOnly, stock: 50, prediction: 51},
+                            {date: "17/" + monthOnly, stock: 50, prediction: 52},
+                            {date: "18/" + monthOnly, stock: 50, prediction: 51},
+                            {date: "19/" + monthOnly, stock: 100, prediction: 51},
+                            {date: "20/" + monthOnly, stock: 100, prediction: 52},
+                            {date: "21/" + monthOnly, stock: 100, prediction: 52},
+                            {date: "22/" + monthOnly, stock: 100, prediction: 52},
+                            {date: "23/" + monthOnly, stock: 100, prediction: 50},
+                            {date: "24/" + monthOnly, stock: 50, prediction: 49},
+                            {date: "25/" + monthOnly, stock: 50, prediction: 49},
+                            {date: "26/" + monthOnly, stock: 100, prediction: 100},
+                            {date: "27/" + monthOnly, stock: 100, prediction: 100},
+                            {date: "28/" + monthOnly, stock: 100, prediction: 49},
+                            {date: "29/" + monthOnly, stock: 100, prediction: 48},
+                            {date: "30/" + monthOnly, stock: 100, prediction: 49},
+                            {date: "31/" + monthOnly, stock: 100, prediction: 48},
                         ]
                     }
                 };
@@ -371,6 +375,46 @@ class Networking {
 
     }
 
+
+    static doGetStatisticsML(element, startDate, length){
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+
+        return new Promise( (resolve, reject) => {
+
+            axios
+                .get("http://79.118.91.29:8081/prediction/" + element.ID + "/"+startDate+"/"+length,{
+                    headers  : {
+                        "Authentication" : "Token 679895cf533b0dbcbb15661852037bdcd4ec80f2"
+                    }
+                })
+                .then(response => {
+                    console.log(response);
+                    try {
+                        let status = response["status"];
+                        if (parseInt(status) === Config.HTTP_REQUEST_STATUS_OK) {
+                            resolve(response["data"]);
+                        }
+                    } catch (e) {
+                        console.error("Parsing error at load.");
+                        console.error(e);
+                        reject();
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    reject();
+                })
+                .finally(() => {
+                    // always executed
+                });
+        });
+
+
+    }
 
 
 }
