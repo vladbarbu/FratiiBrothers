@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Moment from "moment";
+
 
 import "../resources/styles/AllNotificationsPopup.scss";
 import Config from "../config";
+import SNotification from "../model/SNotification";
 
 class AllNotificationsPopup extends Component {
   constructor(props) {
@@ -39,15 +40,8 @@ class AllNotificationsPopup extends Component {
   };
 
 
-
   printDate = notification => {
-    try{
-      return  Moment(notification["createdAt"],"MM/DD/YYYY hh:mm:ss").format('MMMM Do YYYY, h:mm:ss a');
-
-    }catch (e) {
-      console.error(e);
-    }
-    return "-";
+    return (SNotification.parseDate(notification["createdAt"]));
   };
 
 

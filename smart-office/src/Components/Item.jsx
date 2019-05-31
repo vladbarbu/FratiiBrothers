@@ -33,7 +33,7 @@ class Item extends Component {
       >
         <div className="image">
           <img
-            src={require("./../resources/" + this.props.item.image)}
+            src={this.props.item.image}
             alt=""
           />
         </div>

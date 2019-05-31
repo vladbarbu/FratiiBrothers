@@ -1,4 +1,6 @@
-class Notification {
+import Moment from "moment";
+
+class SNotification {
 
   get type() {
     return this._type;
@@ -49,6 +51,16 @@ class Notification {
     this.content = object.hasOwnProperty("content") ? object["content"] : null;
     this.itemID = object.hasOwnProperty("elementId") ? object["elementId"] : null;
   }
+
+
+  static parseDate(date){
+    try{
+      return  Moment(date,Moment.ISO_8601).format('MMMM Do YYYY, h:mm:ss A');
+    }catch (e) {
+      console.error(e);
+    }
+    return "-";
+  }
 }
 
-export default Notification;
+export default SNotification;

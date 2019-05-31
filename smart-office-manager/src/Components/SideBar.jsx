@@ -119,7 +119,7 @@ class SideBar extends Component {
                   </div>
                   <div className={"header"}>
                       <div className={"image"}>
-                          <img alt={"Item element"} src={require("./../resources/" + element.image)}/>
+                          <img alt={"Item element"} src={element.image}/>
                       </div>
                       <div className={"breadcrumbs"}>
                           {breadcrumbs.slice(0).reverse().map((element, index) => {

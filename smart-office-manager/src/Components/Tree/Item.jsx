@@ -10,19 +10,10 @@ class Item extends PureComponent{
        active : false
    };
 
-   componentWillReceiveProps(nextProps, nextContext) {
-
-       // this.setState({
-       //     active : active
-       // });
-       // console.log(this.props.element);
-       // console.log(this.context.screen);
-       // console.log(active);
-
-   }
 
 
     render() {
+
         let active =
             this.context.screen ===  Config.SCREEN_IDENTIFIER_STATIONS ?
                 this.props.element.activeInStations :
@@ -36,7 +27,7 @@ class Item extends PureComponent{
             <div className={"Item"}>
                 <div className={"card" + (active ? " active" : "") } onClick={()=>{ this.context.doChooseElement(this.props.element.ID); }}  >
                     <div className={"icon"}><i className={"material-icons"}>subdirectory_arrow_right</i></div>
-                    <div className={"image"}><img alt={this.props.element.name} src={require("./../../resources/" + this.props.element.image)}/></div>
+                    <div className={"image"}><img alt={this.props.element.name} src={this.props.element.image}/></div>
                     <div className={"content"}>
                         <p className={"label"}>Item:</p>
                         <p className={"title"}>{this.props.element.name}</p>

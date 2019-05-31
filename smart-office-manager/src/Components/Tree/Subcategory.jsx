@@ -10,6 +10,8 @@ class Subcategory extends PureComponent{
 
 
     render() {
+
+
         let active =
             this.context.screen ===  Config.SCREEN_IDENTIFIER_STATIONS ?
                 this.props.element.activeInStations :
@@ -23,7 +25,7 @@ class Subcategory extends PureComponent{
 
             <div className={"card" +  (active? " active" : "")} onClick={() => {this.context.doTreeElementToggle(this.props.element.ID);}}  >
                 <div className={"icon"}><i className={"material-icons"}>subdirectory_arrow_right</i></div>
-                <div className={"image"}><img alt={this.props.element.name} src={require("./../../resources/" + this.props.element.image)}/></div>
+                <div className={"image"}><img alt={this.props.element.name} src={this.props.element.image}/></div>
                 <div className={"content"}>
                     <p className={"label"}>Subcategory:</p>
                     <p className={"title"}>{this.props.element.name}</p>

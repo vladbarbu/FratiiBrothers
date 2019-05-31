@@ -31,7 +31,7 @@ class SideBarItem extends Component {
     return (
       <div className="ItemBar sideBarItem">
         <img
-          src={require("./../resources/" + this.props.element.image)}
+          src={this.props.element.image}
           alt=""
         />
         <div className="body">

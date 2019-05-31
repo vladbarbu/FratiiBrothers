@@ -13,6 +13,7 @@ class Category extends PureComponent{
 
     render() {
 
+
         let active =
             this.context.screen ===  Config.SCREEN_IDENTIFIER_STATIONS ?
                 this.props.element.activeInStations :
@@ -24,7 +25,7 @@ class Category extends PureComponent{
 
         return (<div className={"Category"}>
             <div className={"card" + ( active ? " active" : "") } onClick={() => {this.context.doTreeElementToggle(this.props.element.ID);}}>
-                <div className={"image"}><img alt={this.props.element.name} src={require("./../../resources/" + this.props.element.image)}/></div>
+                <div className={"image"}><img alt={this.props.element.name} src={this.props.element.image}/></div>
                 <div className={"content"}>
                     <p className={"label"}>Category:</p>
                     <p className={"title"}>{this.props.element.name}</p>

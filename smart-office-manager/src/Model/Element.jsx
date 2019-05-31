@@ -1,5 +1,13 @@
 import Config from "./../config";
+import ElementStock from "./ElementStock";
 class Element {
+  get stock() {
+    return this._stock;
+  }
+
+  set stock(value) {
+    this._stock = value;
+  }
   get activeInStatistics() {
     return this._activeInStatistics;
   }
@@ -118,16 +126,16 @@ class Element {
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
     this.image = object.hasOwnProperty("image") ? object["image"] : null;
     this.parentID = object.hasOwnProperty("parentId") ? object["parentId"] : null;
-    this.quantity = object.hasOwnProperty("quantity") ? object["quantity"] : null;
+    this.quantity = object.hasOwnProperty("quantity") ? parseInt(object["quantity"]) : 0;
+    this.stock = object.hasOwnProperty("stock") ? Config.parseArrayElementWithClass(object["stock"],(element)=>{return new ElementStock(element);} ): [];
+
     this.elements = (() => {
       /**
        *
        * @type {Array<Element>}
        */
       let data = [];
-      let elements = object.hasOwnProperty("elements")
-        ? object["elements"]
-        : [];
+      let elements = object.hasOwnProperty("elements") ? object["elements"] : [];
       if (elements && elements.length > 0)
         for (let i = 0; i < elements.length; i++)
           data.push(new Element(elements[i]));
@@ -135,7 +143,7 @@ class Element {
     })();
     this.notifications = (() => {
       let data = [];
-      let notifications = object.hasOwnProperty("notifications") ? object["notifications"] : [];
+      let notifications = object.hasOwnProperty("messages") ? object["messages"] : [];
       if (!Config.isEmpty(notifications) && notifications.length > 0) for (let i = 0; i < notifications.length; i++) data.push(notifications[i]);
       return data;
     })();

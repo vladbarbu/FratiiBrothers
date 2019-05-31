@@ -14,6 +14,14 @@ const AppContext = React.createContext({
     getChosenElement : (screen = Config.SCREEN_IDENTIFIER_STATIONS) => {},
     getChosenStation : (screen = Config.SCREEN_IDENTIFIER_STATIONS) => {},
 
+
+    /**
+     * Retrieve and interpret the universe (received from the networking system)
+     * -- doGetUniverse()
+     */
+    doActionUniverseParse : () => {},
+
+
     /**
      * Changes the expand/collapse state of the element (Element.activeInStations)
      * Useful only for Category and Subcategory
@@ -56,9 +64,9 @@ const AppContext = React.createContext({
      * bind the scope and trigger the Networking.doRefillStock action (Promise)
      * Input Data: Quantity, Expiration Date
      * @param staition
-     * @param item
+     * @param element
      */
-    doActionElementRefillStock : (staition, item) => {},
+    doActionElementRefillStock : (staition, element) => {},
 
 
     /**
@@ -66,17 +74,17 @@ const AppContext = React.createContext({
      * If data is valid, trigger the Networking.doEditStock action (Promise)
      * Input Data: Array<Quantity, Expiration Date>
      * @param station
-     * @param item
+     * @param element
      */
-    doActionElementEditStock : (station, item) => {},
+    doActionElementEditStock : (station, element) => {},
 
 
     /**
      * Will clear warnings for a specific item. Triggers the Networking.clearWarnings action (Promise)
      * @param station
-     * @param item
+     * @param element
      */
-    doActionElementClearWarnings : (station, item) => {},
+    doActionElementClearWarnings : (station, element) => {},
 
 
     /**

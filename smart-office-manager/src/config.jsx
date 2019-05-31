@@ -3,8 +3,9 @@
 import Networking from './Model/Networking'
 import Moment from "moment";
 import React from "react";
+import ElementStock from "./Model/ElementStock";
 
-
+import { sha256 } from 'js-sha256';
 
 
 class Config{
@@ -20,6 +21,11 @@ class Config{
     static LOCATION_ID = "5cec1a164bda4429340dfdbb";
     static API_ROOT = "https://smart-office-backend.herokuapp.com/api/";
     static API_GLOBAL_RETRIEVE = Config.API_ROOT + "admin/locations/";
+    static API_PRODUCT_REQUESTS_RETRIEVE = Config.API_ROOT + "admin/requests/all";
+    static API_NOTIFICATIONS_RETRIEVE = Config.API_ROOT + "admin/messages/all";
+    static API_NOTIFICATIONS_CLEAR = Config.API_ROOT + "messages/filters";
+    static API_STOCK_SEND = Config.API_ROOT + "admin/stock/add";
+    static API_STOCK_EDIT = Config.API_ROOT + "admin/stock/edit/";
 
 
 
@@ -70,7 +76,7 @@ class Config{
             doActionElementEditStock : Config.doActionElementEditStock.bind(scope),
             doActionElementClearWarnings : Config.doActionElementClearWarnings.bind(scope),
             doActionElementClearWarning : Config.doActionElementClearWarning.bind(scope),
-
+            doActionUniverseParse : Config.doActionUniverseParse.bind(scope),
 
             /**
              * ------------------------------------
@@ -118,6 +124,101 @@ class Config{
 
         }
     }
+
+
+
+
+    static doActionUniverseParse(){
+
+        /**
+         * The scope will be bound to App.js
+         */
+        let scope = this;
+
+        Networking.doGetUniverse.bind(scope)().then((initial)=> {
+
+
+            let data = {...initial};
+            let encoded = sha256(JSON.stringify({...initial}));
+
+            console.log(scope.state.initial);
+            console.log(encoded);
+
+            if(!Config.isEmpty(scope.state.initial) && scope.state.initial === encoded){
+                console.log("Universe was already up to date.");
+                return;
+            }
+
+
+            let location = {id : !Config.isEmpty(data["id"]) ? data["id"] : null, name : !Config.isEmpty(data["name"]) ? data["name"] : null};
+            let stations = scope.loadStations(data["stations"]);
+            let items = scope.getAllItems(stations);
+            let notifications = scope.loadNotifications(stations);
+
+            scope.setState({
+                /**
+                 * Store the initial dataset
+                 */
+                initial : encoded,
+                chosenElement: null,
+                chosenStation: null,
+
+
+                /**
+                 * To keep the tree structure separate for the Stations Screen, the Item Stock Screen and the statistics, we will se separate chosen element&station for each one
+                 */
+                chosenStockElement : null,
+                chosenStockStation : null,
+
+                /**
+                 * To keep the tree structure separate for the Stations Screen, the Item Stock Screen and the statistics, we will se separate chosen element&station for each one
+                 */
+                chosenStatisticsElement : null,
+                chosenStatisticsStation : null,
+
+                sideBarChosen: Config.SCREEN_IDENTIFIER_STATIONS,
+                location: location,
+                stations: stations,
+                items: items,
+                notifications: notifications,
+                showConfirmationPopup: false,
+                showInputPopup: false,
+
+
+                isSafeToUpdateUniverse : true,
+
+                /**
+                 * The stockHolder will represent an imaginary Station, that will hold every unique item in the platform.
+                 * Also, when declaring this, we will compute other "global" data items that we need (e.g. entire stock for each item)
+                 */
+                stockHolder : scope.createStockHolder(data, stations),
+
+
+                /**
+                 *
+                 *
+                 * -------------
+                 *
+                 * DESIGN UTILITIES
+                 *
+                 * -------------
+                 *
+                 */
+
+
+                isMobileDrawerExpanded : false,
+                isSideBarExpanded : false,
+                isSideBarStatisticsExpanded: false,
+                loading : false,
+                alert : null,
+                globalModals : [],
+
+            });
+        });
+    }
+
+
+
 
 
 
@@ -353,9 +454,9 @@ class Config{
      * ASYNC because we have to wait for the setState({}) to fully take place before showing the modal
      *
      * @param {Station} station
-     * @param {Element} item
+     * @param {Element} element
      */
-    static async doActionElementRefillStock(station, item){
+    static async doActionElementRefillStock(station, element){
         /**
          * The scope will be bound to App.js
          */
@@ -367,17 +468,17 @@ class Config{
             ID : modalID,
             title : "Refill Stock",
             mini : true,
-            description : "Add a new quantity of \""+item.name+"\" to this station (#"+station.name+"). Don't forget to add an expiration date if needed.",
+            description : "Add a new quantity of \""+element.name+"\" to this station (#"+station.name+"). Don't forget to add an expiration date if needed.",
             fields : [
                 {
                     ID : "quantity",
-                    label : "Item Quantity",
+                    label : "Quantity",
                     placeholder : "Fill in the expected quantity",
                     type : "number"
                 },
                 {
                     ID : "expiration",
-                    label : "Item Expiration Date",
+                    label : "Expiration Date",
                     placeholder : "Fill in the expected expiration date",
                     value : Moment().add(1,"days").format("YYYY-MM-DD"),
                     type : "date"
@@ -400,7 +501,23 @@ class Config{
                         if(flag){ this.context.showAlert("Please provide data for all the available inputs.", Config.ALERT_TYPE_ERROR); return; }
 
 
-                        Networking.doRefillStock.bind(scope)(station.ID, item.ID, quantity , expiration);
+                        Networking.doRefillStock.bind(scope)(station, element, quantity , expiration)
+                            .then((result)=>{
+                                Config.showAlert.bind(scope)("Stock updated!",Config.ALERT_TYPE_SUCCESS);
+                                element.stock.push(new ElementStock({
+                                    stationId : station.ID,
+                                    elementId : element.ID,
+                                    quantity : quantity,
+                                    expirationDate : expiration
+                                }));
+                                element.quantity += parseInt(quantity);
+                                this.hide();
+
+                            })
+                            .catch(()=>{
+                                Config.showAlert.bind(scope)("Server Error",Config.ALERT_TYPE_ERROR);
+                            })
+                        ;
                     }
                 },
                 {
@@ -421,9 +538,9 @@ class Config{
     /**
      *
      * @param {Station} station
-     * @param {Element} item
+     * @param {Element} element
      */
-    static async doActionElementEditStock(station, item){
+    static async doActionElementEditStock(station, element){
         /**
          * The scope will be bound to App.js
          */
@@ -434,49 +551,55 @@ class Config{
         let modal = Config.createModalObject({
             ID : modalID,
             title : "Refill Stock",
-            description : "Add a new quantity of \""+item.name+"\" to this station (#"+station.name+"). Don't forget to add an expiration date if needed.",
+            description : "Add a new quantity of \""+element.name+"\" to this station (#"+station.name+"). Don't forget to add an expiration date if needed.",
             customContent : function(){
-                let data = [
-                    {stockID : "1sadasd", quantity : 8, expiration : "2019-09-01"},
-                    {stockID : "221s3", quantity : 3, expiration : "2019-10-01"},
-                    {stockID : "3xzcxz", quantity : 4, expiration : "2019-11-01"},
-                    {stockID : "4sadsa", quantity : 19, expiration : "2019-11-02"},
-                ];
-                let rows = []; for(let item of data) rows.push({
+
+                let rows = []; for(let item of element.stock)
+                {
+                    rows.push({
                         "quantity" : {
-                            ID : "quantity-"+item.stockID,
-                            label : "Item Quantity",
+                            ID : "quantity-"+item.ID,
+                            label : "Quantity",
                             placeholder : "Fill in the expected quantity",
                             value : item.quantity,
                             type : "number"
                         },
-                        "expiration" : {
-                            ID : "expiration-"+item.stockID,
-                            label : "Item Expiration Date",
-                            value : item.expiration,
+                        "expirationDate" : {
+                            ID : "expirationDate-"+item.ID,
+                            label : "Expiration Date",
+                            value : item.expirationDateParsed,
                             type : "date"
                         }
                     });
-                console.log(this);
+                }
+
+                for(let i = 0 ; i < element.stock.length; i++)  this.fields["stock-"+element.stock[i].ID] = "-";
+
+
 
 
                 return (
                     <div className={"customContent"}>
-                        {rows.map((row, index) => {
+                        {rows.length === 0
+                            ? <div><p>Stock is empty at the moment. Please refill first.</p></div>
+                            : rows.map((row, index) => {
                             return (
-                                <div key={index} className={"fieldRow"} ref={(element)=>{ this.fields["stock-"+data[index].stockID] = element; }} data-stock={data[index].stockID}>
-                                    <div data-id={row.quantity.ID} className="field quantity" ref={(element)=>{ this.fields[row.quantity.ID] = element; }} data-stock={data[index].stockID} >
+                                <div key={index}
+                                     className={"fieldRow"}
+                                     ref={(renderedElement)=>{this.fields["stock-"+element.stock[index].ID] = renderedElement;}}
+                                     data-stock={element.stock[index].ID}>
+                                    <div data-id={row.quantity.ID} className="field quantity" ref={(renderedElement)=>{ this.fields[row.quantity.ID] = renderedElement; }} data-stock={element.stock[index].ID} >
                                         <label htmlFor={row.quantity.ID}>{row.quantity.label}</label>
                                         <input id={row.quantity.ID} type={Config.sanitize(row.quantity.type,"text")} placeholder={Config.sanitize(row.quantity.placeholder,null)} defaultValue={Config.sanitize(row.quantity.value,null)} />
                                     </div>
-                                    <div data-id={row.expiration.ID} className="field expiration" ref={(element)=>{ this.fields[row.expiration.ID] = element; }}  data-stock={data[index].stockID} >
-                                        <label htmlFor={row.expiration.ID}>{row.expiration.label}</label>
-                                        <input id={row.expiration.ID} type={Config.sanitize(row.expiration.type,"text")} placeholder={Config.sanitize(row.expiration.placeholder,null)} defaultValue={Config.sanitize(row.expiration.value,null)} />
+                                    <div data-id={row.expirationDate.ID} className="field expiration" ref={(renderedElement)=>{ this.fields[row.expirationDate.ID] = renderedElement; }}  data-stock={element.stock[index].ID} >
+                                        <label htmlFor={row.expirationDate.ID}>{row.expirationDate.label}</label>
+                                        <input id={row.expirationDate.ID} type={Config.sanitize(row.expirationDate.type,"text")} placeholder={Config.sanitize(row.expirationDate.placeholder,null)} defaultValue={Config.sanitize(row.expirationDate.value,null)} />
                                     </div>
-                                    <div data-id={row.expiration.ID} className="field action">
+                                    <div data-id={row.expirationDate.ID} className="field action">
                                         <label className={"remove"}>{"Remove"}</label>
                                         <label className={"restore"}>{"Restore"}</label>
-                                        <div data-id={row.expiration.ID} className="button" onClick={()=>{this.fields["stock-"+data[index].stockID].classList.toggle("removed");}}>
+                                        <div data-id={row.expirationDate.ID} className="button" onClick={()=>{this.fields["stock-"+element.stock[index].ID].classList.toggle("removed");}}>
                                             <div className={"icon remove"}><i className={"material-icons"}>remove_shopping_cart</i></div>
                                             <div className={"icon restore"}><i className={"material-icons"}>settings_backup_restore</i></div>
                                         </div>
@@ -530,7 +653,7 @@ class Config{
                         if(flagTime) {this.toggleWarnForField("expiration",true);return;}
                         if(flag){ this.context.showAlert("Please provide data for all the available inputs.", Config.ALERT_TYPE_ERROR); return; }
 
-                        Networking.doEditStock.bind(scope)(station.ID, item.ID, []);
+                        Networking.doEditStock.bind(scope)(station.ID, element.ID, []);
                     }
                 },
                 {
@@ -551,16 +674,12 @@ class Config{
     /**
      *
      * @param {Station} station
-     * @param {Element} item
+     * @param {Element} element
      */
-    static async doActionElementClearWarnings(station, item){
+    static async doActionElementClearWarnings(station, element){
         /**
          * The scope will be bound to App.js
          */
-       // let scope = this;
-
-
-        //let requestClearWarnings = Networking.doClearWarnings.bind(scope);
 
 
         let scope = this;
@@ -571,13 +690,31 @@ class Config{
             ID : modalID,
             title : "Refill Stock",
             mini : true,
-            description : "Clear all existing warnings/notifications sent for \""+item.name+"\" from this station (#"+station.name+")?",
+            description : "Clear all existing warnings/notifications sent for \""+element.name+"\" from this station (#"+station.name+")?",
             buttons : [
                 {
                     ID : "remove",
                     title : "Clear All",
                     callback_click : function(){
-                        Networking.doClearWarnings.bind(scope)(station.ID, item.ID);
+                        Networking.doClearWarnings.bind(scope)(station, element)
+                            .then((result)=>{
+                                Config.showAlert.bind(scope)("Warnings/Notifications cleared.",Config.ALERT_TYPE_SUCCESS);
+                                element.notifications = [];
+
+                                let list = scope.state.notifications.filter(item =>  item.itemID !== element.ID);
+                                element.notifications = element.notifications.filter(item =>  item.itemID !== element.ID);
+                                let elementsFlat =  scope.state.elementsFlat;
+
+                                scope.setState({
+                                    notifications : list,
+                                    elementsFlat : elementsFlat
+                                });
+
+                                this.hide();
+                            })
+                            .catch(()=>{
+                                Config.showAlert.bind(scope)("Server Error",Config.ALERT_TYPE_ERROR);
+                            });
                     }
                 },
                 {
@@ -590,6 +727,9 @@ class Config{
 
         await Config.registerGlobalModal.bind(scope)(modal);
         Config.showGlobalModal.bind(scope)(modal.ID);
+
+
+
 
 
 

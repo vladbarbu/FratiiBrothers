@@ -7,10 +7,6 @@ import Config from "./../../config";
 class ScreenItemStock extends Component {
 
 
-  componentDidMount() {
-
-  }
-
   render() {
     return (
       <div className="ScreenItemStock">

@@ -13,7 +13,8 @@ class ScreenRequests extends Component {
          * @type {{productRequests: Array<SRequest>}}
          */
         this.state = {
-            productRequests : []
+            productRequests : [],
+            localLoading : false,
         }
     }
 
@@ -41,13 +42,12 @@ class ScreenRequests extends Component {
     }
 
     loadRequests(){
-        this.context.startLoading();
+        this.setState({localLoading : true});
         this.context.doGetProductRequests().then(list => {
-
             this.setState({
-                productRequests :  Config.parseArrayElementWithClass(list, (element)=>{return new SRequest(element)})
+                productRequests :  Config.parseArrayElementWithClass(list, (element)=>{return new SRequest(element)}),
+                localLoading : false
             });
-
             this.context.stopLoading();
 
         });
@@ -55,7 +55,7 @@ class ScreenRequests extends Component {
 
 
     printRequests(){
-        if(this.context.isLoading() && (Config.isEmpty(this.state.productRequests) || this.state.productRequests.length === 0))
+        if(this.state.localLoading && (Config.isEmpty(this.state.productRequests) || this.state.productRequests.length === 0))
             return (<div  className={"request-item loading"}><div className={"content"}><div className={"icon"}><i className={"material-icons"}>refresh</i></div><p>Loading latest results</p></div></div>);
         else if(Config.isEmpty(this.state.productRequests) ||  this.state.productRequests.length === 0)
             return (

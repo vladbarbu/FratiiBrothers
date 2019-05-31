@@ -71,8 +71,10 @@ class Config {
   static loadNotifications = items => {
     let notifications = [];
     for (let i = 0; i < items.length; i++)
-      for (let j = 0; j < items[i].notifications.length; j++)
+      for (let j = 0; j < items[i].notifications.length; j++) {
+        items[i].notifications[j]["elementId"] = items[i].ID;
         notifications.push(items[i].notifications[j]);
+      }
     return notifications;
   };
 

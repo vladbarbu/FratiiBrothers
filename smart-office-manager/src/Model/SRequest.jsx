@@ -61,7 +61,7 @@ class SRequest {
 
   constructor(object) {
     if (object === null) return;
-    this.ID = object.hasOwnProperty("id") ? object["id"] : null;
+    this.ID = object.hasOwnProperty("_id") ? object["_id"] : null;
     this.badge = object.hasOwnProperty("badge") ? object["badge"] : null;
     this.name = object.hasOwnProperty("name") ? object["name"] : null;
     this.description = object.hasOwnProperty("description") ? object["description"] : null;
@@ -75,7 +75,7 @@ class SRequest {
 
   static parseDate = date => {
     try{
-      return  Moment(date,"MM/DD/YYYY hh:mm:ss").format('MMMM Do YYYY, h:mm:ss a');
+      return  Moment(date,Moment.ISO_8601).format('MMMM Do YYYY, h:mm:ss a');
     }catch (e) {
       console.error(e);
     }

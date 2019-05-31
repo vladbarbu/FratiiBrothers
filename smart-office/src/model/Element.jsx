@@ -91,7 +91,10 @@ class Element {
     this.notifications = (() => {
       let data = [];
       let notifications = object.hasOwnProperty("messages") ? object["messages"] : [];
-      if (notifications && notifications.length > 0) for (let i = 0; i < notifications.length; i++) data.push(notifications[i]);
+      if (notifications && notifications.length > 0) for (let i = 0; i < notifications.length; i++) {
+        notifications[i]["elementId"] = this.ID;
+        data.push(notifications[i]);
+      }
       return data;
     })();
   }

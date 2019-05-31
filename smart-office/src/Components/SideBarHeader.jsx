@@ -10,7 +10,6 @@ class SideBarHeader extends Component {
 
 
 
-
     render() {
       let station = {
           building: "Centric Iasi",

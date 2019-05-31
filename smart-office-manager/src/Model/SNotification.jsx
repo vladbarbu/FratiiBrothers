@@ -61,15 +61,15 @@ class SNotification {
     this._stationID = value;
   }
 
-  constructor(object, stationID) {
+  constructor(object) {
     if (object === null) return;
     this.ID = object.hasOwnProperty("id") ? object["id"] : null;
     this.type = object.hasOwnProperty("type") ? object["type"] : null;
     this.createdAt = object.hasOwnProperty("createdAt") ? object["createdAt"] : null;
     this.createdAtParsed = SNotification.parseDate(this.createdAt);
     this.content = object.hasOwnProperty("content") ? object["content"] : null;
-    this.itemID = object.hasOwnProperty("itemId") ? object["itemId"] : null;
-    this.stationID = stationID;
+    this.itemID = object.hasOwnProperty("elementId") ? object["elementId"] : null;
+    this.stationID =  object.hasOwnProperty("stationId") ? object["stationId"] : null;
 
     this.dismissing = false;
   }
@@ -77,7 +77,7 @@ class SNotification {
 
   static parseDate = date => {
     try{
-      return  Moment(date,"MM/DD/YYYY hh:mm:ss").format('MMMM Do YYYY, h:mm:ss a');
+      return  Moment(date,Moment.ISO_8601).format('MMMM Do YYYY, h:mm:ss a');
     }catch (e) {
       console.error(e);
     }

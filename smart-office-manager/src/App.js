@@ -16,23 +16,13 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 class App extends Component {
   constructor(props) {
     super(props);
-
-    let data = require("./resources/data/data.json");
-    let location = data["location"];
-    let stations = this.loadStations(data["stations"]);
-    let items = this.getAllItems(stations);
-    let notifications = this.loadNotifications(stations);
-
-
-
     this.state = {
       /**
        * Store the initial dataset
        */
-      initial : data,
+      initial : null,
       chosenElement: null,
       chosenStation: null,
-
 
       /**
        * To keep the tree structure separate for the Stations Screen, the Item Stock Screen and the statistics, we will se separate chosen element&station for each one
@@ -47,10 +37,10 @@ class App extends Component {
       chosenStatisticsStation : null,
 
       sideBarChosen: Config.SCREEN_IDENTIFIER_STATIONS,
-      location: location,
-      stations: stations,
-      items: items,
-      notifications: notifications,
+      location: {},
+      stations: [],
+      items: [],
+      notifications: [],
       showConfirmationPopup: false,
       showInputPopup: false,
 
@@ -61,7 +51,7 @@ class App extends Component {
        * The stockHolder will represent an imaginary Station, that will hold every unique item in the platform.
        * Also, when declaring this, we will compute other "global" data items that we need (e.g. entire stock for each item)
        */
-      stockHolder : this.createStockHolder(data, stations),
+      stockHolder : {},
 
 
       /**
@@ -84,7 +74,6 @@ class App extends Component {
 
       globalModals : [],
     };
-
   }
 
 
@@ -107,6 +96,7 @@ class App extends Component {
     }
     return [];
   };
+
   loadNotifications = (stations) => {
     let notifications = [];
     for(let i = 0; i < stations.length; i++){
@@ -114,8 +104,13 @@ class App extends Component {
       if(!Config.isEmpty(elements))
         Object.keys(elements).forEach(key => {
             if(!Config.isEmpty(elements[key].notifications)){
-              for(let j = 0; j < elements[key].notifications.length; j++)
-                notifications.push(new SNotification(elements[key].notifications[j], stations[i].ID));
+              for(let j = 0; j < elements[key].notifications.length; j++) {
+
+                let object = elements[key].notifications[j];
+                object.stationId = stations[i].ID;
+                object.elementId = elements[key].ID;
+                notifications.push(new SNotification(object));
+              }
             }
         });
     }
@@ -127,19 +122,9 @@ class App extends Component {
     this.setState({
       context : Config.generateAppContextValues(this),
       loading : true
-    },
-        ()=>{
-          this.state.context.doGetUniverse().then(()=> {
-            this.setState({loading : false});
-          });
-        });
+    }, ()=>{ this.state.context.doActionUniverseParse();});
 
-
-
-    setInterval(()=>{this.state.context.doGetUniverse()}, 30000);
-
-
-
+    setInterval(()=>{this.state.context.doActionUniverseParse()}, 30000);
 
   }
   render() {
@@ -331,7 +316,7 @@ class App extends Component {
 
     try {
       /** As cloning a fully functional Object isn't that pretty, we will recreate the first station to us as a holder */
-      data = data["stations"][0];
+      data = {...data["stations"][0]};
       data["elements"].push({
         ID : "temporary-category-for-fresh-elements",
         type : Config.ELEMENT_TYPE_CATEGORY,

@@ -391,17 +391,17 @@ class App extends Component {
               console.log(response);
               let status = response["status"];
               if (parseInt(status) === Config.HTTP_REQUEST_STATUS_OK || parseInt(status) === Config.HTTP_REQUEST_STATUS_CREATED ){
-                console.log("[OK] Notification was successful!");
+                console.log("[OK] SNotification was successful!");
               }
-              else console.log("Notification encountered errors.")
+              else console.log("SNotification encountered errors.")
             }catch (e) {
-              console.error("Notification failed.");
+              console.error("SNotification failed.");
               console.error(e);
               reject();
             }
           })
           .catch((error) => {
-            console.error("Notification failed miserably.");
+            console.error("SNotification failed miserably.");
             console.error(error);
             reject();
           })
