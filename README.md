@@ -1,5 +1,6 @@
 # Live prototype (Employee/Manager App) and working platforms
-https://sketch.cloud/s/8YoYw  
+__Prototypes:__ https://sketch.cloud/s/8YoYw  
+__Presentation:__ https://docs.google.com/presentation/d/1Exhjd5faIRZzHKV9I27OtIhJSb7XnLcMCSFdHZd6HQ4/edit?usp=sharing   
 __Front Office:__ https://priceless-dijkstra-ab3aef.netlify.com/   
 __Back Office:__ https://cocky-mahavira-d62945.netlify.com/   
 
