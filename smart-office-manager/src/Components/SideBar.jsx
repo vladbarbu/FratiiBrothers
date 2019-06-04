@@ -185,7 +185,7 @@ class SideBar extends Component {
                                       <div className="header">
                                           <p>{element.name}</p>
                                           <p className="time">
-                                              { Moment(notification["createdAt"],"MM/DD/YYYY hh:mm:ss").format('MMMM Do YYYY, h:mm:ss a')}
+                                              { Moment(notification["createdAt"],Moment.ISO_8601).format('MMMM Do YYYY, h:mm:ss a')}
                                           </p>
                                       </div>
                                       <div className="notification-item-message">

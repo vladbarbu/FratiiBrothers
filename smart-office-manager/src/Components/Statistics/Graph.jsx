@@ -242,6 +242,9 @@ class Graph extends Component{
         let chosen = "";
 
 
+        console.log(this.props.statistic)
+
+
 
         switch (this.props.option) {
             case Config.OPTION_DAY :

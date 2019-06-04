@@ -5,6 +5,7 @@ import Config from "../../config";
 import Tree from "../Tree/Tree";
 import Moment from "moment"
 import Graph from "./Graph";
+import SupplyTabContentCalendar from "./SupplyTabContentCalendar";
 
 
 
@@ -85,7 +86,7 @@ class SupplyTabContentGraph extends Component {
                     </div>
                 </div>
                 <div className={"canvas"}>
-                   <Graph {...graphProps} />
+                   <Graph station={this.props.chosenStatisticsStation}   {...graphProps} />
                 </div>
             </div>
         )
@@ -125,9 +126,9 @@ class SupplyTabContentGraph extends Component {
         this.context.doGetStatistics(
             this.state.option,
             date,
-            null,
-            null,
-        ).then((statistic)=>{
+            Config.isEmpty(this.props.element)  ? null : this.props.element.ID,
+            Config.isEmpty(this.props.station) ? null :  this.props.station.ID,
+           ).then((statistic)=>{
             console.log(statistic);
             this.setState({
                 statistic : statistic

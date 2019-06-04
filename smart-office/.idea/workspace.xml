@@ -3,23 +3,58 @@
   <component name="ChangeListManager">
     <list default="true" id="513dcac1-8cf0-4d0d-9161-1275ea55d02e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenStatistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Screen/ScreenStatistics.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/Calendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/Calendar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/Graph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/Graph.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentCalendar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentCalendar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentGraph.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Components/Statistics/SupplyTabContentGraph.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/AppContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/AppContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/Model/Networking.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/Model/Networking.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/config.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/config.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/NavBar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../smart-office-manager/src/resources/styles/NavBar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/precache-manifest.eaf95c43fdbbc89d2b1d1ab58736639e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.041b3a46777d85abb23b8d9868c56a1c.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.41d09e2d.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.41d09e2d.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.910fb023.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.910fb023.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.a52e4446.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.a52e4446.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.8fef0c4f.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.8fef0c4f.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.86ca8fcd.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.86ca8fcd.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.9b711862.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.9b711862.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-Black.80051a19.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-Black.94a505bb.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-BlackItalic.67928d02.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-BlackItalic.9470b32b.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-Bold.97ca9508.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-Bold.e7d8d623.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-BoldItalic.0088d032.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-BoldItalic.67ea4103.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-Book.4f84355b.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-Book.c8ae3e93.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-BookItalic.2b9fb40f.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-BookItalic.6c288c98.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-Medium.029c2e0e.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-Medium.35be8fce.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-MediumItalic.9644e15a.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/CircularStd-MediumItalic.bec30234.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/books.5da2e378.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_1.d7106792.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_10.8570d914.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_2.dfd19fe9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_3.9557a03c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_4.9eba7753.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_5.78fe85b4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_6.7db2a187.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_7.2c9a6f6b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_8.eb870e3a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/category_9.1d5868e3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/fruits.5eb69d01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/item_1.5e537fb2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/item_2.eb870e3a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/item_3.4c924a41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/media/unknown.989f6a95.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,18 +79,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/Element.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="94" column="35" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Item.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="345">
               <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
               <folding>
                 <element signature="e#0#60#0" expanded="true" />
@@ -64,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -76,10 +102,22 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/NavBar.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="530">
+              <caret line="136" column="36" selection-start-line="136" selection-start-column="36" selection-end-line="136" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/SideBarInitial.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
+            <state relative-caret-position="1350">
               <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -91,7 +129,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/SideBarItem.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="540">
               <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -103,7 +141,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/SideBarCategory.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="165">
               <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -115,7 +153,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/SideBarHeader.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="105">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -239,7 +277,6 @@
         <option value="$PROJECT_DIR$/src/resources/styles/Item.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/App.scss" />
         <option value="$PROJECT_DIR$/src/resources/styles/config.scss" />
-        <option value="$PROJECT_DIR$/src/Components/NavBar.jsx" />
         <option value="$PROJECT_DIR$/src/Components/RequestForm.jsx" />
         <option value="$PROJECT_DIR$/src/Components/RequestItemPopup.jsx" />
         <option value="$PROJECT_DIR$/src/Components/FewLeftPopup.jsx" />
@@ -256,6 +293,7 @@
         <option value="$PROJECT_DIR$/src/Components/SideBarItem.jsx" />
         <option value="$PROJECT_DIR$/src/Components/SideBarHeader.jsx" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Components/NavBar.jsx" />
       </list>
     </option>
   </component>
@@ -396,17 +434,18 @@
       <workItem from="1559129050393" duration="872000" />
       <workItem from="1559132278607" duration="2241000" />
       <workItem from="1559253719115" duration="1270000" />
+      <workItem from="1559631895597" duration="350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94131000" />
+    <option name="totallyTimeSpent" value="94481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23032904" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23319027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -590,16 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/NavBar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/RequestForm.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -682,6 +711,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Element.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="94" column="35" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Item.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SideBarInitial.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SideBarItem.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SideBarCategory.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/SideBarHeader.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/styles/FewLeftPopup.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1155">
@@ -715,67 +801,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Element.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="94" column="35" selection-start-line="94" selection-start-column="35" selection-end-line="94" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Item.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBarInitial.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBarItem.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="38" column="39" selection-start-line="38" selection-start-column="39" selection-end-line="38" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBarCategory.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/SideBarHeader.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="368" column="20" selection-start-line="368" selection-start-column="16" selection-end-line="368" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/NavBar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="136" column="36" selection-start-line="136" selection-start-column="36" selection-end-line="136" selection-end-column="36" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

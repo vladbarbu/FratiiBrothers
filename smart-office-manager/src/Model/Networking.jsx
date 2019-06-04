@@ -89,10 +89,10 @@ class Networking {
         return new Promise( (resolve, reject) => {
 
             axios
-                .delete(Config.API_NOTIFICATIONS_CLEAR,{params: {
+                .delete(Config.API_NOTIFICATIONS_CLEAR,{params: JSON.stringify({
                     stationId : station.ID,
                     elementId : element.ID
-                }})
+                })})
                 .then(response => {
                     console.log(response);
                     try {
@@ -144,13 +144,106 @@ class Networking {
      * @param stationID
      * @return {Promise<any>}
      */
-    static doGetStatistics(option, date,itemID, stationID){
+    static doGetStatistics(option, date, itemID, stationID){
+
 
         /**
          * Temporary local dataset
          */
 
+        this.doGetLocalStatistics(option,date,itemID,stationID);
 
+
+        /**
+         * Live dataset from the ML Database
+         */
+
+        let sourceFormat = "YYYY-MM-DD";
+
+
+        let days = Moment(date, sourceFormat).daysInMonth();
+
+        let startOfWeek = Moment(date, sourceFormat).startOf("week").format("DD/MM/YYYY");
+        let startOfMonth = Moment(date, sourceFormat).startOf("month").format("DD/MM/YYYY");
+
+        return new Promise( (resolve, reject) => {
+
+            axios
+                .get("http://192.168.43.51:8081/prediction/"+itemID+"/"+date+"/"+days, {
+                    headers : {
+                        "Authorization" : "Token 679895cf533b0dbcbb15661852037bdcd4ec80f2"
+                    }
+                })
+                .then(response => {
+                    console.log(response);
+                    try {
+                        let status = response["status"];
+                        if (parseInt(status) === Config.HTTP_REQUEST_STATUS_OK) {
+                            let data = response["data"];
+
+                            console.log("here");
+
+                            let final = {};
+
+                            let index = "byMonth";
+
+                            final[index] = {};
+                            final[index].date =  option === Config.OPTION_MONTH ? startOfMonth : startOfWeek;
+                            final[index].data = [];
+
+                           for(let i = 0; i < data.length; i++){
+                               let p = parseFloat(data[i]["prediction"]);
+                               let random = Math.floor(Math.random() * 5 + p);
+
+                               final[index].data.push({
+                                   date : Moment(data[i]["date"],"YYYY-MM-DD").format("DD/MM/YYYY"),
+                                   stock : random,
+                                   prediction : data[i]["prediction"]
+                               });
+                           }
+
+
+                           final["byWeek"] = {
+                               date : startOfWeek,
+                               data : []
+                           };
+
+                            for(let i = 0; i < Math.min(data.length, 7); i++){
+                                final["byWeek"].data.push({
+                                    date : Moment(data[i]["date"],"YYYY-MM-DD").format("DD/MM/YYYY"),
+                                    stock : 50,
+                                    prediction : data[i]["prediction"]
+                                })
+                            }
+
+
+                            resolve(final);
+                        }
+                    } catch (e) {
+                        console.error("Parsing error at load.");
+                        console.error(e);
+                        reject();
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    reject();
+                })
+                .finally(() => {
+                    // always executed
+                });
+        });
+
+
+
+
+
+
+    }
+
+
+
+    static doGetLocalStatistics(option, date, itemID,stationID){
         return new Promise((resolve, reject) =>{
 
             try {
@@ -166,10 +259,7 @@ class Networking {
 
 
                 let daysInMonth = Moment(date, sourceFormat).daysInMonth();
-
                 let salt = parseInt(Moment(date, sourceFormat).format("DD")) / 2;
-
-
                 let statistic = {
                     byDay: {
                         date: day,
@@ -285,8 +375,6 @@ class Networking {
 
 
         } )
-
-
     }
 
 

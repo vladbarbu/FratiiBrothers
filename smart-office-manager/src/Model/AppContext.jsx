@@ -11,6 +11,10 @@ const AppContext = React.createContext({
     screen : Config.SCREEN_IDENTIFIER_STATIONS ,
 
 
+    chosenStatisticsStation : null,
+    chosenStatisticsElement : null,
+
+
     getChosenElement : (screen = Config.SCREEN_IDENTIFIER_STATIONS) => {},
     getChosenStation : (screen = Config.SCREEN_IDENTIFIER_STATIONS) => {},
 

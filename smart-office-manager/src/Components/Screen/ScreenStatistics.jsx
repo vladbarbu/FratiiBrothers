@@ -54,8 +54,8 @@ class ScreenStatistics extends Component {
                             <SupplyTab index={1} doChooseTab={this.doChooseTab} activeTabIndex={ this.state.activeTabIndex} element={{icon:"graphic_eq", title : "Supply Graph"}} />
                             </div>
                             <div className={"content"}>
-                                { this.state.activeTabIndex === 0 ? <SupplyTabContentCalendar element={this.props.chosenStatisticsElement}/> : null }
-                                { this.state.activeTabIndex === 1 ? <SupplyTabContentGraph element={this.props.chosenStatisticsElement}  updateGraphComponents={this.updateGraphComponents}  /> : null }
+                                { this.state.activeTabIndex === 0 ? <SupplyTabContentCalendar station={this.props.chosenStatisticsStation}   element={this.props.chosenStatisticsElement}/> : null }
+                                { this.state.activeTabIndex === 1 ? <SupplyTabContentGraph station={this.props.chosenStatisticsStation}   element={this.props.chosenStatisticsElement}  updateGraphComponents={this.updateGraphComponents}  /> : null }
                             </div>
                         </div>
 

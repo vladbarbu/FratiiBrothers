@@ -134,7 +134,7 @@ class NavBar extends Component {
               >
                 <img
                   alt="Item"
-                  src={require("./../resources/" + element.image)}
+                  src={element.image}
                 />
                 <p>{" " + element.name}</p>
                 <div className="btn">

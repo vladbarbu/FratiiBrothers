@@ -421,7 +421,7 @@ class Config{
         switch (screen) {
             case Config.SCREEN_IDENTIFIER_STATIONS : return  scope.state.chosenElement;
             case Config.SCREEN_IDENTIFIER_STOCK : return  scope.state.chosenStockElement;
-            case Config.SCREEN_IDENTIFIER_STATISTICS : return  scope.state.chosenStockElement;
+            case Config.SCREEN_IDENTIFIER_STATISTICS : return  scope.state.chosenStatisticsElement;
             default : return null;
         }
     }
@@ -435,7 +435,7 @@ class Config{
         switch (screen) {
             case Config.SCREEN_IDENTIFIER_STATIONS : return  scope.state.chosenStation;
             case Config.SCREEN_IDENTIFIER_STOCK : return  scope.state.chosenStockStation;
-            case Config.SCREEN_IDENTIFIER_STATISTICS : return  scope.state.chosenStockStation;
+            case Config.SCREEN_IDENTIFIER_STATISTICS : return  scope.state.chosenStatisticsStation;
             default : return null;
         }
     }

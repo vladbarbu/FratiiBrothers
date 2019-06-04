@@ -79,6 +79,7 @@ class Calendar extends PureComponent{
     }
 
     parseStatistic = () => {
+        console.log(this.props.statistic);
         let data = this.props.statistic.byMonth["data"];
         let object = {};
         for(let i = 0; i < data.length; i++){
